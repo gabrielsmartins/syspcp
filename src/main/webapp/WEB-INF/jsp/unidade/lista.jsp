@@ -11,10 +11,9 @@
 <c:forEach items="${unidadeMedidaList}" var="unidade" >
     <li> ${unidade.id} - ${unidade.descricao} - ${unidade.sigla} <a href="<c:url value='/unidades/${unidade.id}'/>"><button>Editar</button></a></li>
 </c:forEach>
-
+</ul>
 <div id="mensagem">
     <strong>${mensagem}</strong>
 </div>
-</ul>
 </body>
 </html>
