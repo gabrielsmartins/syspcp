@@ -11,21 +11,21 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import br.ifsp.edu.pcp.dao.HibernateUtil;
-import br.ifsp.edu.pcp.dao.ProdutoCompradoDAO;
+import br.ifsp.edu.pcp.dao.MaterialDAO;
 import br.ifsp.edu.pcp.dao.UnidadeMedidaDAO;
-import br.ifsp.edu.pcp.model.ProdutoComprado;
+import br.ifsp.edu.pcp.model.Material;
 import br.ifsp.edu.pcp.model.SituacaoProduto;
 import br.ifsp.edu.pcp.model.UnidadeMedida;
 
 public class ProdutoCompradoDAOTest {
 
 	private static UnidadeMedidaDAO unidadeMedidaDAO;
-	private static ProdutoCompradoDAO produtoCompradoDAO;
+	private static MaterialDAO produtoCompradoDAO;
 	private static UnidadeMedida unidadeMedida;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		produtoCompradoDAO = new ProdutoCompradoDAO();
+		produtoCompradoDAO = new MaterialDAO();
 		unidadeMedidaDAO = new UnidadeMedidaDAO();
 		unidadeMedida = new UnidadeMedida("Unidade", "UN");
 		unidadeMedidaDAO.salvar(unidadeMedida);
@@ -34,7 +34,7 @@ public class ProdutoCompradoDAOTest {
 	@Test
 	public void salvarProdutoComprado() {
 
-		ProdutoComprado produtoComprado = new ProdutoComprado("CHAPA AÇO INOX #20", SituacaoProduto.ATIVO,
+		Material produtoComprado = new Material("CHAPA AÇO INOX #20", SituacaoProduto.ATIVO,
 				unidadeMedida, 75.00, 5, 100.00, 85.00);
 
 		produtoComprado.setPeso(0.2);
@@ -47,7 +47,7 @@ public class ProdutoCompradoDAOTest {
 
 	@Test
 	public void alterarProdutoComprado() {
-		ProdutoComprado produtoComprado = new ProdutoComprado("CHAPA AÇO INOX #18", SituacaoProduto.ATIVO,
+		Material produtoComprado = new Material("CHAPA AÇO INOX #18", SituacaoProduto.ATIVO,
 				unidadeMedida, 65.00, 7, 75.00, 55.00);
 		produtoComprado.setPeso(0.35);
 		produtoComprado.setAltura(0.2);
@@ -55,7 +55,7 @@ public class ProdutoCompradoDAOTest {
 		produtoComprado.setLargura(250.00);
 		produtoComprado.setSituacao(SituacaoProduto.ATIVO);
 		produtoCompradoDAO.salvar(produtoComprado);
-		ProdutoComprado produtoCompradoAlterado = new ProdutoComprado("CHAPA AÇO INOX #10", SituacaoProduto.ATIVO,
+		Material produtoCompradoAlterado = new Material("CHAPA AÇO INOX #10", SituacaoProduto.ATIVO,
 				unidadeMedida, 95.00, 3, 15.00, 5.00);
 		produtoCompradoAlterado.setPeso(0.3);
 		produtoCompradoAlterado.setAltura(0.2);
@@ -69,7 +69,7 @@ public class ProdutoCompradoDAOTest {
 
 	@Test
 	public void removerProdutoComprado() {
-		ProdutoComprado produtoComprado = new ProdutoComprado("PARAFUSO 3/8 \"\" x 100mm", SituacaoProduto.ATIVO,
+		Material produtoComprado = new Material("PARAFUSO 3/8 \"\" x 100mm", SituacaoProduto.ATIVO,
 				unidadeMedida, 95.00, 3, 15.00, 5.00);
 		produtoCompradoDAO.salvar(produtoComprado);
 		produtoCompradoDAO.remover(produtoComprado.getId());
@@ -77,16 +77,16 @@ public class ProdutoCompradoDAOTest {
 
 	@Test
 	public void pesquisarProdutoComprado() {
-		ProdutoComprado produtoComprado = new ProdutoComprado("ARRUELA 1/2 \"\" x 100mm", SituacaoProduto.ATIVO,
+		Material produtoComprado = new Material("ARRUELA 1/2 \"\" x 100mm", SituacaoProduto.ATIVO,
 				unidadeMedida, 95.00, 3, 15.00, 5.00);
 		produtoCompradoDAO.salvar(produtoComprado);
-		ProdutoComprado produtoCompradoEncontrado = produtoCompradoDAO.pesquisar(produtoComprado.getId());
+		Material produtoCompradoEncontrado = produtoCompradoDAO.pesquisar(produtoComprado.getId());
 		assertNotNull(produtoCompradoEncontrado);
 	}
 
 	@Test
 	public void listarProdutoComprado() {
-		List<ProdutoComprado> produtos = produtoCompradoDAO.listar();
+		List<Material> produtos = produtoCompradoDAO.listar();
 		assertNotNull(produtos);
 	}
 

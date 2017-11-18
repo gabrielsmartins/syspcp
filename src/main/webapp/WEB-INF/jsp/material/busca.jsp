@@ -5,13 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Material ${material.descricao}</title>
+<title>Unidade ${unidadeMedida.sigla}</title>
 </head>
 <body>
-	<form action="<c:url value='/materiais/${material.id}'/>"
+	<form action="<c:url value='/unidades/${unidadeMedida.id}'/>"
 		method="POST">
-		<input type="text" name="material.descricao"
-			value="${material.descricao}"> <input type="text" name="unidade.sigla" value="${material.unidadeMedida.sigla}">
+		<input type="text" name="unidade.descricao"
+			value="${unidadeMedida.descricao}"> <input type="text" name="unidade.sigla" value="${unidadeMedida.sigla}">
 		<button type="submit" name="_method" value="PUT">Salvar</button>
 		<button type="submit" name="_method" value="DELETE">Excluir</button>
 	</form>
