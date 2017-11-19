@@ -9,27 +9,28 @@
 </head>
 <body>
 	<form action="<c:url value='/materiais/'/>" method="POST">
-		Descrição: <input type="text" name="material.descricao" /><br />
-		Situação: <input type="text" name="material.situacao" /><br /> Unidade
-		Medida: <select name="material.unidadeMedida" >
+		<label>Descrição:</label> <input type="text" name="material.descricao" /><br />
+		<label>Código Interno:</label> <input type="text" name="material.codigoInterno" /><br />
+		<label>Situação:</label> 
+		<input type="radio" name="material.situacao" value="ATIVO"/>Ativo
+		<input type="radio" name="material.situacao" value="INATIVO"/>Inativo
+		<input type="radio" name="material.situacao" value="FORA_DE_LINHA"/>Fora de Linha<br/>
+		<label>Unidade Medida:</label> 
+		<select name="material.unidadeMedida.id">
 			<c:forEach items="${unidades}" var="unidade">
-			<option value="${unidade}">${unidade.sigla}-${unidade.descricao}</option>
+				<option value="${unidade.id}">${unidade.sigla}-${unidade.descricao}</option>
 			</c:forEach>
-		</select> <input type="submit" value="Salvar" /><br/>
-		Valor Unitário:
-		<input type="text" name="material.valorUnitario"/><br/>
-		Quantidade Estoque:
-		<input type="text" name="material.quantidadeEstoque"/>
-		Quantidade Mínima:
-		<input type="text" name="material.quantidadeMinima"/>
-		Peso (KG):
-		<input type="text" name="material.peso"/><br/>
-		Comprimento (mm):
-		<input type="text" name="material.comprimento"/>
-		Largura (mm):
-		<input type="text" name="material.largura"/>
-		Altura (mm):
-		<input type="text" name="material.altura"/>
+		</select><br/>
+		<label>Valor Unitário:</label> <input type="text" name="material.valorUnitario" />
+		<label>Lead time:</label> <input type="text" name="material.leadTime" /><br />
+		<label>Quantidade Estoque:</label> <input type="text"
+			name="material.quantidadeEstoque" /> <label>Quantidade
+			Mínima:</label> <input type="text" name="material.quantidadeMinima" /><br />
+		<label>Peso (KG):</label> <input type="text" name="material.peso" /><br />
+		<label>Comprimento (mm):</label> <input type="text" name="material.comprimento" /> 
+		<label>Largura (mm):</label> <input type="text" name="material.largura" /> 
+		<label>Altura (mm):</label> <input type="text" name="material.altura" /><br />
+		<button type="submit">Salvar</button>
 	</form>
 </body>
 </html>

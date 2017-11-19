@@ -1,11 +1,4 @@
-﻿/*DROP DATABASE IF EXISTS bdpcp;
-CREATE DATABASE bdpcp;*/
-
-/*USE bdpcp;
-
-SET SQL_SAFE_UPDATES = 0;*/
-
-CREATE TABLE perfil(
+﻿CREATE TABLE perfil(
 	perf_id  SERIAL,
     perf_desc VARCHAR(200) NOT NULL,
     CONSTRAINT PK_perfil PRIMARY KEY(perf_id),
@@ -38,6 +31,7 @@ CREATE TABLE unidade(
 
 CREATE TABLE produto(
    prod_id SERIAL,
+   prod_cod_intr VARCHAR(500) DEFAULT NULL,
    prod_unid_id INT NOT NULL,
    prod_desc VARCHAR(200) NOT NULL,
    prod_sit VARCHAR(200) NOT NULL,
@@ -51,6 +45,7 @@ CREATE TABLE produto(
    prod_qntd_min NUMERIC(15,4) NOT NULL,
    prod_tipo VARCHAR(200) NOT NULL,
   CONSTRAINT PK_produto PRIMARY KEY(prod_id),
+  CONSTRAINT UNQ_produto_codigo_interno UNIQUE(prod_cod_intr),
   CONSTRAINT FK_produto_unidade FOREIGN KEY(prod_unid_id) REFERENCES unidade(unid_id),
   CONSTRAINT CHK_produto_situacao CHECK(prod_sit IN('ATIVO','INATIVO','FORA_DE_LINHA'))
 );
@@ -66,17 +61,7 @@ CREATE TABLE estrutura_produto(
 	CONSTRAINT FK_estrutura_produto_subproduto FOREIGN KEY(prod_sub_id)REFERENCES produto(prod_id)
 );
 
-SELECT * FROM perfil;
-SELECT * FROM usuario;
-SELECT * FROM unidade;
-SELECT * FROM produto;
-SELECT * FROM estrutura_produto;
 
-
-
-
-SELECT p.*,u.* from produto  AS p 
-inner join unidade AS u on u.unid_id = p.prod_unid_id;
 
 INSERT INTO perfil(perf_desc)VALUES('PCP');
 INSERT INTO perfil(perf_desc)VALUES('PROGRAMADOR PCP');
@@ -109,7 +94,14 @@ ALTER SEQUENCE unidade_unid_id_seq RESTART WITH 1;
 ALTER SEQUENCE produto_prod_id_seq RESTART WITH 1;
 
 
+SELECT * FROM perfil;
+SELECT * FROM usuario;
+SELECT * FROM unidade;
+SELECT * FROM produto;
+SELECT * FROM estrutura_produto;
 
+SELECT p.*,u.* from produto  AS p 
+inner join unidade AS u on u.unid_id = p.prod_unid_id;
 
 /*
 CREATE TABLE Produto (

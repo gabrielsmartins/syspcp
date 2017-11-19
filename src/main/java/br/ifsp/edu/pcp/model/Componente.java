@@ -21,6 +21,8 @@ public abstract class Componente {
 	@GeneratedValue (strategy=GenerationType.IDENTITY)
 	@Column(name="prod_id")
 	protected Long id;
+	@Column(name="prod_cod_intr")
+	protected String codigoInterno;
 	@Column(name="prod_desc")
 	protected String descricao;
 	@Enumerated(EnumType.STRING)
@@ -70,13 +72,23 @@ public abstract class Componente {
 	public Long getId() {
 		return id;
 	}
-
+	
 
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+	
+
+	public String getCodigoInterno() {
+		return codigoInterno;
+	}
+
+	
+	public void setCodigoInterno(String codigoInterno) {
+		this.codigoInterno = codigoInterno;
+	}
 
 
 	public String getDescricao() {
@@ -198,14 +210,7 @@ public abstract class Componente {
 		this.situacao = situacao;
 	}
 
-	
-	
-	
 
-	
-	
-	
-	
 	
 	
 	

@@ -8,11 +8,11 @@
 </head>
 <body>
 <form action="<c:url value='/unidades/'/>" method="POST">
-    Descrição:
+    <label>Descrição:</label>
     <input type="text" name="unidade.descricao"/><br/>
-    Sigla:
+    <label>Sigla:</label>
     <input type="text" name="unidade.sigla"/><br/>
-    <input type="submit" value="Salvar" />
+    <button type="submit">Salvar</button>
 </form>
 </body>
 </html>

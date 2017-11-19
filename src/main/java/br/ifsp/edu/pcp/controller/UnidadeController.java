@@ -29,7 +29,7 @@ public class UnidadeController {
 		
 	}
 
-	@Get("/")
+	@Get({"/",""})
 	public List<UnidadeMedida> lista() {
 		return unidadeMedidaDAO.listar();
 	}

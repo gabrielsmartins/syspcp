@@ -32,7 +32,7 @@ public class MaterialController {
 		result.include("unidades", unidadeMedidaDAO.listar());
 	}
 
-	@Get("/")
+	@Get({"/",""})
 	public List<Material> lista() {
 		return materialDAO.listar();
 	}
@@ -41,12 +41,13 @@ public class MaterialController {
 	public void adiciona(Material material) {
 		materialDAO.salvar(material);
 		result.include("mensagem", "Material Salvo com Sucesso");
-		result.redirectTo(UnidadeController.class).lista();
+		result.redirectTo(MaterialController.class).lista();
 
 	}
 
 	@Get("/{material.id}")
 	public Material busca(Material material) {
+		result.include("unidades", unidadeMedidaDAO.listar());
 		return materialDAO.pesquisar(material.getId());
 	}
 
@@ -54,7 +55,7 @@ public class MaterialController {
 	public void atualiza(Material material) {
 		materialDAO.atualizar(material);
 		result.include("mensagem", "Material Alterado com Sucesso");
-		result.redirectTo(UnidadeController.class).lista();
+		result.redirectTo(MaterialController.class).lista();
 		 
 	}
 
