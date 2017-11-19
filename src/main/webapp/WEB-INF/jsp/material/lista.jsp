@@ -1,13 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ include file="../common/import_jstl.jspf" %> 
+<!DOCTYPE HTML>
+<html lang="pt-br">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>Lista - Material</title>
+<%@ include file="../common/import_css.jspf"%>
+</head>
+<%@ include file="../common/header.jspf"%>>
 </head>
 <body>
+<main>
 	<table>
 		<thead>
 			<tr>
@@ -48,5 +52,7 @@
 	<div id="mensagem">
 		<strong>${mensagem}</strong>
 	</div>
+	</main>
 </body>
+<%@ include file="../common/import_js.jspf"%>
 </html>

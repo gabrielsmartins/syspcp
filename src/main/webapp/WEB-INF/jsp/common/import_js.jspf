@@ -1,0 +1,14 @@
+<script type="text/javascript"
+	src="<c:url value='/resources/mdboostrap/js/bootstrap.js'/>"></script>
+<script type="text/javascript"
+	src="<c:url value='/resources/mdboostrap/js/jquery-3.2.1.min.js'/>"></script>
+<script type="text/javascript"
+	src="<c:url value='/resources/mdboostrap/js/mdb.js'/>"></script>
+<script type="text/javascript"
+	src="<c:url value='/resources/mdboostrap/js/popper.min.js'/>"></script>
+	<script type="text/javascript"
+	src="<c:url value='/resources/mdboostrap/js/compiled.min.js'/>"></script>
+<script>
+	//SideNav Initialization
+	$(".button-collapse").sideNav();
+</script>
