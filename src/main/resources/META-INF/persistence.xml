@@ -7,8 +7,6 @@
 		<!-- provedor/implementacao do JPA -->
 		<!-- entidade mapeada -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>br.ifsp.edu.pcp.model.Perfil</class>
-		<class>br.ifsp.edu.pcp.model.Usuario</class>
 		<properties>
 			<!-- dados da conexao -->
 			<!-- propriedades do hibernate -->
