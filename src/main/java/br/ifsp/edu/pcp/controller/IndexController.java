@@ -25,6 +25,6 @@ public class IndexController {
 
 	@Path("/")
 	public void index() {
-		result.include("variable", "VRaptor!");
+		result.redirectTo(SessionController.class).login();
 	}
 }

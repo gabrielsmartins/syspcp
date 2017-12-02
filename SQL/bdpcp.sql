@@ -70,12 +70,13 @@ INSERT INTO perfil(perf_desc)VALUES('PRODUCAO');
 INSERT INTO perfil(perf_desc)VALUES('ALMOXARIFADO');
 INSERT INTO perfil(perf_desc)VALUES('ENGENHARIA');
 
+INSERT INTO usuario(usr_perf_id,usr_nome,usr_login,usr_pwd)VALUES(1,'Gabriel Martins','admin',12345);
 
 INSERT INTO unidade(unid_desc,unid_sig)VALUES('UNIDADE','UN');
 INSERT INTO unidade(unid_desc,unid_sig)VALUES('CAIXA','CX');
 INSERT INTO unidade(unid_desc,unid_sig)VALUES('MILIMETRO','MM');
 
-INSERT INTO usuario(usr_perf_id,usr_nome,usr_login,usr_pwd)VALUES(1,'Gabriel Martins','admin',12345);
+
 
 
 DROP TABLE estrutura_produto;
