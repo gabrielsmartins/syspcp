@@ -1,25 +1,63 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <title>Bem-Vindo ${usuario}</title>
 <%@ include file="../common/import_css.jspf"%>
 </head>
+<style>
+header, main, footer {
+	padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+	header, main, footer {
+		padding-left: 0;
+	}
+}
+</style>
+<!-- Side Bar -->
+<ul id="slide-out" class="side-nav fixed">
+	<li><a href="#!" class="brand-logo">Logo</a></li>
+	<li><a href="#!">Ordem de Produção</a></li>
+	<li><a href="#!">Produto</a></li>
+	<li><a href="#!">Material</a></li>
+	<li><a href="#!">Unidade de Medida</a></li>
+</ul>
+
+<!-- Side Bar -->
+
+
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+	<li><a href="#!">Perfil</a></li>
+	<li><a href="#!">Meus Dados</a></li>
+	<li class="divider"></li>
+	<li><a href="#!">Logout</a></li>
+</ul>
+
+
+
 <body>
- <ul id="slide-out" class="side-nav">
-    <li><div class="user-view">
-      <div class="background">
-        <img src="images/office.jpg">
-      </div>
-      <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#!name"><span class="white-text name">John Doe</span></a>
-      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-  </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+	<main>
+	<nav class="black">
+		<div class="nav-wrapper">
+			<a href="#" data-activates="slide-out" class="button-collapse"><i
+				class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="sass.html">Sass</a></li>
+				<li><a href="badges.html">Components</a></li>
+				<!-- Dropdown Trigger -->
+				<li><a class="dropdown-button" href="#!"
+					data-activates="dropdown1">Opções<i
+						class="material-icons right">arrow_drop_down</i></a></li>
+			</ul>
+		</div>
+	</nav>
+
+	</main>
 </body>
+<%@ include file="../common/import_js.jspf"%>
+<script>
+	$(".button-collapse").sideNav();
+</script>
 </html>

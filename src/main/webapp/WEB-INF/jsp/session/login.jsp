@@ -27,7 +27,7 @@ html, body, .login-box {
 <body class="grey darken-4">
 	<div class="valign-wrapper row login-box">
 		<div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
-			<form action="<c:url value='/autenticar/'/>" method="POST">
+			<form action="<c:url value='/session/autenticar'/>" method="POST">
 				<div class="card-content">
 					<span class="card-title"><strong>Autenticação</strong></span>
 					<div class="row">

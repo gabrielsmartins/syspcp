@@ -31,7 +31,7 @@ public class SessionController {
 			result.include("usuario",user.getNome());
 			return user;
 		}else {
-			result.redirectTo(SessionController.class).login();;
+			result.redirectTo(SessionController.class).login();
 		}
 	  return null;
 		
