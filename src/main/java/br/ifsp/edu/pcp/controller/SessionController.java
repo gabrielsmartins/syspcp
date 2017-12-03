@@ -1,6 +1,7 @@
 package br.ifsp.edu.pcp.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
@@ -25,16 +26,26 @@ public class SessionController {
 	}
 	
 	@Post("/autenticar")
-	public Usuario home(Usuario usuario) {
+	public void autenticar(Usuario usuario,HttpSession session) {
 		Usuario user = usuarioDAO.pesquisarPorLoginESenha(usuario.getLogin(), usuario.getSenha());
 		if(user != null) {
-			result.include("usuario",user.getNome());
-			return user;
+			session.setAttribute("usuarioLogado", user);
+			result.redirectTo(MainController.class).home();;
 		}else {
 			result.redirectTo(SessionController.class).login();
 		}
-	  return null;
+
 		
 	}
+	
+	
+	@Post("/logout")
+	public void logout(HttpSession session) {
+		session.invalidate();
+		result.redirectTo(SessionController.class).login();
+	}
+	
+	
+	
 
 }

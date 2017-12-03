@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Bem-Vindo ${usuario}</title>
+<title>Bem-Vindo</title>
 <%@ include file="../common/import_css.jspf"%>
 </head>
 <style>
@@ -16,8 +16,14 @@ header, main, footer {
 }
 </style>
 <!-- Side Bar -->
-<ul id="slide-out" class="side-nav fixed">
-	<li><a href="#!" class="brand-logo">Logo</a></li>
+<ul id="slide-out" class="side-nav fixed grey lighten-2">
+	<ul class="black" style="height: 64px;">
+		<li>
+		<a href="#" class="brand-logo"> 
+		<img class="responsive-img" src="<c:url value='/resources/img/logo.png'/>" height="64px" width="64px">
+		</a>
+		</li>
+	</ul>
 	<li><a href="#!">Ordem de Produção</a></li>
 	<li><a href="#!">Produto</a></li>
 	<li><a href="#!">Material</a></li>
