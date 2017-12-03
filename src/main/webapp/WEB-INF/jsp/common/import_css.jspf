@@ -5,5 +5,15 @@
 <!--Import materialize.css-->
 <link type="text/css" rel="stylesheet" href="<c:url value='/resources/materialize/css/style.css'/>"  media="screen,projection"/>
 <link type="text/css" rel="stylesheet" href="<c:url value='/resources/materialize/css/materialize.css'/>"  media="screen,projection"/>
+<style>
+header, main, footer {
+	padding-left: 300px;
+}
 
+@media only screen and (max-width : 992px) {
+	header, main, footer {
+		padding-left: 0;
+	}
+}
+</style>
 

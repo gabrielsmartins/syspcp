@@ -9,44 +9,139 @@
 <title>Material -${material.codigoInterno}</title>
 <%@ include file="../common/import_css.jspf"%>
 </head>
-<%@ include file="../common/header.jspf"%>
 <body>
-<main>
-	<form action="<c:url value='/materiais/${material.id}'/>" method="POST">
-		<label>Descrição:</label> <input type="text" name="material.descricao"
-			value="${material.descricao}" /><br /> <label>Código
-			Interno:</label> <input type="text" name="material.codigoInterno"
-			value="${material.codigoInterno}" /><br /> <label>Situação:</label>
-		<input type="radio" name="material.situacao" value="ATIVO"
-			<c:if test="${material.situacao == 'ATIVO'}">checked</c:if> />Ativo
-		<input type="radio" name="material.situacao" value="INATIVO"
-			<c:if test="${material.situacao == 'INATIVO'}">checked</c:if> />Inativo
-		<input type="radio" name="material.situacao" value="FORA_DE_LINHA"
-			<c:if test="${material.situacao == 'FORA_DE_LINHA'}">checked</c:if> />Fora
-		de Linha<br /> <label>Unidade Medida:</label> <select
-			name="material.unidadeMedida.id">
-			<c:forEach items="${unidades}" var="unidade">
-				<option value="${unidade.id}"
-					<c:if test="${unidade.id == material.unidadeMedida.id}">selected</c:if>>${unidade.sigla}-${unidade.descricao}</option>
-			</c:forEach>
-		</select><br /> <label>Valor Unitário:</label> <input type="text"
-			name="material.valorUnitario" value="${material.valorUnitario}" /> <label>Lead
-			time:</label> <input type="text" name="material.leadTime"
-			value="${material.leadTime}" /><br /> <label>Quantidade
-			Estoque:</label> <input type="text" name="material.quantidadeEstoque"
-			value="${material.quantidadeEstoque}" /> <label>Quantidade
-			Mínima:</label> <input type="text" name="material.quantidadeMinima"
-			value="${material.quantidadeMinima}" /><br /> <label>Peso
-			(KG):</label> <input type="text" name="material.peso"
-			value="${material.peso}" /><br /> <label>Comprimento (mm):</label>
-		<input type="text" name="material.comprimento"
-			value="${material.comprimento}" /> <label>Largura (mm):</label> <input
-			type="text" name="material.largura" value="${material.largura}" /> <label>Altura
-			(mm):</label> <input type="text" name="material.altura"
-			value="${material.altura}" /><br />
-		<button type="submit" name="_method" value="PUT">Salvar</button>
-		<button type="submit" name="_method" value="DELETE">Excluir</button>
-	</form>
+	<main> <%@ include file="../common/sidebar.jspf"%>
+	<%@ include file="../common/navbar.jspf"%>
+
+	<div class="container">
+		<h2 class="bold">Editar Material</h2>
+		<form action="<c:url value='/materiais/${material.id}'/>"
+			method="POST" class="col s12">
+
+			<fieldset>
+				<legend><strong>Dados Básicos</strong></legend>
+				<div class="row">
+					<div class="input-field col s3"></div>
+					<input type="text" name="material.codigoInterno" class="validate"
+						value="${material.codigoInterno}" /> <label for="codigoInterno">Código
+						Interno:</label>
+
+					<div class="input-field col s6">
+						<input type="text" name="material.descricao" class="validate"
+							value="${material.descricao}" /> <label for="descricao">Descrição:</label>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s6">
+						<select name="material.unidadeMedida.id">
+							<c:forEach items="${unidades}" var="unidade">
+								<option value="${unidade.id}"
+									<c:if test="${unidade.id == material.unidadeMedida.id}">selected</c:if>>${unidade.sigla}-${unidade.descricao}</option>
+							</c:forEach>
+						</select> <label for="unidadeMedida">Unidade de Medida:</label>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s6">
+						<input type="text" name="material.valorUnitario" class="validate"
+							value="${material.valorUnitario}" /> <label for="valor unitario">Valor
+							Unitário:</label>
+					</div>
+
+					<div class="input-field col s6">
+						<input type="text" name="material.leadTime" class="validate"
+							value="${material.leadTime}" /> <label for="valor unitario">Lead
+							Time:</label>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s6">
+						<input class="with-gap" type="radio" id="ATIVO" name="material.situacao" value="ATIVO" 
+							<c:if test="${material.situacao == 'ATIVO'}">checked</c:if> /> 
+							<label for="ATIVO">Ativo</label> 
+							<input class="with-gap" type="radio" id="INATIVO" name="material.situacao" value="INATIVO"
+							<c:if test="${material.situacao == 'INATIVO'}">checked</c:if> />
+						    <label for="INATIVO">Inativo</label> 
+						    <input class="with-gap" type="radio" id="FORA_DE_LINHA" name="material.situacao" value="FORA_DE_LINHA"
+							<c:if test="${material.situacao == 'FORA_DE_LINHA'}">checked</c:if> />
+						<label for="FORA_DE_LINHA">Fora de Linha</label>
+
+					</div>
+				</div>
+
+			</fieldset>
+
+
+
+			<fieldset>
+				<legend><strong>Dados Técnicos</strong></legend>
+
+				<div class="row">
+					<div class="input-field col s6">
+						<input type="text" name="material.peso" class="validate"
+							value="${material.peso}" /> <label for="peso">Peso (KG):</label>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s6">
+						<input type="text" name="material.comprimento" class="validate"
+							value="${material.comprimento}" /> <label for="comprimento">Comprimento
+							(mm):</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s6">
+						<input type="text" name="material.largura" class="validate"
+							value="${material.largura}" /> <label for="largura">Largura
+							(mm):</label>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="input-field col s6">
+						<input type="text" name="material.altura" class="validate"
+							value="${material.altura}" /> <label for="altura">Altura
+							(mm):</label>
+					</div>
+				</div>
+			</fieldset>
+
+
+			<fieldset>
+				<legend><strong>Dados Estoque</strong></legend>
+				<div class="row">
+					<div class="input-field col s6">
+						<input type="text" name="material.quantidadeEstoque"
+							class="validate" value="${material.quantidadeEstoque}" /> <label
+							for="quantidade estoque">Quantidade Estoque:</label>
+					</div>
+					<div class="input-field col s6">
+						<input type="text" name="material.quantidadeMinima"
+							class="validate" value="${material.quantidadeMinima}" /> <label
+							for="quantidade minima">Quantidade Mínima:</label>
+					</div>
+				</div>
+			</fieldset>
+
+
+			<div class="row">
+				<button type="submit" class="btn yellow darken-3 waves-effect waves-light" name="_method" value="PUT">
+				<i class="large material-icons prefix">save</i>Salvar
+			</button>
+			<button type="submit" class="btn yellow darken-3 waves-effect waves-light" name="_method" value="DELETE">Excluir</button>
+			</div>
+		</form>
+	</div>
 	</main>
 </body>
 <%@ include file="../common/import_js.jspf"%>

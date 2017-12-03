@@ -1,0 +1,63 @@
+<!-- Side Bar -->
+<ul id="slide-out" class="side-nav fixed grey lighten-2">
+	<ul class="black" style="height: 64px;">
+		<li><a href="#" class="brand-logo"> <img
+				class="responsive-img"
+				src="<c:url value='/resources/img/logo.png'/>" height="64px"
+				width="64px">
+		</a></li>
+	</ul>
+	<li class="no-padding">
+		<ul class="collapsible collapsible-accordion">
+			<li><a class="collapsible-header">Ordem de Produção<i
+					class="material-icons">arrow_drop_down</i></a>
+				<div class="collapsible-body">
+					<ul>
+						<li><a href="#!">Novo</a></li>
+						<li><a href="#!">Pesquisar</a></li>
+					</ul>
+				</div></li>
+		</ul>
+	</li>
+	<li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Produto<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#!">Novo</a></li>
+                <li><a href="#!">Pesquisar</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+	<li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Material<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="<c:url value="/materiais/form" />">Novo</a></li>
+                <li><a href="<c:url value="/materiais/" />">Pesquisar</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+	<li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Unidade de Medida<i class="material-icons">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="<c:url value="/unidades/form" />">Novo</a></li>
+                <li><a href="<c:url value="/unidades/" />">Pesquisar</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+</ul>
+
+<!-- Side Bar -->

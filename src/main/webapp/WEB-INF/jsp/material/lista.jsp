@@ -8,11 +8,33 @@
 <title>Lista - Material</title>
 <%@ include file="../common/import_css.jspf"%>
 </head>
-<%@ include file="../common/header.jspf"%>>
 </head>
 <body>
 <main>
-	<table>
+<%@ include file="../common/sidebar.jspf"%>
+	<%@ include file="../common/navbar.jspf"%>
+	<div class="container">
+		<form class="col s12">
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons">search</i> <input
+						name="unidade.descricao" type="text" class="validate" />
+				</div>
+			</div>
+		</form>
+
+
+		<c:if test="${mensagem}">
+			<div class="row">
+				<div class="white-text card-panel green darken-1">
+					<p>
+						<strong>${mensagem}</strong>
+					</p>
+				</div>
+			</div>
+		</c:if>
+	</div>
+	<table class="responsive-table striped highlight">
 		<thead>
 			<tr>
 				<th>ID</th>
@@ -45,13 +67,11 @@
 					<td>${material.largura}</td>
 					<td>${material.altura}</td>
 					<td>${material.situacao}</td>
-					<td><a href="<c:url value='/materiais/${material.id}'/>"><button>Editar</button></a></td>
+					<td><a href="<c:url value='/materiais/${material.id}'/>"><button class="btn yellow darken-3 waves-effect waves-light">
+								<i class="large material-icons prefix">create</i>Editar</button></a></td>
 			</c:forEach>
 		</tbody>
 	</table>
-	<div id="mensagem">
-		<strong>${mensagem}</strong>
-	</div>
 	</main>
 </body>
 <%@ include file="../common/import_js.jspf"%>

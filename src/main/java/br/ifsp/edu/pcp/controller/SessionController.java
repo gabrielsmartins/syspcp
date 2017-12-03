@@ -8,7 +8,10 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.ifsp.edu.pcp.dao.UsuarioDAO;
+import br.ifsp.edu.pcp.model.Sessao;
 import br.ifsp.edu.pcp.model.Usuario;
+
+
 
 @Controller
 @Path("/session")	
@@ -20,21 +23,23 @@ public class SessionController {
 	@Inject
 	private UsuarioDAO usuarioDAO;
 	
+	@Inject
+	private Sessao sessao;
+	
 	@Path("/login")
 	public void login() {
 		
 	}
 	
 	@Post("/autenticar")
-	public void autenticar(Usuario usuario,HttpSession session) {
-		Usuario user = usuarioDAO.pesquisarPorLoginESenha(usuario.getLogin(), usuario.getSenha());
+	public void autenticar(Usuario usuario) {
+		Usuario user = this.usuarioDAO.pesquisarPorLoginESenha(usuario.getLogin(), usuario.getSenha());
 		if(user != null) {
-			session.setAttribute("usuarioLogado", user);
-			result.redirectTo(MainController.class).home();;
+			sessao.login(user);
+			result.redirectTo(MainController.class).home();
 		}else {
 			result.redirectTo(SessionController.class).login();
 		}
-
 		
 	}
 	

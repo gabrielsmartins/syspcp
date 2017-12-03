@@ -50,7 +50,7 @@ public class UnidadeController {
 	@Put("/{unidade.id}")
 	public void atualiza(UnidadeMedida unidade) {
 		unidadeMedidaDAO.atualizar(unidade);
-		result.include("mensagem", "Unidade Alterado com Sucesso");
+		result.include("mensagem", "Unidade Alterada com Sucesso");
 		result.redirectTo(UnidadeController.class).lista();
 		 
 	}

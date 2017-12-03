@@ -1,29 +1,22 @@
 package br.ifsp.edu.pcp.model;
 
+import br.ifsp.edu.pcp.model.Usuario;
+
+
 public class Sessao {
-	private static Sessao instance = null;
+	
 	private Usuario usuario;
+	
+	 public void login(Usuario usuario) {
+		    this.usuario = usuario;
+		  }
+		  
+		  public String getNome() {
+		    return usuario.getNome();
+		  }
+		  
+		  public boolean isLogado() {
+		    return this.usuario != null;
+		  }
 
-	private Sessao() {
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public static Sessao getInstance() {
-		if (instance == null) {
-			instance = new Sessao();
-		}
-		return instance;
-	}
-
-	public void encerrarSessao() {
-		instance = null;
-
-	}
 }

@@ -47,7 +47,7 @@ public class MaterialController {
 
 	@Get("/{material.id}")
 	public Material busca(Material material) {
-		result.include("unidades", unidadeMedidaDAO.listar());
+		result.include("mensagem", unidadeMedidaDAO.listar());
 		return materialDAO.pesquisar(material.getId());
 	}
 
