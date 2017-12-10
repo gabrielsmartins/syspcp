@@ -61,7 +61,7 @@
 
 
 				<div class="row">
-					<div class="input-field col s6">
+					<div class="col s6">
 						<input class="with-gap" type="radio" id="ATIVO" name="material.situacao" value="ATIVO" 
 							<c:if test="${material.situacao == 'ATIVO'}">checked</c:if> /> 
 							<label for="ATIVO">Ativo</label> 

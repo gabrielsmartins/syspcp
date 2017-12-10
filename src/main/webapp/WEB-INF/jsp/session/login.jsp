@@ -32,13 +32,13 @@ html, body, .login-box {
 					<span class="card-title"><strong>Autenticação</strong></span>
 					<div class="row">
 						<div class="input-field col s12">
-							<i class="large material-icons prefix">account_circle</i>
+							<i class="large material-icons prefix black-text">account_circle</i>
 							<input id="icon_prefix" type="text" class="validate" name="usuario.login"> 
 							<label for="icon_prefix">Login</label>
 							
 						</div>
 						<div class="input-field col s12">
-							<i class="large material-icons prefix">lock_open</i> 
+							<i class="large material-icons prefix black-text">lock_open</i> 
 							<input id="icon_prefix" type="password" class="validate" name="usuario.senha">
 							<label for="icon_prefix">Senha</label>
 						</div>
@@ -46,7 +46,7 @@ html, body, .login-box {
 				</div>
 				<div class="card-action right-align">
 					<button type="reset" id="reset" class="btn-flat grey lighten-1 waves-effect">Redefinir</button>
-						<button type="submit" class="btn yellow darken-3 waves-effect waves-light">Login</button>
+						<button type="submit" class="btn red accent-4 waves-effect waves-light">Login</button>
 				</div>
 			</form>
 		</div>

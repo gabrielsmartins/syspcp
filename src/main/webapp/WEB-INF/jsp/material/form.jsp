@@ -56,7 +56,7 @@
 
 
 				<div class="row">
-					<div class="input-field col s6">
+					<div class="col s6">
 						<input class="with-gap" type="radio" id="ativo"
 							name="material.situacao" value="ATIVO" checked /> <label
 							for="ativo">Ativo</label> <input class="with-gap" type="radio"

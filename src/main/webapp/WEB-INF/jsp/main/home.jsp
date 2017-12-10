@@ -10,6 +10,7 @@
 	 <%@ include file="../common/sidebar.jspf"%>
 	 <%@ include file="../common/navbar.jspf"%>
 	
+	<h1>Olá ${sessao.usuario.nome} </h1>
 
 	</main>
 </body>

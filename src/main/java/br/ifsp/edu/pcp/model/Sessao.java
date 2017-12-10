@@ -1,8 +1,11 @@
 package br.ifsp.edu.pcp.model;
 
+import javax.enterprise.context.SessionScoped;
+
 import br.ifsp.edu.pcp.model.Usuario;
 
 
+@SessionScoped
 public class Sessao {
 	
 	private Usuario usuario;

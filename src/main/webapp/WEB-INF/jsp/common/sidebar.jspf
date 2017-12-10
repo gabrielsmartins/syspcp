@@ -1,63 +1,65 @@
 <!-- Side Bar -->
-<ul id="slide-out" class="side-nav fixed grey lighten-2">
-	<ul class="black" style="height: 64px;">
-		<li><a href="#" class="brand-logo"> <img
-				class="responsive-img"
+<ul id="slide-out" class="side-nav fixed black">
+	<ul class="red accent-4" style="height: 64px;">
+		<li><a href="<c:url value='/main/home' />" class="brand-logo">
+				<img class="responsive-img"
 				src="<c:url value='/resources/img/logo.png'/>" height="64px"
 				width="64px">
 		</a></li>
 	</ul>
 	<li class="no-padding">
-		<ul class="collapsible collapsible-accordion">
-			<li><a class="collapsible-header">Ordem de Produção<i
-					class="material-icons">arrow_drop_down</i></a>
-				<div class="collapsible-body">
+		<ul class="collapsible collapsible-accordion grey darken-2">
+			<li><a class="collapsible-header white-text">Ordem de
+					Produção<i class="material-icons white-text">arrow_drop_down</i>
+			</a>
+				<div class="collapsible-body grey">
 					<ul>
-						<li><a href="#!">Novo</a></li>
-						<li><a href="#!">Pesquisar</a></li>
+						<li><a href="#!" class="white-text">Novo</a></li>
+						<li><a href="#!" class="white-text">Pesquisar</a></li>
 					</ul>
 				</div></li>
 		</ul>
 	</li>
 	<li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-          <li>
-            <a class="collapsible-header">Produto<i class="material-icons">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="#!">Novo</a></li>
-                <li><a href="#!">Pesquisar</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </li>
+		<ul class="collapsible collapsible-accordion grey darken-2">
+			<li><a class="collapsible-header white-text">Produto<i
+					class="material-icons white-text">arrow_drop_down</i></a>
+				<div class="collapsible-body grey">
+					<ul>
+						<li><a href="#!" class="white-text">Novo</a></li>
+						<li><a href="#!" class="white-text">Pesquisar</a></li>
+					</ul>
+				</div></li>
+		</ul>
+	</li>
 	<li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-          <li>
-            <a class="collapsible-header">Material<i class="material-icons">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="<c:url value="/materiais/form" />">Novo</a></li>
-                <li><a href="<c:url value="/materiais/" />">Pesquisar</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </li>
+		<ul class="collapsible collapsible-accordion grey darken-2">
+			<li><a class="collapsible-header white-text">Material<i
+					class="material-icons white-text">arrow_drop_down</i></a>
+				<div class="collapsible-body grey">
+					<ul>
+						<li><a href="<c:url value="/materiais/form" />"
+							class="white-text">Novo</a></li>
+						<li><a href="<c:url value="/materiais/" />"
+							class="white-text">Pesquisar</a></li>
+					</ul>
+				</div></li>
+		</ul>
+	</li>
 	<li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-          <li>
-            <a class="collapsible-header">Unidade de Medida<i class="material-icons">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="<c:url value="/unidades/form" />">Novo</a></li>
-                <li><a href="<c:url value="/unidades/" />">Pesquisar</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </li>
+		<ul class="collapsible collapsible-accordion grey darken-2">
+			<li><a class="collapsible-header white-text">Unidade de
+					Medida<i class="material-icons white-text">arrow_drop_down</i>
+			</a>
+				<div class="collapsible-body grey">
+					<ul>
+						<li><a href="<c:url value="/unidades/form" />"
+							class="white-text">Novo</a></li>
+						<li><a href="<c:url value="/unidades/" />" class="white-text">Pesquisar</a></li>
+					</ul>
+				</div></li>
+		</ul>
+	</li>
 </ul>
 
 <!-- Side Bar -->

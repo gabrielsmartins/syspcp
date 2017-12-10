@@ -1,11 +1,11 @@
 /* label focus color */
 .input-field input:focus+label {
-	color: #f9a825 !important;
+	color: red !important;
 }
 /* label underline focus color */
 .row .input-field input:focus {
-	border-bottom: 1px solid #f9a825 !important;
-	box-shadow: 0 1px 0 0 #f9a825 !important
+	border-bottom: 1px solid red !important;
+	box-shadow: 0 1px 0 0 red !important;
 }
 
 .material-icons {
@@ -13,5 +13,5 @@
 }
 
 .material-icons.active {
-	color: #f9a825;
+	color: red;
 }
