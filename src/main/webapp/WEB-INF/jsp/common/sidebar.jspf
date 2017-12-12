@@ -1,6 +1,6 @@
 <!-- Side Bar -->
-<ul id="slide-out" class="side-nav fixed black">
-	<ul class="light-green accent-4" style="height: 64px;">
+<ul id="slide-out" class="side-nav fixed grey darken-3">
+	<ul class="red accent-4" style="height: 64px;">
 		<li><a href="<c:url value='/main/home' />" class="brand-logo">
 				<img class="responsive-img"
 				src="<c:url value='/resources/img/logo.png'/>" height="64px"
@@ -8,9 +8,9 @@
 		</a></li>
 	</ul>
 	<li class="no-padding">
-		<ul class="collapsible collapsible-accordion grey darken-4">
-			<li><a class="collapsible-header yellow-text">Ordem de
-					Produção<i class="material-icons white-text">arrow_drop_down</i>
+		<ul class="collapsible collapsible-accordion black">
+			<li><a class="collapsible-header white-text">Ordem de
+					Produção<i class="material-icons red-text">arrow_drop_down</i>
 			</a>
 				<div class="collapsible-body grey darken-3">
 					<ul>
@@ -21,9 +21,9 @@
 		</ul>
 	</li>
 	<li class="no-padding">
-		<ul class="collapsible collapsible-accordion grey darken-4">
-			<li><a class="collapsible-header yellow-text">Produto<i
-					class="material-icons white-text">arrow_drop_down</i></a>
+		<ul class="collapsible collapsible-accordion black">
+			<li><a class="collapsible-header white-text">Produto<i
+					class="material-icons red-text">arrow_drop_down</i></a>
 				<div class="collapsible-body grey darken-3">
 					<ul>
 						<li><a href="#!" class="white-text">Novo</a></li>
@@ -33,9 +33,9 @@
 		</ul>
 	</li>
 	<li class="no-padding">
-		<ul class="collapsible collapsible-accordion grey darken-4">
-			<li><a class="collapsible-header yellow-text">Material<i
-					class="material-icons white-text">arrow_drop_down</i></a>
+		<ul class="collapsible collapsible-accordion black">
+			<li><a class="collapsible-header white-text">Material<i
+					class="material-icons red-text">arrow_drop_down</i></a>
 				<div class="collapsible-body grey darken-3">
 					<ul>
 						<li><a href="<c:url value="/materiais/form" />"
@@ -47,9 +47,9 @@
 		</ul>
 	</li>
 	<li class="no-padding">
-		<ul class="collapsible collapsible-accordion grey darken-4">
-			<li><a class="collapsible-header yellow-text">Unidade de
-					Medida<i class="material-icons white-text">arrow_drop_down</i>
+		<ul class="collapsible collapsible-accordion black">
+			<li><a class="collapsible-header white-text">Unidade de
+					Medida<i class="material-icons red-text">arrow_drop_down</i>
 			</a>
 				<div class="collapsible-body grey darken-3">
 					<ul>
