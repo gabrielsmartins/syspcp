@@ -1,4 +1,4 @@
-package br.ifsp.edu.pcp.model;
+package br.ifsp.edu.pcp.util;
 
 import java.io.Serializable;
 
@@ -29,5 +29,9 @@ public class Sessao implements Serializable {
 	public boolean isLogado() {
 		return this.usuario != null;
 	}
+	
+	 public void logout() {
+		    this.usuario = null;
+		  }
 
 }

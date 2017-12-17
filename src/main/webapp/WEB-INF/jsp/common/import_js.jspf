@@ -1,11 +1,6 @@
-<%@ include file="../common/import_jstl.jspf"%>
-<script type="text/javascript" src="<c:url value='/resources/materialize/js/jquery-3.2.1.min.js'/>"></script>
-<script type="text/javascript" src="<c:url value='/resources/materialize/js/materialize.min.js'/>"></script>
+<%@ include file="import_jstl.jspf"%>
 
-<script>
-$(document).ready(function() {
-    $('select').material_select();
-  });
-  
-$(".button-collapse").sideNav();
-</script>
+
+<script src="<c:url value='/resources/js/jquery-3.2.1.min.js'/>"></script>
+<script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
+<script src="<c:url value='/resources/js/propeller.min.js'/>"></script>

@@ -1,65 +1,78 @@
-<!-- Side Bar -->
-<ul id="slide-out" class="side-nav fixed grey darken-3">
-	<ul class="red accent-4" style="height: 64px;">
-		<li><a href="<c:url value='/main/home' />" class="brand-logo">
-				<img class="responsive-img"
-				src="<c:url value='/resources/img/logo.png'/>" height="64px"
-				width="64px">
-		</a></li>
-	</ul>
-	<li class="no-padding">
-		<ul class="collapsible collapsible-accordion black">
-			<li><a class="collapsible-header white-text">Ordem de
-					Produção<i class="material-icons red-text">arrow_drop_down</i>
-			</a>
-				<div class="collapsible-body grey darken-3">
-					<ul>
-						<li><a href="#!" class="white-text">Novo</a></li>
-						<li><a href="#!" class="white-text">Pesquisar</a></li>
-					</ul>
-				</div></li>
-		</ul>
-	</li>
-	<li class="no-padding">
-		<ul class="collapsible collapsible-accordion black">
-			<li><a class="collapsible-header white-text">Produto<i
-					class="material-icons red-text">arrow_drop_down</i></a>
-				<div class="collapsible-body grey darken-3">
-					<ul>
-						<li><a href="#!" class="white-text">Novo</a></li>
-						<li><a href="#!" class="white-text">Pesquisar</a></li>
-					</ul>
-				</div></li>
-		</ul>
-	</li>
-	<li class="no-padding">
-		<ul class="collapsible collapsible-accordion black">
-			<li><a class="collapsible-header white-text">Material<i
-					class="material-icons red-text">arrow_drop_down</i></a>
-				<div class="collapsible-body grey darken-3">
-					<ul>
-						<li><a href="<c:url value="/materiais/form" />"
-							class="white-text">Novo</a></li>
-						<li><a href="<c:url value="/materiais/" />"
-							class="white-text">Pesquisar</a></li>
-					</ul>
-				</div></li>
-		</ul>
-	</li>
-	<li class="no-padding">
-		<ul class="collapsible collapsible-accordion black">
-			<li><a class="collapsible-header white-text">Unidade de
-					Medida<i class="material-icons red-text">arrow_drop_down</i>
-			</a>
-				<div class="collapsible-body grey darken-3">
-					<ul>
-						<li><a href="<c:url value="/unidades/form" />"
-							class="white-text">Novo</a></li>
-						<li><a href="<c:url value="/unidades/" />" class="white-text">Pesquisar</a></li>
-					</ul>
-				</div></li>
-		</ul>
-	</li>
-</ul>
+<!-- Sidebar Starts -->
+<div class="pmd-sidebar-overlay"></div>
 
-<!-- Side Bar -->
+<!-- Left sidebar -->
+<aside class="pmd-sidebar sidebar-default pmd-sidebar-slide-push pmd-sidebar-left pmd-sidebar-open bg-fill-darkgrey sidebar-with-icons" role="navigation">
+	<ul class="nav pmd-sidebar-nav">
+		
+		<!-- User info -->
+		<li class="dropdown pmd-dropdown pmd-user-info visible-xs visible-md visible-sm visible-lg">
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" aria-expandedhref="javascript:void(0);">
+				<div class="media-left">
+					<img src="<c:url value='/resources/images/user-icon.png'/>" alt="User">
+				</div>
+				<div class="media-body media-middle">Bem-Vindo ${session.usuario.nome}</div>
+				<div class="media-right media-middle"><i class="dic-more-vert dic"></i></div>
+			</a>
+			<ul class="dropdown-menu">
+			<li><a href="#">Perfil: ${session.usuario.perfil.descricao}</a></li>
+				<li><a href="<c:url value='/session/logout'/>">Logout</a></li>
+			</ul>
+		</li><!-- End user info -->
+		
+		<li class="dropdown pmd-dropdown"> 
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="javascript:void(0);">	
+				<i class="media-left media-middle material-icons">dashboard</i>
+				<span class="media-body">Ordem de Produção</span>
+				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
+			</a> 
+			<ul class="dropdown-menu">
+				<li><a href="typography.html">Emitir</a></li>
+				<li><a href="icons.html">Consultar</a></li>
+				<li><a href="shadow.html">Relatório</a></li>
+			</ul>
+		</li>
+		
+		<li class="dropdown pmd-dropdown"> 
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="javascript:void(0);">	
+				<i class="media-left media-middle material-icons">dashboard</i>
+				<span class="media-body">Produtos</span>
+				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
+			</a> 
+			<ul class="dropdown-menu">
+				<li><a href="typography.html">Novo</a></li>
+				<li><a href="icons.html">Consultar</a></li>
+				<li><a href="shadow.html">Relatório</a></li>
+			</ul>
+		</li>
+                
+                
+                <li class="dropdown pmd-dropdown"> 
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="javascript:void(0);">	
+				<i class="media-left media-middle material-icons">dashboard</i>
+				<span class="media-body">Materiais</span>
+				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
+			</a> 
+			<ul class="dropdown-menu">
+				<li><a href="<c:url value='/materiais/form' />">Novo</a></li>
+				<li><a href="<c:url value='/materiais/' />">Consultar</a></li>
+				<li><a href="shadow.html">Relatório</a></li>
+			</ul>
+		</li>
+                
+                
+                <li class="dropdown pmd-dropdown"> 
+			<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="javascript:void(0);">	
+				<i class="media-left media-middle material-icons">dashboard</i>
+				<span class="media-body">Unidade de Medida</span>
+				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
+			</a> 
+			<ul class="dropdown-menu">
+				<li><a href="<c:url value='/unidades/form' />">Novo</a></li>
+				<li><a href="<c:url value='/unidades/' />">Consultar</a></li>
+				<li><a href="shadow.html">Relatório</a></li>
+			</ul>
+		</li>
+	</ul>
+</aside><!-- End Left sidebar -->
+<!-- Sidebar Ends -->  

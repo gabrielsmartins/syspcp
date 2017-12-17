@@ -1,19 +1,26 @@
-<%@ include file="../common/import_jstl.jspf"%>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- <!--Import Google Icon Font-->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="<c:url value='/resources/materialize/css/style.css'/>"  media="screen,projection"/>
-<link type="text/css" rel="stylesheet" href="<c:url value='/resources/materialize/css/materialize.css'/>"  media="screen,projection"/>
-<style>
-header, main, footer {
-	padding-left: 300px;
-}
+<%@ include file="import_jstl.jspf"%>
 
-@media only screen and (max-width : 992px) {
-	header, main, footer {
-		padding-left: 0;
-	}
-}
-</style>
+
+<link rel="shortcut icon" type="image/x-icon" href="<c:url value='/resources/images/logo-icon.png'/>">
+
+<!-- Google icon -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- Bootstrap css -->
+<link href="<c:url value='/resources/css/bootstrap.css'/>" rel="stylesheet">
+
+<!-- Custom css -->
+<link href="<c:url value='/resources/css/custom.css'/>" rel="stylesheet">
+
+<!-- Propeller css -->
+<!-- build:[href] assets/css/ -->
+<link href="<c:url value='/resources/css/propeller.min.css'/>" rel="stylesheet">
+<!-- /build -->
+
+<!-- Propeller theme css-->
+<link href="<c:url value='/resources/themes/css/propeller-theme.css'/>" rel="stylesheet">
+
+<!-- Propeller admin theme css-->
+<link href="<c:url value='/resources/themes/css/propeller-admin.css'/>" rel="stylesheet">
+
 

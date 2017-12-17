@@ -1,15 +1,15 @@
 package br.ifsp.edu.pcp.controller;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpSession;
 
 import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.ifsp.edu.pcp.dao.UsuarioDAO;
-import br.ifsp.edu.pcp.model.Sessao;
 import br.ifsp.edu.pcp.model.Usuario;
+import br.ifsp.edu.pcp.util.Sessao;
 
 
 
@@ -44,9 +44,10 @@ public class SessionController {
 	}
 	
 	
-	@Post("/logout")
-	public void logout(HttpSession session) {
-		session.invalidate();
+	@Get("/logout")
+	public void logout() {	
+		sessao.logout();
+		result.include("mensagem", "Obrigado por Utilizar o WEBPCP");
 		result.redirectTo(SessionController.class).login();
 	}
 	
