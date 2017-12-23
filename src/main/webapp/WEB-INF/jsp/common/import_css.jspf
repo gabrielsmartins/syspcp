@@ -14,7 +14,7 @@
 
 <!-- Propeller css -->
 <!-- build:[href] assets/css/ -->
-<link href="<c:url value='/resources/css/propeller.min.css'/>" rel="stylesheet">
+<link href="<c:url value='/resources/css/propeller.css'/>" rel="stylesheet">
 <!-- /build -->
 
 <!-- Propeller theme css-->

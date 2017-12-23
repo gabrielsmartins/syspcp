@@ -61,7 +61,7 @@ a{ color:rgba(0, 0, 0, 0.84); text-decoration:none; outline:none;}
 
 /*======= Input Field =======*/
 .pmd-textfield .form-control{border-color:rgba(0,0,0,0.14);}
-.pmd-textfield-focused{background-color:#001E80;}
+.pmd-textfield-focused{background-color:#ff0000;}
 
 /* Input Field & Selectbox Inverse Theme */
 form.theme-inverse .pmd-textfield-focused, form.theme-inverse .pmd-textfield.has-error .form-control:invalid ~ .pmd-textfield-focused, form.theme-inverse .pmd-radio *:checked + span.pmd-radio-label::after{background-color: #ffffff;}

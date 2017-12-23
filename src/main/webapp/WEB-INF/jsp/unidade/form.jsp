@@ -54,14 +54,14 @@
 							accept-charset="UTF-8">
 							<div
 								class="form-group pmd-textfield pmd-textfield-floating-label">
-								<label for="regular1" class="control-label">Descrição</label> <input
+								<label for="regular1" class="control-label">Descrição:</label> <input
 									name="unidade.descricao" id="regular1" class="form-control"
 									type="text"><span class="pmd-textfield-focused"></span>
 							</div>
 
 							<div
 								class="form-group pmd-textfield pmd-textfield-floating-label">
-								<label for="regular1" class="control-label">Sigla</label> <input
+								<label for="regular1" class="control-label">Sigla:</label> <input
 									name="unidade.sigla" id="regular1" class="form-control"
 									type="text"><span class="pmd-textfield-focused"></span>
 							</div>

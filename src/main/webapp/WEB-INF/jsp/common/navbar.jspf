@@ -2,24 +2,11 @@
     <div class="container-fluid">
         <div class="pmd-navbar-right-icon pull-right navigation">
             
-            <div class="dropdown pmd-dropdown pmd-user-info pull-right">
-                <a href="javascript:void(0);" class="btn-user dropdown-toggle media" data-toggle="dropdown" aria-expanded="false">
-                    <div class="media-body media-middle">
-                      Perfil: ${session.usuario.perfil.descricao}
-                    </div>
-                </a>
-                <div class="pmd-dropdown-menu-container"><div class="pmd-dropdown-menu-bg pmd-dropdown-menu-bg-right"></div><ul class="dropdown-menu dropdown-menu-right" role="menu" style="clip: rect(0px, 99px, 0px, 99px);">
-                        <li><a href="javascript:void(0);">Edit Profile</a></li>
-                        <li><a href="javascript:void(0);">Logout</a></li>
-                    </ul></div>
-            </div>
+   
         </div>
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <a href="javascript:void(0);" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect pull-left margin-r8 pmd-sidebar-toggle"><i class="material-icons">menu</i></a>	
-            <a href="index.html" class="navbar-brand">
-                <img src="{{ asset('assets/images/logo-icon.png')}}" width="50" height="50">
-            </a>
         </div>
     </div>
 </nav>

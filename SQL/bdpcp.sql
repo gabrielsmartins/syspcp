@@ -1,65 +1,86 @@
 ﻿CREATE TABLE perfil(
-	perf_id  SERIAL,
-    perf_desc VARCHAR(200) NOT NULL,
-    CONSTRAINT PK_perfil PRIMARY KEY(perf_id),
-    CONSTRAINT UNQ_perfil_desc UNIQUE(perf_desc)
+       perf_id  SERIAL,
+       perf_desc VARCHAR(200) NOT NULL,
+       CONSTRAINT PK_perfil PRIMARY KEY(perf_id),
+       CONSTRAINT UNQ_perfil_desc UNIQUE(perf_desc)
 );
 
 CREATE TABLE usuario(
-	usr_id SERIAL,
-    usr_perf_id BIGINT NOT NULL,
-    usr_nome VARCHAR(200) NOT NULL,
-    usr_login VARCHAR(200) NOT NULL,
-    usr_pwd VARCHAR(200) NOT NULL,
-    CONSTRAINT PK_usuario PRIMARY KEY(usr_id),
-    CONSTRAINT FK_usuario_perfil FOREIGN KEY(usr_perf_id) REFERENCES perfil(perf_id),
-    CONSTRAINT UNQ_usuario_nome UNIQUE(usr_nome)
+       usr_id SERIAL,
+       usr_perf_id BIGINT NOT NULL,
+       usr_nome VARCHAR(200) NOT NULL,
+       usr_login VARCHAR(200) NOT NULL,
+       usr_pwd VARCHAR(200) NOT NULL,
+       CONSTRAINT PK_usuario PRIMARY KEY(usr_id),
+       CONSTRAINT FK_usuario_perfil FOREIGN KEY(usr_perf_id) REFERENCES perfil(perf_id),
+       CONSTRAINT UNQ_usuario_nome UNIQUE(usr_nome)
 );
 
 
 
 CREATE TABLE unidade(
-    unid_id SERIAL,
-    unid_desc VARCHAR(200) NOT NULL,
-    unid_sig VARCHAR(3) NOT NULL,
-    CONSTRAINT PK_unidade PRIMARY KEY(unid_id),
-    CONSTRAINT UNQ_unidade_desc UNIQUE(unid_desc),
-    CONSTRAINT UNQ_sig UNIQUE(unid_sig)
+       unid_id SERIAL,
+       unid_desc VARCHAR(200) NOT NULL,
+       unid_sig VARCHAR(3) NOT NULL,
+       CONSTRAINT PK_unidade PRIMARY KEY(unid_id),
+       CONSTRAINT UNQ_unidade_desc UNIQUE(unid_desc),
+       CONSTRAINT UNQ_sig UNIQUE(unid_sig)
 );
 
 
-
 CREATE TABLE produto(
-   prod_id SERIAL,
-   prod_cod_intr VARCHAR(500) DEFAULT NULL,
-   prod_unid_id INT NOT NULL,
-   prod_desc VARCHAR(200) NOT NULL,
-   prod_sit VARCHAR(200) NOT NULL,
-   prod_peso_kg NUMERIC(15,4) DEFAULT NULL,
-   prod_comp_mm NUMERIC(15,4) DEFAULT NULL,
-   prod_larg_mm NUMERIC(15,4) DEFAULT NULL,
-   prod_alt_mm NUMERIC(15,4) DEFAULT NULL,
-   prod_vlr_unit NUMERIC(15,2) NOT NULL,
-   prod_lead_time INT NOT NULL,
-   prod_qntd_estq NUMERIC(15,4) NOT NULL,
-   prod_qntd_min NUMERIC(15,4) NOT NULL,
-   prod_tipo VARCHAR(200) NOT NULL,
-  CONSTRAINT PK_produto PRIMARY KEY(prod_id),
-  CONSTRAINT UNQ_produto_codigo_interno UNIQUE(prod_cod_intr),
-  CONSTRAINT FK_produto_unidade FOREIGN KEY(prod_unid_id) REFERENCES unidade(unid_id),
-  CONSTRAINT CHK_produto_situacao CHECK(prod_sit IN('ATIVO','INATIVO','FORA_DE_LINHA'))
+       prod_id SERIAL,
+       prod_cod_intr VARCHAR(500) DEFAULT NULL,
+       prod_unid_id INT NOT NULL,
+       prod_desc VARCHAR(200) NOT NULL,
+       prod_sit VARCHAR(200) NOT NULL,
+       prod_peso_kg NUMERIC(15,4) DEFAULT NULL,
+       prod_comp_mm NUMERIC(15,4) DEFAULT NULL,
+       prod_larg_mm NUMERIC(15,4) DEFAULT NULL,
+       prod_alt_mm NUMERIC(15,4) DEFAULT NULL,
+       prod_vlr_unit NUMERIC(15,2) NOT NULL,
+       prod_lead_time INT NOT NULL,
+       prod_qntd_estq NUMERIC(15,4) NOT NULL,
+       prod_qntd_min NUMERIC(15,4) NOT NULL,
+       prod_tipo VARCHAR(200) NOT NULL,
+       CONSTRAINT PK_produto PRIMARY KEY(prod_id),
+       CONSTRAINT UNQ_produto_codigo_interno UNIQUE(prod_cod_intr),
+       CONSTRAINT FK_produto_unidade FOREIGN KEY(prod_unid_id) REFERENCES unidade(unid_id),
+       CONSTRAINT CHK_produto_situacao CHECK(prod_sit IN('ATIVO','INATIVO','FORA_DE_LINHA'))
 );
 
 
 
 CREATE TABLE estrutura_produto(
-	prod_id INT NOT NULL,
-	prod_sub_id INT NOT NULL,
-	prod_sub_qntd NUMERIC(15,4) NOT NULL,
-	CONSTRAINT PK_estrutura_produto PRIMARY KEY(prod_id,prod_sub_id),
-	CONSTRAINT FK_estrutura_produto_produto FOREIGN KEY(prod_id)REFERENCES produto(prod_id),
-	CONSTRAINT FK_estrutura_produto_subproduto FOREIGN KEY(prod_sub_id)REFERENCES produto(prod_id)
+       prod_id INT NOT NULL,
+       prod_sub_id INT NOT NULL,
+       prod_sub_qntd NUMERIC(15,4) NOT NULL,
+       CONSTRAINT PK_estrutura_produto PRIMARY KEY(prod_id,prod_sub_id),
+       CONSTRAINT FK_estrutura_produto_produto FOREIGN KEY(prod_id)REFERENCES produto(prod_id),
+       CONSTRAINT FK_estrutura_produto_subproduto FOREIGN KEY(prod_sub_id)REFERENCES produto(prod_id)
 );
+
+
+CREATE TABLE setor(
+       setr_id SERIAL,
+       setr_desc VARCHAR(200) NOT NULL,
+       CONSTRAINT PK_setr_id PRIMARY KEY(setr_id),
+       CONSTRAINT UNQ_setor_desc UNIQUE(setr_desc)	
+);
+
+
+CREATE TABLE operacao(
+       oper_id SERIAL,
+       oper_desc VARCHAR(200) NOT NULL,
+       oper_instr VARCHAR(500) NOT NULL,
+       oper_setr_id INT NOT NULL,
+       CONSTRAINT PK_oper_id  PRIMARY KEY(oper_id),
+       CONSTRAINT FK_operacao_setor FOREIGN KEY(oper_setr_id) REFERENCES setor(setr_id),
+       CONSTRAINT UNQ_operacao_desc UNIQUE(oper_desc)	
+);
+
+
+
 
 
 
@@ -82,6 +103,8 @@ INSERT INTO unidade(unid_desc,unid_sig)VALUES('MILIMETRO','MM');
 DROP TABLE estrutura_produto;
 DROP TABLE produto;
 DROP TABLE unidade;
+DROP TABLE setor;
+DROP TABLE operacao;
 
 TRUNCATE TABLE usuario CASCADE;
 TRUNCATE TABLE perfil CASCADE;

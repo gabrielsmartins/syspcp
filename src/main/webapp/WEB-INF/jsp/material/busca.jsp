@@ -9,7 +9,7 @@
 <%@ include file="../common/import_css.jspf"%>
 
 
-<title>Material - Novo</title>
+<title>Material - Editar</title>
 </head>
 
 
@@ -113,7 +113,7 @@
 
 
 
-
+                        <br>
 
 							<!-- Dados Técnicos -->
 
@@ -134,14 +134,12 @@
 									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
 										<div
-											class="form-group pmd-textfield pmd-textfield-floating-label">
+											class="form-group pmd-textfield">
 											<label>Unidade de Medida</label> <select
 												name="material.unidadeMedida.id"
-												class="select-simple form-control pmd-select2 select2-hidden-accessible"
-												tabindex="-1" aria-hidden="true">
-												<option></option>
+												class="select-simple form-control pmd-select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
 												<c:forEach items="${unidades}" var="unidade">
-													<option value="${unidade.id}" <c:if test="${unidade.id == material.unidadeMedida.id}">selected</c:if>>${unidade.sigla}-${unidade.descricao}</option>>${unidade.sigla}-${unidade.descricao}</option>
+													<option value="${unidade.id}" <c:if test="${unidade.id == material.unidadeMedida.id}">selected</c:if>>${unidade.sigla}-${unidade.descricao}</option>
 												</c:forEach>
 											</select><span
 												class="select2 select2-container select2-container--bootstrap select2-container--below"
