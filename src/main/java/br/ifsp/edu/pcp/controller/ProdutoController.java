@@ -11,6 +11,7 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Result;
+import br.ifsp.edu.pcp.dao.MaterialDAO;
 import br.ifsp.edu.pcp.dao.ProdutoDAO;
 import br.ifsp.edu.pcp.dao.UnidadeMedidaDAO;
 import br.ifsp.edu.pcp.model.Produto;
@@ -25,6 +26,12 @@ public class ProdutoController {
 	@Inject
 	private ProdutoDAO produtoDAO;
 	
+	@Inject
+	private MaterialDAO materialDAO;
+	
+	
+	
+	
 	
 	@Inject
 	private UnidadeMedidaDAO unidadeMedidaDAO;
@@ -33,6 +40,8 @@ public class ProdutoController {
 	@Get("form")
 	public void form(){
 		result.include("unidades", unidadeMedidaDAO.listar());
+		result.include("produtos", produtoDAO.listar());
+		result.include("materiais", materialDAO.listar());
 	}
 
 	@Get({"/",""})
@@ -51,6 +60,8 @@ public class ProdutoController {
 	@Get("/{produto.id}")
 	public Produto busca(Produto produto) {
 		result.include("unidades", unidadeMedidaDAO.listar());
+		result.include("produtos", produtoDAO.listar());
+		result.include("materiais", materialDAO.listar());
 		return produtoDAO.pesquisar(produto.getId());
 	}
 
@@ -66,7 +77,7 @@ public class ProdutoController {
 	public void remove(Produto produto) {
 		produtoDAO.remover(produto.getId());
 		result.include("mensagem", "Produto Excluído com Sucesso");
-		result.redirectTo(MaterialController.class).lista();
+		result.redirectTo(ProdutoController.class).lista();
 
 	}
 

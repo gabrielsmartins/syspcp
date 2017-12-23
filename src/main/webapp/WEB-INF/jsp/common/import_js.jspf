@@ -4,3 +4,10 @@
 <script src="<c:url value='/resources/js/jquery-3.2.1.min.js'/>"></script>
 <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
 <script src="<c:url value='/resources/js/propeller.min.js'/>"></script>
+<script src="<c:url value='/resources/js/tab-scrollable.js'/>"></script>
+
+<script type="text/javascript">
+	$(document).ready( function() {
+		$('.pmd-tabs').pmdTab();
+	});
+</script>

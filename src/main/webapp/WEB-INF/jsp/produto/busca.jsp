@@ -9,7 +9,7 @@
 <%@ include file="../common/import_css.jspf"%>
 
 
-<title>Novo - Material</title>
+<title>Editar - Produto</title>
 </head>
 
 
@@ -30,13 +30,13 @@
 			<!-- Start Form  -->
 			<div class="section section-custom billinfo">
 				<!--section-title -->
-				<h2>Novo Material</h2>
+				<h2>Editar Material</h2>
 				<!--section-title end -->
 
 				<!--breadcrum start-->
 				<ol class="breadcrumb text-left">
 					<li><a href="<c:url value='/materiais/'/>">Materiais</a></li>
-					<li class="active">Novo</li>
+					<li class="active">Editar</li>
 				</ol>
 				<!--breadcrum end-->
 
@@ -44,7 +44,7 @@
 
 				<div class="pmd-card pmd-z-depth pmd-card">
 					<div class="pmd-card-body">
-						<form action="<c:url value='/materiais/'/>" method="POST"
+						<form action="<c:url value='/materiais/${material.id}'/>" method="POST"
 							accept-charset="UTF-8">
 
 							<!-- Dados Básicos -->
@@ -55,7 +55,7 @@
 									class="form-group pmd-textfield pmd-textfield-floating-label">
 									<label for="regular1" class="control-label">Código
 										Interno:</label> <input name="material.codigoInterno" id="regular1"
-										class="form-control" type="text"><span
+										class="form-control" type="text" value="${material.codigoInterno}"><span
 										class="pmd-textfield-focused"></span>
 								</div>
 
@@ -63,7 +63,7 @@
 									class="form-group pmd-textfield pmd-textfield-floating-label">
 									<label for="regular1" class="control-label">Descrição:</label>
 									<input name="material.descricao" id="regular1"
-										class="form-control" type="text"><span
+										class="form-control" type="text" value="${material.descricao}"><span
 										class="pmd-textfield-focused"></span>
 								</div>
 
@@ -74,7 +74,7 @@
 											class="form-group pmd-textfield pmd-textfield-floating-label">
 											<label for="valor unitario">Valor Unitário:</label> <input
 												type="text" name="material.valorUnitario"
-												class="form-control" /><span class="pmd-textfield-focused"></span>
+												class="form-control" value="${material.valorUnitario}"/><span class="pmd-textfield-focused"></span>
 										</div>
 									</div>
 
@@ -83,7 +83,7 @@
 										<div
 											class="form-group pmd-textfield pmd-textfield-floating-label">
 											<label for="valor unitario">Lead Time:</label> <input
-												type="text" name="material.leadTime" class="form-control" />
+												type="text" name="material.leadTime" class="form-control" value="${material.leadTime}" />
 											<span class="pmd-textfield-focused"></span>
 										</div>
 									</div>
@@ -97,22 +97,23 @@
 										<!-- Inline radio -->
 										<label class="radio-inline pmd-radio"> <input
 											type="radio" id="ativo" name="material.situacao"
-											value="ATIVO" checked /> <span for="ativo">Ativo</span>
+											value="ATIVO" <c:if test="${material.situacao == 'ATIVO'}">checked</c:if> /> <span for="ativo">Ativo</span>
 										</label> <label class="radio-inline pmd-radio"> <input
 											type="radio" id="inativo" name="material.situacao"
-											value="INATIVO" /> <span for="inativo">Inativo</span>
+											value="INATIVO" <c:if test="${material.situacao == 'INATIVO'}">checked</c:if> />  <span for="inativo">Inativo</span>
 										</label> <label class="radio-inline pmd-radio"> <input
 											type="radio" id="fora_de_linha" name="material.situacao"
-											value="FORA_DE_LINHA" /> <span for="fora_de_linha">Fora
+											value="FORA_DE_LINHA" <c:if test="${material.situacao == 'FORA_DE_LINHA'}">checked</c:if> /><span for="fora_de_linha">Fora
 												de Linha</span>
 										</label>
 									</div>
 								</div>
 
 							</fieldset>
-							
-							
-							<br>
+
+
+
+                        <br>
 
 							<!-- Dados Técnicos -->
 
@@ -124,7 +125,7 @@
 										<div
 											class="form-group pmd-textfield pmd-textfield-floating-label">
 											<label for="valor unitario">Peso (KG):</label> <input
-												type="text" name="material.peso" class="form-control" /><span
+												type="text" name="material.peso" class="form-control" value="${material.peso}"/><span
 												class="pmd-textfield-focused"></span>
 										</div>
 									</div>
@@ -133,14 +134,12 @@
 									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
 										<div
-											class="form-group pmd-textfield pmd-textfield-floating-label">
+											class="form-group pmd-textfield">
 											<label>Unidade de Medida</label> <select
 												name="material.unidadeMedida.id"
-												class="select-simple form-control pmd-select2 select2-hidden-accessible"
-												tabindex="-1" aria-hidden="true">
-												<option></option>
+												class="select-simple form-control pmd-select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
 												<c:forEach items="${unidades}" var="unidade">
-													<option value="${unidade.id}">${unidade.sigla}-${unidade.descricao}</option>
+													<option value="${unidade.id}" <c:if test="${unidade.id == material.unidadeMedida.id}">selected</c:if>>${unidade.sigla}-${unidade.descricao}</option>
 												</c:forEach>
 											</select><span
 												class="select2 select2-container select2-container--bootstrap select2-container--below"
@@ -167,7 +166,7 @@
 										<div
 											class="form-group pmd-textfield pmd-textfield-floating-label">
 											<label for="valor unitario">Comprimento (mm):</label> <input
-												type="text" name="material.comprimento" class="form-control" />
+												type="text" name="material.comprimento" class="form-control" value="${material.comprimento}"/>
 											<span class="pmd-textfield-focused"></span>
 										</div>
 									</div>
@@ -177,7 +176,7 @@
 										<div
 											class="form-group pmd-textfield pmd-textfield-floating-label">
 											<label for="valor unitario">Largura (mm):</label> <input
-												type="text" name="material.largura" class="form-control" />
+												type="text" name="material.largura" class="form-control" value="${material.largura}"/>
 											<span class="pmd-textfield-focused"></span>
 										</div>
 									</div>
@@ -187,7 +186,7 @@
 										<div
 											class="form-group pmd-textfield pmd-textfield-floating-label">
 											<label for="valor unitario">Altura (mm):</label> <input
-												type="text" name="material.altura" class="form-control" />
+												type="text" name="material.altura" class="form-control" value="${material.altura}"/>
 											<span class="pmd-textfield-focused"></span>
 										</div>
 									</div>
@@ -204,7 +203,7 @@
 											class="form-group pmd-textfield pmd-textfield-floating-label">
 
 											<label for="valor unitario">Quantidade Estoque:</label> <input
-												type="text" name="material.quantidadeEstoque"
+												type="text" name="material.quantidadeEstoque"  value="${material.quantidadeEstoque}"
 												class="form-control" />
 										</div>
 									</div>
@@ -215,15 +214,15 @@
 										<div
 											class="form-group pmd-textfield pmd-textfield-floating-label">
 											<label for="valor unitario">Quantidade Mínima:</label> <input
-												type="text" name="material.quantidadeMinima"
+												type="text" name="material.quantidadeMinima" value="${material.quantidadeMinima}"
 												class="form-control" />
 										</div>
 									</div>
 								</div>
 							</fieldset>
 							<div class="pmd-card-actions">
-								<button class="btn btn-red next" type="submit">Salvar</button>
-								<button type="reset" class="btn btn-gray">Cancelar</button>
+								<button class="btn btn-red next" type="submit" name="_method" value="PUT">Salvar</button>
+								<button type="reset" class="btn btn-gray" name="_method" value="DELETE">Excluir</button>
 							</div>
 						</form>
 					</div>

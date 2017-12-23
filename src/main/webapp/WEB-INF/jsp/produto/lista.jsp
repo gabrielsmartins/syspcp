@@ -9,7 +9,7 @@
 <%@ include file="../common/import_css.jspf"%>
 
 
-<title>Consulta - Setor</title>
+<title>Consulta - Produto</title>
 </head>
 
 
@@ -38,12 +38,12 @@
 				</div>
 				<!-- Title -->
 				<h1 class="section-title" id="services">
-					<span>Setor</span>
+					<span>Material</span>
 				</h1>
 				<!-- End Title -->
 				<!--breadcrum start-->
 				<ol class="breadcrumb text-left">
-					<li><a href="<c:url value='/setores/'/>">Setores</a></li>
+					<li><a href="<c:url value='/materiais/'/>">Materiais</a></li>
 					<li class="active">Consulta</li>
 				</ol>
 				<!--breadcrum end-->
@@ -64,27 +64,46 @@
 					<thead>
 						<tr>
 							<th>ID</th>
-							<th>Descrição</th>
+				<th>Descrição</th>
+				<th>Código Interno</th>
+				<th>Unidade</th>
+				<th>Quantidade Estoque</th>
+				<th>Quantidade Mínima</th>
+				<th>Valor Unit (R$)</th>
+				<th>Peso (KG)</th>
+				<th>Comprimento (mm)</th>
+				<th>Largura (mm)</th>
+				<th>Altura (mm)</th>
+				<th>Situação</th>
+				<th></th>
 						</tr>
 					</thead>
 
 
 					<tbody>
-						<c:forEach items="${setorList}" var="setor">
-							<tr>
-								<td>${setor.id}</td>
-								<td>${setor.descricao}</td>
-								<td><a href="<c:url value='/setores/${setor.id}'/>"
+					<c:forEach items="${materialList}" var="material">
+				<tr>
+					<td>${material.id}</td>
+					<td>${material.descricao}</td>
+					<td>${material.codigoInterno}</td>
+					<td>${material.unidadeMedida.sigla}</td>
+					<td>${material.quantidadeEstoque}</td>
+					<td>${material.quantidadeMinima}</td>
+					<td>${material.valorUnitario}</td>
+					<td>${material.peso}</td>
+					<td>${material.comprimento}</td>
+					<td>${material.largura}</td>
+					<td>${material.altura}</td>
+					<td>${material.situacao}</td>
+					<td><a href="<c:url value='/materiais/${material.id}'/>"
 									class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-red btn-sm">
 										<i class="material-icons md-dark pmd-sm">edit</i>
 								</a> <a href="javascript:void(0);"
 									class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-red btn-sm">
 										<i class="material-icons md-dark pmd-sm">delete</i>
 								</a></td>
-							</tr>
-
-						</c:forEach>
-
+	
+			</c:forEach>
 					</tbody>
 				</table>
 			</div>

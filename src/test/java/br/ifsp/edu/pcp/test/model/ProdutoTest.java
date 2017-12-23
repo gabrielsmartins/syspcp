@@ -13,32 +13,9 @@ public class ProdutoTest {
 
 
 
-	@Test
-	public void produtoPoderSerMaterial() {
-		UnidadeMedida unidadeMedida = new UnidadeMedida("Unidade","UN");
-		Material material = new Material("Chapa ACO #20",SituacaoProduto.ATIVO,unidadeMedida,50.00,2,50.00,25.00);
-		material.setCodigoInterno("CHA-50");
-		material.setPeso(0.5);
-		material.setAltura(2.0);
-		material.setComprimento(500.00);
-		material.setLargura(200.00);
-		assertEquals("Chapa ACO #20", material.getDescricao());
-		assertEquals("CHA-50",material.getCodigoInterno());
-		assertEquals("Unidade", material.getUnidadeMedida().getDescricao());
-		assertEquals("UN", material.getUnidadeMedida().getSigla());
-		assertEquals(50.00, material.getValorUnitario(),0);
-		assertEquals(2, material.getLeadTime(),0);
-		assertEquals(50.00, material.getQuantidadeEstoque(),0);
-		assertEquals(25.00, material.getQuantidadeMinima(),0);
-		assertEquals(0.5, material.getPeso(),0);
-		assertEquals(2.0, material.getAltura(),0);
-		assertEquals(500.0, material.getComprimento(),0);
-		assertEquals(200.0, material.getLargura(),0);
-		assertEquals(SituacaoProduto.ATIVO, material.getSituacao());
-	}
 	
 	@Test
-	public void produtoPoderSerFabriado() {
+	public void produtoPossuiDados() {
 		UnidadeMedida unidadeMedida = new UnidadeMedida("Unidade","UN");
 		Material material1 = new Material("TUBO DE ACO 20X20X100",SituacaoProduto.ATIVO, unidadeMedida, 8.00, 5, 100.00, 75.00);
 		material1.setPeso(0.2);

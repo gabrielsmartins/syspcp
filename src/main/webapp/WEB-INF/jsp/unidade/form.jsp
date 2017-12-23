@@ -9,7 +9,7 @@
 <%@ include file="../common/import_css.jspf"%>
 
 
-<title>Unidade de Medida - Novo</title>
+<title>Novo - Unidade de Medida</title>
 </head>
 
 

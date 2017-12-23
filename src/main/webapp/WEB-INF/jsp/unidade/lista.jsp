@@ -9,7 +9,7 @@
 <%@ include file="../common/import_css.jspf"%>
 
 
-<title>Unidade de Medida - Lista</title>
+<title>Consulta - Unidade de Medida</title>
 </head>
 
 

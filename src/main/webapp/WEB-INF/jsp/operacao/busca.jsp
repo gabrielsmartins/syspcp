@@ -9,7 +9,7 @@
 <%@ include file="../common/import_css.jspf"%>
 
 
-<title>Operação - Editar</title>
+<title>Editar - Operação</title>
 </head>
 
 

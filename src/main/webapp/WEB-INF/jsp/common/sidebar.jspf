@@ -55,8 +55,8 @@
 				</div>
 		</a>
 			<ul class="dropdown-menu">
-				<li><a href="typography.html">Novo</a></li>
-				<li><a href="icons.html">Consultar</a></li>
+				<li><a href="<c:url value='/produtos/form' />">Novo</a></li>
+				<li><a href="<c:url value='/produtos/' />">Consultar</a></li>
 				<li><a href="shadow.html">Relatório</a></li>
 			</ul></li>
 
