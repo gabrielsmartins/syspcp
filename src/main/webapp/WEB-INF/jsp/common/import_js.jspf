@@ -1,13 +1,29 @@
 <%@ include file="import_jstl.jspf"%>
 
+<!-- Bootstrap and necessary plugins -->
+<script src="<c:url value='/resources/coreui/js/common/jquery-3.2.1.min.js'/>"></script>
+<script src="<c:url value='/resources/coreui/js/common/popper.min.js'/>"></script>
+<script src="<c:url value='/resources/coreui/js/common/bootstrap.js'/>"></script>
+<script src="<c:url value='/resources/coreui/js/common/pace.min.js'/>"></script>
+<script src="<c:url value='/resources/coreui/js/common/mdb.js'/>"></script>
 
-<script src="<c:url value='/resources/js/jquery-3.2.1.min.js'/>"></script>
-<script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
-<script src="<c:url value='/resources/js/propeller.min.js'/>"></script>
-<script src="<c:url value='/resources/js/tab-scrollable.js'/>"></script>
+<!-- Plugins and scripts required by all views -->
+<script src="<c:url value='/resources/coreui/js/common/Chart.min.js'/>"></script>
+
+<!-- CoreUI main scripts -->
+<script src="<c:url value='/resources/coreui/js/app.js'/>"></script>
+
+<!-- Plugins and scripts required by this views -->
+
+<!-- Custom scripts required by this view -->
+
+<script src="<c:url value='/resources/coreui/js/common/main.js'/>"></script>
+
 
 <script type="text/javascript">
-	$(document).ready( function() {
-		$('.pmd-tabs').pmdTab();
-	});
+
+$(document).ready(function() {
+    $('.mdb-select').material_select();
+  });
+
 </script>

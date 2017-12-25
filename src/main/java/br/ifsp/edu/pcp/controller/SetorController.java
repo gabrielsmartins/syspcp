@@ -58,7 +58,7 @@ public class SetorController {
 	@Delete("/{setor.id}")
 	public void remove(Setor setor) {
 		setorDAO.remover(setor.getId());
-		result.include("mensagem", "Setor Excluído com Sucesso");
+		result.include("mensagem", "Setor Excluido com Sucesso");
 		result.redirectTo(SetorController.class).lista();
 
 	}

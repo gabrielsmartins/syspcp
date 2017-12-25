@@ -1,151 +1,132 @@
-<!-- Sidebar Starts -->
-<div class="pmd-sidebar-overlay"></div>
-
-<!-- Left sidebar -->
-<aside
-	class="pmd-sidebar sidebar-default pmd-sidebar-slide-push pmd-sidebar-left pmd-sidebar-open bg-fill-darkgrey sidebar-with-icons"
-	role="navigation">
-	<ul class="nav pmd-sidebar-nav">
-
-		<!-- User info -->
-		<li
-			class="dropdown pmd-dropdown pmd-user-info visible-xs visible-md visible-sm visible-lg">
-			<a aria-expanded="false" data-toggle="dropdown"
-			class="btn-user dropdown-toggle media" data-sidebar="true"
-			aria-expandedhref="javascript:void(0);">
-				<div class="media-left">
-					<img src="<c:url value='/resources/images/user-icon.png'/>"
-						alt="User">
-				</div>
-				<div class="media-body media-middle">Bem-Vindo
-					${session.usuario.nome}</div>
-				<div class="media-right media-middle">
-					<i class="dic-more-vert dic"></i>
-				</div>
-		</a>
-			<ul class="dropdown-menu">
-				<li><a href="#">Perfil: ${session.usuario.perfil.descricao}</a></li>
-				<li><a href="<c:url value='/session/logout'/>">Logout</a></li>
-			</ul>
-		</li>
-		<!-- End user info -->
-
-		<li class="dropdown pmd-dropdown"><a aria-expanded="false"
-			data-toggle="dropdown" class="btn-user dropdown-toggle media"
-			data-sidebar="true" href="javascript:void(0);"> <i
-				class="media-left media-middle material-icons">dashboard</i> <span
-				class="media-body">Ordem de Produção</span>
-				<div class="media-right media-bottom">
-					<i class="dic-more-vert dic"></i>
-				</div>
-		</a>
-			<ul class="dropdown-menu">
-				<li><a href="typography.html">Emitir</a></li>
-				<li><a href="icons.html">Consultar</a></li>
-				<li><a href="shadow.html">Relatório</a></li>
-			</ul></li>
-
-		<li class="dropdown pmd-dropdown"><a aria-expanded="false"
-			data-toggle="dropdown" class="btn-user dropdown-toggle media"
-			data-sidebar="true" href="javascript:void(0);"> <i
-				class="media-left media-middle material-icons">dashboard</i> <span
-				class="media-body">Produtos</span>
-				<div class="media-right media-bottom">
-					<i class="dic-more-vert dic"></i>
-				</div>
-		</a>
-			<ul class="dropdown-menu">
-				<li><a href="<c:url value='/produtos/form' />">Novo</a></li>
-				<li><a href="<c:url value='/produtos/' />">Consultar</a></li>
-				<li><a href="shadow.html">Relatório</a></li>
-			</ul></li>
-
-
-		<li class="dropdown pmd-dropdown"><a aria-expanded="false"
-			data-toggle="dropdown" class="btn-user dropdown-toggle media"
-			data-sidebar="true" href="javascript:void(0);"> <i
-				class="media-left media-middle material-icons">dashboard</i> <span
-				class="media-body">Materiais</span>
-				<div class="media-right media-bottom">
-					<i class="dic-more-vert dic"></i>
-				</div>
-		</a>
-			<ul class="dropdown-menu">
-				<li><a href="<c:url value='/materiais/form' />">Novo</a></li>
-				<li><a href="<c:url value='/materiais/' />">Consultar</a></li>
-				<li><a href="shadow.html">Relatório</a></li>
-			</ul></li>
-
-
-		<li class="dropdown pmd-dropdown"><a aria-expanded="false"
-			data-toggle="dropdown" class="btn-user dropdown-toggle media"
-			data-sidebar="true" href="javascript:void(0);"> <i
-				class="media-left media-middle material-icons">dashboard</i> <span
-				class="media-body">Operações</span>
-				<div class="media-right media-bottom">
-					<i class="dic-more-vert dic"></i>
-				</div>
-		</a>
-			<ul class="dropdown-menu">
-				<li><a href="<c:url value='/operacoes/form' />">Novo</a></li>
-				<li><a href="<c:url value='/operacoes/' />">Consultar</a></li>
-				<li><a href="shadow.html">Relatório</a></li>
-			</ul></li>
-
-
-		<li class="dropdown pmd-dropdown"><a aria-expanded="false"
-			data-toggle="dropdown" class="btn-user dropdown-toggle media"
-			data-sidebar="true" href="javascript:void(0);"> <i
-				class="media-left media-middle material-icons">dashboard</i> <span
-				class="media-body">Unidade de Medida</span>
-				<div class="media-right media-bottom">
-					<i class="dic-more-vert dic"></i>
-				</div>
-		</a>
-			<ul class="dropdown-menu">
-				<li><a href="<c:url value='/unidades/form' />">Novo</a></li>
-				<li><a href="<c:url value='/unidades/' />">Consultar</a></li>
-				<li><a href="shadow.html">Relatório</a></li>
-			</ul></li>
-
-
-
-		<li class="dropdown pmd-dropdown"><a aria-expanded="false"
-			data-toggle="dropdown" class="btn-user dropdown-toggle media"
-			data-sidebar="true" href="javascript:void(0);"> <i
-				class="media-left media-middle material-icons">dashboard</i> <span
-				class="media-body">Recursos</span>
-				<div class="media-right media-bottom">
-					<i class="dic-more-vert dic"></i>
-				</div>
-		</a>
-			<ul class="dropdown-menu">
-				<li><a href="<c:url value='/unidades/form' />">Novo</a></li>
-				<li><a href="<c:url value='/unidades/' />">Consultar</a></li>
-				<li><a href="shadow.html">Relatório</a></li>
-			</ul></li>
-
-
-		<li class="dropdown pmd-dropdown"><a aria-expanded="false"
-			data-toggle="dropdown" class="btn-user dropdown-toggle media"
-			data-sidebar="true" href="javascript:void(0);"> <i
-				class="media-left media-middle material-icons">dashboard</i> <span
-				class="media-body">Setores</span>
-				<div class="media-right media-bottom">
-					<i class="dic-more-vert dic"></i>
-				</div>
-		</a>
-			<ul class="dropdown-menu">
-				<li><a href="<c:url value='/setores/form' />">Novo</a></li>
-				<li><a href="<c:url value='/setores/' />">Consultar</a></li>
-				<li><a href="shadow.html">Relatório</a></li>
-			</ul></li>
+<div class="sidebar">
+	<nav class="sidebar-nav">
+		<ul class="nav">
+			<li class="nav-item"><a class="nav-link" href="index.html"><i
+					class="icon-speedometer"></i> Dashboard </a></li>
+			<li class="nav-title">PCP</li>
+			<li class="nav-item nav-dropdown"><a
+				class="nav-link nav-dropdown-toggle" href="#"><i
+					class="icon-puzzle"></i> Ordem de Produção</a>
+				<ul class="nav-dropdown-items">
+					<li class="nav-item"><a class="nav-link"
+						href="#"><i class="icon-puzzle"></i>
+							Novo</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="#"><i class="icon-puzzle"></i>
+							Consultar</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="#"><i class="icon-puzzle"></i> Relatório</a>
+					</li>
+				</ul>
+				</li>
+				<li class="nav-item nav-dropdown"><a
+				class="nav-link nav-dropdown-toggle" href="#"><i
+					class="icon-puzzle"></i> Compras</a>
+				<ul class="nav-dropdown-items">
+					<li class="nav-item"><a class="nav-link"
+						href="#"><i class="icon-puzzle"></i>
+							Novo</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="#"><i class="icon-puzzle"></i>
+							Consultar</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="#"><i class="icon-puzzle"></i> Relatório</a>
+					</li>
+				</ul>
+				</li>
+				<li class="divider"></li>
+			<li class="nav-title">Estoque</li>
+			<li class="nav-item nav-dropdown"><a
+				class="nav-link nav-dropdown-toggle" href="#"><i
+					class="icon-star"></i> Produtos</a>
+				<ul class="nav-dropdown-items">
+					<li class="nav-item"><a class="nav-link"
+						href="<c:url value='/produtos/form' />"><i class="icon-star"></i> Novo</a>
+						</li>
+						<li class="nav-item"><a class="nav-link"
+						href="<c:url value='/produtos/' />"><i class="icon-star"></i> Consultar</a>
+						</li>
+					<li class="nav-item"><a class="nav-link"
+						href="#"><i class="icon-star"></i>
+							Relatório</a></li>
+				</ul></li>
+			<li class="nav-item nav-dropdown"><a
+				class="nav-link nav-dropdown-toggle" href="#"><i
+					class="icon-star"></i> Materiais</a>
+				<ul class="nav-dropdown-items">
+					<li class="nav-item"><a class="nav-link"
+						href="<c:url value='/materiais/form' />"><i class="icon-star"></i> Novo</a>
+						</li>
+						<li class="nav-item"><a class="nav-link"
+						href="<c:url value='/materiais/' />"><i class="icon-star"></i> Consultar</a>
+						</li>
+					<li class="nav-item"><a class="nav-link"
+						href="#"><i class="icon-star"></i>
+							Relatório</a></li>
+				</ul></li>
+				<li class="divider"></li>
+			<li class="nav-title">Engenharia</li>
+				<li class="nav-item nav-dropdown"><a
+				class="nav-link nav-dropdown-toggle" href="#"><i
+					class="icon-star"></i> Operações</a>
+				<ul class="nav-dropdown-items">
+					<li class="nav-item"><a class="nav-link"
+						href="<c:url value='/operacoes/form' />"><i class="icon-star"></i> Novo</a>
+						</li>
+						<li class="nav-item"><a class="nav-link"
+						href="<c:url value='/operacoes/' />"><i class="icon-star"></i> Consultar</a>
+						</li>
+					<li class="nav-item"><a class="nav-link"
+						href="#"><i class="icon-star"></i>
+							Relatório</a></li>
+				</ul></li>
+				<li class="nav-item nav-dropdown"><a
+				class="nav-link nav-dropdown-toggle" href="#"><i
+					class="icon-star"></i> Unidade de Medida</a>
+				<ul class="nav-dropdown-items">
+					<li class="nav-item"><a class="nav-link"
+						href="<c:url value='/unidades/form' />"><i class="icon-star"></i> Novo</a>
+						</li>
+						<li class="nav-item"><a class="nav-link"
+						href="<c:url value='/unidades/' />"><i class="icon-star"></i> Consultar</a>
+						</li>
+					<li class="nav-item"><a class="nav-link"
+						href="#"><i class="icon-star"></i>
+							Relatório</a></li>
+				</ul></li>
+			<li class="divider"></li>
+			<li class="nav-title">Produção</li>
+			<li class="nav-item nav-dropdown"><a
+				class="nav-link nav-dropdown-toggle" href="#"><i
+					class="icon-star"></i> Recursos</a>
+				<ul class="nav-dropdown-items">
+					<li class="nav-item"><a class="nav-link"
+						href="pages-login.html" target="_top"><i class="icon-star"></i>
+							Novo</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="pages-register.html" target="_top"><i class="icon-star"></i>
+							Consultar</a></li>
+					<li class="nav-item"><a class="nav-link" href="pages-404.html"
+						target="_top"><i class="icon-star"></i> Relatório</a></li>
+				</ul></li>
+				
+				
+				<li class="nav-item nav-dropdown"><a
+				class="nav-link nav-dropdown-toggle" href="#"><i
+					class="icon-star"></i> Setores</a>
+				<ul class="nav-dropdown-items">
+					<li class="nav-item"><a class="nav-link"
+						href="<c:url value='/setores/form' />" target="_top"><i class="icon-star"></i>
+							Novo</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="<c:url value='/setores/' />" target="_top"><i class="icon-star"></i>
+							Consultar</a></li>
+					<li class="nav-item"><a class="nav-link" href="#"
+						target="_top"><i class="icon-star"></i> Relatório</a></li>
+				</ul></li>
 
 
-
-
-
-	</ul>
-</aside>
-<!-- End Left sidebar -->
-<!-- Sidebar Ends -->
+		</ul>
+	</nav>
+	<button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>

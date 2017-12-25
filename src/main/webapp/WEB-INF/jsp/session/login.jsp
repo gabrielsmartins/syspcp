@@ -8,156 +8,67 @@
 <title>Autenticação</title>
 </head>
 
-<body class="body-custom">
-	<div class="logincard">
-		<div class="pmd-card card-default pmd-z-depth">
-			<div class="login-card">
-				<form action="<c:url value='/session/autenticar'/>" method="POST">
-					<div class="pmd-card-title card-header-border text-center">
-						<div class="loginlogo">
-							<a href="javascript:void(0);"><img
-								src="<c:url value='/resources/images/logo-icon.png'/>"
-								alt="Logo"></a>
-						</div>
-						<h3>
-							Login <span>com <strong>WEBPCP</strong></span>
-						</h3>
-					</div>
-
-					<div class="pmd-card-body">
-					<div class="alert alert-success" role="alert"> Oh snap! Change a few things up and try submitting again. </div>
-						<div class="form-group pmd-textfield pmd-textfield-floating-label">
-							<label for="inputError1"
-								class="control-label pmd-input-group-label">Login</label>
-							<div class="input-group">
-								<div class="input-group-addon">
-									<i class="material-icons md-dark pmd-sm">perm_identity</i>
+<body class="app flex-row align-items-center">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-8">
+				<div class="card-group">
+					<div class="card p-4">
+						<div class="card-body">
+							<h1>Login</h1>
+							<p class="text-muted">Sign In to your account</p>
+							<form action="<c:url value='/session/autenticar'/>" method="POST">
+								<div class="input-group mb-3">
+									<div class="md-form">
+										<i class="fa fa-user prefix grey-text"></i> <input type="text"
+											id="usuario" class="form-control" name="usuario.login">
+										<label for="usuario">Usuário</label>
+									</div>
 								</div>
-								<input type="text" class="form-control" id="exampleInputAmount"
-									name="usuario.login">
-							</div>
-						</div>
-
-						<div class="form-group pmd-textfield pmd-textfield-floating-label">
-							<label for="inputError1"
-								class="control-label pmd-input-group-label">Senha</label>
-							<div class="input-group">
-								<div class="input-group-addon">
-									<i class="material-icons md-dark pmd-sm">lock_outline</i>
+								<div class="input-group mb-4">
+									<div class="md-form">
+										<i class="fa fa-lock prefix grey-text"></i> <input
+											type="password" id="senha" class="form-control"
+											name="usuario.senha"> <label for="senha">Senha</label>
+									</div>
 								</div>
-								<input type="password" class="form-control"
-									id="exampleInputAmount" name="usuario.senha">
+								
+								
+								<div class="row">
+									<div class="col-6">
+										<button type="submit" class="btn btn-primary px-4">Login</button>
+									</div>
+									<div class="col-6 text-right">
+										<button type="button" class="btn btn-link px-0">Forgot
+											password?</button>
+									</div>
+									<c:if test="${not empty mensagem}">
+										<p class="text-success">${mensagem}</p>
+									</c:if>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="card text-white bg-primary py-5 d-md-down-none"
+						style="width: 44%">
+						<div class="card-body text-center">
+							<div>
+								<h2>Sign up</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+									sed do eiusmod tempor incididunt ut labore et dolore magna
+									aliqua.</p>
+								<button type="button" class="btn btn-primary active mt-3">Register
+									Now!</button>
 							</div>
 						</div>
 					</div>
-
-
-					<div
-						class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
-						<div class="form-group clearfix">
-							<div class="checkbox pull-left">
-								<label class="pmd-checkbox checkbox-pmd-ripple-effect">
-									<input type="checkbox" checked="" value=""> <span
-									class="pmd-checkbox"> Lembrar-me</span>
-								</label>
-							</div>
-							<span class="pull-right forgot-password"> <a
-								href="javascript:void(0);">Esqueceu a senha?</a>
-							</span>
-						</div>
-						<c:if test="${not empty mensagem}">
-							<p class="text-success">${mensagem}</p>
-						</c:if>
-						<button type="submit"
-							class="btn pmd-ripple-effect btn-red btn-block">Entrar</button>
-					</div>
-
-				</form>
+				</div>
 			</div>
-
-
-			<div class="forgot-password-card">
-				<form>
-					<div class="pmd-card-title card-header-border text-center">
-						<div class="loginlogo">
-							<a href="javascript:void(0);"><img
-								src="<c:url value='/resources/images/logo-icon.png'/>"
-								alt="Logo"></a>
-						</div>
-						<h3>
-							Esqueceu a senha?<br> <span>Preencha seu e-mail para
-								receber a senha.</span>
-						</h3>
-					</div>
-					<div class="pmd-card-body">
-						<div class="form-group pmd-textfield pmd-textfield-floating-label">
-							<label for="inputError1"
-								class="control-label pmd-input-group-label">Email</label>
-							<div class="input-group">
-								<div class="input-group-addon">
-									<i class="material-icons md-dark pmd-sm">email</i>
-								</div>
-								<input type="text" class="form-control" id="exampleInputAmount">
-							</div>
-						</div>
-					</div>
-					<div
-						class="pmd-card-footer card-footer-no-border card-footer-p16 text-center">
-						<a href="index.html" type="button"
-							class="btn pmd-btn-raised pmd-ripple-effect btn-red btn-block">Enviar</a>
-						<p class="redirection-link">
-							Já é cadastrado? <a href="javascript:void(0);"
-								class="register-login">Entre</a>
-						</p>
-					</div>
-				</form>
-			</div>
-
 		</div>
-
-
 	</div>
 
-
-	<!-- Scripts Starts -->
+	<!-- Bootstrap and necessary plugins -->
 	<%@ include file="../common/import_js.jspf"%>
-
-	<!-- login page sections show hide -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.app-list-icon li a').addClass("active");
-			$(".login-for").click(function() {
-				$('.login-card').hide()
-				$('.forgot-password-card').show();
-			});
-			$(".signin").click(function() {
-				$('.login-card').show()
-				$('.forgot-password-card').hide();
-			});
-		});
-	</script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$(".login-register").click(function() {
-				$('.login-card').hide()
-				$('.forgot-password-card').hide();
-				$('.register-card').show();
-			});
-
-			$(".register-login").click(function() {
-				$('.register-card').hide()
-				$('.forgot-password-card').hide();
-				$('.login-card').show();
-			});
-			$(".forgot-password").click(function() {
-				$('.login-card').hide()
-				$('.register-card').hide()
-				$('.forgot-password-card').show();
-			});
-		});
-	</script>
-
-	<!-- Scripts Ends -->
 
 </body>
 </html>

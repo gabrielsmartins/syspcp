@@ -58,7 +58,7 @@ public class UnidadeController {
 	@Delete("/{unidade.id}")
 	public void remove(UnidadeMedida unidade) {
 		unidadeMedidaDAO.remover(unidade.getId());
-		result.include("mensagem", "Unidade Excluída com Sucesso");
+		result.include("mensagem", "Unidade Excluida com Sucesso");
 		result.redirectTo(UnidadeController.class).lista();
 
 	}

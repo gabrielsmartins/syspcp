@@ -92,7 +92,7 @@
 							<div class="pmd-card-actions">
 								<button class="btn btn-red next" type="submit" name="_method"
 									value="PUT">Salvar</button>
-								<button type="reset" class="btn btn-gray" name="_method"
+								<button type="submit" class="btn btn-gray" name="_method"
 									value="DELETE">Excluir</button>
 							</div>
 						</form>

@@ -1,19 +1,4 @@
-<footer class="admin-footer">
- <div class="container-fluid">
- 	<ul class="list-unstyled list-inline">
-	 	<li>
-			<span class="pmd-card-subtitle-text">WEBPCP &copy; <span class="auto-update-year"></span>. All Rights Reserved.</span>
-			<h3 class="pmd-card-subtitle-text">Trabalho de Conclusão de Concurso<a href="#" target="_blank">IFSP-GRU.</a></h3>
-        </li>
-        <li class="pull-right for-support">
-			<a href="mailto:support@propeller.in">
-            	<div>
-				  <span class="pmd-card-subtitle-text">IFSP-GRU</span>
-				  <h3 class="pmd-card-title-text">Trabalho de Conclusão de Concurso</h3>
-				</div>
-            </a>
-        </li>
-    </ul>
- </div>
+<footer class="app-footer">
+	<span><a href="http://coreui.io">CoreUI</a> © 2017 creativeLabs.</span>
+	<span class="ml-auto">Powered by <a href="http://coreui.io">CoreUI</a></span>
 </footer>
-<!--footer end-->

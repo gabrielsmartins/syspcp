@@ -76,7 +76,7 @@ public class ProdutoController {
 	@Delete("/{produto.id}")
 	public void remove(Produto produto) {
 		produtoDAO.remover(produto.getId());
-		result.include("mensagem", "Produto Excluído com Sucesso");
+		result.include("mensagem", "Produto Excluido com Sucesso");
 		result.redirectTo(ProdutoController.class).lista();
 
 	}

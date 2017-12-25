@@ -62,7 +62,7 @@ public class MaterialController {
 	@Delete("/{material.id}")
 	public void remove(Material material) {
 		materialDAO.remover(material.getId());
-		result.include("mensagem", "Material Excluído com Sucesso");
+		result.include("mensagem", "Material Excluido com Sucesso");
 		result.redirectTo(MaterialController.class).lista();
 
 	}
