@@ -8,7 +8,7 @@
 
 <%@ include file="../common/import_css.jspf"%>
 
-<title>Novo - Unidade de Medida</title>
+<title>Novo - Operacao</title>
 </head>
 
 <body
@@ -73,12 +73,14 @@
 							</div>
 
 
-
+                           <div class="col-md-6">
 							<select class="mdb-select" name="operacao.setor.id">
 								<c:forEach items="${setores}" var="setor">
 									<option value="${setor.id}">${setor.descricao}</option>
 								</c:forEach>
-							</select> <label>Example label</label>
+							</select> 
+							<label>Setor:</label>
+							</div>
 
 
 						</div>
@@ -110,3 +112,8 @@
 	<%@ include file="../common/footer.jspf"%>
 	<%@ include file="../common/import_js.jspf"%>
 </html>
+
+
+
+
+

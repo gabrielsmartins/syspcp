@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!Doctype html>
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
@@ -8,241 +8,225 @@
 
 <%@ include file="../common/import_css.jspf"%>
 
-
 <title>Novo - Material</title>
 </head>
 
+<body
+	class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
 
-<body>
-	<!-- Header Starts -->
-	<!--Start Nav bar -->
 	<%@ include file="../common/navbar.jspf"%>
-	<!--End Nav bar -->
-	<!-- Header Ends -->
-	<%@ include file="../common/sidebar.jspf"%>
 
-	<!--content area start-->
-	<div id="content" class="pmd-content content-area dashboard">
+
+
+	<div class="app-body">
+
+
+		<%@ include file="../common/sidebar.jspf"%>
+
+
+
+		<main class="main"> <!-- Breadcrumb -->
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">Home</li>
+			<li class="breadcrumb-item"><a href="#">Material</a></li>
+			<li class="breadcrumb-item active">Novo</li>
+
+			<!-- Breadcrumb Menu-->
+			<li class="breadcrumb-menu d-md-down-none">
+				<div class="btn-group" role="group" aria-label="Button group">
+					<a class="btn" href="#"><i class="icon-speech"></i></a> <a
+						class="btn" href="./"><i class="icon-graph"></i>
+						&nbsp;Dashboard</a> <a class="btn" href="#"><i
+						class="icon-settings"></i> &nbsp;Settings</a>
+				</div>
+			</li>
+		</ol>
 
 		<div class="container-fluid">
 
+			<div class="animated fadeIn">
 
-			<!-- Start Form  -->
-			<div class="section section-custom billinfo">
-				<!--section-title -->
-				<h2>Novo Material</h2>
-				<!--section-title end -->
+				<div class="card">
+					<div class="card-header">
+						<strong>Material - Novo</strong>
+					</div>
 
-				<!--breadcrum start-->
-				<ol class="breadcrumb text-left">
-					<li><a href="<c:url value='/materiais/'/>">Materiais</a></li>
-					<li class="active">Novo</li>
-				</ol>
-				<!--breadcrum end-->
-
-
-
-				<div class="pmd-card pmd-z-depth pmd-card">
-					<div class="pmd-card-body">
-						<form action="<c:url value='/materiais/'/>" method="POST"
-							accept-charset="UTF-8">
+					<form action="<c:url value='/materiais/'/>" method="POST"
+						accept-charset="UTF-8">
+						<div class="card-body">
 
 							<!-- Dados Básicos -->
 							<fieldset>
 								<legend>Dados Básicos</legend>
 
-								<div
-									class="form-group pmd-textfield pmd-textfield-floating-label">
-									<label for="regular1" class="control-label">Código
-										Interno:</label> <input name="material.codigoInterno" id="regular1"
-										class="form-control" type="text"><span
-										class="pmd-textfield-focused"></span>
-								</div>
-
-								<div
-									class="form-group pmd-textfield pmd-textfield-floating-label">
-									<label for="regular1" class="control-label">Descrição:</label>
-									<input name="material.descricao" id="regular1"
-										class="form-control" type="text"><span
-										class="pmd-textfield-focused"></span>
-								</div>
 
 
-								<div class="group-fields clearfix row">
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-										<div
-											class="form-group pmd-textfield pmd-textfield-floating-label">
-											<label for="valor unitario">Valor Unitário:</label> <input
-												type="text" name="material.valorUnitario"
-												class="form-control" /><span class="pmd-textfield-focused"></span>
+								<div class="row">
+									<div class="col-md-3">
+										<div class="md-form">
+											<input name="material.codigoInterno" id="codigoInterno"
+												class="form-control" type="text"> <label
+												for="codigoInterno">Código Interno:</label>
 										</div>
 									</div>
 
 
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-										<div
-											class="form-group pmd-textfield pmd-textfield-floating-label">
-											<label for="valor unitario">Lead Time:</label> <input
-												type="text" name="material.leadTime" class="form-control" />
-											<span class="pmd-textfield-focused"></span>
+									<div class="col-md-6">
+										<div class="md-form">
+											<input name="material.descricao" id="descricao"
+												class="form-control" type="text"> <label
+												for="descricao">Descricao:</label>
 										</div>
 									</div>
 								</div>
 
 
-								<div class="group-fields clearfix row">
-									<div
-										class="form-group pmd-textfield pmd-textfield-floating-label">
-										<label for="situacao" class="control-label">Situação:</label>
-										<!-- Inline radio -->
-										<label class="radio-inline pmd-radio"> <input
-											type="radio" id="ativo" name="material.situacao"
-											value="ATIVO" checked /> <span for="ativo">Ativo</span>
-										</label> <label class="radio-inline pmd-radio"> <input
-											type="radio" id="inativo" name="material.situacao"
-											value="INATIVO" /> <span for="inativo">Inativo</span>
-										</label> <label class="radio-inline pmd-radio"> <input
-											type="radio" id="fora_de_linha" name="material.situacao"
-											value="FORA_DE_LINHA" /> <span for="fora_de_linha">Fora
-												de Linha</span>
-										</label>
+								<div class="row">
+									<div class="col-md-3">
+										<div class="md-form">
+											<input name="material.valorUnitario" id="descricao"
+												class="form-control" type="text"> <label
+												for="descricao">Valor Unitário:</label>
+										</div>
+									</div>
+
+
+									<div class="col-md-3">
+										<div class="md-form">
+											<input name="material.leadTime" id="leadTime" class="form-control" type="text"> <label
+												for="leadTime">Lead Time (d):</label>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="row">
+									<div class="col-md-6">
+										<label for="descricao">Situacao:</label>
+										<div class="form-group">
+											<input name="material.situacao" type="radio" id="ATIVO"
+												value="ATIVO" checked> <label for="ATIVO">Ativo</label> <input
+												name="material.situacao" type="radio" id="INATIVO"
+												VALUE="INATIVO"> <label for="INATIVO">Inativo</label>
+											<input name="material.situacao" type="radio"
+												id="FORA_DE_LINHA" VALUE="FORA_DE_LINHA"> <label
+												for="FORA_DE_LINHA">Fora de Linha</label>
+										</div>
 									</div>
 								</div>
 
 							</fieldset>
-							
-							
-							<br>
 
-							<!-- Dados Técnicos -->
 
+							<!--Dados Técnicos-->
 							<fieldset>
 								<legend>Dados Técnicos</legend>
 
-								<div class="group-fields clearfix row">
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-										<div
-											class="form-group pmd-textfield pmd-textfield-floating-label">
-											<label for="valor unitario">Peso (KG):</label> <input
-												type="text" name="material.peso" class="form-control" /><span
-												class="pmd-textfield-focused"></span>
+								<div class="row">
+									<div class="col-md-3">
+										<div class="md-form">
+											<input name="material.peso" id="peso" class="form-control"
+												type="text"> <label for="peso">Peso (Kg):</label>
 										</div>
 									</div>
 
 
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-
-										<div
-											class="form-group pmd-textfield pmd-textfield-floating-label">
-											<label>Unidade de Medida</label> <select
-												name="material.unidadeMedida.id"
-												class="select-simple form-control pmd-select2 select2-hidden-accessible"
-												tabindex="-1" aria-hidden="true">
-												<option></option>
-												<c:forEach items="${unidades}" var="unidade">
-													<option value="${unidade.id}">${unidade.sigla}-${unidade.descricao}</option>
-												</c:forEach>
-											</select><span
-												class="select2 select2-container select2-container--bootstrap select2-container--below"
-												dir="ltr" style="width: 236px;"><span
-												class="selection"><span
-													class="select2-selection select2-selection--single"
-													role="combobox" aria-haspopup="true" aria-expanded="false"
-													tabindex="0" aria-labelledby="select2-4dir-container"><span
-														class="select2-selection__rendered"
-														id="select2-4dir-container" title=""></span><span
-														class="select2-selection__arrow" role="presentation"><b
-															role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-												aria-hidden="true"></span></span><span
-												class="pmd-textfield-focused"></span>
-										</div>
-
-
+									<div class="col-md-6">
+										<select class="mdb-select" name="material.unidadeMedida.id">
+											<c:forEach items="${unidades}" var="unidade">
+												<option value="${unidade.id}">${unidade.sigla}-${unidade.descricao}</option>
+											</c:forEach>
+										</select> <label>Unidade de Medida:</label>
 									</div>
 								</div>
 
+								<div class="row">
 
-								<div class="group-fields clearfix row">
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-										<div
-											class="form-group pmd-textfield pmd-textfield-floating-label">
-											<label for="valor unitario">Comprimento (mm):</label> <input
-												type="text" name="material.comprimento" class="form-control" />
-											<span class="pmd-textfield-focused"></span>
+									<div class="col-md-3">
+										<div class="md-form">
+											<input name="material.comprimento" id="comprimento"
+												class="form-control" type="text"> <label
+												for="comprimento">Comprimento (mm):</label>
+										</div>
+									</div>
+
+									<div class="col-md-3">
+										<div class="md-form">
+											<input name="material.largura" id="largura"
+												class="form-control" type="text"> <label
+												for="largura">Largura (mm):</label>
 										</div>
 									</div>
 
 
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-										<div
-											class="form-group pmd-textfield pmd-textfield-floating-label">
-											<label for="valor unitario">Largura (mm):</label> <input
-												type="text" name="material.largura" class="form-control" />
-											<span class="pmd-textfield-focused"></span>
-										</div>
-									</div>
-
-
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-										<div
-											class="form-group pmd-textfield pmd-textfield-floating-label">
-											<label for="valor unitario">Altura (mm):</label> <input
-												type="text" name="material.altura" class="form-control" />
-											<span class="pmd-textfield-focused"></span>
+									<div class="col-md-3">
+										<div class="md-form">
+											<input name="material.altura" id="altura"
+												class="form-control" type="text"> <label
+												for="altura">Altura (mm):</label>
 										</div>
 									</div>
 								</div>
+
 							</fieldset>
 
 
 							<!-- Dados Estoque -->
 							<fieldset>
 								<legend>Dados Estoque</legend>
-								<div class="group-fields clearfix row">
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-										<div
-											class="form-group pmd-textfield pmd-textfield-floating-label">
 
-											<label for="valor unitario">Quantidade Estoque:</label> <input
-												type="text" name="material.quantidadeEstoque"
-												class="form-control" />
+								<div class="row">
+									<div class="col-md-3">
+										<div class="md-form">
+											<input name="material.quantidadeEstoque"
+												id="quantidadeEstoque" class="form-control" type="text">
+											<label for="quantidadeEstoque">Quantidade Estoque:</label>
 										</div>
 									</div>
 
 
-
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-										<div
-											class="form-group pmd-textfield pmd-textfield-floating-label">
-											<label for="valor unitario">Quantidade Mínima:</label> <input
-												type="text" name="material.quantidadeMinima"
-												class="form-control" />
+									<div class="col-md-3">
+										<div class="md-form">
+											<input name="material.quantidadeMinima" id="quantidadeMinima"
+												class="form-control" type="text"> <label
+												for="quantidadeMinima">Quantidade Mínima:</label>
 										</div>
 									</div>
 								</div>
 							</fieldset>
-							<div class="pmd-card-actions">
-								<button class="btn btn-red next" type="submit">Salvar</button>
-								<button type="reset" class="btn btn-gray">Cancelar</button>
-							</div>
-						</form>
-					</div>
-					<!-- End Form  -->
+
+
+						</div>
+
+						<div class="card-footer">
+							<button class="btn btn red accent-4" type="submit">Salvar</button>
+							<button type="reset" class="btn btn-blue-grey">Cancelar</button>
+						</div>
+
+					</form>
 				</div>
+
+
+
+				<!--/.row-->
 			</div>
 
+
+
 		</div>
+		<!-- /.conainer-fluid --> </main>
 
 
+
+		<%@ include file="../common/sidebar_right.jspf"%>
 	</div>
-	<!--end content area-->
-</body>
 
-<!-- Footer Starts -->
-<!--footer start-->
-<%@ include file="../common/footer.jspf"%>
-<!-- Footer Ends -->
 
-<!-- Scripts Starts -->
-<%@ include file="../common/import_js.jspf"%>
+	<%@ include file="../common/footer.jspf"%>
+	<%@ include file="../common/import_js.jspf"%>
 </html>
+
+
+
+
+

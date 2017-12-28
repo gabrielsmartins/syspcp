@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!Doctype html>
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
@@ -8,79 +8,87 @@
 
 <%@ include file="../common/import_css.jspf"%>
 
-
 <title>Editar - Setor</title>
 </head>
 
+<body
+	class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
 
-<body>
-	<!-- Header Starts -->
-	<!--Start Nav bar -->
 	<%@ include file="../common/navbar.jspf"%>
-	<!--End Nav bar -->
-	<!-- Header Ends -->
-	<%@ include file="../common/sidebar.jspf"%>
 
-	<!--content area start-->
-	<div id="content" class="pmd-content content-area dashboard">
+
+
+	<div class="app-body">
+
+
+		<%@ include file="../common/sidebar.jspf"%>
+
+
+
+		<main class="main"> <!-- Breadcrumb -->
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">Home</li>
+			<li class="breadcrumb-item"><a href="#">Setor</a></li>
+			<li class="breadcrumb-item active">Editar</li>
+
+			<!-- Breadcrumb Menu-->
+			<li class="breadcrumb-menu d-md-down-none">
+				<div class="btn-group" role="group" aria-label="Button group">
+					<a class="btn" href="#"><i class="icon-speech"></i></a> <a
+						class="btn" href="./"><i class="icon-graph"></i>
+						&nbsp;Dashboard</a> <a class="btn" href="#"><i
+						class="icon-settings"></i> &nbsp;Settings</a>
+				</div>
+			</li>
+		</ol>
 
 		<div class="container-fluid">
 
+			<div class="animated fadeIn">
 
-			<!-- Title -->
-			<h1 class="section-title" id="services">
-				<span>Setor</span>
-			</h1>
-			<!-- End Title -->
-
-			<!--breadcrum start-->
-			<ol class="breadcrumb text-left">
-				<li><a href="<c:url value='/setores/'/>">Setores</a></li>
-				<li class="active">Editar</li>
-			</ol>
-			<!--breadcrum end-->
-
-
-
-			<!-- Start Form  -->
-			<div class="section section-custom billinfo">
-				<!--section-title -->
-				<h2>Editar Setor</h2>
-				<!--section-title end -->
-
-				<div class="pmd-card pmd-z-depth pmd-card">
-					<div class="pmd-card-body">
-						<form action="<c:url value='/setores/${setor.id}'/>" method="POST"
-							accept-charset="UTF-8">
-							<div
-								class="form-group pmd-textfield pmd-textfield-floating-label">
-								<label for="regular1" class="control-label">Descrição:</label> 
-								<input
-									name="setor.descricao" id="regular1" class="form-control"
-									type="text" value="${setor.descricao}"><span class="pmd-textfield-focused"></span>
-							</div>
-
-
-							<div class="pmd-card-actions">
-								<button class="btn btn-red next" type="submit" name="_method" value="PUT">Salvar</button>
-								<button type="reset" class="btn btn-gray" name="_method" value="DELETE">Excluir</button>
-							</div>
-						</form>
+				<div class="card">
+					<div class="card-header">
+						<strong>Setor - Novo</strong>
 					</div>
 
+					<form action="<c:url value='/setores/${setor.id}'/>" method="POST"
+							accept-charset="UTF-8">
+						<div class="card-body">
+
+							<div class="col-md-6">
+								<div class="md-form">
+									<input name="setor.descricao" id="descricao"
+										class="form-control" type="text" value="${setor.descricao}"> <label
+										for="descricao">Descricao:</label>
+								</div>
+							</div>
+
+						</div>
+
+
+						<div class="card-footer">
+							<button class="btn btn red accent-4" type="submit" name="_method" value="PUT">Salvar</button>
+							<button type="submit" class="btn btn-blue-grey" name="_method" value="DELETE">Excluir</button>
+						</div>
+					</form>
 				</div>
-				<!-- End Form  -->
+
+
+
+				<!--/.row-->
 			</div>
 
-		</div>
-	</div>
-	<!--end content area-->
-</body>
-	<!-- Footer Starts -->
-	<!--footer start-->
-	<%@ include file="../common/footer.jspf"%>
-	<!-- Footer Ends -->
 
-	<!-- Scripts Starts -->
+
+		</div>
+		<!-- /.conainer-fluid --> </main>
+
+
+
+		<%@ include file="../common/sidebar_right.jspf"%>
+	</div>
+
+
+	<%@ include file="../common/footer.jspf"%>
 	<%@ include file="../common/import_js.jspf"%>
 </html>
