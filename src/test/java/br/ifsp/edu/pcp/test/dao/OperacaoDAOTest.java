@@ -43,6 +43,7 @@ public class OperacaoDAOTest {
 		Operacao operacao = new Operacao("CORTAR", "CORTAR NA MEDIDA", setor);
 		operacaoDAO.salvar(operacao);
 		Operacao alterado = new Operacao("CORTE PERSONALIZADO", "CORTAR LATERAIS", setor);
+		alterado.setId(setor.getId());
 		operacaoDAO.atualizar(alterado);
 	}
 	
@@ -60,7 +61,7 @@ public class OperacaoDAOTest {
 	public void pesquisarOperacao() {
 	   Setor setor = new Setor("DOBRA");
 	   setorDAO.salvar(setor);
-	   Operacao operacao = new Operacao("DOBRAR", "DOBRAR 90º", setor);
+	   Operacao operacao = new Operacao("DOBRAR", "DOBRAR 90ï¿½", setor);
 	   operacaoDAO.salvar(operacao);
 	   Operacao encontrada = operacaoDAO.pesquisar(operacao.getId());
        assertNotNull(encontrada);

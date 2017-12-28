@@ -80,6 +80,14 @@ CREATE TABLE operacao(
 );
 
 
+CREATE TABLE recurso(
+       recr_id SERIAL,
+       recr_desc VARCHAR(200) NOT NULL,
+       recr_setr_id INT NOT NULL,
+       CONSTRAINT PK_recr_id PRIMARY KEY(recr_id),
+       CONSTRAINT FK_recurso_operacao FOREIGN KEY (recr_setr_id) REFERENCES setor(setr_id),
+       CONSTRAINT UNQ_recurso_desc UNIQUE(recr_desc)	
+);
 
 
 

@@ -31,15 +31,17 @@ public class Setor implements Serializable {
 	@OneToMany(mappedBy="setor")
 	private List<Operacao> operacoes;
 	
+	
+	@OneToMany(mappedBy="setor")
+	private List<Recurso> recursos;
+	
 	public Setor(String descricao) {
 		this.descricao = descricao;
 	}
 	
-	
 
 	public Setor() {
 	}
-
 
 
 	public Long getId() {
@@ -59,7 +61,6 @@ public class Setor implements Serializable {
 	}
 
 
-
 	public List<Operacao> getOperacoes() {
 		return operacoes;
 	}
@@ -69,4 +70,7 @@ public class Setor implements Serializable {
 		this.operacoes.add(operacao);
 	}
 
+	public void adicionarRecurso(Recurso recurso) {
+		this.recursos.add(recurso);
+	}
 }

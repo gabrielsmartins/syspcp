@@ -55,17 +55,18 @@
 
 				<div class="card">
 					<div class="card-header">
-						<i class="fa fa-align-justify"></i> <strong>Operacao - Lista</strong>
+						<i class="fa fa-align-justify"></i> <strong>Operacao -
+							Lista</strong>
 					</div>
 					<div class="card-body">
 						<table
 							class="table table-bordered table-striped table-sm table-hover">
 							<thead>
 								<tr>
-									<th>ID</th>
-							<th>Descricao</th>
-							<th>Setor</th>
-							<th>Acao</th>
+									<th><strong>ID</strong></th>
+									<th><strong>Descricao</strong></th>
+									<th><strong>Setor</strong></th>
+									<th><strong>Acao</strong></th>
 								</tr>
 							</thead>
 
@@ -73,8 +74,8 @@
 								<c:forEach items="${operacaoList}" var="operacao">
 									<tr>
 										<td>${operacao.id}</td>
-								<td>${operacao.descricao}</td>
-								<td>${operacao.setor.descricao}</td>
+										<td>${operacao.descricao}</td>
+										<td>${operacao.setor.descricao}</td>
 										<td><a href="<c:url value='/operacoes/${operacao.id}'/>"
 											class="btn-floating btn-sm red accent-4"> <i
 												class="material-icons md-dark pmd-sm">edit</i>

@@ -43,6 +43,7 @@ public class UsuarioDAOTest {
 		Usuario usuario = new Usuario("Usuario 2", "usuario2", "12345",perfil);
 		usuarioDAO.salvar(usuario);
 		Usuario alterado = new Usuario("Usuario 3","usuario3","12345",perfil);
+		alterado.setId(usuario.getId());
 		usuarioDAO.atualizar(alterado);
 	}
 	

@@ -8,7 +8,7 @@
 
 <%@ include file="../common/import_css.jspf"%>
 
-<title>Consultar - Material</title>
+<title>Consultar - Recurso</title>
 </head>
 
 <body
@@ -28,7 +28,7 @@
 		<main class="main"> <!-- Breadcrumb -->
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">Home</li>
-			<li class="breadcrumb-item"><a href="#">Material</a></li>
+			<li class="breadcrumb-item"><a href="#">Recurso</a></li>
 			<li class="breadcrumb-item active">Consultar</li>
 
 			<!-- Breadcrumb Menu-->
@@ -55,7 +55,7 @@
 
 				<div class="card">
 					<div class="card-header">
-						<i class="fa fa-align-justify"></i> <strong>Material -
+						<i class="fa fa-align-justify"></i> <strong>Recurso -
 							Lista</strong>
 					</div>
 					<div class="card-body">
@@ -65,36 +65,18 @@
 								<tr>
 									<th><strong>ID</strong></th>
 									<th><strong>Descricao</strong></th>
-									<th><strong>Codigo Interno</strong></th>
-									<th><strong>Unidade</strong></th>
-									<th><strong>Quantidade Estoque</strong></th>
-									<th><strong>Quantidade Mínima</strong></th>
-									<th><strong>Valor Unit (R$)</strong></th>
-									<th><strong>Peso (KG)</strong></th>
-									<th><strong>Comprimento (mm)</strong></th>
-									<th><strong>Largura (mm)</strong></th>
-									<th><strong>Altura (mm)</strong></th>
-									<th><strong>Situação</strong></th>
+									<th><strong>Setor</strong></th>
 									<th><strong>Acao</strong></th>
 								</tr>
 							</thead>
 
 							<tbody>
-								<c:forEach items="${materialList}" var="material">
+								<c:forEach items="${recursoList}" var="recurso">
 									<tr>
-										<td>${material.id}</td>
-										<td>${material.descricao}</td>
-										<td>${material.codigoInterno}</td>
-										<td>${material.unidadeMedida.sigla}</td>
-										<td>${material.quantidadeEstoque}</td>
-										<td>${material.quantidadeMinima}</td>
-										<td>${material.valorUnitario}</td>
-										<td>${material.peso}</td>
-										<td>${material.comprimento}</td>
-										<td>${material.largura}</td>
-										<td>${material.altura}</td>
-										<td>${fn:replace(material.situacao, '_', ' ')}</td>
-										<td><a href="<c:url value='/materiais/${material.id}'/>"
+										<td>${recurso.id}</td>
+										<td>${recurso.descricao}</td>
+										<td>${recurso.setor.descricao}</td>
+										<td><a href="<c:url value='/recursos/${recurso.id}'/>"
 											class="btn-floating btn-sm red accent-4"> <i
 												class="material-icons md-dark pmd-sm">edit</i>
 										</a> <a href="javascript:void(0);"

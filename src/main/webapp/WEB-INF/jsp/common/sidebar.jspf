@@ -101,12 +101,12 @@
 					class="icon-star"></i> Recursos</a>
 				<ul class="nav-dropdown-items">
 					<li class="nav-item"><a class="nav-link"
-						href="pages-login.html" target="_top"><i class="icon-star"></i>
+						href="<c:url value='/recursos/form' />" target="_top"><i class="icon-star"></i>
 							Novo</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="pages-register.html" target="_top"><i class="icon-star"></i>
+						href="<c:url value='/recursos/' />" target="_top"><i class="icon-star"></i>
 							Consultar</a></li>
-					<li class="nav-item"><a class="nav-link" href="pages-404.html"
+					<li class="nav-item"><a class="nav-link" href="#"
 						target="_top"><i class="icon-star"></i> Relatório</a></li>
 				</ul></li>
 				

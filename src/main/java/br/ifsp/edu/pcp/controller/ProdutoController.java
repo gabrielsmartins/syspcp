@@ -31,8 +31,6 @@ public class ProdutoController {
 	
 	
 	
-	
-	
 	@Inject
 	private UnidadeMedidaDAO unidadeMedidaDAO;
 	
