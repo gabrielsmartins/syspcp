@@ -73,8 +73,8 @@
 
 
 						<div class="card-footer">
-							<button class="btn btn red accent-4" type="submit">Salvar</button>
-							<button type="reset" class="btn btn-blue-grey">Cancelar</button>
+							<button class="btn black" type="submit">Salvar</button>
+							<button type="reset" class="btn grey">Cancelar</button>
 						</div>
 					</form>
 				</div>

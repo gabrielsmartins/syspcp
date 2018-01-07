@@ -1,3 +1,21 @@
+fieldset {
+	border: 1px solid #999;
+	border-radius:8px;
+	box-shadow:0 0 10px #999;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 20px;
+}
 
-
-
+.legenda {
+	border: 1px solid green;
+	color: white;
+	background-color:red;
+	border-radius:8px;
+	font-size: 15px;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	box-shadow:0 0 10px #999;
+}

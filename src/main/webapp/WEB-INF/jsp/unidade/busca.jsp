@@ -73,8 +73,8 @@
 
 
 						<div class="card-footer">
-							<button class="btn btn red accent-4" type="submit" name="_method" value="PUT">Salvar</button>
-							<button type="submit" class="btn btn-blue-grey" name="_method" value="DELETE">Excluir</button>
+							<button class="btn black" type="submit" name="_method" value="PUT">Salvar</button>
+							<button type="submit" class="btn grey" name="_method" value="DELETE">Excluir</button>
 						</div>
 					</form>
 				</div>

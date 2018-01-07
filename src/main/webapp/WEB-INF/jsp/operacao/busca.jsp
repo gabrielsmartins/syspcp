@@ -52,45 +52,50 @@
 					</div>
 
 					<form action="<c:url value='/operacoes/${operacao.id}'/>"
-							method="POST" accept-charset="UTF-8">
+						method="POST" accept-charset="UTF-8">
 						<div class="card-body">
 
-							<div class="col-md-6">
-								<div class="md-form">
-									<input name="operacao.descricao" id="descricao"
-										class="form-control" type="text" value="${operacao.descricao}"> <label
-										for="descricao">Descricao:</label>
+							<fieldset>
+								<legend>
+									<span class="legenda">Dados Básicos</span>
+								</legend>
+								<div class="col-md-6">
+									<div class="md-form">
+										<input name="operacao.descricao" id="descricao"
+											class="form-control" type="text"
+											value="${operacao.descricao}"> <label for="descricao">Descricao:</label>
+									</div>
 								</div>
-							</div>
 
-							<div class="col-md-9">
-								<div class="md-form">
-									<textarea id="instrucao" class="md-textarea"
-										name="operacao.instrucao">${operacao.instrucao}</textarea>
-									<label for="form76">Instrução:</label>
+								<div class="col-md-9">
+									<div class="md-form">
+										<textarea id="instrucao" class="md-textarea"
+											name="operacao.instrucao">${operacao.instrucao}</textarea>
+										<label for="form76">Instrução:</label>
+									</div>
 								</div>
-							</div>
 
 
-                           <div class="col-md-6">
-							<select class="mdb-select" name="operacao.setor.id">
-								<c:forEach items="${setores}" var="setor">
-									<option value="${setor.id}" <c:if test="${setor.id == operacao.setor.id}">selected</c:if>>${setor.descricao}</option>
-								</c:forEach>
-							</select> 
-							<label>Setor:</label>
-							</div>
-							
-							
-							
-							
-							
+								<div class="col-md-6">
+									<label>Setor:</label> <select class="form-control"
+										name="operacao.setor.id">
+										<c:forEach items="${setores}" var="setor">
+											<option value="${setor.id}"
+												<c:if test="${setor.id == operacao.setor.id}">selected</c:if>>${setor.descricao}</option>
+										</c:forEach>
+									</select>
+								</div>
+
+							</fieldset>
+
 						</div>
 
 
 						<div class="card-footer">
-							<button class="btn btn red accent-4" type="submit" name="_method" value="PUT">Salvar</button>
-							<button type="submit" class="btn btn-blue-grey" name="_method" value="DELETE">Excluir</button>
+							<button class="btn black" type="submit" name="_method"
+								value="PUT">Salvar</button>
+							<button type="submit" class="btn grey" name="_method"
+								value="DELETE">Excluir</button>
 						</div>
 					</form>
 				</div>

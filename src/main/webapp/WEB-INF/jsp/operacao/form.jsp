@@ -55,40 +55,47 @@
 						accept-charset="UTF-8">
 						<div class="card-body">
 
-							<div class="col-md-6">
-								<div class="md-form">
-									<input name="operacao.descricao" id="descricao"
-										class="form-control" type="text"> <label
-										for="descricao">Descricao:</label>
+
+							<fieldset>
+								<legend>
+									<span class="legenda">Dados Básicos</span>
+								</legend>
+								<div class="col-md-6">
+									<div class="md-form">
+										<input name="operacao.descricao" id="descricao"
+											class="form-control" type="text"> <label
+											for="descricao">Descricao:</label>
+									</div>
 								</div>
-							</div>
 
 
-							<div class="col-md-9">
-								<div class="md-form">
-									<textarea id="instrucao" class="md-textarea"
-										name="operacao.instrucao"></textarea>
-									<label for="form76">Instrução:</label>
+								<div class="col-md-9">
+									<div class="md-form">
+										<textarea id="instrucao" class="md-textarea"
+											name="operacao.instrucao"></textarea>
+										<label for="form76">Instrução:</label>
+									</div>
 								</div>
-							</div>
 
 
-                           <div class="col-md-6">
-							<select class="mdb-select" name="operacao.setor.id">
-								<c:forEach items="${setores}" var="setor">
-									<option value="${setor.id}">${setor.descricao}</option>
-								</c:forEach>
-							</select> 
-							<label>Setor:</label>
-							</div>
+								<div class="col-md-6">
+									<label>Setor:</label> <select class="form-control"
+										name="operacao.setor.id">
+										<c:forEach items="${setores}" var="setor">
+											<option value="${setor.id}">${setor.descricao}</option>
+										</c:forEach>
+									</select>
+								</div>
 
-
+							</fieldset>
 						</div>
 
 						<div class="card-footer">
-							<button class="btn btn red accent-4" type="submit">Salvar</button>
-							<button type="reset" class="btn btn-blue-grey">Cancelar</button>
+							<button class="btn black" type="submit">Salvar</button>
+							<button type="reset" class="btn grey">Cancelar</button>
 						</div>
+
+
 
 					</form>
 				</div>

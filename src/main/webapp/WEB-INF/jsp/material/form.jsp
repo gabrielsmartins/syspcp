@@ -57,7 +57,7 @@
 
 							<!-- Dados Básicos -->
 							<fieldset>
-								<legend>Dados Básicos</legend>
+								<legend><span class="legenda">Dados Básicos</span></legend>
 
 
 
@@ -120,7 +120,7 @@
 
 							<!--Dados Técnicos-->
 							<fieldset>
-								<legend>Dados Técnicos</legend>
+								<legend><span class="legenda">Dados Técnicos</span></legend>
 
 								<div class="row">
 									<div class="col-md-3">
@@ -132,7 +132,7 @@
 
 
 									<div class="col-md-6">
-										<select class="mdb-select" name="material.unidadeMedida.id">
+										<select class="form-control" name="material.unidadeMedida.id">
 											<c:forEach items="${unidades}" var="unidade">
 												<option value="${unidade.id}">${unidade.sigla}-${unidade.descricao}</option>
 											</c:forEach>
@@ -173,7 +173,7 @@
 
 							<!-- Dados Estoque -->
 							<fieldset>
-								<legend>Dados Estoque</legend>
+								<legend><span class="legenda">Dados Estoque</span></legend>
 
 								<div class="row">
 									<div class="col-md-3">
@@ -199,8 +199,8 @@
 						</div>
 
 						<div class="card-footer">
-							<button class="btn btn red accent-4" type="submit">Salvar</button>
-							<button type="reset" class="btn btn-blue-grey">Cancelar</button>
+							<button class="btn black" type="submit">Salvar</button>
+							<button type="reset" class="btn grey">Cancelar</button>
 						</div>
 
 					</form>

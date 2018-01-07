@@ -52,23 +52,31 @@
 					</div>
 
 					<form action="<c:url value='/setores/${setor.id}'/>" method="POST"
-							accept-charset="UTF-8">
+						accept-charset="UTF-8">
 						<div class="card-body">
 
-							<div class="col-md-6">
-								<div class="md-form">
-									<input name="setor.descricao" id="descricao"
-										class="form-control" type="text" value="${setor.descricao}"> <label
-										for="descricao">Descricao:</label>
+							<fieldset>
+								<legend>
+									<span class="legenda">Dados Básicos</span>
+								</legend>
+								<div class="col-md-6">
+									<div class="md-form">
+										<input name="setor.descricao" id="descricao"
+											class="form-control" type="text" value="${setor.descricao}">
+										<label for="descricao">Descricao:</label>
+									</div>
 								</div>
-							</div>
+
+							</fieldset>
 
 						</div>
 
 
 						<div class="card-footer">
-							<button class="btn btn red accent-4" type="submit" name="_method" value="PUT">Salvar</button>
-							<button type="submit" class="btn btn-blue-grey" name="_method" value="DELETE">Excluir</button>
+							<button class="btn black" type="submit" name="_method"
+								value="PUT">Salvar</button>
+							<button type="submit" class="btn grey" name="_method"
+								value="DELETE">Excluir</button>
 						</div>
 					</form>
 				</div>

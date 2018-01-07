@@ -7,22 +7,25 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import br.ifsp.edu.pcp.model.Perfil;
-import br.ifsp.edu.pcp.model.Sessao;
 import br.ifsp.edu.pcp.model.Usuario;
+import br.ifsp.edu.pcp.util.Sessao;
 
 public class SessaoTest {
+	
+	private static Sessao sessao;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		Perfil perfil = new Perfil("PCP");
 		Usuario usuario = new Usuario("Usuario", "usuario", "12345", perfil);
-		Sessao.getInstance().setUsuario(usuario);
+	    sessao = new Sessao();
+		sessao.login(usuario);
 	}
 
 
 	@Test
 	public void obterUsuarioDaSessao() {
-		Usuario usuario = Sessao.getInstance().getUsuario();
+		Usuario usuario = sessao.getUsuario();
 		assertEquals("Usuario", usuario.getNome());
 		assertEquals("usuario", usuario.getLogin());
 		assertEquals("12345", usuario.getSenha());
@@ -31,7 +34,7 @@ public class SessaoTest {
 	
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-		Sessao.getInstance().encerrarSessao();
+		sessao.logout();
 		
 	}
 

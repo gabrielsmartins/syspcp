@@ -26,7 +26,7 @@ public class SessionController {
 	@Inject
 	private Sessao sessao;
 	
-	@Path("/login")
+	@Get("/login")
 	public void login() {
 		
 	}
