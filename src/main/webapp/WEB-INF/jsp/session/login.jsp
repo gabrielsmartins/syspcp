@@ -1,74 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<%@ include file="../common/import_css.jspf"%>
-<title>Autenticação</title>
+    <title>Autenticação de Usuário</title>
+    <%@ include file="../common/import_css.jspf"%>
+
+
 </head>
 
-<body class="app flex-row align-items-center">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-8">
-				<div class="card-group">
-					<div class="card p-4">
-						<div class="card-body">
-							<h1>Login</h1>
-							<p class="text-muted">Sign In to your account</p>
-							<form action="<c:url value='/session/autenticar'/>" method="POST">
-								<div class="input-group mb-3">
-									<div class="md-form">
-										<i class="fa fa-user prefix grey-text"></i> <input type="text"
-											id="usuario" class="form-control" name="usuario.login">
-										<label for="usuario">Usuário</label>
-									</div>
-								</div>
-								<div class="input-group mb-4">
-									<div class="md-form">
-										<i class="fa fa-lock prefix grey-text"></i> <input
-											type="password" id="senha" class="form-control"
-											name="usuario.senha"> <label for="senha">Senha</label>
-									</div>
-								</div>
-								
-								
-								<div class="row">
-									<div class="col-6">
-										<button type="submit" class="btn btn-primary px-4">Login</button>
-									</div>
-									<div class="col-6 text-right">
-										<button type="button" class="btn btn-link px-0">Forgot
-											password?</button>
-									</div>
-									<c:if test="${not empty mensagem}">
-										<p class="text-success">${mensagem}</p>
-									</c:if>
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="card text-white bg-primary py-5 d-md-down-none"
-						style="width: 44%">
-						<div class="card-body text-center">
-							<div>
-								<h2>Sign up</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-									sed do eiusmod tempor incididunt ut labore et dolore magna
-									aliqua.</p>
-								<button type="button" class="btn btn-primary active mt-3">Register
-									Now!</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<body class="fix-menu">
+    <section class="login p-fixed d-flex text-center bg-primary common-img-bg">
+        <!-- Container-fluid starts -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Authentication card start -->
+                    <div class="login-card card-block auth-body">
 
-	<!-- Bootstrap and necessary plugins -->
-	<%@ include file="../common/import_js.jspf"%>
-
+                        <form action="<c:url value='/session/autenticar'/>" method="POST" class="md-float-material">
+                            <div class="text-center">
+                                <img src="<c:url value='/resources/img/logo.png'/>" alt="logo.png" width="100" height="100">
+                            </div>
+                            <div class="auth-box">
+                                <div class="row m-b-20">
+                                    <div class="col-md-3">
+                                        <h3 class="text-center txt-primary">Login</h3>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <p class="text-inverse m-t-25 text-left">Não possui acesso? <a href=""> Registre-se </a> aqui!</p>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon-user"></i></span>
+                                    <input type="text" class="form-control" placeholder="Username" name="usuario.login">
+                                    <span class="md-line"></span>
+                                </div>
+                                <div class="input-group">
+                                   <span class="input-group-addon"><i class="icon-lock"></i></span>
+                                    <input type="password" class="form-control" placeholder="password" name="usuario.senha">
+                                    <span class="md-line"></span>
+                                </div>
+                                <div class="row m-t-25 text-left">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="checkbox-fade fade-in-primary">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                <span class="text-inverse">Remember me</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12 forgot-phone text-right">
+                                        <a href="auth-reset-password.html" class="text-right f-w-600 text-inverse"> Forget Password?</a>
+                                    </div>
+                                </div>
+                                <div class="row m-t-30">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">LOGIN</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- end of form -->
+                    </div>
+                    <!-- Authentication card end -->
+                </div>
+                <!-- end of col-sm-12 -->
+            </div>
+            <!-- end of row -->
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+    
+    <!-- Required Jquery -->
+    <%@ include file="../common/import_js.jspf"%>
 </body>
+
 </html>

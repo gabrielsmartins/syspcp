@@ -1,29 +1,32 @@
 <%@ include file="import_jstl.jspf"%>
 
-<!-- Bootstrap and necessary plugins -->
-<script src="<c:url value='/resources/coreui/js/common/jquery-3.2.1.min.js'/>"></script>
-<script src="<c:url value='/resources/coreui/js/common/popper.min.js'/>"></script>
-<script src="<c:url value='/resources/coreui/js/common/bootstrap.js'/>"></script>
-<script src="<c:url value='/resources/coreui/js/common/pace.min.js'/>"></script>
-<script src="<c:url value='/resources/coreui/js/common/mdb.js'/>"></script>
 
-<!-- Plugins and scripts required by all views -->
-<script src="<c:url value='/resources/coreui/js/common/Chart.min.js'/>"></script>
+<!-- Required Jquery -->
+<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/jquery/dist/jquery.min.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/jquery-ui/jquery-ui.min.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/tether/dist/js/tether.min.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/bootstrap/dist/js/bootstrap.min.js'/>"></script>
 
-<!-- CoreUI main scripts -->
-<script src="<c:url value='/resources/coreui/js/app.js'/>"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/jquery-slimscroll/jquery.slimscroll.js'/>"></script>
 
-<!-- Plugins and scripts required by this views -->
+<!-- modernizr js -->
+<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/modernizr/modernizr.js'/>"></script>
+ <script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/modernizr/feature-detects/css-scrollbars.js'/>"></script>
 
-<!-- Custom scripts required by this view -->
+<!-- Morris Chart js -->
+<script src="<c:url value='/resources/mashable-lite/assets/plugins/raphael/raphael.min.js'/>"></script>
+<script src="<c:url value='/resources/mashable-lite/assets/plugins/morris.js/morris.js'/>"></script>
 
-<script src="<c:url value='/resources/coreui/js/common/main.js'/>"></script>
+<!-- echart js -->
+<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/pages/chart/echarts/js/echarts-all.js'/>" ></script>
 
+<!-- Morris Chart Custom js -->
+<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/pages/dashboard/project-dashboard.js'/>"></script>
 
-<script type="text/javascript">
+<!-- Custom js -->
+<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/js/script.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/js/pcoded.min.js'/>"></script>
+<script  type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/js/demo-12.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/js/jquery.mCustomScrollbar.concat.min.js'/>"></script>
 
-$(document).ready(function() {
-    $('.mdb-select').material_select();
-  });
-
-</script>
