@@ -114,6 +114,29 @@
 				</ul></li>
 		</ul>
 		
+		
+		<ul class="pcoded-item pcoded-left-item">
+			<li class="pcoded-hasmenu"><a href="javascript:void(0)"> <span
+					class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span> <span
+					class="pcoded-mtext">Operações</span> <span class="pcoded-mcaret"></span>
+			</a>
+				<ul class="pcoded-submenu">
+					<li class=" "><a href="<c:url value='/operacoes/form'/>"> <span
+							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
+							class="pcoded-mtext">Novo</span> <span class="pcoded-mcaret"></span>
+					</a></li>
+					<li class=" "><a href="<c:url value='/operacoes/'/>"> <span
+							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
+							class="pcoded-mtext">Consultar</span> <span class="pcoded-mcaret"></span>
+					</a></li>
+					<li class=" "><a href="button.html"> <span
+							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
+							class="pcoded-mtext">Relatório</span> <span class="pcoded-mcaret"></span>
+					</a></li>
+
+				</ul></li>
+		</ul>
+		
 		<ul class="pcoded-item pcoded-left-item">
 			<li class="pcoded-hasmenu"><a href="javascript:void(0)"> <span
 					class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span> <span
@@ -124,7 +147,7 @@
 							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
 							class="pcoded-mtext">Novo</span> <span class="pcoded-mcaret"></span>
 					</a></li>
-					<li class=" "><a href="breadcrumb.html"> <span
+					<li class=" "><a href="<c:url value='/unidades/'/>"> <span
 							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
 							class="pcoded-mtext">Consultar</span> <span class="pcoded-mcaret"></span>
 					</a></li>
@@ -144,11 +167,11 @@
 					class="pcoded-mtext">Recursos</span> <span class="pcoded-mcaret"></span>
 			</a>
 				<ul class="pcoded-submenu">
-					<li class=" "><a href="accordion.html"> <span
+					<li class=" "><a href="<c:url value='/recursos/form'/>"> <span
 							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
 							class="pcoded-mtext">Novo</span> <span class="pcoded-mcaret"></span>
 					</a></li>
-					<li class=" "><a href="breadcrumb.html"> <span
+					<li class=" "><a href="<c:url value='/recursos/'/>"> <span
 							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
 							class="pcoded-mtext">Consultar</span> <span class="pcoded-mcaret"></span>
 					</a></li>
@@ -167,11 +190,11 @@
 					class="pcoded-mtext">Setores</span> <span class="pcoded-mcaret"></span>
 			</a>
 				<ul class="pcoded-submenu">
-					<li class=" "><a href="accordion.html"> <span
+					<li class=" "><a href="<c:url value='/setores/form'/>"> <span
 							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
 							class="pcoded-mtext">Novo</span> <span class="pcoded-mcaret"></span>
 					</a></li>
-					<li class=" "><a href="breadcrumb.html"> <span
+					<li class=" "><a href="<c:url value='/setores/'/>"> <span
 							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
 							class="pcoded-mtext">Consultar</span> <span class="pcoded-mcaret"></span>
 					</a></li>

@@ -1,66 +1,67 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
+<title>Recurso - Lista</title>
 <%@ include file="../common/import_css.jspf"%>
-
-<title>Consultar - Operação</title>
 </head>
 
-<body
-	class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+<body>
+	<!-- Pre-loader start -->
+	<div class="theme-loader">
+		<div class="ball-scale">
+			<div></div>
+		</div>
+	</div>
+	<!-- Pre-loader end -->
 
-	<%@ include file="../common/navbar.jspf"%>
+	<div id="pcoded" class="pcoded">
+		<div class="pcoded-overlay-box"></div>
+		<div class="pcoded-container navbar-wrapper">
 
+			<%@ include file="../common/navbar.jspf"%>
+			<div class="pcoded-main-container">
+				<div class="pcoded-wrapper">
 
+					<%@ include file="../common/sidebar.jspf"%>
 
-	<div class="app-body">
+					<div class="pcoded-content">
 
+						<div class="pcoded-inner-content">
 
-		<%@ include file="../common/sidebar.jspf"%>
+							<div class="main-body">
+								<div class="page-wrapper">
+									<div class="page-header">
+										<div class="page-header-title">
+											<h4>Material - Lista</h4>
+										</div>
+										<div class="page-header-breadcrumb">
+											<ul class="breadcrumb-title">
+												<li class="breadcrumb-item"><a href="#!"> <i
+														class="icofont icofont-home"></i>
+												</a></li>
+												<li class="breadcrumb-item"><a href="#!">Dashboard</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="page-body">
 
+										<!-- Start Message -->
+										<c:if test="${not empty mensagem}">
+											<div class="alert alert-success" role="alert">${mensagem}</div>
+										</c:if>
 
+										<div class="card">
+											<div class="card-header">
+												<i class="fa fa-align-justify"></i> <strong>Material
+													- Lista</strong>
+											</div>
+											<div class="card-body">
 
-		<main class="main"> <!-- Breadcrumb -->
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">Home</li>
-			<li class="breadcrumb-item"><a href="#">Operacao</a></li>
-			<li class="breadcrumb-item active">Consultar</li>
-
-			<!-- Breadcrumb Menu-->
-			<li class="breadcrumb-menu d-md-down-none">
-				<div class="btn-group" role="group" aria-label="Button group">
-					<a class="btn" href="#"><i class="icon-speech"></i></a> <a
-						class="btn" href="./"><i class="icon-graph"></i>
-						&nbsp;Dashboard</a> <a class="btn" href="#"><i
-						class="icon-settings"></i> &nbsp;Settings</a>
-				</div>
-			</li>
-		</ol>
-
-		<div class="container-fluid">
-
-			<div class="animated fadeIn">
-
-
-
-				<!-- Start Message -->
-				<c:if test="${not empty mensagem}">
-					<div class="alert alert-success" role="alert">${mensagem}</div>
-				</c:if>
-
-				<div class="card">
-					<div class="card-header">
-						<i class="fa fa-align-justify"></i> <strong>Operacao -
-							Lista</strong>
-					</div>
-					<div class="card-body">
-						<table
-							class="table table-bordered table-striped table-sm table-hover">
+												<div class="col-sm-12">
+													<table
+							class="table table-bordered table-striped table-sm table-hover table-responsive">
 							<thead>
 								<tr>
 									<th><strong>ID</strong></th>
@@ -89,37 +90,45 @@
 
 							</tbody>
 
+
 						</table>
-						<nav>
-							<ul class="pagination">
-								<li class="page-item"><a class="page-link" href="#">Prev</a></li>
-								<li class="page-item active"><a class="page-link" href="#">1</a>
-								</li>
-								<li class="page-item"><a class="page-link" href="#">2</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
-								<li class="page-item"><a class="page-link" href="#">4</a></li>
-								<li class="page-item"><a class="page-link" href="#">Next</a></li>
-							</ul>
-						</nav>
+
+													<nav>
+														<ul class="pagination">
+															<li class="page-item"><a class="page-link" href="#">Prev</a></li>
+															<li class="page-item active"><a class="page-link"
+																href="#">1</a></li>
+															<li class="page-item"><a class="page-link" href="#">2</a></li>
+															<li class="page-item"><a class="page-link" href="#">3</a></li>
+															<li class="page-item"><a class="page-link" href="#">4</a></li>
+															<li class="page-item"><a class="page-link" href="#">Next</a></li>
+														</ul>
+													</nav>
+												</div>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+							</div>
+							<!--<div id="styleSelector">-->
+
+							<!--</div>-->
+						</div>
 					</div>
 				</div>
-
-
-
-				<!--/.row-->
 			</div>
-
-
-
 		</div>
-		<!-- /.conainer-fluid --> </main>
 
-
-
-		<%@ include file="../common/sidebar_right.jspf"%>
 	</div>
 
 
-	<%@ include file="../common/footer.jspf"%>
+
+
 	<%@ include file="../common/import_js.jspf"%>
+
+
+</body>
+
 </html>

@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-<title>Home</title>
+<title>Material - Lista</title>
 <%@ include file="../common/import_css.jspf"%>
 </head>
 

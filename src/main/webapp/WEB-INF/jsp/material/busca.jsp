@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-<title>Material - Novo</title>
+<title>Material - Editar</title>
 <%@ include file="../common/import_css.jspf"%>
 </head>
 

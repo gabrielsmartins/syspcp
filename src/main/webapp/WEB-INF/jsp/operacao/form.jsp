@@ -1,124 +1,144 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
+<title>Operacao - Novo</title>
 <%@ include file="../common/import_css.jspf"%>
-
-<title>Novo - Operacao</title>
 </head>
 
-<body
-	class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
-
-	<%@ include file="../common/navbar.jspf"%>
-
-
-
-	<div class="app-body">
-
-
-		<%@ include file="../common/sidebar.jspf"%>
-
-
-
-		<main class="main"> <!-- Breadcrumb -->
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">Home</li>
-			<li class="breadcrumb-item"><a href="#">Operacao</a></li>
-			<li class="breadcrumb-item active">Novo</li>
-
-			<!-- Breadcrumb Menu-->
-			<li class="breadcrumb-menu d-md-down-none">
-				<div class="btn-group" role="group" aria-label="Button group">
-					<a class="btn" href="#"><i class="icon-speech"></i></a> <a
-						class="btn" href="./"><i class="icon-graph"></i>
-						&nbsp;Dashboard</a> <a class="btn" href="#"><i
-						class="icon-settings"></i> &nbsp;Settings</a>
-				</div>
-			</li>
-		</ol>
-
-		<div class="container-fluid">
-
-			<div class="animated fadeIn">
-
-				<div class="card">
-					<div class="card-header">
-						<strong>Operacao - Novo</strong>
-					</div>
-
-					<form action="<c:url value='/operacoes/'/>" method="POST"
-						accept-charset="UTF-8">
-						<div class="card-body">
-
-
-							<fieldset>
-								<legend>
-									<span class="legenda">Dados Básicos</span>
-								</legend>
-								<div class="col-md-6">
-									<div class="md-form">
-										<input name="operacao.descricao" id="descricao"
-											class="form-control" type="text"> <label
-											for="descricao">Descricao:</label>
-									</div>
-								</div>
-
-
-								<div class="col-md-9">
-									<div class="md-form">
-										<textarea id="instrucao" class="md-textarea"
-											name="operacao.instrucao"></textarea>
-										<label for="form76">Instrução:</label>
-									</div>
-								</div>
-
-
-								<div class="col-md-6">
-									<label>Setor:</label> <select class="form-control"
-										name="operacao.setor.id">
-										<c:forEach items="${setores}" var="setor">
-											<option value="${setor.id}">${setor.descricao}</option>
-										</c:forEach>
-									</select>
-								</div>
-
-							</fieldset>
-						</div>
-
-						<div class="card-footer">
-							<button class="btn black" type="submit">Salvar</button>
-							<button type="reset" class="btn grey">Cancelar</button>
-						</div>
-
-
-
-					</form>
-				</div>
-
-
-
-				<!--/.row-->
-			</div>
-
-
-
+<body>
+	<!-- Pre-loader start -->
+	<div class="theme-loader">
+		<div class="ball-scale">
+			<div></div>
 		</div>
-		<!-- /.conainer-fluid --> </main>
+	</div>
+	<!-- Pre-loader end -->
+
+	<div id="pcoded" class="pcoded">
+		<div class="pcoded-overlay-box"></div>
+		<div class="pcoded-container navbar-wrapper">
+
+			<%@ include file="../common/navbar.jspf"%>
+			<div class="pcoded-main-container">
+				<div class="pcoded-wrapper">
+
+					<%@ include file="../common/sidebar.jspf"%>
+
+					<div class="pcoded-content">
+
+						<div class="pcoded-inner-content">
+
+							<div class="main-body">
+								<div class="page-wrapper">
+									<div class="page-header">
+										<div class="page-header-title">
+											<h4>Operacao - Novo</h4>
+										</div>
+										<div class="page-header-breadcrumb">
+											<ul class="breadcrumb-title">
+												<li class="breadcrumb-item"><a href="#!"> <i
+														class="icofont icofont-home"></i>
+												</a></li>
+												<li class="breadcrumb-item"><a href="#!">Dashboard</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="page-body">
+
+										<form action="<c:url value='/operacoes/'/>" method="POST"
+											accept-charset="UTF-8">
+											<div class="card-body z-depth-0">
+												<div class="row">
+													<div class="col-sm-12">
+														<!-- Basic Form Inputs card start -->
+														<div class="card">
+															<div class="card-header">
+																<h5>Dados Basicos</h5>
+																<div class="card-header-right">
+																	<i class="icofont icofont-rounded-down"></i> <i
+																		class="icofont icofont-refresh"></i>
+																</div>
+															</div>
+															<div class="card-block" style="">
+																<h4 class="sub-title">Informacoes Basicas</h4>
+
+																<div class="form-group row">
+																	<label class="col-sm-2 col-form-label">Descricao:</label>
+																	<div class="col-sm-6">
+																		<input class="form-control" placeholder="Descricao"
+																			type="text" name="operacao.descricao">
+																	</div>
+																</div>
 
 
+																<div class="form-group row">
+																	<label class="col-sm-2 col-form-label">Descricao:</label>
+																	<div class="col-sm-6">
+																		<textarea id="instrucao" class="form-control"
+																			name="operacao.instrucao"></textarea>
+																	</div>
+																</div>
 
-		<%@ include file="../common/sidebar_right.jspf"%>
+
+																<div class="form-group row">
+																	<label class="col-sm-2 col-form-label">Setor:</label>
+																	<div class="col-sm-6">
+																		<select class="form-control" name="operacao.setor.id">
+																			<c:forEach items="${setores}" var="setor">
+																				<option value="${setor.id}">${setor.descricao}</option>
+																			</c:forEach>
+																		</select>
+																	</div>
+																</div>
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+
+											<div class="card-footer z-depth-0">
+												<button class="btn btn-primary" type="submit">Salvar</button>
+												<button type="reset" class="btn btn-default">Cancelar</button>
+											</div>
+
+										</form>
+
+									</div>
+								</div>
+							</div>
+							<!--<div id="styleSelector">-->
+
+							<!--</div>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 
-	<%@ include file="../common/footer.jspf"%>
+
+
 	<%@ include file="../common/import_js.jspf"%>
+
+
+</body>
+
 </html>
+
+
+
+
+
+
+
+
+
 
 
 
