@@ -218,7 +218,6 @@
 
 
 
-		<%@ include file="../common/sidebar_right.jspf"%>
 	</div>
 
 

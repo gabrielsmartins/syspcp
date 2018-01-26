@@ -1,32 +1,53 @@
 <%@ include file="import_jstl.jspf"%>
 
 
-<!-- Required Jquery -->
-<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/jquery/dist/jquery.min.js'/>"></script>
-<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/jquery-ui/jquery-ui.min.js'/>"></script>
-<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/tether/dist/js/tether.min.js'/>"></script>
-<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/bootstrap/dist/js/bootstrap.min.js'/>"></script>
+ <!-- Required Jqurey -->
+   <script src="<c:url value='/resources/quantum-able/assets/plugins/Jquery/dist/jquery.min.js'/>"></script>
+   <script src="<c:url value='/resources/quantum-able/assets/plugins/jquery-ui/jquery-ui.min.js'/>"></script>
+   <script src="<c:url value='/resources/quantum-able/assets/plugins/tether/dist/js/tether.min.js'/>"></script>
 
-<!-- jquery slimscroll js -->
-<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/jquery-slimscroll/jquery.slimscroll.js'/>"></script>
+   <!-- Required Fremwork -->
+   <script src="<c:url value='/resources/quantum-able/assets/plugins/bootstrap/js/bootstrap.min.js'/>"></script>
 
-<!-- modernizr js -->
-<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/modernizr/modernizr.js'/>"></script>
- <script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/plugins/modernizr/feature-detects/css-scrollbars.js'/>"></script>
+   <!-- Scrollbar JS-->
+   <script src="<c:url value='/resources/quantum-able/assets/plugins/jquery-slimscroll/jquery.slimscroll.js'/>"></script>
+   <script src="<c:url value='/resources/quantum-able/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js'/>"></script>
 
-<!-- Morris Chart js -->
-<script src="<c:url value='/resources/mashable-lite/assets/plugins/raphael/raphael.min.js'/>"></script>
-<script src="<c:url value='/resources/mashable-lite/assets/plugins/morris.js/morris.js'/>"></script>
+   <!--classic JS-->
+   <script src="<c:url value='/resources/quantum-able/assets/plugins/classie/classie.js'/>"></script>
 
-<!-- echart js -->
-<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/pages/chart/echarts/js/echarts-all.js'/>" ></script>
+   <!-- notification -->
+   <script src="assets/plugins/notification/js/bootstrap-growl.min.js"></script>
 
-<!-- Morris Chart Custom js -->
-<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/pages/dashboard/project-dashboard.js'/>"></script>
+   <!-- Sparkline charts -->
+   <script src="<c:url value='/resources/quantum-able/assets/plugins/notification/js/bootstrap-growl.min.js'/>"></script>
 
-<!-- Custom js -->
-<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/js/script.js'/>"></script>
-<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/js/pcoded.min.js'/>"></script>
-<script  type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/js/demo-12.js'/>"></script>
-<script type="text/javascript" src="<c:url value='/resources/mashable-lite/assets/js/jquery.mCustomScrollbar.concat.min.js'/>"></script>
+   <!-- Counter js  -->
+   <script src="<c:url value='/resources/quantum-able/assets/plugins/waypoints/jquery.waypoints.min.js'/>"></script>
+   <script src="<c:url value='/resources/quantum-able/assets/plugins/countdown/js/jquery.counterup.js'/>"></script>
+
+   <!-- Echart js -->
+   <script src="<c:url value='/resources/quantum-able/assets/plugins/charts/echarts/js/echarts-all.js'/>"></script>
+
+   <script src="https://code.highcharts.com/highcharts.js"></script>
+   <script src="https://code.highcharts.com/modules/exporting.js"></script>
+   <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+
+   <!-- custom js -->
+   <script type="text/javascript" src="<c:url value='/resources/quantum-able/assets/js/main.min.js'/>"></script>
+   <script type="text/javascript" src="<c:url value='/resources/quantum-able/assets/pages/dashboard.js'/>"></script>
+   <script type="text/javascript" src="assets/pages/elements.js"></script>
+   <script type="text/javascript" src="<c:url value='/resources/quantum-able/assets/pages/elements.js'/>"></script>
+<script>
+var $window = $(window);
+var nav = $('.fixed-button');
+$window.scroll(function(){
+    if ($window.scrollTop() >= 200) {
+       nav.addClass('active');
+    }
+    else {
+       nav.removeClass('active');
+    }
+});
+</script>
 

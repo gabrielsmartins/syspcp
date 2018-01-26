@@ -1,245 +1,139 @@
-<nav class="pcoded-navbar">
-	<div class="sidebar_toggle">
-		<a href="#"><i class="icon-close icons"></i></a>
-	</div>
-	<div class="pcoded-inner-navbar main-menu">
-
-		<div class="pcoded-navigatio-lavel">PCP</div>
-		<ul class="pcoded-item pcoded-left-item">
-			<li class="active pcoded-trigger "><a href="index.html "> <span
-					class="pcoded-micon"><i class="ti-comments"></i></span> <span
-					class="pcoded-mtext">Dashboard</span> <span class="pcoded-mcaret"></span>
+<aside class="main-sidebar hidden-print ">
+	<section class="sidebar" id="sidebar-scroll">
+		<!-- Sidebar Menu-->
+		<ul class="sidebar-menu">
+			<li class="nav-level">--- Navigation</li>
+			<li class="active treeview"><a class="waves-effect waves-dark"
+				href="index.html"> <i class="icon-speedometer"></i><span>
+						Dashboard</span>
 			</a></li>
+			
+			<li class="nav-level">--- PCP</li>
+			<li class="treeview"><a class="waves-effect waves-dark"
+				href="#!"><i class="icon-briefcase"></i><span> Ordem de Produção</span><i
+					class="icon-arrow-down"></i></a>
+				<ul class="treeview-menu">
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Emitir</a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Consultar</a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Relatório</a></li>
+				</ul></li>
+
+			<li class="treeview"><a class="waves-effect waves-dark"
+				href="#!"><i class="icon-briefcase"></i><span> Requisição Material</span><i
+					class="icon-arrow-down"></i></a>
+				<ul class="treeview-menu">
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Emitir</a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Consultar</a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Relatório</a></li>
+				</ul>
+				</li>
+
+
+
+			<li class="treeview"><a class="waves-effect waves-dark"
+				href="#!"><i class="icon-briefcase"></i><span> Estoque</span><i
+					class="icon-arrow-down"></i></a>
+				<ul class="treeview-menu">
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Novo</a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Consultar</a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Relatório</a></li>
+				</ul></li>
+			
+			
+			
+			
+			
+			
+			<li class="nav-level">--- ENGENHARIA</li>
+			<li class="treeview"><a class="waves-effect waves-dark"
+				href="#!"><i class="icon-briefcase"></i><span> Unidades</span><i
+					class="icon-arrow-down"></i></a>
+				<ul class="treeview-menu">
+					<li><a class="waves-effect waves-dark" href="<c:url value='/unidades/form'/>"><i
+							class="icon-arrow-right"></i> Novo</a></li>
+					<li><a class="waves-effect waves-dark" href="<c:url value='/materiais/'/>"><i
+							class="icon-arrow-right"></i> Consultar</a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Relatório</a></li>
+				</ul></li>
+
+			<li class="treeview"><a class="waves-effect waves-dark"
+				href="#!"><i class="icon-briefcase"></i><span> Produtos</span><i
+					class="icon-arrow-down"></i></a>
+				<ul class="treeview-menu">
+					<li><a class="waves-effect waves-dark" href="<c:url value='/produtos/form'/>"><i
+							class="icon-arrow-right"></i> Novo</a></li>
+					<li><a class="waves-effect waves-dark" href="<c:url value='/produtos/'/>"><i
+							class="icon-arrow-right"></i> Consultar</a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Relatório</a></li>
+				</ul>
+				</li>
+
+			<li class="treeview"><a class="waves-effect waves-dark"
+				href="#!"><i class="icon-briefcase"></i><span> Materiais</span><i
+					class="icon-arrow-down"></i></a>
+				<ul class="treeview-menu">
+					<li><a class="waves-effect waves-dark" href="<c:url value='/materiais/form'/>"><i
+							class="icon-arrow-right"></i> Novo</a></li>
+					<li><a class="waves-effect waves-dark" href="<c:url value='/materiais/'/>"><i
+							class="icon-arrow-right"></i> Consultar</a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Relatório</a></li>
+				</ul></li>
+
+			<li class="treeview"><a class="waves-effect waves-dark"
+				href="#!"><i class="icon-briefcase"></i><span> Operações</span><i
+					class="icon-arrow-down"></i></a>
+				<ul class="treeview-menu">
+					<li><a class="waves-effect waves-dark" href="<c:url value='/operacoes/form'/>"><i
+							class="icon-arrow-right"></i> Novo</a></li>
+					<li><a class="waves-effect waves-dark" href="<c:url value='/materiais/'/>"><i
+							class="icon-arrow-right"></i> Consultar</a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Relatório</a></li>
+				</ul></li>
+
+
+
+			<li class="nav-level">--- PRODUÇÃO</li>
+
+			<li class="treeview"><a class="waves-effect waves-dark"
+				href="#!"><i class="icon-briefcase"></i><span> Setores</span><i
+					class="icon-arrow-down"></i></a>
+				<ul class="treeview-menu">
+					<li><a class="waves-effect waves-dark" href="<c:url value='/setores/form'/>"><i
+							class="icon-arrow-right"></i> Novo</a></li>
+					<li><a class="waves-effect waves-dark" href="<c:url value='/setores/'/>"><i
+							class="icon-arrow-right"></i> Consultar</a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Relatório</a></li>
+				</ul>
+				</li>
+				
+				<li class="treeview"><a class="waves-effect waves-dark"
+				href="#!"><i class="icon-briefcase"></i><span> Recursos</span><i
+					class="icon-arrow-down"></i></a>
+				<ul class="treeview-menu">
+					<li><a class="waves-effect waves-dark" href="<c:url value='/recursos/form'/>"><i
+							class="icon-arrow-right"></i> Novo</a></li>
+					<li><a class="waves-effect waves-dark" href="<c:url value='/recursos/'/>"><i
+							class="icon-arrow-right"></i> Consultar</a></li>
+					<li><a class="waves-effect waves-dark" href="#"><i
+							class="icon-arrow-right"></i> Relatório</a></li>
+				</ul>
+				</li>
+
+	
 		</ul>
-		<ul class="pcoded-item pcoded-left-item">
-			<li class="pcoded-hasmenu"><a href="javascript:void(0)"> <span
-					class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span> <span
-					class="pcoded-mtext">Ordem de Produção</span> <span
-					class="pcoded-mcaret"></span>
-			</a>
-				<ul class="pcoded-submenu">
-					<li class=" "><a href="#"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Emitir</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="breadcrumb.html"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Consultar</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="#"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Relatório</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-
-				</ul></li>
-			<li class="pcoded-hasmenu"><a href="javascript:void(0)"> <span
-					class="pcoded-micon"><i class="ti-crown"></i></span> <span
-					class="pcoded-mtext">Requisão de Material</span> <span
-					class="pcoded-mcaret"></span>
-			</a>
-				<ul class="pcoded-submenu">
-					<li class=" "><a href="#"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Emitir</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="#"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Consultar</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="#"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Relatório</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-				</ul></li>
-			<li class="pcoded-hasmenu"><a href="javascript:void(0)"> <span
-					class="pcoded-micon"><i class="ti-star"></i></span> <span
-					class="pcoded-mtext">Programações</span> <span
-					class="pcoded-mcaret"></span>
-			</a>
-				<ul class="pcoded-submenu">
-					<li class=" "><a href="#"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Themify</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="#"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Ico Fonts</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-				</ul></li>
-		</ul>
-		<div class="pcoded-navigatio-lavel">ENGENHARIA</div>
-
-		<ul class="pcoded-item pcoded-left-item">
-			<li class="pcoded-hasmenu"><a href="javascript:void(0)"> <span
-					class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span> <span
-					class="pcoded-mtext">Produtos</span> <span class="pcoded-mcaret"></span>
-			</a>
-				<ul class="pcoded-submenu">
-					<li class=" "><a href="<c:url value='/produtos/form'/>"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Novo</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="<c:url value='/produtos/'/>"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Consultar</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="button.html"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Relatório</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-
-				</ul></li>
-
-		</ul>
-
-		<ul class="pcoded-item pcoded-left-item">
-			<li class="pcoded-hasmenu"><a href="javascript:void(0)"> <span
-					class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span> <span
-					class="pcoded-mtext">Materiais</span> <span class="pcoded-mcaret"></span>
-			</a>
-				<ul class="pcoded-submenu">
-					<li class=" "><a href="<c:url value='/materiais/form'/>"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Novo</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="<c:url value='/materiais/'/>"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Consultar</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="button.html"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Relatório</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-
-				</ul></li>
-		</ul>
-		
-		
-		<ul class="pcoded-item pcoded-left-item">
-			<li class="pcoded-hasmenu"><a href="javascript:void(0)"> <span
-					class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span> <span
-					class="pcoded-mtext">Operações</span> <span class="pcoded-mcaret"></span>
-			</a>
-				<ul class="pcoded-submenu">
-					<li class=" "><a href="<c:url value='/operacoes/form'/>"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Novo</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="<c:url value='/operacoes/'/>"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Consultar</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="button.html"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Relatório</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-
-				</ul></li>
-		</ul>
-		
-		<ul class="pcoded-item pcoded-left-item">
-			<li class="pcoded-hasmenu"><a href="javascript:void(0)"> <span
-					class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span> <span
-					class="pcoded-mtext">Unidade de Medida</span> <span class="pcoded-mcaret"></span>
-			</a>
-				<ul class="pcoded-submenu">
-					<li class=" "><a href="<c:url value='/unidades/form'/>"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Novo</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="<c:url value='/unidades/'/>"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Consultar</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="button.html"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Relatório</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-
-				</ul></li>
-		</ul>
-
-
-		<div class="pcoded-navigatio-lavel">Produção</div>
-		<ul class="pcoded-item pcoded-left-item">
-			<li class="pcoded-hasmenu"><a href="javascript:void(0)"> <span
-					class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span> <span
-					class="pcoded-mtext">Recursos</span> <span class="pcoded-mcaret"></span>
-			</a>
-				<ul class="pcoded-submenu">
-					<li class=" "><a href="<c:url value='/recursos/form'/>"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Novo</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="<c:url value='/recursos/'/>"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Consultar</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="button.html"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Relatório</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-
-				</ul></li>
-		</ul>
-
-
-		<ul class="pcoded-item pcoded-left-item">
-			<li class="pcoded-hasmenu"><a href="javascript:void(0)"> <span
-					class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span> <span
-					class="pcoded-mtext">Setores</span> <span class="pcoded-mcaret"></span>
-			</a>
-				<ul class="pcoded-submenu">
-					<li class=" "><a href="<c:url value='/setores/form'/>"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Novo</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="<c:url value='/setores/'/>"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Consultar</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-					<li class=" "><a href="button.html"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Relatório</span> <span class="pcoded-mcaret"></span>
-					</a></li>
-
-				</ul></li>
-		</ul>
-
-
-
-		<div class="pcoded-navigatio-lavel">Estoque</div>
-		<ul class="pcoded-item pcoded-left-item">
-			<li class="pcoded-hasmenu "><a href="javascript:void(0)"> <span
-					class="pcoded-micon"><i class="ti-direction-alt"></i></span> <span
-					class="pcoded-mtext">Produtos</span> <span class="pcoded-mcaret"></span>
-			</a>
-				<ul class="pcoded-submenu">
-					<li class=""><a href="javascript:void(0)"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Menu Level 2.1</span> <span
-							class="pcoded-mcaret"></span>
-					</a></li>
-					<li class="pcoded-hasmenu "><a href="javascript:void(0)">
-							<span class="pcoded-micon"><i class="ti-direction-alt"></i></span>
-							<span class="pcoded-mtext">Menu Level 2.2</span> <span
-							class="pcoded-mcaret"></span>
-					</a>
-						<ul class="pcoded-submenu">
-							<li class=""><a href="javascript:void(0)"> <span
-									class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-									class="pcoded-mtext">Menu Level 3.1</span> <span
-									class="pcoded-mcaret"></span>
-							</a></li>
-						</ul></li>
-					<li class=""><a href="javascript:void(0)"> <span
-							class="pcoded-micon"><i class="ti-angle-right"></i></span> <span
-							class="pcoded-mtext">Menu Level 2.3</span> <span
-							class="pcoded-mcaret"></span>
-					</a></li>
-
-				</ul></li>
-		</ul>
-
-	</div>
-</nav>
+	</section>
+</aside>
