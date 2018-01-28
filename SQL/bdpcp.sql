@@ -28,6 +28,36 @@ CREATE TABLE unidade(
 );
 
 
+
+CREATE TABLE setor(
+       setr_id SERIAL,
+       setr_desc VARCHAR(200) NOT NULL,
+       CONSTRAINT PK_setr_id PRIMARY KEY(setr_id),
+       CONSTRAINT UNQ_setor_desc UNIQUE(setr_desc)	
+);
+
+
+CREATE TABLE operacao(
+       oper_id SERIAL,
+       oper_desc VARCHAR(200) NOT NULL,
+       oper_instr VARCHAR(500) NOT NULL,
+       oper_setr_id INT NOT NULL,
+       CONSTRAINT PK_oper_id  PRIMARY KEY(oper_id),
+       CONSTRAINT FK_operacao_setor FOREIGN KEY(oper_setr_id) REFERENCES setor(setr_id),
+       CONSTRAINT UNQ_operacao_desc UNIQUE(oper_desc)	
+);
+
+
+CREATE TABLE recurso(
+       recr_id SERIAL,
+       recr_desc VARCHAR(200) NOT NULL,
+       recr_setr_id INT NOT NULL,
+       CONSTRAINT PK_recr_id PRIMARY KEY(recr_id),
+       CONSTRAINT FK_recurso_operacao FOREIGN KEY (recr_setr_id) REFERENCES setor(setr_id),
+       CONSTRAINT UNQ_recurso_desc UNIQUE(recr_desc)	
+);
+
+
 CREATE TABLE produto(
        prod_id SERIAL,
        prod_cod_intr VARCHAR(500) DEFAULT NULL,
@@ -61,35 +91,28 @@ CREATE TABLE estrutura_produto(
 );
 
 
-CREATE TABLE setor(
-       setr_id SERIAL,
-       setr_desc VARCHAR(200) NOT NULL,
-       CONSTRAINT PK_setr_id PRIMARY KEY(setr_id),
-       CONSTRAINT UNQ_setor_desc UNIQUE(setr_desc)	
+CREATE TABLE roteiro(
+             rot_prod_id INT NOT NULL,
+	     rot_oper_id INT NOT NULL,
+	     rot_seq INT NOT NULL,
+	     rot_tmp_stp TIME NOT NULL,
+	     rot_tmp_prd TIME NOT NULL,
+	     rot_tmp_fnl TIME NOT NULL,
+             CONSTRAINT PK_roteiro PRIMARY KEY(rot_prod_id,rot_oper_id,rot_seq),
+             CONSTRAINT FK_roteiro_produto FOREIGN KEY(rot_prod_id) REFERENCES produto(prod_id),
+             CONSTRAINT FK_roteiro_operacao FOREIGN KEY(rot_oper_id) REFERENCES operacao(oper_id)
 );
 
 
-CREATE TABLE operacao(
-       oper_id SERIAL,
-       oper_desc VARCHAR(200) NOT NULL,
-       oper_instr VARCHAR(500) NOT NULL,
-       oper_setr_id INT NOT NULL,
-       CONSTRAINT PK_oper_id  PRIMARY KEY(oper_id),
-       CONSTRAINT FK_operacao_setor FOREIGN KEY(oper_setr_id) REFERENCES setor(setr_id),
-       CONSTRAINT UNQ_operacao_desc UNIQUE(oper_desc)	
-);
 
 
-CREATE TABLE recurso(
-       recr_id SERIAL,
-       recr_desc VARCHAR(200) NOT NULL,
-       recr_setr_id INT NOT NULL,
-       CONSTRAINT PK_recr_id PRIMARY KEY(recr_id),
-       CONSTRAINT FK_recurso_operacao FOREIGN KEY (recr_setr_id) REFERENCES setor(setr_id),
-       CONSTRAINT UNQ_recurso_desc UNIQUE(recr_desc)	
-);
 
 
+SELECT * FROM roteiro;
+SELECT * FROM produto;
+SELECT * FROM estrutura_produto;
+SELECT * FROM setor;
+SELECT * FROM operacao;
 
 
 INSERT INTO perfil(perf_desc)VALUES('PCP');

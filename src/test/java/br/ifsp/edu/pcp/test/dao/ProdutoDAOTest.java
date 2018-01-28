@@ -2,6 +2,7 @@ package br.ifsp.edu.pcp.test.dao;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.time.LocalTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -12,10 +13,15 @@ import org.junit.Test;
 
 import br.ifsp.edu.pcp.dao.HibernateUtil;
 import br.ifsp.edu.pcp.dao.MaterialDAO;
+import br.ifsp.edu.pcp.dao.OperacaoDAO;
 import br.ifsp.edu.pcp.dao.ProdutoDAO;
+import br.ifsp.edu.pcp.dao.SetorDAO;
 import br.ifsp.edu.pcp.dao.UnidadeMedidaDAO;
 import br.ifsp.edu.pcp.model.Material;
+import br.ifsp.edu.pcp.model.Operacao;
 import br.ifsp.edu.pcp.model.Produto;
+import br.ifsp.edu.pcp.model.Roteiro;
+import br.ifsp.edu.pcp.model.Setor;
 import br.ifsp.edu.pcp.model.SituacaoProduto;
 import br.ifsp.edu.pcp.model.UnidadeMedida;
 
@@ -25,12 +31,16 @@ public class ProdutoDAOTest {
 	private static MaterialDAO materialDAO;
 	private static ProdutoDAO produtoDAO;
 	private static UnidadeMedida unidadeMedida;
+	private static SetorDAO setorDAO;
+	private static OperacaoDAO operacaoDAO;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		unidadeMedidaDAO = new UnidadeMedidaDAO();
 		materialDAO = new MaterialDAO();
 		produtoDAO = new ProdutoDAO();
+		setorDAO = new SetorDAO();
+		operacaoDAO = new OperacaoDAO();
 		unidadeMedida = new UnidadeMedida("Unidade", "UN");
 		unidadeMedidaDAO.salvar(unidadeMedida);
 	}
@@ -58,8 +68,33 @@ public class ProdutoDAOTest {
 		produto.setLargura(450.00);
 
 		produto.adicionarMaterial(material, 2.00);
+		
+		Setor setor1 = new Setor("CORTE A LASER");
+		Setor setor2 = new Setor("DOBRA");
+		
+		
+		setorDAO.salvar(setor1);
+		setorDAO.salvar(setor2);
+		
+		Operacao operacao1 = new Operacao("CORTE A LASER", "CORTAR CONFORME DESENHO", setor1);
+		Operacao operacao2 = new Operacao("DOBRA", "DOBRAR 90º", setor2);
+		
+		operacaoDAO.salvar(operacao1);
+		operacaoDAO.salvar(operacao2);
+		
+
+
+		
+	   Roteiro roteiro1 = new Roteiro(1L,operacao1, LocalTime.of(02, 05, 00), LocalTime.of(05, 50, 10),  LocalTime.of(02, 10, 05));
+	   Roteiro roteiro2 = new Roteiro(2L,operacao2, LocalTime.of(01, 10, 05), LocalTime.of(06, 35, 05),  LocalTime.of(00, 50, 30));
+	
+	    produto.adicionarRoteiro(roteiro1);
+	    produto.adicionarRoteiro(roteiro2);
+		
 		assertNotNull(produtoDAO.salvar(produto));
 	}
+	
+	
 
 	@Test
 	public void alteraProduto() {
@@ -137,6 +172,7 @@ public class ProdutoDAOTest {
 		entityManager.createNativeQuery("TRUNCATE TABLE estrutura_produto CASCADE").executeUpdate();
 		entityManager.createNativeQuery("TRUNCATE TABLE produto CASCADE").executeUpdate();
 		entityManager.createNativeQuery("TRUNCATE TABLE unidade CASCADE").executeUpdate();
+		entityManager.createNativeQuery("TRUNCATE TABLE setor CASCADE").executeUpdate();
 		entityManager.flush();
 		entityManager.getTransaction().commit();
 	}
