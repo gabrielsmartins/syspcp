@@ -1,13 +1,13 @@
 <%@ include file="import_jstl.jspf"%>
-<%@ page pageEncoding="UTF-8" %>
+<%@ page pageEncoding="UTF-8"%>
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-	
-	
-	
+
+
+
 <!-- Favicon icon -->
 <link rel="shortcut icon"
 	href="<c:url value='/resources/img/favicon.ico'/>" type="image/x-icon">
@@ -18,8 +18,15 @@
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700"
 	rel="stylesheet">
 
-	<!-- Font Awesome -->
-	<link href="<c:url value='/resources/quantum-able/assets/css/font-awesome.min.css'/>" rel="stylesheet" type="text/css">
+<!-- Custom Style  -->
+<link
+	href="<c:url value='/resources/quantum-able/assets/css/style.css'/>"
+	rel="stylesheet" type="text/css">
+
+<!-- Font Awesome -->
+<link
+	href="<c:url value='/resources/quantum-able/assets/css/font-awesome.min.css'/>"
+	rel="stylesheet" type="text/css">
 
 <!-- themify -->
 <link rel="stylesheet" type="text/css"
@@ -49,7 +56,8 @@
 
 
 <!-- Style.css -->
-<link rel="stylesheet" type="text/css" href="<c:url value='/resources/quantum-able/assets/css/main.css'/>">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/resources/quantum-able/assets/css/main.css'/>">
 
 <!-- Responsive.css-->
 <link rel="stylesheet" type="text/css"
@@ -57,10 +65,18 @@
 
 
 
+<!-- Select 2 css -->
+<link rel="stylesheet"
+	href="<c:url value='/resources/quantum-able/assets/plugins/select2/dist/css/select2.min.css'/>" />
+<link rel="stylesheet"
+	type="<c:url value='/resources/quantum-able/assets/plugins/select2/css/s2-docs.cs'/>">
 
 
 
-
-
+<!-- Multi Select css -->
+<link rel="stylesheet"
+	href="<c:url value='/resources/quantum-able/assets/plugins/bootstrap-multiselect/dist/css/bootstrap-multiselect.css'/>" />
+<link rel="stylesheet"
+	href="<c:url value='/resources/quantum-able/assets/plugins/multiselect/css/multi-select.css'/>" />
 
 

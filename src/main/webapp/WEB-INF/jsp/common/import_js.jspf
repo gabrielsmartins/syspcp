@@ -38,6 +38,35 @@
    <script type="text/javascript" src="<c:url value='/resources/quantum-able/assets/pages/dashboard.js'/>"></script>
    <script type="text/javascript" src="<c:url value='/resources/quantum-able/assets/pages/elements.js'/>"></script>
    <script type="text/javascript" src="<c:url value='/resources/quantum-able/assets/pages/elements.js'/>"></script>
+   
+   
+   
+   
+   
+   
+   
+   <!-- waves effects.js -->
+    <script type="text/javascript" src="<c:url value='/resources/quantum-able/assets/plugins/Waves/waves.min.js'/>"></script>
+
+
+ <!-- Select 2 js -->
+   <script type="text/javascript" type="text/javascript"src="<c:url value='/resources/quantum-able/assets/plugins/select2/dist/js/select2.full.min.js'/>"></script>
+
+   <!-- Max-Length js -->
+   <script type="text/javascript" src="<c:url value='/resources/quantum-able/assets/plugins/bootstrap-maxlength/src/bootstrap-maxlength.js'/>"></script>
+
+   <!-- Multi Select js -->
+   <script type="text/javascript" src="<c:url value='/resources/quantum-able/assets/plugins/bootstrap-multiselect/dist/js/bootstrap-multiselect.js'/>"></script>
+   <script type="text/javascript" src="<c:url value='/resources/quantum-able/assets/plugins/multiselect/js/jquery.multi-select.js'/>"></script>
+   <script type="text/javascript" src="<c:url value='/resources/quantum-able/assets/plugins/multi-select/js/jquery.quicksearch.js'/>"></script>
+
+
+
+   
+   
+   
+   
+   
 <script>
 var $window = $(window);
 var nav = $('.fixed-button');
