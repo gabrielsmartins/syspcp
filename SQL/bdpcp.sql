@@ -113,6 +113,7 @@ SELECT * FROM produto;
 SELECT * FROM estrutura_produto;
 SELECT * FROM setor;
 SELECT * FROM operacao;
+SELECT * FROM unidade;
 
 
 INSERT INTO perfil(perf_desc)VALUES('PCP');

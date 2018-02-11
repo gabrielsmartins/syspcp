@@ -1,159 +1,66 @@
-<header class="main-header-top hidden-print">
-         <a href="index.html" class="logo"><img class="img-fluid able-logo" src="<c:url value='/resources/img/logo.png'/>" width="50" height="50"  alt="WEB-PCP">WEB-PCP</a>
-         <nav class="navbar navbar-static-top">
-            <!-- Sidebar toggle button-->
-            <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
-            <ul class="top-nav lft-nav">
-               <li>
-                  <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
-                     <i class="ti-files"> </i><span> Files</span>
-                  </a>
-               </li>               
-               <li class="dropdown">
-                  <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
-                     <span>Dropdown </span><i class=" icofont icofont-simple-down"></i>
-                  </a>
-                  <ul class="dropdown-menu settings-menu">
-                     <li><a href="#">List item 1</a></li>
-                     <li><a href="#">List item 2</a></li>
-                     <li><a href="#">List item 3</a></li>
-                     <li><a href="#">List item 4</a></li>
-                     <li><a href="#">List item 5</a></li>
-                  </ul>
-               </li>
-               <li class="dropdown pc-rheader-submenu message-notification search-toggle">
-                  <a href="#!" id="morphsearch-search" class="drop icon-circle txt-white">
-                     <i class="ti-search"></i>
-                  </a>
-               </li>
-            </ul>
-            <!-- Navbar Right Menu-->
-            <div class="navbar-custom-menu f-right">
-      
-
-               <ul class="top-nav">
-                  <!--Notification Menu-->
-                    
-                  <li class="dropdown notification-menu">
-                     <a href="#!" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
-                        <i class="icon-bell"></i>
-                        <span class="badge badge-danger header-badge">9</span>
-                     </a>
-                     <ul class="dropdown-menu">
-                        <li class="not-head">You have <b class="text-primary">4</b> new notifications.</li>
-                        <li class="bell-notification">
-                           <a href="javascript:;" class="media">
-                              <span class="media-left media-icon">
-                    <img class="img-circle" src="<c:url value='/resources/img/avatar-1.png'/>" alt="User Image">
-                  </span>
-                              <div class="media-body"><span class="block">Lisa sent you a mail</span><span class="text-muted block-time">2min ago</span></div>
-                           </a>
+<nav class="navbar-color red accent-4">
+                <div class="nav-wrapper">
+                    <ul class="left">                      
+                      <li><h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><img src="<c:url value='/resources/img/logo_nav.png'/>" alt="PCP WEB" width="200" height="34" ></a> <span class="logo-text">Materialize</span></h1></li>
+                    </ul>
+                    <div class="header-search-wrapper hide-on-med-and-down">
+                        <i class="mdi-action-search"></i>
+                        <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize"/>
+                    </div>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light translation-button"  data-activates="translation-dropdown"><img src="images/flag-icons/United-States.png" alt="USA" /></a>
                         </li>
-                        <li class="bell-notification">
-                           <a href="javascript:;" class="media">
-                              <span class="media-left media-icon">
-                    <img class="img-circle" src="assets/images/avatar-2.png" alt="User Image">
-                  </span>
-                              <div class="media-body"><span class="block">Server Not Working</span><span class="text-muted block-time">20min ago</span></div>
-                           </a>
+                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
                         </li>
-                        <li class="bell-notification">
-                           <a href="javascript:;" class="media"><span class="media-left media-icon">
-                    <img class="img-circle" src="assets/images/avatar-3.png" alt="User Image">
-                  </span>
-                                    <div class="media-body"><span class="block">Transaction xyz complete</span><span class="text-muted block-time">3 hours ago</span></div></a>
+                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light notification-button" data-activates="notifications-dropdown"><i class="mdi-social-notifications"><small class="notification-badge">5</small></i>
+                        
+                        </a>
+                        </li>                        
+                        <li><a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse"><i class="mdi-communication-chat"></i></a>
                         </li>
-                        <li class="not-footer">
-                           <a href="#!">See all notifications.</a>
-                        </li>
-                     </ul>
-                  </li>
-                  <!-- chat dropdown -->
-                  <li class="pc-rheader-submenu ">
-                     <a href="#!" class="drop icon-circle displayChatbox">
-                        <i class="icon-bubbles"></i>
-                        <span class="badge badge-danger header-badge">5</span>
-                     </a>
-
-                  </li>
-                  <!-- window screen -->
-                  <li class="pc-rheader-submenu">
-                     <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
-                        <i class="icon-size-fullscreen"></i>
-                     </a>
-
-                  </li>
-                  <!-- User Menu-->
-                  <li class="dropdown">
-                     <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
-                        <span><img class="img-circle " src="<c:url value='/resources/img/avatar-1.png'/>" style="width:40px;" alt="User Image"></span>
-                        <span><strong>${session.usuario.nome }</strong><i class=" icofont icofont-simple-down"></i></span>
-
-                     </a>
-                     <ul class="dropdown-menu settings-menu">
-                        <li><a href="#!"><i class="icon-settings"></i> Settings</a></li>
-                        <li><a href="#"><i class="icon-user"></i> Profile</a></li>
-                        <li><a href="#"><i class="icon-envelope-open"></i> My Messages</a></li>
-                        <li class="p-0">
-                           <div class="dropdown-divider m-0"></div>
-                        </li>
-                        <li><a href="#"><i class="icon-lock"></i> Lock Screen</a></li>
-                        <li><a href="<c:url value='/logout'/>"><i class="icon-logout"></i> Logout</a></li>
-
-                     </ul>
-                  </li>
-               </ul>
-
-               <!-- search -->
-               <div id="morphsearch" class="morphsearch">
-                  <form class="morphsearch-form">
-
-                     <input class="morphsearch-input" type="search" placeholder="Search..." />
-
-                     <button class="morphsearch-submit" type="submit">Search</button>
-
-                  </form>
-                  <div class="morphsearch-content">
-                     <div class="dummy-column">
-                        <h2>People</h2>
-                        <a class="dummy-media-object" href="#!">
-                           <img class="round" src="http://0.gravatar.com/avatar/81b58502541f9445253f30497e53c280?s=50&d=identicon&r=G" alt="Sara Soueidan" />
-                           <h3>Sara Soueidan</h3>
-                        </a>
-
-                        <a class="dummy-media-object" href="#!">
-                           <img class="round" src="http://1.gravatar.com/avatar/9bc7250110c667cd35c0826059b81b75?s=50&d=identicon&r=G" alt="Shaun Dona" />
-                           <h3>Shaun Dona</h3>
-                        </a>
-                     </div>
-                     <div class="dummy-column">
-                        <h2>Popular</h2>
-                        <a class="dummy-media-object" href="#!">
-                           <img src="assets/images/avatar-1.png" alt="PagePreloadingEffect" />
-                           <h3>Page Preloading Effect</h3>
-                        </a>
-
-                        <a class="dummy-media-object" href="#!">
-                           <img src="assets/images/avatar-1.png" alt="DraggableDualViewSlideshow" />
-                           <h3>Draggable Dual-View Slideshow</h3>
-                        </a>
-                     </div>
-                     <div class="dummy-column">
-                        <h2>Recent</h2>
-                        <a class="dummy-media-object" href="#!">
-                           <img src="assets/images/avatar-1.png" alt="TooltipStylesInspiration" />
-                           <h3>Tooltip Styles Inspiration</h3>
-                        </a>
-                        <a class="dummy-media-object" href="#!">
-                           <img src="assets/images/avatar-1.png" alt="NotificationStyles" />
-                           <h3>Notification Styles Inspiration</h3>
-                        </a>
-                     </div>
-                  </div>
-                  <!-- /morphsearch-content -->
-                  <span class="morphsearch-close"><i class="icofont icofont-search-alt-1"></i></span>
-               </div>
-               <!-- search end -->
-            </div>
-         </nav>
-      </header>
+                    </ul>
+                    <!-- translation-button -->
+                    <ul id="translation-dropdown" class="dropdown-content">
+                      <li>
+                        <a href="#!"><img src="images/flag-icons/United-States.png" alt="English" />  <span class="language-select">English</span></a>
+                      </li>
+                      <li>
+                        <a href="#!"><img src="images/flag-icons/France.png" alt="French" />  <span class="language-select">French</span></a>
+                      </li>
+                      <li>
+                        <a href="#!"><img src="images/flag-icons/China.png" alt="Chinese" />  <span class="language-select">Chinese</span></a>
+                      </li>
+                      <li>
+                        <a href="#!"><img src="images/flag-icons/Germany.png" alt="German" />  <span class="language-select">German</span></a>
+                      </li>
+                      
+                    </ul>
+                    <!-- notifications-dropdown -->
+                    <ul id="notifications-dropdown" class="dropdown-content">
+                      <li>
+                        <h5>NOTIFICATIONS <span class="new badge">5</span></h5>
+                      </li>
+                      <li class="divider"></li>
+                      <li>
+                        <a href="#!"><i class="mdi-action-add-shopping-cart"></i> A new order has been placed!</a>
+                        <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">2 hours ago</time>
+                      </li>
+                      <li>
+                        <a href="#!"><i class="mdi-action-stars"></i> Completed the task</a>
+                        <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">3 days ago</time>
+                      </li>
+                      <li>
+                        <a href="#!"><i class="mdi-action-settings"></i> Settings updated</a>
+                        <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">4 days ago</time>
+                      </li>
+                      <li>
+                        <a href="#!"><i class="mdi-editor-insert-invitation"></i> Director meeting started</a>
+                        <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">6 days ago</time>
+                      </li>
+                      <li>
+                        <a href="#!"><i class="mdi-action-trending-up"></i> Generate monthly report</a>
+                        <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">1 week ago</time>
+                      </li>
+                    </ul>
+                </div>
+            </nav>

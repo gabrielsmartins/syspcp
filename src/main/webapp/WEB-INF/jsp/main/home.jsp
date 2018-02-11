@@ -6,510 +6,733 @@
   <%@ include file="../common/import_css.jspf"%>
 </head>
 
-<body class="sidebar-mini fixed">
-   <div class="loader-bg">
-      <div class="loader-bar">
-      </div>
-   </div>
-   <div class="wrapper">
-      <!-- Navbar-->
-      <%@ include file="../common/navbar.jspf"%>
-      <!-- Side-Nav-->
-         <%@ include file="../common/sidebar.jspf"%>
-      <!-- Sidebar chat start -->
-      <div id="sidebar" class="p-fixed header-users showChat">
-         <div class="had-container">
-            <div class="card card_main header-users-main">
-               <div class="card-content user-box">
-                  <div class="md-group-add-on p-20">
-                     <span class="md-add-on">
-                                    <i class="icofont icofont-search-alt-2 chat-search"></i>
-                                 </span>
-                     <div class="md-input-wrapper">
-                        <input type="text" class="md-form-control" name="username" id="search-friends">
-                        <label>Search</label>
-                     </div>
+<body>
+    <!-- Start Page Loading -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>        
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- End Page Loading -->
 
-                  </div>
-                  <div class="media friendlist-main">
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
 
-                     <h6>Friend List</h6>
+    <!-- START HEADER -->
+    <%@ include file="../common/header.jspf"%>
+    <!-- END HEADER -->
 
-                  </div>
-                  <div class="main-friend-list">
-                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
 
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
-                           <div class="live-status bg-success"></div>
+    <!-- START MAIN -->
+    <div id="main">
+        <!-- START WRAPPER -->
+        <div class="wrapper">
+
+            <!-- START LEFT SIDEBAR NAV-->
+             <%@ include file="../common/sidebar.jspf"%>
+            <!-- END LEFT SIDEBAR NAV-->
+
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+            <!-- START CONTENT -->
+            <section id="content">
+
+                <!--start container-->
+                <div class="container">
+
+                    <!--chart dashboard start-->
+                    <div id="chart-dashboard">
+                        <div class="row">
+                            <div class="col s12 m8 l8">
+                                <div class="card">
+                                    <div class="card-move-up waves-effect waves-block waves-light">
+                                        <div class="move-up cyan darken-1">
+                                            <div>
+                                                <span class="chart-title white-text">Revenue</span>
+                                                <div class="chart-revenue cyan darken-2 white-text">
+                                                    <p class="chart-revenue-total">$4,500.85</p>
+                                                    <p class="chart-revenue-per"><i class="mdi-navigation-arrow-drop-up"></i> 21.80 %</p>
+                                                </div>
+                                                <div class="switch chart-revenue-switch right">
+                                                    <label class="cyan-text text-lighten-5">
+                                                      Month
+                                                      <input type="checkbox">
+                                                      <span class="lever"></span> Year
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="trending-line-chart-wrapper">
+                                                <canvas id="trending-line-chart" height="70"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <a class="btn-floating btn-move-up waves-effect waves-light darken-2 right"><i class="mdi-content-add activator"></i></a>
+                                        <div class="col s12 m3 l3">
+                                            <div id="doughnut-chart-wrapper">
+                                                <canvas id="doughnut-chart" height="200"></canvas>
+                                                <div class="doughnut-chart-status">4500
+                                                    <p class="ultra-small center-align">Sold</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s12 m2 l2">
+                                            <ul class="doughnut-chart-legend">
+                                                <li class="mobile ultra-small"><span class="legend-color"></span>Mobile</li>
+                                                <li class="kitchen ultra-small"><span class="legend-color"></span> Kitchen</li>
+                                                <li class="home ultra-small"><span class="legend-color"></span> Home</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col s12 m5 l6">
+                                            <div class="trending-bar-chart-wrapper">
+                                                <canvas id="trending-bar-chart" height="90"></canvas>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">Revenue by Month <i class="mdi-navigation-close right"></i></span>
+                                        <table class="responsive-table">
+                                            <thead>
+                                                <tr>
+                                                    <th data-field="id">ID</th>
+                                                    <th data-field="month">Month</th>
+                                                    <th data-field="item-sold">Item Sold</th>
+                                                    <th data-field="item-price">Item Price</th>
+                                                    <th data-field="total-profit">Total Profit</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>January</td>
+                                                    <td>122</td>
+                                                    <td>100</td>
+                                                    <td>$122,00.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>February</td>
+                                                    <td>122</td>
+                                                    <td>100</td>
+                                                    <td>$122,00.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>March</td>
+                                                    <td>122</td>
+                                                    <td>100</td>
+                                                    <td>$122,00.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>April</td>
+                                                    <td>122</td>
+                                                    <td>100</td>
+                                                    <td>$122,00.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>May</td>
+                                                    <td>122</td>
+                                                    <td>100</td>
+                                                    <td>$122,00.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>June</td>
+                                                    <td>122</td>
+                                                    <td>100</td>
+                                                    <td>$122,00.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>July</td>
+                                                    <td>122</td>
+                                                    <td>100</td>
+                                                    <td>$122,00.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>August</td>
+                                                    <td>122</td>
+                                                    <td>100</td>
+                                                    <td>$122,00.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>Septmber</td>
+                                                    <td>122</td>
+                                                    <td>100</td>
+                                                    <td>$122,00.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>Octomber</td>
+                                                    <td>122</td>
+                                                    <td>100</td>
+                                                    <td>$122,00.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>11</td>
+                                                    <td>November</td>
+                                                    <td>122</td>
+                                                    <td>100</td>
+                                                    <td>$122,00.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>12</td>
+                                                    <td>December</td>
+                                                    <td>122</td>
+                                                    <td>100</td>
+                                                    <td>$122,00.00</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col s12 m4 l4">
+                                <div class="card">
+                                    <div class="card-move-up teal waves-effect waves-block waves-light">
+                                        <div class="move-up">
+                                            <p class="margin white-text">Browser Stats</p>
+                                            <canvas id="trending-radar-chart" height="114"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="card-content  teal darken-2">
+                                        <a class="btn-floating btn-move-up waves-effect waves-light darken-2 right"><i class="mdi-content-add activator"></i></a>
+                                        <div class="line-chart-wrapper">
+                                            <p class="margin white-text">Revenue by country</p>
+                                            <canvas id="line-chart" height="114"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">Revenue by country <i class="mdi-navigation-close right"></i></span>
+                                        <table class="responsive-table">
+                                            <thead>
+                                                <tr>
+                                                    <th data-field="country-name">Country Name</th>
+                                                    <th data-field="item-sold">Item Sold</th>
+                                                    <th data-field="total-profit">Total Profit</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>USA</td>
+                                                    <td>65</td>
+                                                    <td>$452.55</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>UK</td>
+                                                    <td>76</td>
+                                                    <td>$452.55</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Canada</td>
+                                                    <td>65</td>
+                                                    <td>$452.55</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Brazil</td>
+                                                    <td>76</td>
+                                                    <td>$452.55</td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>India</td>
+                                                    <td>65</td>
+                                                    <td>$452.55</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>France</td>
+                                                    <td>76</td>
+                                                    <td>$452.55</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Austrelia</td>
+                                                    <td>65</td>
+                                                    <td>$452.55</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Russia</td>
+                                                    <td>76</td>
+                                                    <td>$452.55</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--chart dashboard end-->
+
+                    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+                    <!--card stats start-->
+                    <div id="card-stats">
+                        <div class="row">
+                            <div class="col s12 m6 l3">
+                                <div class="card">
+                                    <div class="card-content  green white-text">
+                                        <p class="card-stats-title"><i class="mdi-social-group-add"></i> New Clients</p>
+                                        <h4 class="card-stats-number">566</h4>
+                                        <p class="card-stats-compare"><i class="mdi-hardware-keyboard-arrow-up"></i> 15% <span class="green-text text-lighten-5">from yesterday</span>
+                                        </p>
+                                    </div>
+                                    <div class="card-action  green darken-2">
+                                        <div id="clients-bar" class="center-align"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <div class="card">
+                                    <div class="card-content pink lighten-1 white-text">
+                                        <p class="card-stats-title"><i class="mdi-editor-insert-drive-file"></i> New Invoice</p>
+                                        <h4 class="card-stats-number">1806</h4>
+                                        <p class="card-stats-compare"><i class="mdi-hardware-keyboard-arrow-down"></i> 3% <span class="deep-purple-text text-lighten-5">from last month</span>
+                                        </p>
+                                    </div>
+                                    <div class="card-action  pink darken-2">
+                                        <div id="invoice-line" class="center-align"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <div class="card">
+                                    <div class="card-content blue-grey white-text">
+                                        <p class="card-stats-title"><i class="mdi-action-trending-up"></i> Today Profit</p>
+                                        <h4 class="card-stats-number">$806.52</h4>
+                                        <p class="card-stats-compare"><i class="mdi-hardware-keyboard-arrow-up"></i> 80% <span class="blue-grey-text text-lighten-5">from yesterday</span>
+                                        </p>
+                                    </div>
+                                    <div class="card-action blue-grey darken-2">
+                                        <div id="profit-tristate" class="center-align"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l3">
+                                <div class="card">
+                                    <div class="card-content purple white-text">
+                                        <p class="card-stats-title"><i class="mdi-editor-attach-money"></i>Total Sales</p>
+                                        <h4 class="card-stats-number">$8990.63</h4>
+                                        <p class="card-stats-compare"><i class="mdi-hardware-keyboard-arrow-up"></i> 70% <span class="purple-text text-lighten-5">last month</span>
+                                        </p>
+                                    </div>
+                                    <div class="card-action purple darken-2">
+                                        <div id="sales-compositebar" class="center-align"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--card stats end-->
+
+                    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+                    <!--card widgets start-->
+                    <div id="card-widgets">
+                        <div class="row">
+
+                            <div class="col s12 m12 l4">
+                                <ul id="task-card" class="collection with-header">
+                                    <li class="collection-header cyan">
+                                        <h4 class="task-card-title">My Task</h4>
+                                        <p class="task-card-date">March 26, 2015</p>
+                                    </li>
+                                    <li class="collection-item dismissable">
+                                        <input type="checkbox" id="task1" />
+                                        <label for="task1">Create Mobile App UI. <a href="#" class="secondary-content"><span class="ultra-small">Today</span></a>
+                                        </label>
+                                        <span class="task-cat teal">Mobile App</span>
+                                    </li>
+                                    <li class="collection-item dismissable">
+                                        <input type="checkbox" id="task2" />
+                                        <label for="task2">Check the new API standerds. <a href="#" class="secondary-content"><span class="ultra-small">Monday</span></a>
+                                        </label>
+                                        <span class="task-cat purple">Web API</span>
+                                    </li>
+                                    <li class="collection-item dismissable">
+                                        <input type="checkbox" id="task3" checked="checked" />
+                                        <label for="task3">Check the new Mockup of ABC. <a href="#" class="secondary-content"><span class="ultra-small">Wednesday</span></a>
+                                        </label>
+                                        <span class="task-cat pink">Mockup</span>
+                                    </li>
+                                    <li class="collection-item dismissable">
+                                        <input type="checkbox" id="task4" checked="checked" disabled="disabled" />
+                                        <label for="task4">I did it !</label>
+                                        <span class="task-cat cyan">Mobile App</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col s12 m6 l4">
+                                <div id="flight-card" class="card">
+                                    <div class="card-header amber darken-2">
+                                        <div class="card-title">
+                                            <h4 class="flight-card-title">Flight</h4>
+                                            <p class="flight-card-date">June 18, Thu 04:50</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-content-bg white-text">
+                                        <div class="card-content">
+                                            <div class="row flight-state-wrapper">
+                                                <div class="col s5 m5 l5 center-align">
+                                                    <div class="flight-state">
+                                                        <h4 class="margin">LDN</h4>
+                                                        <p class="ultra-small">London</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col s2 m2 l2 center-align">
+                                                    <i class="mdi-device-airplanemode-on flight-icon"></i>
+                                                </div>
+                                                <div class="col s5 m5 l5 center-align">
+                                                    <div class="flight-state">
+                                                        <h4 class="margin">SFO</h4>
+                                                        <p class="ultra-small">San Francisco</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s6 m6 l6 center-align">
+                                                    <div class="flight-info">
+                                                        <p class="small"><span class="grey-text text-lighten-4">Depart:</span> 04.50</p>
+                                                        <p class="small"><span class="grey-text text-lighten-4">Flight:</span> IB 5786</p>
+                                                        <p class="small"><span class="grey-text text-lighten-4">Terminal:</span> B</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col s6 m6 l6 center-align flight-state-two">
+                                                    <div class="flight-info">
+                                                        <p class="small"><span class="grey-text text-lighten-4">Arrive:</span> 08.50</p>
+                                                        <p class="small"><span class="grey-text text-lighten-4">Flight:</span> IB 5786</p>
+                                                        <p class="small"><span class="grey-text text-lighten-4">Terminal:</span> C</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m6 l4">
+                                <div id="profile-card" class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img class="activator" src="images/user-bg.jpg" alt="user background">
+                                    </div>
+                                    <div class="card-content">
+                                        <img src="images/avatar.jpg" alt="" class="circle responsive-img activator card-profile-image">
+                                        <a class="btn-floating activator btn-move-up waves-effect waves-light darken-2 right">
+                                            <i class="mdi-action-account-circle"></i>
+                                        </a>
+
+                                        <span class="card-title activator grey-text text-darken-4">Roger Waters</span>
+                                        <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Project Manager</p>
+                                        <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> +1 (612) 222 8989</p>
+                                        <p><i class="mdi-communication-email cyan-text text-darken-2"></i> mail@domain.com</p>
+
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">Roger Waters <i class="mdi-navigation-close right"></i></span>
+                                        <p>Here is some more information about this card.</p>
+                                        <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Project Manager</p>
+                                        <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> +1 (612) 222 8989</p>
+                                        <p><i class="mdi-communication-email cyan-text text-darken-2"></i> mail@domain.com</p>
+                                        <p><i class="mdi-social-cake cyan-text text-darken-2"></i> 18th June 1990</p>
+                                        <p><i class="mdi-device-airplanemode-on cyan-text text-darken-2"></i> BAR - AUS</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <!-- blog card -->
+                            <div class="col s12 m12 l4">
+                                <div class="blog-card" >
+                                <div class="card">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <img src="images/gallary/30.jpg" alt="blog-img">
+                                    </div>
+                                    <ul class="card-action-buttons">
+                                        <li><a class="btn-floating waves-effect waves-light green accent-4"><i class="mdi-social-share"></i></a>
+                                        </li>                            
+                                        <li><a class="btn-floating waves-effect waves-light light-blue"><i class="mdi-action-info activator"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="card-content">
+                                        <p class="row">
+                                          <span class="left"><a href="">Web Design</a></span>
+                                          <span class="right">18th June, 2015</span>
+                                        </p>
+                                        <h4 class="card-title grey-text text-darken-4"><a href="#" class="grey-text text-darken-4">Materialize Featured Blog Post Card</a>
+                                        </h4>                                        
+                                        <div class="row">
+                                          <div class="col s2">
+                                            <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
+                                          </div>
+                                          <div class="col s9"> By <a href="#">John Doe</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4"><i class="mdi-navigation-close right"></i> Apple MacBook Pro A1278 13"</span>
+                                        <p>Here is some more information about this blog that is only revealed once clicked on.</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+                            <!-- product-card -->
+                            <div class="col s12 m12 l4">
+                                <div class="product-card">
+                                    <div class="card">
+                                        <div class="card-image waves-effect waves-block waves-light">
+                                            <a href="#" class="btn-floating btn-large btn-price waves-effect waves-light  pink accent-2">$189</a>
+                                            <img src="images/gallary/33.jpg" alt="product-img">
+                                        </div>
+                                        <ul class="card-action-buttons">
+                                            <li><a class="btn-floating waves-effect waves-light green accent-4"><i class="mdi-av-repeat"></i></a>
+                                            </li>
+                                            <li><a class="btn-floating waves-effect waves-light red accent-2"><i class="mdi-action-favorite"></i></a>
+                                            </li>
+                                            <li><a class="btn-floating waves-effect waves-light light-blue"><i class="mdi-action-info activator"></i></a>
+                                            </li>
+                                        </ul>
+                                        <div class="card-content">
+
+                                            <div class="row">
+                                                <div class="col s8">
+                                                    <p class="card-title grey-text text-darken-4"><a href="#" class="grey-text text-darken-4">Featured Product of The Month</a>
+                                                    </p>
+                                                </div>
+                                                <div class="col s4 no-padding">
+                                                    <a href=""></a><img src="images/amazon.jpg" alt="amazon" class="responsive-img">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-reveal">
+                                            <span class="card-title grey-text text-darken-4"><i class="mdi-navigation-close right"></i> Apple MacBook Pro A1278 13"</span>
+                                            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- map-card -->
+                            <div class="col s12 m12 l4">
+                                <div class="map-card">
+                                    <div class="card">
+                                        <div class="card-image waves-effect waves-block waves-light">
+                                            <div id="map-canvas" data-lat="40.747688" data-lng="-74.004142"></div>
+                                        </div>
+                                        <div class="card-content">                    
+                                            <a class="btn-floating activator btn-move-up waves-effect waves-light darken-2 right">
+                                                <i class="mdi-maps-pin-drop"></i>
+                                            </a>
+                                            <h4 class="card-title grey-text text-darken-4"><a href="#" class="grey-text text-darken-4">Company Name LLC</a>
+                                            </h4>
+                                            <p class="blog-post-content">Some more information about this company.</p>
+                                        </div>
+                                        <div class="card-reveal">
+                                            <span class="card-title grey-text text-darken-4">Company Name LLC <i class="mdi-navigation-close right"></i></span>                   
+                                            <p>Here is some more information about this company. As a creative studio we believe no client is too big nor too small to work with us to obtain good advantage.By combining the creativity of artists with the precision of engineers we develop custom solutions that achieve results.Some more information about this company.</p>
+                                            <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Manager Name</p>
+                                            <p><i class="mdi-communication-business cyan-text text-darken-2"></i> 125, ABC Street, New Yourk, USA</p>
+                                            <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> +1 (612) 222 8989</p>
+                                            <p><i class="mdi-communication-email cyan-text text-darken-2"></i> support@geekslabs.com</p>                    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                    <!--card widgets end-->
+
+                    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+                    <!--work collections start-->
+                    <div id="work-collections">
+                        <div class="row">
+                            <div class="col s12 m12 l6">
+                                <ul id="projects-collection" class="collection">
+                                    <li class="collection-item avatar">
+                                        <i class="mdi-file-folder circle light-blue darken-2"></i>
+                                        <span class="collection-header">Projects</span>
+                                        <p>Your Favorites</p>
+                                        <a href="#" class="secondary-content"><i class="mdi-action-grade"></i></a>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s6">
+                                                <p class="collections-title">Web App</p>
+                                                <p class="collections-content">AEC Company</p>
+                                            </div>
+                                            <div class="col s3">
+                                                <span class="task-cat cyan">Development</span>
+                                            </div>
+                                            <div class="col s3">
+                                                <div id="project-line-1"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s6">
+                                                <p class="collections-title">Mobile App for Social</p>
+                                                <p class="collections-content">iSocial App</p>
+                                            </div>
+                                            <div class="col s3">
+                                                <span class="task-cat grey darken-3">UI/UX</span>
+                                            </div>
+                                            <div class="col s3">
+                                                <div id="project-line-2"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s6">
+                                                <p class="collections-title">Website</p>
+                                                <p class="collections-content">MediTab</p>
+                                            </div>
+                                            <div class="col s3">
+                                                <span class="task-cat teal">Marketing</span>
+                                            </div>
+                                            <div class="col s3">
+                                                <div id="project-line-3"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s6">
+                                                <p class="collections-title">AdWord campaign</p>
+                                                <p class="collections-content">True Line</p>
+                                            </div>
+                                            <div class="col s3">
+                                                <span class="task-cat green">SEO</span>
+                                            </div>
+                                            <div class="col s3">
+                                                <div id="project-line-4"></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col s12 m12 l6">
+                                <ul id="issues-collection" class="collection">
+                                    <li class="collection-item avatar">
+                                        <i class="mdi-action-bug-report circle red darken-2"></i>
+                                        <span class="collection-header">Issues</span>
+                                        <p>Assigned to you</p>
+                                        <a href="#" class="secondary-content"><i class="mdi-action-grade"></i></a>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s7">
+                                                <p class="collections-title"><strong>#102</strong> Home Page</p>
+                                                <p class="collections-content">Web Project</p>
+                                            </div>
+                                            <div class="col s2">
+                                                <span class="task-cat pink accent-2">P1</span>
+                                            </div>
+                                            <div class="col s3">
+                                                <div class="progress">
+                                                     <div class="determinate" style="width: 70%"></div>   
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s7">
+                                                <p class="collections-title"><strong>#108</strong> API Fix</p>
+                                                <p class="collections-content">API Project </p>
+                                            </div>
+                                            <div class="col s2">
+                                                <span class="task-cat yellow darken-4">P2</span>
+                                            </div>
+                                            <div class="col s3">
+                                                <div class="progress">
+                                                    <div class="determinate" style="width: 40%"></div>   
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s7">
+                                                <p class="collections-title"><strong>#205</strong> Profile page css</p>
+                                                <p class="collections-content">New Project </p>
+                                            </div>
+                                            <div class="col s2">                                                
+                                                <span class="task-cat light-green darken-3">P3</span>
+                                            </div>
+                                            <div class="col s3">
+                                                <div class="progress">
+                                                    <div class="determinate" style="width: 95%"></div>   
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div class="row">
+                                            <div class="col s7">
+                                                <p class="collections-title"><strong>#188</strong> SAP Changes</p>
+                                                <p class="collections-content">SAP Project</p>
+                                            </div>
+                                            <div class="col s2">
+                                                <span class="task-cat pink accent-2">P1</span>
+                                            </div>
+                                            <div class="col s3">
+                                                <div class="progress">
+                                                     <div class="determinate" style="width: 10%"></div>   
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--work collections end-->
+
+                    <!-- Floating Action Button -->
+                    <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
+                        <a class="btn-floating btn-large">
+                          <i class="mdi-action-stars"></i>
                         </a>
-                        <div class="media-body">
-                           <div class="friend-header">Josephin Doe</div>
-                           <span>20min ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-2.png" alt="Generic placeholder image">
-                           <div class="live-status bg-success"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Alice</div>
-                           <span>1 hour ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="7" data-status="offline" data-username="Michael Scofield" data-toggle="tooltip" data-placement="left" title="Michael Scofield">
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-3.png" alt="Generic placeholder image">
-                           <div class="live-status bg-danger"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Michael Scofield</div>
-                           <span>3 hours ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="5" data-status="online" data-username="Irina Shayk" data-toggle="tooltip" data-placement="left" title="Irina Shayk">
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-4.png" alt="Generic placeholder image">
-                           <div class="live-status bg-success"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Irina Shayk</div>
-                           <span>1 day ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="6" data-status="offline" data-username="Sara Tancredi" data-toggle="tooltip" data-placement="left" title="Sara Tancredi">
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-5.png" alt="Generic placeholder image">
-                           <div class="live-status bg-danger"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Sara Tancredi</div>
-                           <span>2 days ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
-                           <div class="live-status bg-success"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Josephin Doe</div>
-                           <span>20min ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-2.png" alt="Generic placeholder image">
-                           <div class="live-status bg-success"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Alice</div>
-                           <span>1 hour ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+                        <ul>
+                          <li><a href="css-helpers.html" class="btn-floating red"><i class="large mdi-communication-live-help"></i></a></li>
+                          <li><a href="app-widget.html" class="btn-floating yellow darken-1"><i class="large mdi-device-now-widgets"></i></a></li>
+                          <li><a href="app-calendar.html" class="btn-floating green"><i class="large mdi-editor-insert-invitation"></i></a></li>
+                          <li><a href="app-email.html" class="btn-floating blue"><i class="large mdi-communication-email"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- Floating Action Button -->
 
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
-                           <div class="live-status bg-success"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Josephin Doe</div>
-                           <span>20min ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-2.png" alt="Generic placeholder image">
-                           <div class="live-status bg-success"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Alice</div>
-                           <span>1 hour ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+                </div>
+                </div>
+                <!--end container-->
+            </section>
+            <!-- END CONTENT -->
 
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
-                           <div class="live-status bg-success"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Josephin Doe</div>
-                           <span>20min ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="3" data-status="online" data-username="Alice" data-toggle="tooltip" data-placement="left" title="Alice">
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-2.png" alt="Generic placeholder image">
-                           <div class="live-status bg-success"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Alice</div>
-                           <span>1 hour ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+            <!-- START RIGHT SIDEBAR NAV-->
+            <%@ include file="../common/right_sidebar.jspf"%>
+            <!-- LEFT RIGHT SIDEBAR NAV-->
 
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
-                           <div class="live-status bg-success"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Josephin Doe</div>
-                           <span>20min ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+        </div>
+        <!-- END WRAPPER -->
 
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
-                           <div class="live-status bg-success"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Josephin Doe</div>
-                           <span>20min ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
+    </div>
+    <!-- END MAIN -->
 
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
-                           <div class="live-status bg-success"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Josephin Doe</div>
-                           <span>20min ago</span>
-                        </div>
-                     </div>
-                     <div class="media friendlist-box" data-id="1" data-status="online" data-username="Josephin Doe" data-toggle="tooltip" data-placement="left" title="Josephin Doe">
-
-                        <a class="media-left" href="#!">
-                           <img class="media-object img-circle" src="assets/images/avatar-1.png" alt="Generic placeholder image">
-                           <div class="live-status bg-success"></div>
-                        </a>
-                        <div class="media-body">
-                           <div class="friend-header">Josephin Doe</div>
-                           <span>20min ago</span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-      </div>
-      <div class="showChat_inner">
-         <div class="media chat-inner-header">
-            <a class="back_chatBox">
-               <i class="icofont icofont-rounded-left"></i> Josephin Doe
-            </a>
-         </div>
-         <div class="media chat-messages">
-            <a class="media-left photo-table" href="#!">
-               <img class="media-object img-circle m-t-5" src="assets/images/avatar-1.png" alt="Generic placeholder image">
-               <div class="live-status bg-success"></div>
-            </a>
-            <div class="media-body chat-menu-content">
-               <div class="">
-                  <p class="chat-cont">I'm just looking around. Will you tell me something about yourself?</p>
-                  <p class="chat-time">8:20 a.m.</p>
-               </div>
-            </div>
-         </div>
-         <div class="media chat-messages">
-            <div class="media-body chat-menu-reply">
-               <div class="">
-                  <p class="chat-cont">I'm just looking around. Will you tell me something about yourself?</p>
-                  <p class="chat-time">8:20 a.m.</p>
-               </div>
-            </div>
-            <div class="media-right photo-table">
-               <a href="#!">
-                  <img class="media-object img-circle m-t-5" src="assets/images/avatar-2.png" alt="Generic placeholder image">
-                  <div class="live-status bg-success"></div>
-               </a>
-            </div>
-         </div>
-         <div class="media chat-reply-box">
-            <div class="md-input-wrapper">
-               <input type="text" class="md-form-control" id="inputEmail" name="inputEmail">
-               <label>Share your thoughts</label>
-               <span class="highlight"></span>
-               <span class="bar"></span> <button type="button" class="chat-send waves-effect waves-light">
-                     <i class="icofont icofont-location-arrow f-20 "></i>
-                 </button>
-
-               <button type="button" class="chat-send waves-effect waves-light">
-                    <i class="icofont icofont-location-arrow f-20 "></i>
-                </button>
-            </div>
-
-         </div>
-      </div>
-      <!-- Sidebar chat end-->
-      <div class="content-wrapper">
-         <!-- Container-fluid starts -->
-         <!-- Main content starts -->
-         <div class="container-fluid">
-            <div class="row">
-               <div class="main-header">
-                  <h4>Dashboard</h4>
-               </div>
-            </div>
-            <!-- 4-blocks row start -->
-            <div class="row dashboard-header">
-               <div class="col-lg-3 col-md-6">
-                  <div class="card dashboard-product">
-                     <span>Products</span>
-                     <h2 class="dashboard-total-products">4500</h2>
-                     <span class="label label-warning">Sales</span>Arriving Today
-                     <div class="side-box">
-                        <i class="ti-signal text-warning-color"></i>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-md-6">
-                  <div class="card dashboard-product">
-                     <span>Products</span>
-                     <h2 class="dashboard-total-products">37,500</h2>
-                     <span class="label label-primary">Views</span>View Today
-                     <div class="side-box ">
-                        <i class="ti-gift text-primary-color"></i>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-md-6">
-                  <div class="card dashboard-product">
-                     <span>Products</span>
-                     <h2 class="dashboard-total-products">$<span>30,780</span></h2>
-                     <span class="label label-success">Sales</span>Reviews
-                     <div class="side-box">
-                        <i class="ti-direction-alt text-success-color"></i>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-md-6">
-                  <div class="card dashboard-product">
-                     <span>Products</span>
-                     <h2 class="dashboard-total-products">$<span>30,780</span></h2>
-                     <span class="label label-danger">Sales</span>Reviews
-                     <div class="side-box">
-                        <i class="ti-rocket text-danger-color"></i>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- 4-blocks row end -->
-
-            <!-- 1-3-block row start -->
-            <div class="row">
-               <div class="col-lg-4">
-                  <div class="card">
-                     <div class="user-block-2">
-                        <img class="img-fluid" src="assets/images/widget/user-1.png" alt="user-header">
-                        <h5>Josephin Villa</h5>
-                        <h6>Software Engineer</h6>
-                     </div>
-                     <div class="card-block">
-                        <div class="user-block-2-activities">
-                           <div class="user-block-2-active">
-                              <i class="icofont icofont-clock-time"></i> Recent Activities
-                              <label class="label label-primary">480</label>
-                           </div>
-                        </div>
-                        <div class="user-block-2-activities">
-                           <div class="user-block-2-active">
-                              <i class="icofont icofont-users"></i> Current Employees
-                              <label class="label label-primary">390</label>
-                           </div>
-                        </div>
-
-                        <div class="user-block-2-activities">
-                           <div class="user-block-2-active">
-                              <i class="icofont icofont-ui-user"></i> Following
-                              <label class="label label-primary">485</label>
-                           </div>
-
-                        </div>
-                        <div class="user-block-2-activities">
-                           <div class="user-block-2-active">
-                              <i class="icofont icofont-picture"></i> Pictures
-                              <label class="label label-primary">506</label>
-                           </div>
-                        </div>
-                        <div class="text-center">
-                           <button type="button" class="btn btn-warning waves-effect waves-light text-uppercase m-r-30">
-                                    Follows
-                                </button>
-                           <button type="button" class="btn btn-primary waves-effect waves-light text-uppercase">
-                                    Message
-                                </button>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-8">
-                  <div class="card">
-                     <div class="card-header">
-                        <h5 class="card-header-text">Bar chart</h5>
-                     </div>
-                     <div class="card-block">
-                        <div id="barchart" style="min-width: 250px; height: 330px; margin: 0 auto"></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xl-4 col-lg-12 grid-item">
-                  <div class="card">
-                     <div class="card-block horizontal-card-img d-flex">
-                        <img class="media-object img-circle" src="assets/images/avatar-3.png" alt="Generic placeholder image">
-                        <div class="d-inlineblock  p-l-20">
-                          <h6>Josephin Doe</h6>
-                          <a href="#">contact@admin.com</a>
-                       </div>
-                        <h6 class="txt-warning rotate-txt">Designer</h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xl-4 col-lg-12 grid-item">
-                  <div class="card">
-                     <div class="card-block horizontal-card-img d-flex">
-                        <img class="media-object img-circle" src="assets/images/lockscreen.png" alt="Generic placeholder image">
-                        <div class="d-inlineblock  p-l-20">
-                          <h6>Josephin Doe</h6>
-                          <a href="#">contact@admin.com</a>
-                       </div>
-                        <h6 class="txt-danger rotate-txt">Developer</h6>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- 1-3-block row end -->
-
-            <!-- 2-1 block start -->
-            <div class="row">
-               <div class="col-xl-8 col-lg-12">
-                  <div class="card">
-                     <div class="card-block">
-                        <div class="table-responsive">
-                           <table class="table m-b-0 photo-table">
-                              <thead>
-                                 <tr class="text-uppercase">
-                                    <th>Photo</th>
-                                    <th>Project</th>
-                                    <th>Completed</th>
-                                    <th>Status</th>
-                                    <th>Date</th>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 <tr>
-                                    <th>
-                                       <img class="img-fluid img-circle" src="assets/images/avatar-2.png" alt="User">
-                                    </th>
-                                    <td>Appestia Project
-                                       <p><i class="icofont icofont-clock-time"></i>Created 14.9.2016</p>
-                                    </td>
-                                    <td>
-                                       <span class="pie" style="display: none;">226,134</span><svg class="peity" height="30" width="30"><path d="M 15.000000000000002 0 A 15 15 0 1 1 4.209902994920235 25.41987555688496 L 15 15" fill="#2196F3"></path><path d="M 4.209902994920235 25.41987555688496 A 15 15 0 0 1 14.999999999999996 0 L 15 15" fill="#ccc"></path></svg>
-                                    </td>
-                                    <td>50%</td>
-                                    <td>October 21, 2015</td>
-                                 </tr>
-                                 <tr>
-                                    <th>
-                                       <img class="img-fluid img-circle" src="assets/images/avatar-4.png" alt="User">
-                                    </th>
-                                    <td>Contract with belife Company
-                                       <p><i class="icofont icofont-clock-time"></i>Created 20.10.2016</p>
-                                    </td>
-                                    <td>
-                                       <span class="pie" style="display: none;">0.52/1.561</span><svg class="peity" height="30" width="30"><path d="M 15.000000000000002 0 A 15 15 0 0 1 28.00043211809656 22.482564048691025 L 15 15" fill="#2196F3"></path><path d="M 28.00043211809656 22.482564048691025 A 15 15 0 1 1 14.999999999999996 0 L 15 15" fill="#ccc"></path></svg>
-                                    </td>
-                                    <td>70%</td>
-                                    <td>November 21, 2015</td>
-                                 </tr>
-                                 <tr>
-                                    <th>
-                                       <img class="img-fluid img-circle" src="assets/images/avatar-1.png" alt="User">
-                                    </th>
-                                    <td>Web Consultancy project
-                                       <p><i class="icofont icofont-clock-time"></i>Created 20.10.2016</p>
-                                    </td>
-                                    <td>
-                                       <span class="pie" style="display: none;">1,4</span><svg class="peity" height="30" width="30"><path d="M 15.000000000000002 0 A 15 15 0 0 1 29.265847744427305 10.36474508437579 L 15 15" fill="#2196F3"></path><path d="M 29.265847744427305 10.36474508437579 A 15 15 0 1 1 14.999999999999996 0 L 15 15" fill="#ccc"></path></svg>
-                                    </td>
-                                    <td>40%</td>
-                                    <td>September 21, 2015</td>
-                                 </tr>
-                                 <tr>
-                                    <th>
-                                       <img class="img-fluid img-circle" src="assets/images/avatar-3.png" alt="User">
-                                    </th>
-                                    <td>Contract with belife Company
-                                       <p><i class="icofont icofont-clock-time"></i>Created 20.10.2016</p>
-                                    </td>
-                                    <td>
-                                       <span class="pie" style="display: none;">0.52/1.561</span><svg class="peity" height="30" width="30"><path d="M 15.000000000000002 0 A 15 15 0 0 1 28.00043211809656 22.482564048691025 L 15 15" fill="#2196F3"></path><path d="M 28.00043211809656 22.482564048691025 A 15 15 0 1 1 14.999999999999996 0 L 15 15" fill="#ccc"></path></svg>
-                                    </td>
-                                    <td>70%</td>
-                                    <td>November 21, 2015</td>
-                                 </tr>
-                                 <tr>
-                                    <th>
-                                       <img class="img-fluid img-circle" src="assets/images/avatar-1.png" alt="User">
-                                    </th>
-                                    <td>Contract with belife Company
-                                       <p><i class="icofont icofont-clock-time"></i>Created 20.10.2016</p>
-                                    </td>
-                                    <td>
-                                       <span class="pie" style="display: none;">0.52/1.561</span><svg class="peity" height="30" width="30"><path d="M 15.000000000000002 0 A 15 15 0 0 1 28.00043211809656 22.482564048691025 L 15 15" fill="#2196F3"></path><path d="M 28.00043211809656 22.482564048691025 A 15 15 0 1 1 14.999999999999996 0 L 15 15" fill="#ccc"></path></svg>
-                                    </td>
-                                    <td>70%</td>
-                                    <td>November 21, 2015</td>
-                                 </tr>
-                                 <tr>
-                                    <th>
-                                       <img class="img-fluid img-circle" src="assets/images/avatar-2.png" alt="User">
-                                    </th>
-                                    <td>Contract with belife Company
-                                       <p><i class="icofont icofont-clock-time"></i>Created 20.10.2016</p>
-                                    </td>
-                                    <td>
-                                       <span class="pie" style="display: none;">0.52/1.561</span><svg class="peity" height="30" width="30"><path d="M 15.000000000000002 0 A 15 15 0 0 1 28.00043211809656 22.482564048691025 L 15 15" fill="#2196F3"></path><path d="M 28.00043211809656 22.482564048691025 A 15 15 0 1 1 14.999999999999996 0 L 15 15" fill="#ccc"></path></svg>
-                                    </td>
-                                    <td>70%</td>
-                                    <td>November 21, 2015</td>
-                                 </tr>
-
-                              </tbody>
-                           </table>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-xl-4 col-lg-12">
-                  <div class="card">
-                     <div class="card-header">
-                        <h5 class="card-header-text">Bar chart</h5>
-                     </div>
-                     <div class="card-block">
-                        <div id="piechart" style="min-width: 250px; height: 460px; margin: 0 auto"></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- 2-1 block end -->
-         </div>
-         <!-- Main content ends -->
-         <!-- Container-fluid ends -->
-      </div>
-   </div>
-
-
-
-
+<%@ include file="../common/footer.jspf"%>
 <%@ include file="../common/import_js.jspf"%>
 
 </body>

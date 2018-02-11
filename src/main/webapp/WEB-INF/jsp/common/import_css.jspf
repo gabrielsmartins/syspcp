@@ -1,82 +1,34 @@
 <%@ include file="import_jstl.jspf"%>
 <%@ page pageEncoding="UTF-8"%>
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
 
 
-
-<!-- Favicon icon -->
-<link rel="shortcut icon"
-	href="<c:url value='/resources/img/favicon.ico'/>" type="image/x-icon">
-<link rel="icon" href="<c:url value='/resources/img/favicon.ico'/>"
-	type="image/x-icon">
-
-<!-- Google font-->
-<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700"
-	rel="stylesheet">
-
-<!-- Custom Style  -->
-<link
-	href="<c:url value='/resources/quantum-able/assets/css/style.css'/>"
-	rel="stylesheet" type="text/css">
-
-<!-- Font Awesome -->
-<link
-	href="<c:url value='/resources/quantum-able/assets/css/font-awesome.min.css'/>"
-	rel="stylesheet" type="text/css">
-
-<!-- themify -->
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/quantum-able/assets/icon/themify-icons/themify-icons.css'/>">
-
-<!-- iconfont -->
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/quantum-able/assets/icon/icofont/css/icofont.css'/>">
-
-<!-- simple line icon -->
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/quantum-able/assets/icon/simple-line-icons/css/simple-line-icons.css'/>">
-
-<!-- Required Fremwork -->
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/quantum-able/assets/plugins/bootstrap/css/bootstrap.min.css'/>">
-
-<!-- Chartlist chart css -->
-<link rel="stylesheet"
-	href="<c:url value='/resources/quantum-able/assets/plugins/chartist/dist/chartist.css'/>"
-	type="text/css" media="all">
-
-<!-- Weather css -->
-<link
-	href="<c:url value='/resources/quantum-able/assets/css/svg-weather.css'/>"
-	rel="stylesheet">
+  <!-- Favicons-->
+    <link rel="icon" href="<c:url value='/resources/img/favicon.ico'/>" sizes="32x32">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="<c:url value='/resources/materialize-admin/images/favicon/apple-touch-icon-152x152.png'/>">
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#00bcd4">
+    <meta name="msapplication-TileImage" content="<c:url value='/resources/materialize-admin/images/favicon/mstile-144x144.png'/>">
+    <!-- For Windows Phone -->
 
 
-<!-- Style.css -->
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/quantum-able/assets/css/main.css'/>">
-
-<!-- Responsive.css-->
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/quantum-able/assets/css/responsive.css'/>">
+    <!-- CORE CSS-->    
+    <link href="<c:url value='/resources/materialize-admin/css/materialize.min.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="<c:url value='/resources/materialize-admin/css/style.min.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
+    <!-- Custome CSS-->    
+    <link href="<c:url value='/resources/materialize-admin/css/custom/custom.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
 
 
-
-<!-- Select 2 css -->
-<link rel="stylesheet"
-	href="<c:url value='/resources/quantum-able/assets/plugins/select2/dist/css/select2.min.css'/>" />
-<link rel="stylesheet"
-	type="<c:url value='/resources/quantum-able/assets/plugins/select2/css/s2-docs.cs'/>">
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    <link href="<c:url value='/resources/materialize-admin/js/plugins/perfect-scrollbar/perfect-scrollbar.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="<c:url value='/resources/materialize-admin/js/plugins/jvectormap/jquery-jvectormap.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="<c:url value='/resources/materialize-admin/js/plugins/chartist-js/chartist.min.css'/>" type="text/css" rel="stylesheet" media="screen,projection">
 
 
-
-<!-- Multi Select css -->
-<link rel="stylesheet"
-	href="<c:url value='/resources/quantum-able/assets/plugins/bootstrap-multiselect/dist/css/bootstrap-multiselect.css'/>" />
-<link rel="stylesheet"
-	href="<c:url value='/resources/quantum-able/assets/plugins/multiselect/css/multi-select.css'/>" />
 
 
