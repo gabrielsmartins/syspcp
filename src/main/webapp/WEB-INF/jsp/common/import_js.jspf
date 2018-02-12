@@ -7,9 +7,9 @@
     ================================================ -->
     
     <!-- jQuery Library -->
-    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/plugins/jquery-1.11.2.min.js'/>"></script>    
+      <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/jquery-3.3.1.min.js'/>"></script>
     <!--materialize js-->
-    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/materialize.min.js'/>"></script>
+    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/materialize.js'/>"></script>
     <!--scrollbar-->
     <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js'/>"></script>
     
@@ -48,9 +48,12 @@
     <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/custom-script.js'/>"></script>
     
     
-    <script>
+     <script>
+            
     $(document).ready(function() {
-        $('select').material_select();
-      });
-    </script>
+	    $('select').material_select();
+	     });
+
+        </script>
+    
 

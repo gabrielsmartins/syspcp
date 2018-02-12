@@ -1,92 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-<title>Setor - Novo</title>
+<title>Setor - Cadastro</title>
 <%@ include file="../common/import_css.jspf"%>
 </head>
 
-<body class="sidebar-mini fixed">
-	<div class="loader-bg">
-		<div class="loader-bar"></div>
-	</div>
-	<div class="wrapper">
-		<!-- Navbar-->
-		<%@ include file="../common/navbar.jspf"%>
-		<!-- Side-Nav-->
-		<%@ include file="../common/sidebar.jspf"%>
-		<div class="content-wrapper">
-			<!-- Container-fluid starts -->
-			<!-- Main content starts -->
-			<div class="container-fluid">
+<body>
+	<%@ include file="../common/header.jspf"%>
+
+
+	<!-- START MAIN -->
+	<main>
+	<div id="main">
+		<!-- START WRAPPER -->
+		<div class="wrapper">
+			<%@ include file="../common/sidebar.jspf"%>
+			<!-- START CONTENT -->
+			<section id="content">
+
+				<!--start container-->
+				<div class="container">
 				<div class="row">
-					<div class="main-header">
-						<h4>Setor - Novo</h4>
-						<ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
-							<li class="breadcrumb-item"><a href="index.html"><i
-									class="icofont icofont-home"></i></a></li>
-							<li class="breadcrumb-item"><a href="#">Setor</a></li>
-							<li class="breadcrumb-item"><a
-								href="form-elements-bootstrap.html">Novo</a></li>
-						</ol>
-					</div>
-				</div>
-				<div class="card">
-
-					<form action="<c:url value='/setores/'/>" method="POST"
-						accept-charset="UTF-8">
-						<div class="card-header">
-							<h5 class="card-header-text">Cadastro</h5>
-						</div>
-
-
-						<div class="card-body">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="card-block">
-
-
-										<div class="form-group row">
-											<label class="col-sm-2 col-form-label">Descricao:</label>
-											<div class="col-sm-6">
-												<input class="form-control" placeholder="Descricao"
-													type="text" name="setor.descricao">
-											</div>
-										</div>
-
-
-
-
+              <div class="col s12 m12 l12">
+                <h5 class="breadcrumbs-title">Setor</h5>
+                <ol class="breadcrumbs">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="#">Setor</a></li>
+                    <li class="active">Cadastro</li>
+                </ol>
+              </div>
+            </div>
+				
+				
+					<div class="card-panel">
+						<h4 class="header2">Setor - Cadastro</h4>
+						<div class="row">
+							<form action="<c:url value='/setores/'/>" method="POST" accept-charset="UTF-8">
+								<div class="row">
+									<div class="input-field col s6">
+										<input id="descricao" type="text" class="validate" name="setor.descricao"> 
+											<label for="descricao" class="">Descricao</label>
 									</div>
-
 								</div>
-							</div>
+								
+								<div class="row">
+										<button class="btn grey darken-4 waves-effect waves-light right" type="submit">
+											Salvar <i class="mdi-content-send right"></i>
+										</button>
+								</div>
+								
+							</form>
 						</div>
 
-
-						<div class="card-footer">
-							<button class="btn btn-success waves-effect waves-light m-r-30"
-								type="submit">Salvar</button>
-							<button type="reset"
-								class="btn btn-default waves-effect waves-light m-r-30">Cancelar</button>
-						</div>
-					</form>
+					</div>
 
 				</div>
-			</div>
-			<!-- Main content ends -->
-			<!-- Container-fluid ends -->
+				<!--end container-->
+			</section>
+			<!-- END CONTENT -->
+
+			<%@ include file="../common/right_sidebar.jspf"%>
+
+
 		</div>
+		<!-- END WRAPPER -->
+
 	</div>
+	</main>
+	<!-- END MAIN -->
 
-
-
-
+	<%@ include file="../common/footer.jspf"%>
 	<%@ include file="../common/import_js.jspf"%>
 
 </body>
 
 </html>
+
+
+
 
 
 

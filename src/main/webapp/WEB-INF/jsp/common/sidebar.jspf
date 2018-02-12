@@ -26,8 +26,10 @@
                 </li>
                 <li class="bold active"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Dashboard</a>
                 </li>
+                <!-- ENGENHARIA MENU -->
                 <li class="li-hover"><div class="divider"></div></li>
-                <li class="li-hover"><p class="ultra-small margin more-text">Engenharia</p></li>
+                <li class="li-hover"><p class="ultra-small margin more-text">ENGENHARIA</p></li>
+                <!-- PRODUTOS -->
                 <li class="no-padding">
                     <ul class="collapsible collapsible-accordion">
                         <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-view-carousel"></i> Produtos</a>
@@ -48,7 +50,30 @@
                     </ul>
                 </li>
         
+        <!-- MATERIAIS -->
                 <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                        <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-invert-colors"></i> Materiais</a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>
+                                    	<a href="<c:url value='/materiais/form'/>">Cadastro</a>
+                                    </li>
+                                    <li>
+                                    	<a href="<c:url value='/materiais'/>">Consulta</a>
+                                    </li>
+                                    <li>
+                                    	<a href="<c:url value='#'/>">Relatórios</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        </ul>
+                        </li>
+                        
+                        
+                         <!-- OPERAÇÕES -->
+                         <li class="no-padding">
                     <ul class="collapsible collapsible-accordion">
                         <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-invert-colors"></i> Operações</a>
                             <div class="collapsible-body">
@@ -65,21 +90,13 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-invert-colors"></i> Operações</a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li>
-                                    	<a href="<c:url value='/operacoes/form'/>">Cadastro</a>
-                                    </li>
-                                    <li>
-                                    	<a href="<c:url value='/operacoes'/>">Consulta</a>
-                                    </li>
-                                    <li>
-                                    	<a href="<c:url value='#'/>">Relatórios</a>
-                                    </li>
-                                </ul>
-                            </div>
+                        </ul>
                         </li>
+                        
+                        
+                        <!-- UNIDADE DE MEDIDA -->
+                         <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
                         <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-image-palette"></i> Unidades de Medida</a>
                             <div class="collapsible-body">
                                 <ul>
@@ -97,29 +114,109 @@
                         </li>
    
                     </ul>
+                    
                 </li>
+                
+                
+                
+                
+                   <!-- PCP MENU -->
+                
+                
+                
+                
                 <li class="li-hover"><div class="divider"></div></li>
                 <li class="li-hover"><p class="ultra-small margin more-text">PCP</p></li>
-                <li><a href="angular-ui.html"><i class="mdi-action-verified-user"></i> Ordem de Produção</a>
-                </li>
-                <li><a href="css-grid.html"><i class="mdi-image-grid-on"></i> Grid</a>
-                </li>
-                <li><a href="css-color.html"><i class="mdi-editor-format-color-fill"></i> Color</a>
-                </li>
-                <li><a href="css-helpers.html"><i class="mdi-communication-live-help"></i> Helpers</a>
-                </li>
-                <li><a href="changelogs.html"><i class="mdi-action-swap-vert-circle"></i> Changelogs</a>
-                </li>                    
-                <li class="li-hover"><div class="divider"></div></li>
-                <li class="li-hover"><p class="ultra-small margin more-text">Daily Sales</p></li>
-                <li class="li-hover">
-                    <div class="row">
-                        <div class="col s12 m12 l12">
-                            <div class="sample-chart-wrapper">                            
-                                <div class="ct-chart ct-golden-section" id="ct2-chart"></div>
+                <!-- ORDEM DE PRODUÇÃO -->
+                <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                        <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-view-carousel"></i> Ordens de Produção</a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>
+                                    	<a href="<c:url value='/produtos/form'/>">Cadastro</a>
+                                    </li>
+                                    <li>
+                                    	<a href="<c:url value='/produtos'/>">Consulta</a>
+                                    </li>
+                                    <li>
+                                    	<a href="<c:url value='#'/>">Relatórios</a>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
+                </li>
+                
+                
+                
+               <!-- REQUISIÇÃO DE MATERIAIS -->
+                <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                        <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-view-carousel"></i> Req. de Materiais</a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>
+                                    	<a href="<c:url value='/produtos/form'/>">Cadastro</a>
+                                    </li>
+                                    <li>
+                                    	<a href="<c:url value='/produtos'/>">Consulta</a>
+                                    </li>
+                                    <li>
+                                    	<a href="<c:url value='#'/>">Relatórios</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                
+                
+                    
+                <li class="li-hover"><div class="divider"></div></li>
+                <li class="li-hover"><p class="ultra-small margin more-text">PRODUÇÃO</p></li>
+                <!-- RECURSOS -->
+                <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                        <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-view-carousel"></i> Recursos</a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>
+                                    	<a href="<c:url value='/recursos/form'/>">Cadastro</a>
+                                    </li>
+                                    <li>
+                                    	<a href="<c:url value='/recursos'/>">Consulta</a>
+                                    </li>
+                                    <li>
+                                    	<a href="<c:url value='#'/>">Relatórios</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                
+                
+                
+                <!-- SETORES -->
+                <li class="no-padding">
+                    <ul class="collapsible collapsible-accordion">
+                        <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-view-carousel"></i> Setores</a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>
+                                    	<a href="<c:url value='/setores/form'/>">Cadastro</a>
+                                    </li>
+                                    <li>
+                                    	<a href="<c:url value='/setores'/>">Consulta</a>
+                                    </li>
+                                    <li>
+                                    	<a href="<c:url value='#'/>">Relatórios</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
                 </li>
             </ul>
                 <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>

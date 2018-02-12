@@ -1,114 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-<title>Operacao - Novo</title>
+<title>Operação - Cadastro</title>
 <%@ include file="../common/import_css.jspf"%>
 </head>
 
-<body class="sidebar-mini fixed">
-	<div class="loader-bg">
-		<div class="loader-bar"></div>
-	</div>
-	<div class="wrapper">
-		<!-- Navbar-->
-		<%@ include file="../common/navbar.jspf"%>
-		<!-- Side-Nav-->
-		<%@ include file="../common/sidebar.jspf"%>
-		<div class="content-wrapper">
-			<!-- Container-fluid starts -->
-			<!-- Main content starts -->
-			<div class="container-fluid">
-				<div class="row">
-					<div class="main-header">
-						<h4>Operacao - Novo</h4>
-						<ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
-							<li class="breadcrumb-item"><a href="index.html"><i
-									class="icofont icofont-home"></i></a></li>
-							<li class="breadcrumb-item"><a href="#">Operacao</a></li>
-							<li class="breadcrumb-item"><a
-								href="form-elements-bootstrap.html">Novo</a></li>
-						</ol>
-					</div>
-				</div>
-				<div class="card">
-					<form action="<c:url value='/operacoes/${operacao.id}'/>"
-						method="POST" accept-charset="UTF-8">
-						<div class="card-header">
-							<h5 class="card-header-text">Cadastro</h5>
+
+<body>
+	<%@ include file="../common/header.jspf"%>
+
+
+	<!-- START MAIN -->
+	<main>
+	<div id="main">
+		<!-- START WRAPPER -->
+		<div class="wrapper">
+			<%@ include file="../common/sidebar.jspf"%>
+			<!-- START CONTENT -->
+			<section id="content">
+
+				<!--start container-->
+				<div class="container">
+					<div class="row">
+						<div class="col s12 m12 l12">
+							<h5 class="breadcrumbs-title">Operação</h5>
+							<ol class="breadcrumbs">
+								<li><a href="index.html">Dashboard</a></li>
+								<li><a href="#">Operação</a></li>
+								<li class="active">Cadastro</li>
+							</ol>
 						</div>
+					</div>
 
 
-						<div class="card-body">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="card-block">
+					<div class="card-panel">
+						<h4 class="header2">Operação - Cadastro</h4>
+						<div class="row">
+							<form action="<c:url value='/operacoes/${operacao.id}'/>"
+						method="POST" accept-charset="UTF-8">
+
+								<div class="row">
+									<div class="input-field col s6">
+										<input id="descricao" type="text" class="validate"
+											name="operacao.descricao" value="${operacao.descricao}"> <label for="descricao"
+											class="active">Descricao</label>
+									</div>
+								</div>
 
 
-										<div class="form-group row">
-											<label class="col-sm-2 col-form-label">Descricao:</label>
-											<div class="col-sm-6">
-												<input class="form-control" placeholder="Descricao"
-													type="text" name="operacao.descricao"
-													value="${operacao.descricao}">
-											</div>
-										</div>
+
+								<div class="row">
+									<div class="input-field col s6">
+										<textarea id="instrucao" class="materialize-textarea"
+											name="operacao.instrucao">${operacao.instrucao}</textarea>
+										<label for="instrucao">Instrução</label>
+									</div>
+								</div>
 
 
-										<div class="form-group row">
-											<label class="col-sm-2 col-form-label">Descricao:</label>
-											<div class="col-sm-6">
-												<textarea id="instrucao" class="form-control"
-													name="operacao.instrucao">${operacao.instrucao}</textarea>
-											</div>
-										</div>
-
-
-										<div class="form-group row">
-											<label class="col-sm-2 col-form-label">Setor:</label>
-											<div class="col-sm-6">
-												<select class="form-control" name="operacao.setor.id">
+								<div class="row">
+									<div class="input-field col s6">
+										<select name="operacao.setor.id">
 													<c:forEach items="${setores}" var="setor">
 														<option value="${setor.id}"
 															<c:if test="${setor.id == operacao.setor.id}">selected</c:if>>${setor.descricao}</option>
 													</c:forEach>
-												</select>
-											</div>
-										</div>
-
-
-
-
+												</select> <label>Setor</label>
 									</div>
-
 								</div>
-							</div>
+
+
+
+								<div class="row">
+										<button class="btn grey darken-4 waves-effect waves-light right" type="submit" name="_method" value="DELETE">
+											Excluir <i class="mdi-action-delete right"></i>
+										</button>
+										<button class="btn grey darken-4 waves-effect waves-light right" type="submit" name="_method" value="PUT">
+											Salvar <i class="mdi-content-save right"></i>
+										</button>
+								</div>
+
+							</form>
 						</div>
+					</div>
 
-
-						<div class="card-footer">
-							<button class="btn btn-success waves-effect waves-light m-r-30"
-								type="submit" name="_method" value="PUT">Salvar</button>
-							<button class="btn btn-danger waves-effect waves-light m-r-30"
-								type="submit" name="_method" value="DELETE">Cancelar</button>
-						</div>
-
-					</form>
 				</div>
-			</div>
-			<!-- Main content ends -->
-			<!-- Container-fluid ends -->
 		</div>
+		<!--end container-->
+		</section>
+		<!-- END CONTENT -->
+
+		<%@ include file="../common/right_sidebar.jspf"%>
+
+
 	</div>
+	<!-- END WRAPPER -->
 
+	</div>
+	</main>
+	<!-- END MAIN -->
 
-
-
+	<%@ include file="../common/footer.jspf"%>
 	<%@ include file="../common/import_js.jspf"%>
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -6,14 +6,6 @@
 </head>
 
 <body>
-	<!-- Start Page Loading -->
-	<!-- <div id="loader-wrapper">
-		<div id="loader"></div>
-		<div class="loader-section section-left"></div>
-		<div class="loader-section section-right"></div>
-	</div>-->
-	<!-- End Page Loading -->
-
 	<%@ include file="../common/header.jspf"%>
 
 
@@ -46,29 +38,25 @@
 							<form class="col s12" action="<c:url value='/unidades/'/>"
 								method="POST" accept-charset="UTF-8">
 								<div class="row">
-									<div class="input-field col s12">
-										<input placeholder="Descricao" type="text" class="validate"
-											name="unidade.descricao"> <label for="descricao"
-											class="">Descricao</label>
+									<div class="input-field col s6">
+										<input id="descricao" type="text" class="validate" name="unidade.descricao"> 
+											<label for="descricao">Descricao</label>
 									</div>
 								</div>
 								<div class="row">
-									<div class="input-field col s12">
-										<input placeholder="Sigla" type="text" name="unidade.sigla" class="validate">
-										<label for="sigla" class="">Sigla</label>
+									<div class="input-field col s3">
+										<input id="sigla" type="text" name="unidade.sigla" class="validate">
+										<label for="sigla">Sigla</label>
 									</div>
 								</div>
 
 
 								<div class="row">
-									<div class="input-field col s12">
-										<button
-											class="btn grey darken-4 waves-effect waves-light right"
-											type="submit" name="action">
+										<button class="btn grey darken-4 waves-effect waves-light right" type="submit">
 											Salvar <i class="mdi-content-send right"></i>
 										</button>
-									</div>
 								</div>
+								
 							</form>
 						</div>
 
