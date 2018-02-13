@@ -1,5 +1,7 @@
 package br.ifsp.edu.pcp.controller;
 
+import static br.com.caelum.vraptor.view.Results.json;
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -11,7 +13,6 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Result;
-import br.com.caelum.vraptor.view.Results;
 import br.ifsp.edu.pcp.dao.OperacaoDAO;
 import br.ifsp.edu.pcp.dao.SetorDAO;
 import br.ifsp.edu.pcp.model.Operacao;
@@ -70,10 +71,10 @@ public class OperacaoController {
 	}
 	
 
-	@Get("/operacoes_json")
+	@Get("/operacoes.json")
 	public void operacoes() {
 		 List<Operacao> operacoes = operacaoDAO.listar();
-		    result.use(Results.json()).from(operacoes).serialize();   
+		 result.use(json()).withoutRoot().from(operacoes).serialize();   
     }
 
 }

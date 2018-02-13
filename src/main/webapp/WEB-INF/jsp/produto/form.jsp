@@ -9,14 +9,15 @@
 
 <body>
 	<%@ include file="../common/header.jspf"%>
+<%@ include file="../common/import_js.jspf"%>
 
-
+<%@ include file="../common/sidebar.jspf"%>
 	<!-- START MAIN -->
 	<main>
 	<div id="main">
 		<!-- START WRAPPER -->
 		<div class="wrapper">
-			<%@ include file="../common/sidebar.jspf"%>
+			
 			<!-- START CONTENT -->
 			<section id="content">
 
@@ -200,8 +201,8 @@
 											<div class="row">
 												<div class="input-field col s6">
 												<i class="mdi-action-search prefix"></i>
-													<input type="text" id="autocomplete-input" class="autocomplete"> 
-													<label for="autocomplete-input">Material</label>
+													<input type="text"> 
+													<label for="">Material</label>
 												</div>
 
 												<div class="input-field col s3">
@@ -241,15 +242,20 @@
 										<!-- Roteiro -->
 										<div class="card-panel">
 
+									
+											
+											
 											<div class="row">
-												<div class="col s6">
-													<div class="input-field col s12">
-														<i class="mdi-action-search prefix"></i> <input type="text"
-															id="autocomplete-input" class="autocomplete" onkeyup="carregaOperacaoes();"> <label
-															for="autocomplete-input">Operação</label>
-													</div>
-												</div>
-											</div>
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="mdi-action-search prefix"></i>
+          <input type="text" id="autocomplete-input" class="autocomplete">
+          <label for="autocomplete-input">Operação</label>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 											<div class="row">
@@ -285,9 +291,9 @@
 												</div>
 
 												<div class="input-field col s1">
-													<a
+													<button type="button" onclick="carregaOperacoes();"
 														class="btn-floating right waves-effect waves-light red accent-4"><i
-														class="mdi-content-add"></i></a>
+														class="mdi-content-add"></i></button>
 												</div>
 											</div>
 
@@ -345,50 +351,45 @@
 	<!-- END MAIN -->
 
 	<%@ include file="../common/footer.jspf"%>
-	<%@ include file="../common/import_js.jspf"%>
-
-<script type="text/javascript">
 
 
-
-function carregaOperacaoes(){
-	$.ajax({
-        type: "GET", 
-        url: "/operacoes/operacoes_json",
-        timeout: 3000,
-        contentType: "application/json; charset=utf-8",
-        cache: false,
-        beforeSend: function() {
-            alert("Enviando");
-        },
-        error: function() {
-        	 alert("erro");
-        },
-        success: function(data) {
-                console.log(data);
-        } 
-    });  
-}
 	
-	
-	
-	
+	       <script type="text/javascript">
+          $(document).ready(function() {
+        	  $.ajax({ 
+        		    type: 'GET', 
+        		    url: "<c:url value='/operacoes/operacoes.json'/>",
+        		    data: { get_param: 'value' }, 
+        		    dataType: 'json',
+        		    success: function (data) {
+        		    	alert("Sucess");
+        		    	 console.log(data);
+        		    var operacoes = data;
+        		    var data_operacoes = {};
+        		    for(var i =0; i < operacoes.length;i++){
+        		    	data_operacoes[operacoes[i].descricao] = operacoes[i].id; 
+        		    }
+        		    
+        		    console.log(data_operacoes);
+        		    	
+        		    $('input.autocomplete').autocomplete({
+        		        data: data_operacoes,
+        		        limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+        		        onAutocomplete: function(val) {
+        		          // Callback function when value is autcompleted.
+        		        },
+        		        minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+        		      });
+        	   
+        		       }
+        		});	
+          
+          });
 
 
-$('input.autocomplete').autocomplete({
-    data: {
-      "Apple": null,
-      "Microsoft": null,
-      "Google": 'https://placehold.it/250x250'
-    },
-    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
-    onAutocomplete: function(val) {
-      // Callback function when value is autcompleted.
-    },
-    minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
-  });
+            
+        </script>
 
-</script>
 </body>
 
 </html>
