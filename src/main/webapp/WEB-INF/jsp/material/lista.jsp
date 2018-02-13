@@ -1,71 +1,89 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-<title>Material - Lista</title>
+<title>Material - Consulta</title>
 <%@ include file="../common/import_css.jspf"%>
+
+ 
+
 </head>
 
-<body class="sidebar-mini fixed">
-	<div class="loader-bg">
-		<div class="loader-bar"></div>
-	</div>
-	<div class="wrapper">
-		<!-- Navbar-->
-		<%@ include file="../common/navbar.jspf"%>
-		<!-- Side-Nav-->
-		<%@ include file="../common/sidebar.jspf"%>
-		<div class="content-wrapper">
-			<!-- Container-fluid starts -->
-			<!-- Main content starts -->
-			<div class="container-fluid">
+<body>
+
+
+	<%@ include file="../common/header.jspf"%>
+
+
+	<!-- START MAIN -->
+	<main>
+	<div id="main">
+		<!-- START WRAPPER -->
+		<div class="wrapper">
+			<%@ include file="../common/sidebar.jspf"%>
+			<!-- START CONTENT -->
+			<section id="content">
+
+				<!--start container-->
+				<div class="container">
+				
 				<div class="row">
-					<div class="main-header">
-						<h4>Material - Novo</h4>
-						<ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
-							<li class="breadcrumb-item"><a href="index.html"><i
-									class="icofont icofont-home"></i></a></li>
-							<li class="breadcrumb-item"><a href="#">Material</a></li>
-							<li class="breadcrumb-item"><a
-								href="form-elements-bootstrap.html">Lista</a></li>
-						</ol>
-					</div>
-				</div>
-				<div class="card">
-					<div class="card-header">
-						<h5 class="card-header-text">Consulta</h5>
-					</div>
-
-
-
-					<div class="card-block">
-						<div class="row">
-							<c:if test="${not empty mensagem}">
-								<div class="alert alert-success" role="alert">${mensagem}</div>
-							</c:if>
-
-
-							<div class="col-sm-12 table-responsive">
-								<table class="table table-hover">
-									<thead>
-										<tr>
-											<th><strong>ID</strong></th>
-											<th><strong>Descricao</strong></th>
-											<th><strong>Codigo Interno</strong></th>
-											<th><strong>Unidade</strong></th>
-											<th><strong>Qntd Estoque</strong></th>
-											<th><strong>Qntd M�nima</strong></th>
-											<th><strong>Valor Unit (R$)</strong></th>
-											<th><strong>Peso (KG)</strong></th>
-											<th><strong>Comp (mm)</strong></th>
-											<th><strong>Larg (mm)</strong></th>
-											<th><strong>Alt (mm)</strong></th>
-											<th><strong>Status</strong></th>
-											<th><strong>Acao</strong></th>
-										</tr>
-									</thead>
-									<tbody>
-										<c:forEach items="${materialList}" var="material">
+              <div class="col s12 m12 l12">
+                <h5 class="breadcrumbs-title">Material</h5>
+                <ol class="breadcrumbs">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="#">Material</a></li>
+                    <li class="active">Consulta</li>
+                </ol>
+              </div>
+            </div>
+				
+				
+<div class="row">
+			
+			<div class="col s12">
+                  <div id="data-table-simple_wrapper" class="dataTables_wrapper"><div class="dataTables_length" id="data-table-simple_length"><label>Show <div class="select-wrapper initialized"><span class="caret">▼</span><input class="select-dropdown" readonly="true" data-activates="select-options-652d4a42-0c1d-501d-b8a2-b28ad835c1a1" value="10" type="text"><ul id="select-options-652d4a42-0c1d-501d-b8a2-b28ad835c1a1" class="dropdown-content select-dropdown "><li class=""><span>10</span></li><li class=""><span>25</span></li><li class=""><span>50</span></li><li class=""><span>100</span></li></ul><select name="data-table-simple_length" aria-controls="data-table-simple" class="initialized"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></div> entries</label></div><div id="data-table-simple_filter" class="dataTables_filter"><label>Search:<input class="" placeholder="" aria-controls="data-table-simple" type="search"></label></div><table id="data-table-simple" class="responsive-table display dataTable" role="grid" aria-describedby="data-table-simple_info" cellspacing="0">
+                    <thead>
+                        <tr role="row">
+                        <th class="sorting_asc" tabindex="0" aria-controls="data-table-simple" rowspan="1" colspan="1" style="width: 50px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">ID</th>
+                        <th class="sorting_asc" tabindex="0" aria-controls="data-table-simple" rowspan="1" colspan="1" style="width: 350px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Descrição</th>
+                        <th class="sorting" tabindex="0" aria-controls="data-table-simple" rowspan="1" colspan="1" style="width: 150px;" aria-label="Position: activate to sort column ascending">Codigo Interno</th>
+                        <th class="sorting" tabindex="0" aria-controls="data-table-simple" rowspan="1" colspan="1" style="width: 150px;" aria-label="Office: activate to sort column ascending">Unidade</th>
+                        <th class="sorting" tabindex="0" aria-controls="data-table-simple" rowspan="1" colspan="1" style="width: 150px;" aria-label="Office: activate to sort column ascending">Qntd Estoque</th>
+                        <th class="sorting" tabindex="0" aria-controls="data-table-simple" rowspan="1" colspan="1" style="width: 150px;" aria-label="Office: activate to sort column ascending">Qntd Mínima</th>
+                        <th class="sorting" tabindex="0" aria-controls="data-table-simple" rowspan="1" colspan="1" style="width: 150px;" aria-label="Office: activate to sort column ascending">Valor Unit (R$)</th>
+                          <th class="sorting" tabindex="0" aria-controls="data-table-simple" rowspan="1" colspan="1" style="width: 150px;" aria-label="Office: activate to sort column ascending">Peso (KG)</th>
+                         <th class="sorting" tabindex="0" aria-controls="data-table-simple" rowspan="1" colspan="1" style="width: 150px;" aria-label="Office: activate to sort column ascending">Comp (mm)</th>
+                       <th class="sorting" tabindex="0" aria-controls="data-table-simple" rowspan="1" colspan="1" style="width: 150px;" aria-label="Office: activate to sort column ascending">Larg (mm)</th>
+                        <th class="sorting" tabindex="0" aria-controls="data-table-simple" rowspan="1" colspan="1" style="width: 150px;" aria-label="Office: activate to sort column ascending">Alt (mm)</th>
+                        <th class="sorting" tabindex="0" aria-controls="data-table-simple" rowspan="1" colspan="1" style="width: 150px;" aria-label="Office: activate to sort column ascending">Status</th>
+                        <th class="sorting" tabindex="0" aria-controls="data-table-simple" rowspan="1" colspan="1" style="width: 150px;" aria-label="Office: activate to sort column ascending">Ação</th>
+                        </tr>	
+                    </thead>
+                 
+                    <tfoot>
+                        <tr>
+                        <th rowspan="1" colspan="1"><strong>ID</strong></th>
+											<th rowspan="1" colspan="1"><strong>Descrição</strong></th>
+											<th rowspan="1" colspan="1"><strong>Codigo Interno</strong></th>
+											<th rowspan="1" colspan="1"><strong>Unidade</strong></th>
+											<th rowspan="1" colspan="1"><strong>Qntd Estoque</strong></th>
+											<th rowspan="1" colspan="1"><strong>Qntd Mínima</strong></th>
+											<th rowspan="1" colspan="1"><strong>Valor Unit (R$)</strong></th>
+											<th rowspan="1" colspan="1"><strong>Peso (KG)</strong></th>
+											<th rowspan="1" colspan="1"><strong>Comp (mm)</strong></th>
+											<th rowspan="1" colspan="1"><strong>Larg (mm)</strong></th>
+											<th rowspan="1" colspan="1"><strong>Alt (mm)</strong></th>
+											<th rowspan="1" colspan="1"><strong>Status</strong></th>
+											<th rowspan="1" colspan="1"><strong>Ação</strong></th>
+                        </tr>
+                    </tfoot>
+                 
+                    <tbody>
+                         
+                         
+                         <c:forEach items="${materialList}" var="material">
 											<tr>
 												<td>${material.id}</td>
 												<td>${material.descricao}</td>
@@ -84,56 +102,79 @@
 												<c:choose>
 
 													<c:when test="${status == 'ATIVO'}">
-														<td><span class="bagde badge-success">${status}</span></td>
+														<td><span class="light-green accent-4">${status}</span></td>
 													</c:when>
 
 													<c:when test="${status == 'INATIVO'}">
-														<td><span class="bagde badge-danger">${status}</span></td>
+														<td><span class="red accent-4">${status}</span></td>
 													</c:when>
 
 													<c:otherwise>
-														<td><span class="bagde badge-warning">${status}</span></td>
+														<td><span class="yellow accent-4">${status}</span></td>
 													</c:otherwise>
 												</c:choose>
 
-
-
 												<td><a
 													href="<c:url value='/materiais/${material.id}'/>"
-													class="btn-floating btn-sm red accent-4"> <i
-														class="material-icons md-dark pmd-sm">edit</i>
+													class="btn-floating btn-sm grey darken-4"> <i
+														class="mdi-editor-mode-edit">edit</i>
 												</a> <a href="javascript:void(0);"
-													class="btn-floating btn-sm red accent-4"> <i
-														class="material-icons md-dark pmd-sm">delete</i>
+													class="btn-floating btn-sm grey darken-4"> <i
+														class="mdi-content-clear">delete</i>
 												</a></td>
 											</tr>
-
 										</c:forEach>
-
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-
-
-
+         
+                        
+                    </tbody>
+                  </table>
+                  <div class="dataTables_info" id="data-table-simple_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div><div class="dataTables_paginate paging_simple_numbers" id="data-table-simple_paginate"><a class="paginate_button previous disabled" aria-controls="data-table-simple" data-dt-idx="0" tabindex="0" id="data-table-simple_previous">Previous</a><span><a class="paginate_button current" aria-controls="data-table-simple" data-dt-idx="1" tabindex="0">1</a><a class="paginate_button " aria-controls="data-table-simple" data-dt-idx="2" tabindex="0">2</a><a class="paginate_button " aria-controls="data-table-simple" data-dt-idx="3" tabindex="0">3</a><a class="paginate_button " aria-controls="data-table-simple" data-dt-idx="4" tabindex="0">4</a><a class="paginate_button " aria-controls="data-table-simple" data-dt-idx="5" tabindex="0">5</a><a class="paginate_button " aria-controls="data-table-simple" data-dt-idx="6" tabindex="0">6</a></span><a class="paginate_button next" aria-controls="data-table-simple" data-dt-idx="7" tabindex="0" id="data-table-simple_next">Next</a></div></div>
+                </div>
+                </div>
 
 				</div>
-			</div>
-			<!-- Main content ends -->
-			<!-- Container-fluid ends -->
+				<!--end container-->
+			</section>
+			<!-- END CONTENT -->
+			
+			
+
+			<%@ include file="../common/right_sidebar.jspf"%>
+
+
 		</div>
+		<!-- END WRAPPER -->
+
 	</div>
+	</main>
+	<!-- END MAIN -->
 
-
-
-
+	<%@ include file="../common/footer.jspf"%>
 	<%@ include file="../common/import_js.jspf"%>
+	
+	<script type="text/javascript">
+        /*Show entries on click hide*/
+        $(document).ready(function(){
+            $(".dropdown-content.select-dropdown li").on( "click", function() {
+                var that = this;
+                setTimeout(function(){
+                if($(that).parent().hasClass('active')){
+                        $(that).parent().removeClass('active');
+                        $(that).parent().hide();
+                }
+                },100);
+            });
+        });
+    </script>
 
 </body>
 
 </html>
+
+
+
+
+
 
 
 

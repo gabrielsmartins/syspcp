@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -33,7 +35,7 @@
 				
 				
 					<div class="card-panel">
-						<h4 class="header2">Setor - Editar</h4>
+						<h4 class="header2"><strong>Setor - Editar</strong></h4>
 						<div class="row">
 							<form action="<c:url value='/setores/${setor.id}'/>" method="POST" accept-charset="UTF-8">
 								<div class="row">

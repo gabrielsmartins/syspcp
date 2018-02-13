@@ -11,6 +11,7 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.view.Results;
 import br.ifsp.edu.pcp.dao.OperacaoDAO;
 import br.ifsp.edu.pcp.dao.SetorDAO;
 import br.ifsp.edu.pcp.model.Operacao;
@@ -67,5 +68,12 @@ public class OperacaoController {
 		result.redirectTo(OperacaoController.class).lista();
 
 	}
+	
+
+	@Get("/operacoes_json")
+	public void operacoes() {
+		 List<Operacao> operacoes = operacaoDAO.listar();
+		    result.use(Results.json()).from(operacoes).serialize();   
+    }
 
 }

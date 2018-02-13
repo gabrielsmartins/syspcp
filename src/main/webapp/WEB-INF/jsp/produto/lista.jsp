@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
@@ -64,17 +66,17 @@
 					<thead>
 						<tr>
 							<th>ID</th>
-				<th>Descrição</th>
-				<th>Código Interno</th>
+				<th>DescriÃ§Ã£o</th>
+				<th>CÃ³digo Interno</th>
 				<th>Unidade</th>
 				<th>Quantidade Estoque</th>
-				<th>Quantidade Mínima</th>
+				<th>Quantidade MÃ­nima</th>
 				<th>Valor Unit (R$)</th>
 				<th>Peso (KG)</th>
 				<th>Comprimento (mm)</th>
 				<th>Largura (mm)</th>
 				<th>Altura (mm)</th>
-				<th>Situação</th>
+				<th>SituaÃ§Ã£o</th>
 				<th></th>
 						</tr>
 					</thead>

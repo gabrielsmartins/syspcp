@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
@@ -47,13 +49,13 @@
 						<form action="<c:url value='/materiais/${material.id}'/>" method="POST"
 							accept-charset="UTF-8">
 
-							<!-- Dados B·sicos -->
+							<!-- Dados B√°sicos -->
 							<fieldset>
-								<legend>Dados B·sicos</legend>
+								<legend>Dados B√°sicos</legend>
 
 								<div
 									class="form-group pmd-textfield pmd-textfield-floating-label">
-									<label for="regular1" class="control-label">CÛdigo
+									<label for="regular1" class="control-label">C√≥digo
 										Interno:</label> <input name="material.codigoInterno" id="regular1"
 										class="form-control" type="text" value="${material.codigoInterno}"><span
 										class="pmd-textfield-focused"></span>
@@ -61,7 +63,7 @@
 
 								<div
 									class="form-group pmd-textfield pmd-textfield-floating-label">
-									<label for="regular1" class="control-label">DescriÁ„o:</label>
+									<label for="regular1" class="control-label">Descri√ß√£o:</label>
 									<input name="material.descricao" id="regular1"
 										class="form-control" type="text" value="${material.descricao}"><span
 										class="pmd-textfield-focused"></span>
@@ -72,7 +74,7 @@
 									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 										<div
 											class="form-group pmd-textfield pmd-textfield-floating-label">
-											<label for="valor unitario">Valor Unit·rio:</label> <input
+											<label for="valor unitario">Valor Unit√°rio:</label> <input
 												type="text" name="material.valorUnitario"
 												class="form-control" value="${material.valorUnitario}"/><span class="pmd-textfield-focused"></span>
 										</div>
@@ -93,7 +95,7 @@
 								<div class="group-fields clearfix row">
 									<div
 										class="form-group pmd-textfield pmd-textfield-floating-label">
-										<label for="situacao" class="control-label">SituaÁ„o:</label>
+										<label for="situacao" class="control-label">Situa√ß√£o:</label>
 										<!-- Inline radio -->
 										<label class="radio-inline pmd-radio"> <input
 											type="radio" id="ativo" name="material.situacao"
@@ -115,10 +117,10 @@
 
                         <br>
 
-							<!-- Dados TÈcnicos -->
+							<!-- Dados T√©cnicos -->
 
 							<fieldset>
-								<legend>Dados TÈcnicos</legend>
+								<legend>Dados T√©cnicos</legend>
 
 								<div class="group-fields clearfix row">
 									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -213,7 +215,7 @@
 									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 										<div
 											class="form-group pmd-textfield pmd-textfield-floating-label">
-											<label for="valor unitario">Quantidade MÌnima:</label> <input
+											<label for="valor unitario">Quantidade M√≠nima:</label> <input
 												type="text" name="material.quantidadeMinima" value="${material.quantidadeMinima}"
 												class="form-control" />
 										</div>

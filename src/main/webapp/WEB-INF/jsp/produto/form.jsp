@@ -1,361 +1,405 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-<title>Produto - Novo</title>
+<title>Produto - Cadastro</title>
 <%@ include file="../common/import_css.jspf"%>
-
-    <script>
-        $(document).ready(function() { $("#e1").select2(); });
-    </script>
 </head>
 
-<body class="sidebar-mini fixed">
-	<div class="loader-bg">
-		<div class="loader-bar"></div>
-	</div>
-	<div class="wrapper">
-		<!-- Navbar-->
-		<%@ include file="../common/navbar.jspf"%>
-		<!-- Side-Nav-->
-		<%@ include file="../common/sidebar.jspf"%>
-		<div class="content-wrapper">
-			<!-- Container-fluid starts -->
-			<!-- Main content starts -->
-			<div class="container-fluid">
-				<div class="row">
-					<div class="main-header">
-						<h4>Produto - Novo</h4>
-						<ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
-							<li class="breadcrumb-item"><a href="index.html"><i
-									class="icofont icofont-home"></i></a></li>
-							<li class="breadcrumb-item"><a href="#">Produto</a></li>
-							<li class="breadcrumb-item"><a
-								href="form-elements-bootstrap.html">Novo</a></li>
-						</ol>
-					</div>
-				</div>
-				<div class="card">
-					<form action="<c:url value='/materiais/'/>" method="POST"
-						accept-charset="UTF-8">
-						<div class="card-header">
-							<h5 class="card-header-text">Cadastro</h5>
+<body>
+	<%@ include file="../common/header.jspf"%>
+
+
+	<!-- START MAIN -->
+	<main>
+	<div id="main">
+		<!-- START WRAPPER -->
+		<div class="wrapper">
+			<%@ include file="../common/sidebar.jspf"%>
+			<!-- START CONTENT -->
+			<section id="content">
+
+				<!--start container-->
+				<div class="container">
+
+					<div class="row">
+						<div class="col s12 m12 l12">
+							<h5 class="breadcrumbs-title">Produto</h5>
+							<ol class="breadcrumbs">
+								<li><a href="index.html">Dashboard</a></li>
+								<li><a href="#">Produto</a></li>
+								<li class="active">Cadastro</li>
+							</ol>
 						</div>
+					</div>
 
 
-						<!--  Tabs  -->
-						<ul class="nav nav-tabs md-tabs" role="tablist">
-							<li class="nav-item"><a class="nav-link active"
-								data-toggle="tab" href="#dados_basicos" role="tab">Dados
-									Basicos</a>
-								<div class="slide"></div></li>
-							<li class="nav-item"><a class="nav-link" data-toggle="tab"
-								href="#estrutura" role="tab">Estrutura</a>
-								<div class="slide"></div></li>
-							<li class="nav-item"><a class="nav-link" data-toggle="tab"
-								href="#roteiro" role="tab">Roteiro</a>
-								<div class="slide"></div></li>
-						</ul>
-						<!--  End Tabs  -->
+					<form action="<c:url value='/produtos/'/>" method="POST"
+						accept-charset="UTF-8">
+						<div id="basic-tabs" class="section">
+							<div class="row">
+								<div class="col s12">
+									<ul class="tabs tab-demo z-depth-1" style="width: 100%;">
+										<li class="tab col s3"><a class="" href="#cadastro">Cadastro</a>
+										</li>
+										<li class="tab col s3"><a href="#estrutura"
+											class="active">Estrutura</a></li>
+										<li class="tab col s3"><a href="#roteiro">Roteiro</a></li>
+										<div class="indicator" style="right: 603px; left: 301px;"></div>
+										<div class="indicator" style="right: 603px; left: 301px;"></div>
+									</ul>
+								</div>
+								<div class="col s12">
+									<div id="cadastro" class="col s12" style="display: none;">
 
 
 
+										<!-- Cadastro -->
 
-						<!--  Start Content Tabs -->
-						<div class="tab-content">
-							<div class="tab-pane active" id="dados_basicos" role="tabpanel">
+										<div class="card-panel">
+											<h4 class="header2">
+												<strong>Dados Básicos</strong>
+											</h4>
 
 
-								<!-- Início Aba Dados Básicos -->
-								<div class="card-body">
-									<div class="row">
-										<div class="col-sm-12">
-											<div class="card-body">
-
-												<div class="card-header">
-													<h4 class="sub-title">Informacoes Basicas</h4>
+											<div class="row">
+												<div class="input-field col s3">
+													<input id="codigoInterno" type="text"
+														name="produto.codigoInterno" class="validate"> <label
+														for="codigoInterno">Código Interno:</label>
 												</div>
-												<div class="card-block">
 
-													<div class="form-group row">
-														<label class="col-sm-2 col-form-label">Codigo
-															Interno:</label>
-														<div class="col-sm-6">
-															<input class="form-control" placeholder="Codigo Interno"
-																type="text" name="material.codigoInterno">
-														</div>
-													</div>
-													<div class="form-group row">
-														<label class="col-sm-2 col-form-label">Descricao:</label>
-														<div class="col-sm-10">
-															<input class="form-control" placeholder="Descricao"
-																type="text" name="material.descricao">
-														</div>
-													</div>
-													<div class="form-group row">
-														<label class="col-sm-2 col-form-label">Valor
-															Unitario</label>
-														<div class="col-sm-2">
-															<div class="input-group">
-																<span class="input-group-addon">R$</span> <input
-																	class="form-control" placeholder="Valor Unitario"
-																	type="number" pattern="[0-9]+([\.,][0-9]+)?"
-																	step="0.01" name="material.valorUnitario">
-															</div>
-														</div>
+												<div class="input-field col s6">
+													<input id="descricao" class="validate" type="text"
+														name="produto.descricao"> <label for="descricao">Descricao:</label>
+												</div>
+											</div>
 
-														<label class="col-sm-2 col-form-label">Situacao:</label>
-														<div class="col-md-6">
-															<div class="radio">
-																<input name="material.situacao" type="radio" id="ATIVO"
-																	value="ATIVO" checked> <label for="ATIVO">Ativo</label>
-																<input name="material.situacao" type="radio"
-																	id="INATIVO" VALUE="INATIVO"> <label
-																	for="INATIVO">Inativo</label> <input
-																	name="material.situacao" type="radio"
-																	id="FORA_DE_LINHA" VALUE="FORA_DE_LINHA"> <label
-																	for="FORA_DE_LINHA">Fora de Linha</label>
-															</div>
 
-														</div>
-													</div>
+
+											<div class="row">
+												<div class="input-field col s3">
+													<input id="valorUnitario" class="validate" type="number"
+														pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+														name="produto.valorUnitario"> <label
+														for="valorUnitario">Valor Unitário:</label>
 												</div>
 
 
+												<div class="input-field col s1">
+													<label>Situação:</label>
+												</div>
+
+												<div class="input-field col s6">
+													<input name="produto.situacao" type="radio" id="ATIVO"
+														value="ATIVO" checked> <label for="ATIVO">Ativo</label>
+													<input name="produto.situacao" type="radio" id="INATIVO"
+														VALUE="INATIVO"> <label for="INATIVO">Inativo</label>
+													<input name="produto.situacao" type="radio"
+														id="FORA_DE_LINHA" VALUE="FORA_DE_LINHA"> <label
+														for="FORA_DE_LINHA">Fora de Linha</label>
+												</div>
+											</div>
 
 
-
-												<div class="card-body">
-													<div class="row">
-														<div class="col-sm-12">
-															<div class="card">
-																<div class="card-header">
-																	<h4 class="sub-title">Informacoes Tecnicas</h4>
-																</div>
-																<div class="card-block">
+					
+											<h4 class="header2">
+												<strong>Dados Técnicos</strong>
+											</h4>
 
 
-
-																	<div class="form-group row">
-																		<label class="col-sm-2 col-form-label">Peso
-																			(KG):</label>
-																		<div class="col-sm-2">
-																			<input class="form-control" type="number"
-																				pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
-																				name="material.peso">
-																		</div>
-																	</div>
-
-																	<div class="form-group row">
-																		<label class="col-sm-2 col-form-label">Unidade
-																			de Medida:</label>
-																		<div class="col-sm-6">
-																			<select class="form-control"
-																				name="material.unidadeMedida.id">
-																				<c:forEach items="${unidades}" var="unidade">
-																					<option value="${unidade.id}">${unidade.sigla}-${unidade.descricao}</option>
-																				</c:forEach>
-																			</select>
-																		</div>
-																	</div>
-
-																	<div class="form-group row">
-																		<label class="col-sm-2 col-form-label">Comprimento
-																			(mm):</label>
-																		<div class="col-sm-2">
-																			<input class="form-control" placeholder="Comprimento"
-																				type="number" pattern="[0-9]+([\.,][0-9]+)?"
-																				step="0.01" name="material.comprimento">
-																		</div>
-
-																		<label class="col-sm-1 col-form-label">Largura
-																			(mm):</label>
-																		<div class="col-sm-2">
-																			<input class="form-control" placeholder="Largura"
-																				type="number" pattern="[0-9]+([\.,][0-9]+)?"
-																				step="0.01" name="material.largura">
-																		</div>
-
-																		<label class="col-sm-1 col-form-label">Altura
-																			(mm):</label>
-																		<div class="col-sm-2">
-																			<input class="form-control" placeholder="Altura"
-																				type="number" pattern="[0-9]+([\.,][0-9]+)?"
-																				step="0.01" name="material.altura">
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
+											<div class="row">
+												<div class="input-field col s3">
+													<select name="produto.unidadeMedida.id">
+														<option value="" disabled selected>Escolha uma
+															unidade</option>
+														<c:forEach items="${unidades}" var="unidade">
+															<option value="${unidade.id}">${unidade.sigla}-${unidade.descricao}</option>
+														</c:forEach>
+													</select> <label for="peso">Unidade de Medida:</label>
 												</div>
 
 
+												<div class="input-field col s3">
+													<input id="peso" type="number"
+														pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+														name="produto.peso" class="validate"> <label
+														for="peso">Peso (KG):</label>
+												</div>
+											</div>
 
 
 
+											<div class="row">
+												<div class="input-field col s3">
+													<input id="comprimento" type="number"
+														pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+														name="produto.comprimento" class="validate"> <label
+														for="comprimento">Comprimento (mm):</label>
+												</div>
+
+												<div class="input-field col s3">
+													<input id="largura" type="number"
+														pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+														name="produto.largura" class="validate"> <label
+														for="largura">Largura (mm):</label>
+												</div>
+
+												<div class="input-field col s3">
+													<input id="altura" type="number"
+														pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+														name="produto.altura" class="validate"> <label
+														for="altura">Altura (mm):</label>
+												</div>
 
 
-												<div class="card-body">
-													<div class="row">
-														<div class="col-sm-12">
-															<!-- Basic Form Inputs card start -->
-															<div class="card">
-																<div class="card-header">
-																	<h4 class="sub-title">Informacoes Estoque</h4>
-																</div>
-																<div class="card-block" style="">
+											</div>
+
+								
 
 
-																	<div class="form-group row">
-																		<label class="col-sm-2 col-form-label">Quantidade
-																			Estoque :</label>
-																		<div class="col-sm-2">
-																			<input class="form-control"
-																				placeholder="Quantidade Estoque" type="number"
-																				name="material.quantidadeEstoque">
-																		</div>
-																	</div>
-
-																	<div class="form-group row">
-																		<label class="col-sm-2 col-form-label">Quantidade
-																			Mínima :</label>
-																		<div class="col-sm-2">
-																			<input class="form-control"
-																				placeholder="Quantidade Mínima :" type="number"
-																				name="material.quantidadeMinima">
-																		</div>
-																	</div>
+					
+											<h4 class="header2">
+												<strong>Dados Estoque</strong>
+											</h4>
 
 
-																	<div class="form-group row">
-																		<label class="col-sm-2 col-form-label">Lead
-																			Time (D) :</label>
-																		<div class="col-sm-2">
-																			<input class="form-control" placeholder="Lead Time"
-																				type="number" name="material.leadTime">
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
+											<div class="row">
+												<div class="input-field col s3">
+													<input id="quantidadeEstoque" type="number"
+														pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+														name="produto.quantidadeEstoque" class="validate">
+													<label for="quantidadeEstoque">Quantidade Estoque :</label>
+												</div>
+
+												<div class="input-field col s3">
+													<input id="quantidadeMinima" type="number"
+														pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+														name="produto.quantidadeMinima" class="validate">
+													<label for="quantidadeMinima">Quantidade Mínima :</label>
+												</div>
+
+												<div class="input-field col s3">
+													<input id="leadtime" type="number"
+														pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+														name="produto.leadTime" class="validate"> <label
+														for="leadtime">Lead Time (D) :</label>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<!-- Fim cadastro -->
+
+
+									<div id="estrutura" class="col s12" style="display: block;">
+										<!-- Estrutura -->
+										<div class="card-panel">
+
+											<div class="row">
+												<div class="input-field col s6">
+												<i class="mdi-action-search prefix"></i>
+													<input type="text" id="autocomplete-input" class="autocomplete"> 
+													<label for="autocomplete-input">Material</label>
+												</div>
+
+												<div class="input-field col s3">
+													<input id="largura" type="number"
+														pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+														name="produto.largura" class="validate"> <label
+														for="largura">Quantidade:</label>
+												</div>
+
+												<div class="input-field col s1">
+													<a
+														class="btn-floating right waves-effect waves-light red accent-4"><i
+														class="mdi-content-add"></i></a>
+												</div>
+											</div>
+
+											<table class="hoverable">
+												<thead>
+													<tr>
+														<th>Seq</th>
+														<th>Material</th>
+														<th>Quantidade</th>
+													</tr>
+												</thead>
+												<tbody>
+
+												</tbody>
+												<tfoot>
+
+												</tfoot>
+											</table>
+										</div>
+
+										<!-- Fim Estrutura -->
+									</div>
+									<div id="roteiro" class="col s12" style="display: none;">
+										<!-- Roteiro -->
+										<div class="card-panel">
+
+											<div class="row">
+												<div class="col s6">
+													<div class="input-field col s12">
+														<i class="mdi-action-search prefix"></i> <input type="text"
+															id="autocomplete-input" class="autocomplete" onkeyup="carregaOperacaoes();"> <label
+															for="autocomplete-input">Operação</label>
 													</div>
 												</div>
 											</div>
 
+
+											<div class="row">
+												<div class="input-field col s2">
+													<i class="mdi-av-timer prefix"></i> <label>Tempo
+														Setup:</label>
+												</div>
+
+												<div class="input-field col s1">
+													<input class="validate" type="time" step="1"
+														pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
+												</div>
+
+												<div class="input-field col s2">
+													<i class="mdi-av-timer prefix"></i> <label>Tempo
+														Produção:</label>
+												</div>
+
+												<div class="input-field col s1">
+													<input class="validate" type="time" step="1"
+														pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
+												</div>
+
+												<div class="input-field col s2">
+													<i class="mdi-av-timer prefix"></i> <label>Tempo
+														Finalização:</label>
+												</div>
+
+
+												<div class="input-field col s1">
+													<input class="validate" type="time" step="1"
+														pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
+												</div>
+
+												<div class="input-field col s1">
+													<a
+														class="btn-floating right waves-effect waves-light red accent-4"><i
+														class="mdi-content-add"></i></a>
+												</div>
+											</div>
+
+
+
+
+											<table class="hoverable">
+												<thead>
+													<tr>
+														<th>Seq</th>
+														<th>Operação</th>
+														<th>Tempo Setup</th>
+														<th>Tempo Produção</th>
+														<th>Tempo Finalização</th>
+														<th>Total</th>
+													</tr>
+												</thead>
+												<tbody>
+
+												</tbody>
+												<tfoot>
+
+												</tfoot>
+											</table>
 										</div>
 									</div>
+									<!-- Fim Roteiro -->
+
+
 								</div>
-
-								<!-- Fim Aba Dados Básicos -->
 							</div>
 
-							<!-- Início Aba Estrutura -->
-							<div class="tab-pane" id="estrutura" role="tabpanel">
-								<select id='custom-headers' class="searchable"
-									multiple='multiple'>
-									<option value='elem_1' selected>elem 1</option>
-									<option value='elem_2'>elem 2</option>
-									<option value='elem_3'>elem 3</option>
-									<option value='elem_4' selected>elem 4</option>
-									<option value='elem_5'>elem 5</option>
-									<option value='elem_6'>elem 6</option>
-									<option value='elem_7'>elem 7</option>
-									<option value='elem_8'>elem 8</option>
-									<option value='elem_9'>elem 9</option>
-									<option value='elem_10'>elem 10</option>
-									<option value='elem_11'>elem 11</option>
-									<option value='elem_12'>elem 12</option>
-									<option value='elem_13'>elem 13</option>
-									<option value='elem_14'>elem 14</option>
-									<option value='elem_15'>elem 15</option>
-									<option value='elem_16'>elem 16</option>
-								</select>
-
-
-
-
-
-							</div>
-							<!-- Fim Aba Estrutura -->
-
-							<!-- Início Aba Roteiro -->
-							<div class="tab-pane" id="roteiro" role="tabpanel">
-								<table class="table">
-									<thead>
-										<tr>
-											<th class="col-md-1">Seq.</th>
-											<th class="col-md-4">Operacao</th>
-											<th class="col-md-2">Tempo Setup (hh:mm:ss)</th>
-											<th class="col-md-2">Tempo Prod. (hh:mm:ss)</th>
-											<th class="col-md-2">Tempo Finl. (hh:mm:ss)</th>
-											<th class="col-md-1"><button class="btn btn-success btn-circle btn-lg waves-effect waves-lights">+</button></th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td class="col-md-1"><span id="seq">1</span></td>
-											<td class="col-md-4">
-											
-											
-											
-											    <select id="e1">
-        <option value="AL">Alabama</option>
-
-        <option value="WY">Wyoming</option>
-    </select>
-											
-											
-											
-											
-											
-											</td>
-											<td class="col-md-2"><input type="time" class="form-control"  step="1" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$"></td>
-											<td class="col-md-2"><input type="time" class="form-control"  step="1"  pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$"></td>
-											<td class="col-md-2"><input type="time" class="form-control"  step="1" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$"></td>
-											<td class="col-md-1"><button class="btn btn-danger btn-circle btn-sm waves-effect waves-lights">X</button></td>
-										</tr>
-									</tbody>
-
-								</table>
-							</div>
-							<!-- Fim Aba Roteiro -->
 						</div>
 
-						<!--  End Content Tabs -->
-
-
-
-
-
-
-
-
-
-
-						<div class="card-footer">
-							<button class="btn btn-success waves-effect waves-light m-r-30"
-								type="submit">Salvar</button>
-							<button type="reset"
-								class="btn btn-default waves-effect waves-light m-r-30">Cancelar</button>
+						<div class="card-panel">
+							<div class="row">
+								<button class="btn grey darken-4 waves-effect waves-light right"
+									type="submit">
+									Salvar <i class="mdi-content-send right"></i>
+								</button>
+							</div>
 						</div>
 
 					</form>
+
+
+
 				</div>
-			</div>
-			<!-- Main content ends -->
-			<!-- Container-fluid ends -->
+				<!--end container-->
+			</section>
 		</div>
 	</div>
+	<!-- END WRAPPER --> <!-- END CONTENT --> <%@ include
+		file="../common/right_sidebar.jspf"%> </main>
+	<!-- END MAIN -->
 
-
-
-
+	<%@ include file="../common/footer.jspf"%>
 	<%@ include file="../common/import_js.jspf"%>
 
+<script type="text/javascript">
+
+
+
+function carregaOperacaoes(){
+	$.ajax({
+        type: "GET", 
+        url: "/operacoes/operacoes_json",
+        timeout: 3000,
+        contentType: "application/json; charset=utf-8",
+        cache: false,
+        beforeSend: function() {
+            alert("Enviando");
+        },
+        error: function() {
+        	 alert("erro");
+        },
+        success: function(data) {
+                console.log(data);
+        } 
+    });  
+}
+	
+	
+	
+	
+
+
+$('input.autocomplete').autocomplete({
+    data: {
+      "Apple": null,
+      "Microsoft": null,
+      "Google": 'https://placehold.it/250x250'
+    },
+    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+    onAutocomplete: function(val) {
+      // Callback function when value is autcompleted.
+    },
+    minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+  });
+
+</script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
 
 
 

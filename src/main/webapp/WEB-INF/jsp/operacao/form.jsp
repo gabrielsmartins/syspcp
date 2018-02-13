@@ -1,7 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<title>OperaÁ„o - Cadastro</title>
+<title>Opera√ß√£o - Cadastro</title>
 <%@ include file="../common/import_css.jspf"%>
 </head>
 
@@ -23,10 +25,10 @@
 				<div class="container">
 					<div class="row">
 						<div class="col s12 m12 l12">
-							<h5 class="breadcrumbs-title">OperaÁ„o</h5>
+							<h5 class="breadcrumbs-title">Opera√ß√£o</h5>
 							<ol class="breadcrumbs">
 								<li><a href="index.html">Dashboard</a></li>
-								<li><a href="#">OperaÁ„o</a></li>
+								<li><a href="#">Opera√ß√£o</a></li>
 								<li class="active">Cadastro</li>
 							</ol>
 						</div>
@@ -34,7 +36,7 @@
 
 
 					<div class="card-panel">
-						<h4 class="header2">OperaÁ„o - Cadastro</h4>
+						<h4 class="header2"><strong>Opera√ß√£o - Cadastro</strong></h4>
 						<div class="row">
 							<form action="<c:url value='/operacoes/'/>" method="POST"
 								accept-charset="UTF-8">
@@ -43,7 +45,7 @@
 									<div class="input-field col s6">
 										<input id="descricao" type="text" class="validate"
 											name="operacao.descricao"> <label for="descricao"
-											class="">Descricao</label>
+											class="">Descri√ß√£o:</label>
 									</div>
 								</div>
 
@@ -53,7 +55,7 @@
 									<div class="input-field col s6">
 										<textarea id="instrucao" class="materialize-textarea"
 											name="operacao.instrucao"></textarea>
-										<label for="instrucao">InstruÁ„o</label>
+										<label for="instrucao">Instru√ß√£o:</label>
 									</div>
 								</div>
 
@@ -65,7 +67,7 @@
 											<c:forEach items="${setores}" var="setor">
 												<option value="${setor.id}">${setor.descricao}</option>
 											</c:forEach>
-										</select> <label>Setor</label>
+										</select> <label>Setor:</label>
 									</div>
 								</div>
 

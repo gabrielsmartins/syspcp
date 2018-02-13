@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,19 +36,19 @@
 					<form action="<c:url value='/materiais/'/>" method="POST"
 						accept-charset="UTF-8">
 						<div class="card-panel">
-							<h4 class="header2">Dados B·sicos</h4>
+							<h4 class="header2"><strong>Dados B√°sicos</strong></h4>
 
 
 							<div class="row">
 								<div class="input-field col s3">
 									<input id="codigoInterno" type="text"
 										name="material.codigoInterno" class="validate"> <label
-										for="codigoInterno">CÛdigo Interno:</label>
+										for="codigoInterno">C√≥digo Interno:</label>
 								</div>
 
 								<div class="input-field col s6">
 									<input id="descricao" class="validate" type="text"
-										name="material.descricao"> <label for="descricao">Descricao:</label>
+										name="material.descricao"> <label for="descricao">Descri√ß√£o:</label>
 								</div>
 							</div>
 
@@ -57,39 +59,33 @@
 									<input id="valorUnitario" class="validate" type="number"
 										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
 										name="material.valorUnitario"> <label
-										for="valorUnitario">Valor Unit·rio:</label>
+										for="valorUnitario">Valor Unit√°rio:</label>
 								</div>
 
 
+								<div class="input-field col s1">
+									<label>Situa√ß√£o:</label>
+								</div>
+								
 								<div class="input-field col s6">
-									<label class="situacao">SituaÁ„o:</label> <input
-										name="material.situacao" type="radio" id="ATIVO" value="ATIVO"
-										checked> <label for="ATIVO">Ativo</label> <input
-										name="material.situacao" type="radio" id="INATIVO"
-										VALUE="INATIVO"> <label for="INATIVO">Inativo</label>
-									<input name="material.situacao" type="radio" id="FORA_DE_LINHA"
-										VALUE="FORA_DE_LINHA"> <label for="FORA_DE_LINHA">Fora
-										de Linha</label>
-
-
+										<input name="material.situacao" type="radio" id="ATIVO"
+											value="ATIVO" checked> <label for="ATIVO">Ativo</label>
+										<input name="material.situacao" type="radio" id="INATIVO"
+											VALUE="INATIVO"> <label for="INATIVO">Inativo</label>
+										<input name="material.situacao" type="radio"
+											id="FORA_DE_LINHA" VALUE="FORA_DE_LINHA"> <label
+											for="FORA_DE_LINHA">Fora de Linha</label>
 								</div>
 							</div>
 
 
-						</div>
-
-
-
-
-
-
-						<div class="card-panel">
-							<h4 class="header2">Dados TÈcnicos</h4>
+							<h4 class="header2"><strong>Dados T√©cnicos</strong></h4>
 
 
 							<div class="row">
 								<div class="input-field col s3">
 									<select name="material.unidadeMedida.id">
+									<option value="" disabled selected>Escolha uma unidade</option>
 										<c:forEach items="${unidades}" var="unidade">
 											<option value="${unidade.id}">${unidade.sigla}-${unidade.descricao}</option>
 										</c:forEach>
@@ -130,11 +126,9 @@
 
 							</div>
 
-						</div>
 
-
-						<div class="card-panel">
-							<h4 class="header2">Dados Estoque</h4>
+			
+							<h4 class="header2"><strong>Dados Estoque</strong></h4>
 
 
 							<div class="row">
@@ -149,7 +143,7 @@
 									<input id="quantidadeMinima" type="number"
 										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
 										name="material.quantidadeMinima" class="validate"> <label
-										for="quantidadeMinima">Quantidade MÌnima :</label>
+										for="quantidadeMinima">Quantidade M√≠nima :</label>
 								</div>
 
 								<div class="input-field col s3">
@@ -173,10 +167,9 @@
 
 					</form>
 				</div>
+				</section>
 		</div>
-		<!--end container-->
-		</section>
-		<!-- END CONTENT -->
+
 
 		<%@ include file="../common/right_sidebar.jspf"%>
 
@@ -184,7 +177,6 @@
 	</div>
 	<!-- END WRAPPER -->
 
-	</div>
 	</main>
 	<!-- END MAIN -->
 

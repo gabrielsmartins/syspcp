@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -77,7 +79,7 @@
 											<th class="sorting_asc" tabindex="0"
 												aria-controls="data-table-simple" rowspan="1" colspan="1"
 												style="width: 202px;" aria-sort="ascending"
-												aria-label="Name: activate to sort column descending">Descricao</th>
+												aria-label="Name: activate to sort column descending">Descrição</th>
 											<th class="sorting" tabindex="0"
 												aria-controls="data-table-simple" rowspan="1" colspan="1"
 												style="width: 324px;"
@@ -85,16 +87,16 @@
 											<th class="sorting" tabindex="0"
 												aria-controls="data-table-simple" rowspan="1" colspan="1"
 												style="width: 150px;"
-												aria-label="Office: activate to sort column ascending">Acao</th>
+												aria-label="Office: activate to sort column ascending">Ação</th>
 										</tr>
 									</thead>
 
 									<tfoot>
 										<tr>
 										<th rowspan="1" colspan="1">ID</th>
-											<th rowspan="1" colspan="1">Descricao</th>
+											<th rowspan="1" colspan="1">Descrição</th>
 											<th rowspan="1" colspan="1">Setor</th>
-											<th rowspan="1" colspan="1">Acao</th>
+											<th rowspan="1" colspan="1">Ação</th>
 											</tr>
 									</tfoot>
 
@@ -108,11 +110,11 @@
 												<td>${operacao.setor.descricao}</td>
 												<td><a
 													href="<c:url value='/operacoes/${operacao.id}'/>"
-													class="btn-floating btn-sm red accent-4"> <i
+													class="btn-floating btn-sm grey darken-4"> <i
 														class="mdi-editor-mode-edit">edit</i>
 												</a> <a href="javascript:void(0);"
-													class="btn-floating btn-sm red accent-4"> <i
-														class="mdi-content-remove-circle">delete</i>
+													class="btn-floating btn-sm grey darken-4"> <i
+														class="mdi-content-clear">delete</i>
 												</a></td>
 											</tr>
 

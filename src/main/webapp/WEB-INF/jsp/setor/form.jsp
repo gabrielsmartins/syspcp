@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -33,13 +35,13 @@
 				
 				
 					<div class="card-panel">
-						<h4 class="header2">Setor - Cadastro</h4>
+						<h4 class="header2"><strong>Setor - Cadastro</strong></h4>
 						<div class="row">
 							<form action="<c:url value='/setores/'/>" method="POST" accept-charset="UTF-8">
 								<div class="row">
 									<div class="input-field col s6">
 										<input id="descricao" type="text" class="validate" name="setor.descricao"> 
-											<label for="descricao" class="">Descricao</label>
+											<label for="descricao" class="">Descrição:</label>
 									</div>
 								</div>
 								

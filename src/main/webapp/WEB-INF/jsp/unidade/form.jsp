@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -33,20 +35,20 @@
 				
 				
 					<div class="card-panel">
-						<h4 class="header2">Unidade de Medida - Cadastro</h4>
+						<h4 class="header2"><strong>Unidade de Medida - Cadastro</strong></h4>
 						<div class="row">
 							<form class="col s12" action="<c:url value='/unidades/'/>"
 								method="POST" accept-charset="UTF-8">
 								<div class="row">
 									<div class="input-field col s6">
 										<input id="descricao" type="text" class="validate" name="unidade.descricao"> 
-											<label for="descricao">Descricao</label>
+											<label for="descricao">Descrição:</label>
 									</div>
 								</div>
 								<div class="row">
 									<div class="input-field col s3">
 										<input id="sigla" type="text" name="unidade.sigla" class="validate">
-										<label for="sigla">Sigla</label>
+										<label for="sigla">Sigla:</label>
 									</div>
 								</div>
 

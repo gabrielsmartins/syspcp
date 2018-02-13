@@ -1,270 +1,249 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 <title>Material - Editar</title>
 <%@ include file="../common/import_css.jspf"%>
 </head>
 
-<body class="sidebar-mini fixed">
-	<div class="loader-bg">
-		<div class="loader-bar"></div>
-	</div>
-	<div class="wrapper">
-		<!-- Navbar-->
-		<%@ include file="../common/navbar.jspf"%>
-		<!-- Side-Nav-->
-		<%@ include file="../common/sidebar.jspf"%>
-		<div class="content-wrapper">
-			<!-- Container-fluid starts -->
-			<!-- Main content starts -->
-			<div class="container-fluid">
-				<div class="row">
-					<div class="main-header">
-						<h4>Material - Editar</h4>
-						<ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
-							<li class="breadcrumb-item"><a href="index.html"><i
-									class="icofont icofont-home"></i></a></li>
-							<li class="breadcrumb-item"><a href="#">Material</a></li>
-							<li class="breadcrumb-item"><a
-								href="form-elements-bootstrap.html">Editar</a></li>
-						</ol>
+<body>
+	<%@ include file="../common/header.jspf"%>
+
+
+	<!-- START MAIN -->
+	<main>
+	<div id="main">
+		<!-- START WRAPPER -->
+		<div class="wrapper">
+			<%@ include file="../common/sidebar.jspf"%>
+			<!-- START CONTENT -->
+			<section id="content">
+
+				<!--start container-->
+				<div class="container">
+					<div class="row">
+						<div class="col s12 m12 l12">
+							<h5 class="breadcrumbs-title">Material</h5>
+							<ol class="breadcrumbs">
+								<li><a href="index.html">Dashboard</a></li>
+								<li><a href="#">Material</a></li>
+								<li class="active">Editar</li>
+							</ol>
+						</div>
 					</div>
-				</div>
-				<div class="card">
+
 					<form action="<c:url value='/materiais/${material.id}'/>"
 						method="POST" accept-charset="UTF-8">
-						<div class="card-header">
-							<h5 class="card-header-text">Editar</h5>
-						</div>
+						<div class="card-panel">
+							<h4 class="header2">
+								<strong>Dados BÃ¡sicos</strong>
+							</h4>
+							<!-- Dados BÃ¡sicos -->
 
-
-						<div class="card-body">
 							<div class="row">
-								<div class="col-sm-12">
-									<div class="card-body">
+								<div class="input-field col s3">
+									<input id="codigoInterno" type="text"
+										name="material.codigoInterno" class="validate"
+										value="${material.codigoInterno}"> <label
+										for="codigoInterno">CÃ³digo Interno:</label>
+								</div>
 
-										<div class="card-header">
-											<h4 class="sub-title">Informações Básicas</h4>
-										</div>
-										<div class="card-block">
-
-											<div class="form-group row">
-												<label class="col-sm-2 col-form-label">Código
-													Interno:</label>
-												<div class="col-sm-6">
-													<input class="form-control" placeholder="Código Interno"
-														type="text" name="material.codigoInterno"
-														value="${material.codigoInterno}">
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-2 col-form-label">Descricao:</label>
-												<div class="col-sm-10">
-													<input class="form-control" placeholder="Descrição"
-														type="text" name="material.descricao"
-														value="${material.descricao}">
-												</div>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-2 col-form-label">Valor
-													Unitário</label>
-												<div class="col-sm-2">
-													<div class="input-group">
-														<span class="input-group-addon">R$</span> <input
-															class="form-control" placeholder="Valor Unitário"
-															type="number" pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
-															name="material.valorUnitario"
-															value="${material.valorUnitario}">
-													</div>
-												</div>
-
-												<label class="col-sm-2 col-form-label">Situação:</label>
-												<div class="col-md-6">
-													<div class="radio">
-														<input name="material.situacao" type="radio" id="ATIVO"
-															VALUE="ATIVO"
-															<c:if test="${material.situacao == 'ATIVO'}">checked</c:if> /><label
-															for="ATIVO">Ativo</label> <input name="material.situacao"
-															type="radio" id="INATIVO" VALUE="INATIVO"
-															<c:if test="${material.situacao == 'INATIVO'}">checked</c:if> />
-														<label for="INATIVO">Inativo</label> <input
-															name="material.situacao" type="radio" id="FORA_DE_LINHA"
-															VALUE="FORA_DE_LINHA"
-															<c:if test="${material.situacao == 'FORA_DE_LINHA'}">checked</c:if> />
-
-														<label for="INATIVO">Fora de Linha</label>
-													</div>
-												</div>
-											</div>
-
-
-
-										</div>
-
-
-
-
-
-										<div class="card-body">
-											<div class="row">
-												<div class="col-sm-12">
-													<div class="card">
-														<div class="card-header">
-															<h4 class="sub-title">Informações Técnicas</h4>
-														</div>
-														<div class="card-block">
-
-
-
-															<div class="form-group row">
-																<label class="col-sm-2 col-form-label">Peso
-																	(KG):</label>
-																<div class="col-sm-2">
-																	<input class="form-control" type="number"
-																		pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
-																		name="material.peso" value="${material.peso}">
-																</div>
-															</div>
-
-															<div class="form-group row">
-																<label class="col-sm-2 col-form-label">Unidade
-																	de Medida:</label>
-																<div class="col-sm-6">
-																	<select class="form-control"
-																		name="material.unidadeMedida.id">
-																		<c:forEach items="${unidades}" var="unidade">
-																			<option value="${unidade.id}"
-																				<c:if test="${unidade.id == material.unidadeMedida.id}">selected</c:if>>${unidade.sigla}-${unidade.descricao}</option>
-																		</c:forEach>
-																	</select>
-																</div>
-															</div>
-
-															<div class="form-group row">
-																<label class="col-sm-2 col-form-label">Comprimento
-																	(mm):</label>
-																<div class="col-sm-2">
-																	<input class="form-control" placeholder="Comprimento"
-																		type="number" pattern="[0-9]+([\.,][0-9]+)?"
-																		step="0.01" name="material.comprimento"
-																		value="${material.comprimento}">
-																</div>
-
-																<label class="col-sm-1 col-form-label">Largura
-																	(mm):</label>
-																<div class="col-sm-2">
-																	<input class="form-control" placeholder="Largura"
-																		type="number" pattern="[0-9]+([\.,][0-9]+)?"
-																		step="0.01" name="material.largura"
-																		value="${material.largura}">
-																</div>
-
-																<label class="col-sm-1 col-form-label">Altura
-																	(mm):</label>
-																<div class="col-sm-2">
-																	<input class="form-control" placeholder="Altura"
-																		type="number" pattern="[0-9]+([\.,][0-9]+)?"
-																		step="0.01" name="material.altura"
-																		value="${material.altura}">
-																</div>
-															</div>
-
-
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-
-
-
-
-
-
-										<div class="card-body">
-											<div class="row">
-												<div class="col-sm-12">
-													<!-- Basic Form Inputs card start -->
-													<div class="card">
-														<div class="card-header">
-															<h4 class="sub-title">Informações Estoque</h4>
-														</div>
-														<div class="card-block" style="">
-
-
-															<div class="form-group row">
-																<label class="col-sm-2 col-form-label">Quantidade
-																	Estoque :</label>
-																<div class="col-sm-2">
-																	<input class="form-control"
-																		placeholder="Quantidade Estoque" type="number"
-																		name="material.quantidadeEstoque"
-																		value="${material.quantidadeEstoque}">
-																</div>
-															</div>
-
-															<div class="form-group row">
-																<label class="col-sm-2 col-form-label">Quantidade
-																	Mínima :</label>
-																<div class="col-sm-2">
-																	<input class="form-control"
-																		placeholder="Quantidade Mínima :" type="number"
-																		name="material.quantidadeMinima"
-																		value="${material.quantidadeMinima}">
-																</div>
-															</div>
-
-
-															<div class="form-group row">
-																<label class="col-sm-2 col-form-label">Lead Time
-																	(D) :</label>
-																<div class="col-sm-2">
-																	<input class="form-control" placeholder="Lead Time"
-																		type="number" name="material.leadTime"
-																		value="${material.leadTime}">
-																</div>
-															</div>
-
-
-
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-									</div>
-
+								<div class="input-field col s6">
+									<input id="descricao" class="validate" type="text"
+										name="material.descricao" value="${material.descricao}">
+									<label for="descricao">DescriÃ§Ã£o:</label>
 								</div>
 							</div>
+
+
+
+							<div class="row">
+								<div class="input-field col s3">
+									<input id="valorUnitario" class="validate" type="number"
+										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+										name="material.valorUnitario"
+										value="${material.valorUnitario}"> <label
+										for="valorUnitario">Valor UnitÃ¡rio:</label>
+								</div>
+
+
+								<div class="input-field col s1">
+									<label>SituaÃ§Ã£o:</label>
+								</div>
+
+								<div class="input-field col s6">
+									<input name="material.situacao" type="radio" id="ATIVO"
+										VALUE="ATIVO"
+										<c:if test="${material.situacao == 'ATIVO'}">checked</c:if> /><label
+										for="ATIVO">Ativo</label> <input name="material.situacao"
+										type="radio" id="INATIVO" VALUE="INATIVO"
+										<c:if test="${material.situacao == 'INATIVO'}">checked</c:if> />
+									<label for="INATIVO">Inativo</label> 
+									<input name="material.situacao" type="radio" id="FORA_DE_LINHA" VALUE="FORA_DE_LINHA"
+										<c:if test="${material.situacao == 'FORA_DE_LINHA'}">checked</c:if> />
+									<label for="FORA_DE_LINHA">Fora de Linha</label>
+								</div>
+							</div>
+
+							<!-- Fim Dados BÃ¡sicos -->
+
+
+							<!-- Dados TÃ©cnicos -->
+							<h4 class="header2">
+								<strong>Dados TÃ©cnicos</strong>
+							</h4>
+
+
+							<div class="row">
+								<div class="input-field col s3">
+									<select name="material.unidadeMedida.id">
+										<c:forEach items="${unidades}" var="unidade">
+											<option value="${unidade.id}"
+												<c:if test="${unidade.id == material.unidadeMedida.id}">selected</c:if>>${unidade.sigla}-${unidade.descricao}</option>
+										</c:forEach>
+									</select> <label for="peso">Unidade de Medida:</label>
+								</div>
+
+
+								<div class="input-field col s3">
+									<input id="peso" type="number" pattern="[0-9]+([\.,][0-9]+)?"
+										step="0.01" name="material.peso" class="validate"
+										value="${material.peso}"> <label for="peso">Peso
+										(KG):</label>
+								</div>
+							</div>
+
+
+
+							<div class="row">
+								<div class="input-field col s3">
+									<input id="comprimento" type="number"
+										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+										name="material.comprimento" class="validate"
+										value="${material.comprimento}"> <label
+										for="comprimento">Comprimento (mm):</label>
+								</div>
+
+								<div class="input-field col s3">
+									<input id="largura" type="number"
+										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+										name="material.largura" class="validate"
+										value="${material.largura}"> <label for="largura">Largura
+										(mm):</label>
+								</div>
+
+								<div class="input-field col s3">
+									<input id="altura" type="number" pattern="[0-9]+([\.,][0-9]+)?"
+										step="0.01" name="material.altura" class="validate"
+										value="${material.altura}"> <label for="altura">Altura
+										(mm):</label>
+								</div>
+
+
+							</div>
+
+							<!-- Fim Dados TÃ©cnicos -->
+
+							<!-- Dados Estoque -->
+							<h4 class="header2">
+								<strong>Dados Estoque</strong>
+							</h4>
+
+
+							<div class="row">
+								<div class="input-field col s3">
+									<input id="quantidadeEstoque" type="number"
+										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+										name="material.quantidadeEstoque" class="validate"
+										value="${material.quantidadeEstoque}"> <label
+										for="quantidadeEstoque">Quantidade Estoque :</label>
+								</div>
+
+								<div class="input-field col s3">
+									<input id="quantidadeMinima" type="number"
+										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+										name="material.quantidadeMinima" class="validate"
+										value="${material.quantidadeMinima}"> <label
+										for="quantidadeMinima">Quantidade MÃ­nima :</label>
+								</div>
+
+								<div class="input-field col s3">
+									<input id="leadtime" type="number"
+										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+										name="material.leadTime" class="validate"
+										value="${material.leadTime}"> <label for="leadtime">Lead
+										Time (D) :</label>
+								</div>
+							</div>
+
+							<div class="row">
+								<button class="btn grey darken-4 waves-effect waves-light right"
+									type="submit" name="_method" value="DELETE">
+									Excluir <i class="mdi-action-delete right"></i>
+								</button>
+								<button class="btn grey darken-4 waves-effect waves-light right"
+									type="submit" name="_method" value="PUT">
+									Salvar <i class="mdi-content-save right"></i>
+								</button>
+							</div>
+
+							<!-- Fim Dados Estoque -->
+
 						</div>
 
 
-						<div class="card-footer">
-							<button class="btn btn-success waves-effect waves-light m-r-30"
-								type="submit" name="_method" value="PUT">Salvar</button>
-							<button class="btn btn-danger waves-effect waves-light m-r-30"
-								type="submit" name="_method" value="DELETE">Cancelar</button>
-						</div>
 					</form>
-
 				</div>
-			</div>
-			<!-- Main content ends -->
-			<!-- Container-fluid ends -->
+			</section>
 		</div>
+		<%@ include file="../common/right_sidebar.jspf"%>
+
+
 	</div>
+	<!-- END WRAPPER --> </main>
+	<!-- END MAIN -->
 
-
-
-
+	<%@ include file="../common/footer.jspf"%>
 	<%@ include file="../common/import_js.jspf"%>
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
