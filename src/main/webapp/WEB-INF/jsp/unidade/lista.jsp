@@ -1,45 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<title>Unidade de Medida - Consulta</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!Doctype html>
+<html>
+  <head>
 <%@ include file="../common/import_css.jspf"%>
+<title>Unidade de Medida - Consulta</title>
+<%@ include file="../common/import_js.jspf"%>
+  </head>
+  
+<%@ include file="../common/header.jspf"%>
+  <main>
+  <body>
+  
+      <!-- Breadcrumb -->
+   <nav class="grey">
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="#!" class="breadcrumb">Dashboard</a>
+        <a href="#!" class="breadcrumb">Unidade de Medida</a>
+        <a href="#!" class="breadcrumb">Consulta</a>
+      </div>
+    </div>
+  </nav>
+         <!-- Fim Breadcrumbs -->
+         
 
- 
-
-</head>
-
-<body>
-
-
-	<%@ include file="../common/header.jspf"%>
-
-
-	<!-- START MAIN -->
-	<main>
-	<div id="main">
-		<!-- START WRAPPER -->
-		<div class="wrapper">
-			<%@ include file="../common/sidebar.jspf"%>
-			<!-- START CONTENT -->
-			<section id="content">
-
-				<!--start container-->
-				<div class="container">
-				
-				<div class="row">
-              <div class="col s12 m12 l12">
-                <h5 class="breadcrumbs-title">Unidade de Medida</h5>
-                <ol class="breadcrumbs">
-                    <li><a href="index.html">Dashboard</a></li>
-                    <li><a href="#">Unidade de Medida</a></li>
-                    <li class="active">Consulta</li>
-                </ol>
-              </div>
-            </div>
-				
-				
+		
 <div class="row">
 			
 			<div class="col s12">
@@ -71,10 +56,10 @@
 												<td>${unidade.sigla}</td>
 												<td><a href="<c:url value='/unidades/${unidade.id}'/>"
 													class="btn-floating btn-sm grey darken-4"> <i
-														class="mdi-editor-mode-edit">edit</i>
+														class="material-icons">edit</i>
 												</a> <a href="<c:url value='/unidades/${unidade.id}'/>" data-method="delete"
 													class="btn-floating btn-sm grey darken-4"> <i
-														class="mdi-content-clear">delete</i>
+														class="material-icons">delete</i>
 												</a></td>
 											</tr>
 
@@ -86,44 +71,16 @@
                 </div>
                 </div>
 
-				</div>
-				<!--end container-->
-			</section>
-			<!-- END CONTENT -->
-			
-			
-
-			<%@ include file="../common/right_sidebar.jspf"%>
-
-
-		</div>
-		<!-- END WRAPPER -->
-
-	</div>
-	</main>
-	<!-- END MAIN -->
-
-	<%@ include file="../common/footer.jspf"%>
-	<%@ include file="../common/import_js.jspf"%>
-	
-	<script type="text/javascript">
-        /*Show entries on click hide*/
-        $(document).ready(function(){
-            $(".dropdown-content.select-dropdown li").on( "click", function() {
-                var that = this;
-                setTimeout(function(){
-                if($(that).parent().hasClass('active')){
-                        $(that).parent().removeClass('active');
-                        $(that).parent().hide();
-                }
-                },100);
-            });
-        });
-    </script>
-
-</body>
-
+   
+  </body>
+  </main>
+  
+  
+<%@ include file="../common/footer.jspf"%>
+ 
 </html>
+
+
 
 
 

@@ -1,39 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<title>Produto - Cadastro</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!Doctype html>
+<html>
+  <head>
 <%@ include file="../common/import_css.jspf"%>
-</head>
-
-<body>
-	<%@ include file="../common/header.jspf"%>
+<title>Produto - Cadastro</title>
 <%@ include file="../common/import_js.jspf"%>
-
-<%@ include file="../common/sidebar.jspf"%>
-	<!-- START MAIN -->
-	<main>
-	<div id="main">
-		<!-- START WRAPPER -->
-		<div class="wrapper">
-			
-			<!-- START CONTENT -->
-			<section id="content">
-
-				<!--start container-->
-				<div class="container">
-
-					<div class="row">
-						<div class="col s12 m12 l12">
-							<h5 class="breadcrumbs-title">Produto</h5>
-							<ol class="breadcrumbs">
-								<li><a href="index.html">Dashboard</a></li>
-								<li><a href="#">Produto</a></li>
-								<li class="active">Cadastro</li>
-							</ol>
-						</div>
-					</div>
+  </head>
+  
+<%@ include file="../common/header.jspf"%>
+  <main>
+  <body>
+      <!-- Breadcrumb -->
+   <nav class="grey">
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="#!" class="breadcrumb">Dashboard</a>
+        <a href="#!" class="breadcrumb">Produto</a>
+        <a href="#!" class="breadcrumb">Cadastro</a>
+      </div>
+    </div>
+  </nav>
+         <!-- Fim Breadcrumbs -->
 
 
 					<form action="<c:url value='/produtos/'/>" method="POST"
@@ -250,8 +237,8 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="mdi-action-search prefix"></i>
-          <input type="text" id="autocomplete-input" class="autocomplete">
-          <label for="autocomplete-input">Operação</label>
+          <input type="text" id="operacao" class="autocomplete">
+          <label for="operacao">Operação</label>
         </div>
       </div>
     </div>
@@ -265,7 +252,7 @@
 												</div>
 
 												<div class="input-field col s1">
-													<input class="validate" type="time" step="1"
+													<input class="validate" type="time" step="1" id="tempo_setup"
 														pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
 												</div>
 
@@ -275,7 +262,7 @@
 												</div>
 
 												<div class="input-field col s1">
-													<input class="validate" type="time" step="1"
+													<input class="validate" type="time" step="1" id="tempo_producao"
 														pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
 												</div>
 
@@ -286,32 +273,34 @@
 
 
 												<div class="input-field col s1">
-													<input class="validate" type="time" step="1"
+													<input class="validate" type="time" step="1" id="tempo_finalizacao"
 														pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
 												</div>
 
 												<div class="input-field col s1">
-													<button type="button" onclick="carregaOperacoes();"
+													<button type="button" onclick="addOperacao()"
 														class="btn-floating right waves-effect waves-light red accent-4"><i
-														class="mdi-content-add"></i></button>
+														class="material-icons">add</i></button>
 												</div>
 											</div>
 
 
 
 
-											<table class="hoverable">
+											<table class="hoverable" id="tabela_roteiro">
 												<thead>
 													<tr>
 														<th>Seq</th>
+														<th>ID</th>
 														<th>Operação</th>
 														<th>Tempo Setup</th>
 														<th>Tempo Produção</th>
 														<th>Tempo Finalização</th>
 														<th>Total</th>
+														<th></th>
 													</tr>
 												</thead>
-												<tbody>
+												<tbody id="tabela_operacao">
 
 												</tbody>
 												<tfoot>
@@ -332,7 +321,7 @@
 							<div class="row">
 								<button class="btn grey darken-4 waves-effect waves-light right"
 									type="submit">
-									Salvar <i class="mdi-content-send right"></i>
+									Salvar <i class="material-icons right">send</i>
 								</button>
 							</div>
 						</div>
@@ -341,20 +330,14 @@
 
 
 
-				</div>
-				<!--end container-->
-			</section>
-		</div>
-	</div>
-	<!-- END WRAPPER --> <!-- END CONTENT --> <%@ include
-		file="../common/right_sidebar.jspf"%> </main>
-	<!-- END MAIN -->
 
-	<%@ include file="../common/footer.jspf"%>
-
-
-	
-	       <script type="text/javascript">
+   
+  </body>
+  </main>
+  
+  
+<%@ include file="../common/footer.jspf"%>
+   <script type="text/javascript">
           $(document).ready(function() {
         	  $.ajax({ 
         		    type: 'GET', 
@@ -362,17 +345,14 @@
         		    data: { get_param: 'value' }, 
         		    dataType: 'json',
         		    success: function (data) {
-        		    	alert("Sucess");
-        		    	 console.log(data);
         		    var operacoes = data;
         		    var data_operacoes = {};
         		    for(var i =0; i < operacoes.length;i++){
-        		    	data_operacoes[operacoes[i].descricao] = operacoes[i].id; 
+        		    	data_operacoes[operacoes[i].id + "-" + operacoes[i].descricao] = operacoes[i].id; 
         		    }
         		    
-        		    console.log(data_operacoes);
         		    	
-        		    $('input.autocomplete').autocomplete({
+        		    $('#operacao').autocomplete({
         		        data: data_operacoes,
         		        limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
         		        onAutocomplete: function(val) {
@@ -389,28 +369,34 @@
 
             
         </script>
-
-</body>
-
+        
+        <script>
+        function addOperacao(){
+        	var operacao = document.getElementById("operacao").value;
+        	var id_oper = parseInt(operacao.match(/\d+/)[0]);
+        	var tempo_setup = document.getElementById("tempo_setup").value;
+        	var tempo_producao = document.getElementById("tempo_producao").value;
+        	var tempo_finalizacao = document.getElementById("tempo_finalizacao").value;
+        	
+        	alert(tempo_setup);
+        	var param = {id : id_oper};
+        	$.post("<c:url value='/operacoes/operacao.json'/>",param,insere_operacao);
+        }
+        
+        function insere_operacao(data){
+        	$("#tabela_roteiro").find('tbody').append( "<tr>" + 
+        			                                    "<td>-</td>" + 
+        			                                    "<td>" + data.id +"</td>" + 
+        		                                     	"<td>" + data.descricao + "</td>" +
+        		                                     	"<td>" + String(tempo_setup) + "</td>" + 
+        		                                     	"<td>" + tempo_producao.toString() + "</td>" + 
+        		                                     	"<td>" + tempo_finalizacao.toString() + "</td>" + 
+        		                                     	"<td>-</td>" + 
+        		                                     	"<td><button type='button' class='btn-floating right waves-effect waves-light red accent-4'><i class='material-icons'>remove</i></button></td>" +
+        		                                     	"</tr>" );
+        }
+        </script>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

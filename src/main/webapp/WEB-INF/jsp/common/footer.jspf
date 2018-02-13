@@ -1,16 +1,18 @@
-<footer class="page-footer grey darken-4">
-        <div class="container">
-            <div class="row section">
-                <div class="col l6 s12">
-                    <h5 class="white-text">PCP-WEB</h5>
-                    <p class="grey-text text-lighten-4">Sistema para Planejamento e Controle de Produção.</p>
-                </div>
+<footer class="page-footer grey darken-2">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">PCP-WEB</h5>
+                <p class="grey-text text-lighten-4">Sistema para Planejamento e Controle de Produção</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+              </div>
             </div>
-        </div>
-        <div class="footer-copyright">
+          </div>
+          <div class="footer-copyright">
             <div class="container">
-                IFSP - 2018.
-                <span class="right"> Desenvolvido por <a class="grey-text text-lighten-4" href="http://geekslabs.com/">Gabriel Martins</a></span>
+           IFSP 2018
+            <a class="grey-text text-lighten-4 right" href="#!">Desenvolvido por Gabriel Martins</a>
             </div>
-        </div>
-    </footer>
+          </div>
+        </footer>

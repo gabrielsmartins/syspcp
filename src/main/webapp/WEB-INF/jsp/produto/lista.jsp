@@ -99,10 +99,10 @@
 					<td>${material.situacao}</td>
 					<td><a href="<c:url value='/materiais/${material.id}'/>"
 									class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-red btn-sm">
-										<i class="material-icons md-dark pmd-sm">edit</i>
+										<i class="material-icons">edit</i>
 								</a> <a href="javascript:void(0);"
 									class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-red btn-sm">
-										<i class="material-icons md-dark pmd-sm">delete</i>
+										<i class="material-icons">delete</i>
 								</a></td>
 	
 			</c:forEach>

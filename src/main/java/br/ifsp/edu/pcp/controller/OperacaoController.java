@@ -76,5 +76,11 @@ public class OperacaoController {
 		 List<Operacao> operacoes = operacaoDAO.listar();
 		 result.use(json()).withoutRoot().from(operacoes).serialize();   
     }
+	
+	@Post("/operacao.json")
+	public void buscaOperacao(Long id) {
+		 Operacao operacao = operacaoDAO.pesquisar(id);
+		 result.use(json()).withoutRoot().from(operacao).serialize();   
+    }
 
 }

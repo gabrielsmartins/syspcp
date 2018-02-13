@@ -1,7 +1,4 @@
-<header id="header" class="page-topbar">
-        <!-- start header nav-->
-        <div class="navbar-fixed">
-             <%@ include file="../common/navbar.jspf"%>
-        </div>
-        <!-- end header nav-->
-    </header>
+  <header>
+      
+           <%@ include file="../common/navbar.jspf"%>
+  </header>

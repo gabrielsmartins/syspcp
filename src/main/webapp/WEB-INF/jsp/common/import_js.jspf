@@ -2,57 +2,19 @@
 
 
 
-  <!-- ================================================
+<!-- ================================================
     Scripts
     ================================================ -->
-    
-    <!-- jQuery Library -->
-      <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/jquery-3.3.1.min.js'/>"></script>
-            <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/jquery-ui-1.12.1.js'/>"></script>
-    <!--materialize js-->
-    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/materialize.js'/>"></script>
-    <!--scrollbar-->
-    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js'/>"></script>
-    
 
-     <!-- data-tables -->
-    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/plugins/data-tables/js/jquery.dataTables.min.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/plugins/data-tables/js/plugins/data-tables/data-tables-script.js'/>"></script>
+<!-- jQuery Library -->
+<script type="text/javascript" src="<c:url value='/resources/materialize/js/jquery-3.3.1.min.js'/>"></script>
+<!--materialize js-->
+<script type="text/javascript" src="<c:url value='/resources/materialize/js/materialize.js'/>"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('select').material_select();
+});
+$(".button-collapse").sideNav();
+</script>
 
-    <!-- chartist -->
-    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/plugins/chartist-js/chartist.min.js'/>"></script>   
-
-
-    <!-- chartjs -->
-    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/plugins/chartjs/chart.min.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/plugins/chartjs/chart-script.js'/>"></script>
-
-    <!-- sparkline -->
-    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/plugins/sparkline/jquery.sparkline.min.js'/>"></script>
-    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/plugins/sparkline/sparkline-script.js'/>"></script>
-    
-    <!-- google map api -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAZnaZBXLqNBRXjd-82km_NO7GUItyKek"></script>
-
-
-
-  
-    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
-    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/plugins.min.js'/>"></script>
-    <!--custom-script.js - Add your own theme custom JS-->
-    <script type="text/javascript" src="<c:url value='/resources/materialize-admin/js/custom-script.js'/>"></script>
-    
-    
-     <script>
-            
-     
-     
-    $(document).ready(function() {
-	    $('select').material_select();
-	     });
-    
-    
-
-        </script>
-    
 
