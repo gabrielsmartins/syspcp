@@ -302,6 +302,7 @@
 								<tbody id="tabela_operacao">
                                     <c:forEach items="${produtoSession.roteiros}" var="roteiro">
 											<tr>
+											    <td>${roteiro.operacao.sequencia}</td>
 											    <td>${roteiro.operacao.id}</td>
 											    <td>${roteiro.operacao.descricao}</td>
 												<td>${roteiro.tempoSetup}</td>
