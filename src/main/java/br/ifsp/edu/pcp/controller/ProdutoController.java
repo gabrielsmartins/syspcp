@@ -15,6 +15,7 @@ import br.ifsp.edu.pcp.dao.MaterialDAO;
 import br.ifsp.edu.pcp.dao.ProdutoDAO;
 import br.ifsp.edu.pcp.dao.UnidadeMedidaDAO;
 import br.ifsp.edu.pcp.model.Produto;
+import br.ifsp.edu.pcp.model.Roteiro;
 
 @Controller
 @Path("produtos")
@@ -30,9 +31,13 @@ public class ProdutoController {
 	private MaterialDAO materialDAO;
 	
 	
-	
 	@Inject
 	private UnidadeMedidaDAO unidadeMedidaDAO;
+	
+	 @Inject
+	private Produto produto;
+	
+	
 	
 	
 	@Get("form")
@@ -79,6 +84,14 @@ public class ProdutoController {
 
 	}
 
+	@Post("/roteiro")
+	public void adicionarRoteiro(Roteiro roteiro) {
+		/*this.produtoDAO.recarrega(produto);*/
+		this.produto.adicionarRoteiro(roteiro);
+		result.include("prod",produto.getRoteiros().size());
+		result.redirectTo(ProdutoController.class).form();
+		
+	}
 	
 	
 	

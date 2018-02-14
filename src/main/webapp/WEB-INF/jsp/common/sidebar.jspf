@@ -1,79 +1,144 @@
 <aside>
-    <ul id="slide-out" class="side-nav fixed">
-     <li class="logo">
-     <img src="<c:url value='/resources/img/logo_nav.png'/>" alt="PCP-WEB"/>    
-     </li>
-      <li><a href="#!">Engenharia</a></li>
-      <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-          <li>
-            <a class="collapsible-header">Produtos<i class="material-icons">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="<c:url value='/produtos/form'/>">Novo</a></li>
-                <li><a href="<c:url value='/produtos'/>" >Consulta</a></li>
-                <li><a href="#!">Relatório</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-        
-        
-        
-        <ul class="collapsible collapsible-accordion">
-          <li>
-            <a class="collapsible-header">Materiais<i class="material-icons">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="<c:url value='/materiais/form'/>">Novo</a></li>
-                <li><a href="<c:url value='/materiais'/>" >Consulta</a></li>
-                <li><a href="#!">Relatório</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-        
-        
-         <ul class="collapsible collapsible-accordion">
-          <li>
-            <a class="collapsible-header">Operações<i class="material-icons">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="<c:url value='/operacoes/form'/>">Novo</a></li>
-                <li><a href="<c:url value='/operacoes'/>" >Consulta</a></li>
-                <li><a href="#!">Relatório</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-        
-        
-        
-         <ul class="collapsible collapsible-accordion">
-          <li>
-            <a class="collapsible-header">Unidades de Medida<i class="material-icons">arrow_drop_down</i></a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="<c:url value='/unidades/form'/>">Novo</a></li>
-                <li><a href="<c:url value='/unidades'/>" >Consulta</a></li>
-                <li><a href="#!">Relatório</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-        
-        
-        
-      </li>
-    </ul>
-    <ul class="right hide-on-med-and-down">
-       <li><a class="dropdown-button" href="#!" data-activates="dropdown1">${session.usuario.nome}<i class="material-icons right">arrow_drop_down</i></a></li>
-      <ul id='dropdown1' class='dropdown-content'>
-        <li><a href="#!">Perfil</a></li>
-        <li><a href="#!">Configuraões</a></li>
-        <li><a href="<c:url value='/session/logout'/>">Logout</a></li>
-      </ul>
-      
-    </ul>
-    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-          </aside>
+
+
+	<ul id="slide-out" class="side-nav fixed">
+
+
+		<li><div class="user-view">
+				<div class="background">
+					<img src="<c:url value='/resources/img/logo_nav.png'/>">
+				</div>
+				<a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+				<a href="#!name"><span class="white-text name">John Doe</span></a> <a
+					href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+			</div></li>
+
+		<!-- MENU ENGENHARIA -->
+		<li><a href="#!">ENGENHARIA</a></li>
+		<li class="no-padding">
+			<ul class="collapsible collapsible-accordion">
+				<li><a class="collapsible-header">Produtos<i
+						class="material-icons">arrow_drop_down</i></a>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="<c:url value='/produtos/form'/>">Novo</a></li>
+							<li><a href="<c:url value='/produtos'/>">Consulta</a></li>
+							<li><a href="#!">Relatório</a></li>
+						</ul>
+					</div></li>
+			</ul>
+
+			<ul class="collapsible collapsible-accordion">
+				<li><a class="collapsible-header">Materiais<i
+						class="material-icons">arrow_drop_down</i></a>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="<c:url value='/materiais/form'/>">Novo</a></li>
+							<li><a href="<c:url value='/materiais'/>">Consulta</a></li>
+							<li><a href="#!">Relatório</a></li>
+						</ul>
+					</div></li>
+			</ul>
+
+
+
+			<ul class="collapsible collapsible-accordion">
+				<li><a class="collapsible-header">Operações<i
+						class="material-icons">arrow_drop_down</i></a>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="<c:url value='/operacoes/form'/>">Novo</a></li>
+							<li><a href="<c:url value='/operacoes'/>">Consulta</a></li>
+							<li><a href="#!">Relatório</a></li>
+						</ul>
+					</div></li>
+			</ul>
+
+
+		</li>
+		<!-- FIM ENGENHARIA -->
+
+
+		<!-- MENU PCP -->
+		<li><a href="#!">PCP</a></li>
+		<li class="no-padding">
+
+
+			<ul class="collapsible collapsible-accordion">
+				<li><a class="collapsible-header">Ordens de Produção<i
+						class="material-icons">arrow_drop_down</i></a>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="<c:url value='/produtos/form'/>">Emitir</a></li>
+							<li><a href="<c:url value='/produtos'/>">Consulta</a></li>
+							<li><a href="#!">Relatório</a></li>
+						</ul>
+					</div></li>
+			</ul>
+
+
+
+			<ul class="collapsible collapsible-accordion">
+				<li><a class="collapsible-header">Requisição de Materiais<i
+						class="material-icons">arrow_drop_down</i></a>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="<c:url value='/materiais/form'/>">Emitir</a></li>
+							<li><a href="<c:url value='/materiais'/>">Consulta</a></li>
+							<li><a href="#!">Relatório</a></li>
+						</ul>
+					</div></li>
+			</ul>
+
+		</li>
+		<!-- FIM PCP -->
+
+
+
+
+		<!-- MENU PRODUÇÃO -->
+		<li><a href="#!">PRODUÇÃO</a></li>
+		<li class="no-padding">
+
+
+			<ul class="collapsible collapsible-accordion">
+				<li><a class="collapsible-header">Recursos<i
+						class="material-icons">arrow_drop_down</i></a>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="<c:url value='/recursos/form'/>">Novo</a></li>
+							<li><a href="<c:url value='/recursos'/>">Consulta</a></li>
+							<li><a href="#!">Relatório</a></li>
+						</ul>
+					</div></li>
+			</ul>
+
+
+
+			<ul class="collapsible collapsible-accordion">
+				<li><a class="collapsible-header">Setores<i
+						class="material-icons">arrow_drop_down</i></a>
+					<div class="collapsible-body">
+						<ul>
+							<li><a href="<c:url value='/setores/form'/>">Novo</a></li>
+							<li><a href="<c:url value='/setores'/>">Consulta</a></li>
+							<li><a href="#!">Relatório</a></li>
+						</ul>
+					</div></li>
+			</ul>
+
+		</li>
+		<!-- FIM PRODUÇÃO -->
+
+
+
+
+	</ul>
+
+
+
+
+
+	<a href="#" data-activates="slide-out"
+		class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+</aside>

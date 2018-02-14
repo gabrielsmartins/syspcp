@@ -24,6 +24,7 @@ public class Roteiro {
 
 	@Column(name = "rot_tmp_fnl")
 	private LocalTime tempoFinalizacao;
+	
 
 	public Roteiro() {
 
@@ -82,6 +83,8 @@ public class Roteiro {
 		this.tempoFinalizacao = tempoFinalizacao;
 	}
 
+	
+	
 	
 
 }

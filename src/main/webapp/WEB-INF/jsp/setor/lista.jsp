@@ -3,7 +3,7 @@
 <html>
   <head>
 <%@ include file="../common/import_css.jspf"%>
-<title>Unidade de Medida - Consulta</title>
+<title>Setor- Consulta</title>
 <%@ include file="../common/import_js.jspf"%>
   </head>
   
