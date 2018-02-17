@@ -1,18 +1,8 @@
-<footer class="page-footer grey darken-2">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">PCP-WEB</h5>
-                <p class="grey-text text-lighten-4">Sistema para Planejamento e Controle de Produção</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-           IFSP 2018
-            <a class="grey-text text-lighten-4 right" href="#!">Desenvolvido por Gabriel Martins</a>
-            </div>
-          </div>
-        </footer>
+<footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+  </footer>

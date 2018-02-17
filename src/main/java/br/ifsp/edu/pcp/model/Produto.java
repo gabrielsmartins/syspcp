@@ -51,8 +51,8 @@ public class Produto extends Componente implements Serializable {
 
 	}
 
-	public void adicionarMaterial(Material produto, Double quantidade) {
-		estrutura.put(produto, quantidade);
+	public void adicionarComponente(Componente componente, Double quantidade) {
+		estrutura.put(componente, quantidade);
 	}
 
 	public Map<Componente, Double> getEstrutura() {

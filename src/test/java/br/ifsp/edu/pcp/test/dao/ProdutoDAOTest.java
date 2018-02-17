@@ -67,7 +67,7 @@ public class ProdutoDAOTest {
 		produto.setComprimento(500.00);
 		produto.setLargura(450.00);
 
-		produto.adicionarMaterial(material, 2.00);
+		produto.adicionarComponente(material, 2.00);
 		
 		Setor setor1 = new Setor("CORTE A LASER");
 		Setor setor2 = new Setor("DOBRA");
@@ -115,7 +115,7 @@ public class ProdutoDAOTest {
 		produto.setComprimento(500.00);
 		produto.setLargura(450.00);
 
-		produto.adicionarMaterial(material, 5.00);
+		produto.adicionarComponente(material, 5.00);
 
 		produtoDAO.salvar(produto);
 
@@ -124,7 +124,7 @@ public class ProdutoDAOTest {
 		produtoAlterado.setAltura(1750.00);
 		produtoAlterado.setComprimento(500.00);
 		produtoAlterado.setLargura(450.00);
-		produtoAlterado.adicionarMaterial(material, 5.00);
+		produtoAlterado.adicionarComponente(material, 5.00);
 		produtoAlterado.setId(produto.getId());
 		produtoDAO.atualizar(produtoAlterado);
 	}
@@ -138,7 +138,7 @@ public class ProdutoDAOTest {
 		Produto produto = new Produto("Prateleira Grande", SituacaoProduto.ATIVO,
 				unidadeMedida, 350.00, 20, 5.00, 2.00);
 
-		produto.adicionarMaterial(material, 2.00);
+		produto.adicionarComponente(material, 2.00);
 
 		produtoDAO.salvar(produto);
 		produtoDAO.remover(produto.getId());

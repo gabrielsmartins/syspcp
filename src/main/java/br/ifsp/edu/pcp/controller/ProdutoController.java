@@ -12,8 +12,10 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Result;
 import br.ifsp.edu.pcp.dao.MaterialDAO;
+import br.ifsp.edu.pcp.dao.OperacaoDAO;
 import br.ifsp.edu.pcp.dao.ProdutoDAO;
 import br.ifsp.edu.pcp.dao.UnidadeMedidaDAO;
+import br.ifsp.edu.pcp.model.Material;
 import br.ifsp.edu.pcp.model.Produto;
 import br.ifsp.edu.pcp.model.Roteiro;
 
@@ -26,6 +28,11 @@ public class ProdutoController {
 	
 	@Inject
 	private ProdutoDAO produtoDAO;
+	
+	@Inject
+	private OperacaoDAO operacaoDAO;
+	
+
 	
 	@Inject
 	private MaterialDAO materialDAO;
@@ -45,6 +52,7 @@ public class ProdutoController {
 		result.include("unidades", unidadeMedidaDAO.listar());
 		result.include("produtos", produtoDAO.listar());
 		result.include("materiais", materialDAO.listar());
+		result.include("operacoes", operacaoDAO.listar());
 	}
 
 	@Get({"/",""})
@@ -89,6 +97,21 @@ public class ProdutoController {
 		/*this.produtoDAO.recarrega(produto);*/
 		this.produto.adicionarRoteiro(roteiro);
 		result.include("prod",produto.getRoteiros().size());
+		result.redirectTo(ProdutoController.class).form();
+		
+	}
+	
+	
+	@Post("/addMaterial")
+	public void adicionarMaterial(Material material, Double quantidade) {
+		this.produto.adicionarComponente(material, quantidade);
+		result.redirectTo(ProdutoController.class).form();
+		
+	}
+	
+	@Post("/addProduto")
+	public void adicionarProduto(Produto produto, Double quantidade) {
+		this.produto.adicionarComponente(produto, quantidade);
 		result.redirectTo(ProdutoController.class).form();
 		
 	}

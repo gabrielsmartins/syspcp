@@ -40,8 +40,8 @@ public class ProdutoTest {
 		produto.setSituacao(SituacaoProduto.ATIVO);
 		
 		
-		produto.adicionarMaterial(material1,2.00);
-		produto.adicionarMaterial(material2,1.00);
+		produto.adicionarComponente(material1,2.00);
+		produto.adicionarComponente(material2,1.00);
 		
 		assertEquals("Mesa", produto.getDescricao());
 		assertEquals("MI-005", produto.getCodigoInterno());

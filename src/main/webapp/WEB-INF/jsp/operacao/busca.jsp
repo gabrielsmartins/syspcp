@@ -1,87 +1,137 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!Doctype html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
 <html>
-  <head>
-<%@ include file="../common/import_css.jspf"%>
-<title>Operação - Cadastro</title>
-<%@ include file="../common/import_js.jspf"%>
-  </head>
-  
-<%@ include file="../common/header.jspf"%>
-  <main>
-  <body>
-      <!-- Breadcrumb -->
-   <nav class="grey">
-    <div class="nav-wrapper">
-      <div class="col s12">
-        <a href="#!" class="breadcrumb">Dashboard</a>
-        <a href="#!" class="breadcrumb">Operação</a>
-        <a href="#!" class="breadcrumb">Editar</a>
-      </div>
-    </div>
-  </nav>
-         <!-- Fim Breadcrumbs -->
+<head>
+    <%@ include file="../common/import_css.jspf"%>
+  <title>Operação - Editar</title>
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-red sidebar-mini">
+<div class="wrapper">
 
-					<div class="card-panel">
-						<h4 class="header2"><strong>Operação - Cadastro</strong></h4>
-						<div class="row">
-							<form action="<c:url value='/operacoes/${operacao.id}'/>"
+  <!-- Main Header -->
+      <%@ include file="../common/header.jspf"%>
+  <!-- Left side column. contains the logo and sidebar -->
+   <%@ include file="../common/sidebar.jspf"%>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Operação
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+   <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Editar</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            	<form action="<c:url value='/operacoes/${operacao.id}'/>"
 						method="POST" accept-charset="UTF-8">
+              <div class="box-body">
+                <div class="form-group row">
+                  <label for="descricao" class="col-sm-1 control-label">Descrição:</label>
 
-								<div class="row">
-									<div class="input-field col s6">
-										<input id="descricao" type="text" class="validate"
-											name="operacao.descricao" value="${operacao.descricao}"> <label for="descricao"
-											class="active">Descrição:</label>
-									</div>
-								</div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="descricao" placeholder="Descrição" name="operacao.descricao" value="${operacao.descricao}">
+                  </div>
+                </div>
+                
+                
+                <div class="form-group row">
+                  <label for="instrucao" class="col-sm-1 control-label">Instrução:</label>
 
-
-
-								<div class="row">
-									<div class="input-field col s6">
-										<textarea id="instrucao" class="materialize-textarea"
+                  <div class="col-sm-6">
+                    <textarea id="instrucao" class="form-control"
 											name="operacao.instrucao">${operacao.instrucao}</textarea>
-										<label for="instrucao">Instrução:</label>
-									</div>
-								</div>
+                  </div>
+                </div>
+                
+                
+                <div class="form-group row">
+                  <label for="sigla" class="col-sm-1 control-label">Setor:</label>
 
-
-								<div class="row">
-									<div class="input-field col s6">
-										<select name="operacao.setor.id">
+                  <div class="col-sm-3">
+                     <select  name="operacao.setor.id" class="form-control">
 													<c:forEach items="${setores}" var="setor">
 														<option value="${setor.id}"
-															<c:if test="${setor.id == operacao.setor.id}">selected</c:if>>${setor.descricao}</option>
+															<c:if test="${setor.id == recurso.setor.id}">selected</c:if>>${setor.descricao}</option>
 													</c:forEach>
-												</select> <label>Setor:</label>
-									</div>
-								</div>
+												</select>
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="reset" class="btn btn-cancel pull-right fa fa-remove" name="_method" value="DELETE"> Excluir</button>
+                <button type="submit" class="btn btn-save pull-right fa fa-save" name="_method" value="PUT"> Salvar</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
 
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 
+  <!-- Main Footer -->
+ <%@ include file="../common/footer.jspf"%>
+  <!-- Control Sidebar -->
+ <%@ include file="../common/control_sidebar.jspf"%>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+  immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
 
-								<div class="row">
-										<button class="btn grey darken-4 waves-effect waves-light right" type="submit" name="_method" value="DELETE">
-											Excluir <i class="material-icons right">clear</i>
-										</button>
-										<button class="btn grey darken-4 waves-effect waves-light right" type="submit" name="_method" value="PUT">
-											Salvar <i class="material-icons right">save</i>
-										</button>
-								</div>
+<!-- REQUIRED JS SCRIPTS -->
+ <%@ include file="../common/import_js.jspf"%>
 
-							</form>
-						</div>
-					</div>
-
-	
-   
-  </body>
-  </main>
-  
-  
-<%@ include file="../common/footer.jspf"%>
- 
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. -->
+</body>
 </html>
+
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,6 @@
 package br.ifsp.edu.pcp.test.dao;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
@@ -72,6 +73,20 @@ public class OperacaoDAOTest {
 		List<Operacao> operacoes = operacaoDAO.listar();
 		assertNotNull(operacoes);
 	}
+	
+	
+	@Test
+	public void listarSimilares() {
+		Setor setor = new Setor("TORNEAR");
+		setorDAO.salvar(setor);
+        Operacao operacao1 = new Operacao("TORNEAR 1", "TORNEAR", setor);
+        Operacao operacao2 = new Operacao("TORNEAR 2", "TORNEAR", setor);
+        operacaoDAO.salvar(operacao1);
+        operacaoDAO.salvar(operacao2);
+        List<Operacao> operacoes = operacaoDAO.buscaSimilar("TORN");
+		assertEquals(2, operacoes.size());
+	}
+	
 	
 	
 	@AfterClass

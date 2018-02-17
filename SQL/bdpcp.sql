@@ -154,6 +154,8 @@ SELECT * FROM perfil;
 SELECT * FROM usuario;
 SELECT * FROM unidade;
 SELECT * FROM produto;
+SELECT * FROM operacao;
+SELECT * FROM setor;
 SELECT * FROM estrutura_produto;
 
 SELECT p.*,u.* from produto  AS p 

@@ -1,66 +1,58 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE HTML>
-<html lang="pt-br">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<%@ include file="../common/import_css.jspf"%>
-
-
-<title>Consulta - Produto</title>
+    <%@ include file="../common/import_css.jspf"%>
+  <title>Produto - Consulta</title>
 </head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
 
+  <!-- Main Header -->
+      <%@ include file="../common/header.jspf"%>
+  <!-- Left side column. contains the logo and sidebar -->
+   <%@ include file="../common/sidebar.jspf"%>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Page Header
+        <small>Optional description</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+      </ol>
+    </section>
 
-<body>
-	<!-- Header Starts -->
-	<!--Start Nav bar -->
-	<%@ include file="../common/navbar.jspf"%>
-	<!--End Nav bar -->
-	<!-- Header Ends -->
-	<%@ include file="../common/sidebar.jspf"%>
+    <!-- Main content -->
+    <section class="content container-fluid">
 
-	<!--content area start-->
-	<div id="content" class="pmd-content content-area dashboard">
-
-		<div class="container-fluid">
-
-			<div>
-				<div class="pull-right table-title-top-action">
-					<div class="pmd-textfield pull-left">
-						<input id="exampleInputAmount" class="form-control"
-							placeholder="Pesquisar por..." type="text"><span
-							class="pmd-textfield-focused"></span>
-					</div>
-					<a href="javascript:void(0);"
-						class="btn btn-red pmd-btn-raised add-btn pmd-ripple-effect pull-left">Pesquisar</a>
-				</div>
-				<!-- Title -->
-				<h1 class="section-title" id="services">
-					<span>Material</span>
-				</h1>
-				<!-- End Title -->
-				<!--breadcrum start-->
-				<ol class="breadcrumb text-left">
-					<li><a href="<c:url value='/materiais/'/>">Materiais</a></li>
-					<li class="active">Consulta</li>
-				</ol>
-				<!--breadcrum end-->
-			</div>
-
-
-			<!-- Start Message -->
-			<c:if test="${not empty mensagem}">
-				<div class="alert alert-success" role="alert">${mensagem}</div>
-			</c:if>
-
-			<!-- End Message -->
-
-
-			<div class="pmd-card pmd-z-depth pmd-card-custom-view">
+<div class="pmd-card pmd-z-depth pmd-card-custom-view">
 				<table class="table pmd-table table-hover table-striped display responsive nowrap table-inverse">
 
 					<thead>
@@ -110,17 +102,27 @@
 				</table>
 			</div>
 
-		</div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 
+  <!-- Main Footer -->
+ <%@ include file="../common/footer.jspf"%>
+  <!-- Control Sidebar -->
+ <%@ include file="../common/control_sidebar.jspf"%>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+  immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
 
-	</div>
-	<!--end content area-->
+<!-- REQUIRED JS SCRIPTS -->
+ <%@ include file="../common/import_js.jspf"%>
+
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. -->
 </body>
-<!-- Footer Starts -->
-<!--footer start-->
-<%@ include file="../common/footer.jspf"%>
-<!-- Footer Ends -->
-
-<!-- Scripts Starts -->
-<%@ include file="../common/import_js.jspf"%>
 </html>

@@ -1,442 +1,483 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!Doctype html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
 <html>
 <head>
 <%@ include file="../common/import_css.jspf"%>
-<title>Produto - Cadastro</title>
-<%@ include file="../common/import_js.jspf"%>
+<title>Produto - Novo</title>
+
+
+<link
+	href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css"
+	rel="Stylesheet"></link>
+
+
+
+
+
+
+
 </head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-red sidebar-mini">
+	<div class="wrapper">
 
-<%@ include file="../common/header.jspf"%>
-<main>
-<body>
-	<!-- Breadcrumb -->
-	<nav class="grey">
-		<div class="nav-wrapper">
-			<div class="col s12">
-				<a href="#!" class="breadcrumb">Dashboard</a> <a href="#!"
-					class="breadcrumb">Produto</a> <a href="#!" class="breadcrumb">Cadastro</a>
-			</div>
-		</div>
-	</nav>
-	<!-- Fim Breadcrumbs -->
+		<!-- Main Header -->
+		<%@ include file="../common/header.jspf"%>
+		<!-- Left side column. contains the logo and sidebar -->
+		<%@ include file="../common/sidebar.jspf"%>
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<h1>Produto</h1>
+				<ol class="breadcrumb">
+					<li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+					<li class="active">Here</li>
+				</ol>
+			</section>
 
+			<!-- Main content -->
+			<section class="content container-fluid">
 
-
-	<div id="basic-tabs" class="section">
-		<div class="row">
-			<div class="col s12">
-				<ul class="tabs tab-demo z-depth-1" style="width: 100%;">
-					<li class="tab col s3"><a class="" href="#cadastro">Cadastro</a>
-					</li>
-					<li class="tab col s3"><a href="#estrutura" class="active">Estrutura</a></li>
-					<li class="tab col s3"><a href="#roteiro">Roteiro</a></li>
-					<div class="indicator" style="right: 603px; left: 301px;"></div>
-					<div class="indicator" style="right: 603px; left: 301px;"></div>
-				</ul>
-			</div>
-			<div class="col s12">
-				<div id="cadastro" class="col s12" style="display: none;">
-
-
-
-					<!-- Cadastro -->
-					<form action="<c:url value='/produtos/'/>" method="POST"
-						accept-charset="UTF-8">
-						<div class="card-panel">
-							<h4 class="header2">
-								<strong>Dados Básicos</strong>
-							</h4>
-
-
-							<div class="row">
-								<div class="input-field col s3">
-									<input id="codigoInterno" type="text"
-										name="produto.codigoInterno" class="validate"> <label
-										for="codigoInterno">Código Interno:</label>
-								</div>
-
-								<div class="input-field col s6">
-									<input id="descricao" class="validate" type="text"
-										name="produto.descricao"> <label for="descricao">Descricao:</label>
-								</div>
-							</div>
-
-
-
-							<div class="row">
-								<div class="input-field col s3">
-									<input id="valorUnitario" class="validate" type="number"
-										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
-										name="produto.valorUnitario"> <label
-										for="valorUnitario">Valor Unitário:</label>
-								</div>
-
-
-								<div class="input-field col s1">
-									<label>Situação:</label>
-								</div>
-
-								<div class="input-field col s6">
-									<input name="produto.situacao" type="radio" id="ATIVO"
-										value="ATIVO" checked> <label for="ATIVO">Ativo</label>
-									<input name="produto.situacao" type="radio" id="INATIVO"
-										VALUE="INATIVO"> <label for="INATIVO">Inativo</label>
-									<input name="produto.situacao" type="radio" id="FORA_DE_LINHA"
-										VALUE="FORA_DE_LINHA"> <label for="FORA_DE_LINHA">Fora
-										de Linha</label>
-								</div>
-							</div>
-
-
-
-							<h4 class="header2">
-								<strong>Dados Técnicos</strong>
-							</h4>
-
-
-							<div class="row">
-								<div class="input-field col s3">
-									<select name="produto.unidadeMedida.id">
-										<option value="" disabled selected>Escolha uma
-											unidade</option>
-										<c:forEach items="${unidades}" var="unidade">
-											<option value="${unidade.id}">${unidade.sigla}-${unidade.descricao}</option>
-										</c:forEach>
-									</select> <label for="peso">Unidade de Medida:</label>
-								</div>
-
-
-								<div class="input-field col s3">
-									<input id="peso" type="number" pattern="[0-9]+([\.,][0-9]+)?"
-										step="0.01" name="produto.peso" class="validate"> <label
-										for="peso">Peso (KG):</label>
-								</div>
-							</div>
-
-
-
-							<div class="row">
-								<div class="input-field col s3">
-									<input id="comprimento" type="number"
-										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
-										name="produto.comprimento" class="validate"> <label
-										for="comprimento">Comprimento (mm):</label>
-								</div>
-
-								<div class="input-field col s3">
-									<input id="largura" type="number"
-										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
-										name="produto.largura" class="validate"> <label
-										for="largura">Largura (mm):</label>
-								</div>
-
-								<div class="input-field col s3">
-									<input id="altura" type="number" pattern="[0-9]+([\.,][0-9]+)?"
-										step="0.01" name="produto.altura" class="validate"> <label
-										for="altura">Altura (mm):</label>
-								</div>
-
-
-							</div>
-
-
-
-
-
-							<h4 class="header2">
-								<strong>Dados Estoque</strong>
-							</h4>
-
-
-							<div class="row">
-								<div class="input-field col s3">
-									<input id="quantidadeEstoque" type="number"
-										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
-										name="produto.quantidadeEstoque" class="validate"> <label
-										for="quantidadeEstoque">Quantidade Estoque :</label>
-								</div>
-
-								<div class="input-field col s3">
-									<input id="quantidadeMinima" type="number"
-										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
-										name="produto.quantidadeMinima" class="validate"> <label
-										for="quantidadeMinima">Quantidade Mínima :</label>
-								</div>
-
-								<div class="input-field col s3">
-									<input id="leadtime" type="number"
-										pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
-										name="produto.leadTime" class="validate"> <label
-										for="leadtime">Lead Time (D) :</label>
-								</div>
-							</div>
-						</div>
-					</form>
-
-				</div>
-				<!-- Fim cadastro -->
-
-
-				<div id="estrutura" class="col s12" style="display: block;">
-					<!-- Estrutura -->
-					<div class="card-panel">
-
-						<div class="row">
-							<div class="input-field col s6">
-								<i class="mdi-action-search prefix"></i> <input type="text">
-								<label for="">Material</label>
-							</div>
-
-							<div class="input-field col s3">
-								<input id="largura" type="number" pattern="[0-9]+([\.,][0-9]+)?"
-									step="0.01" name="produto.largura" class="validate"> <label
-									for="largura">Quantidade:</label>
-							</div>
-
-							<div class="input-field col s1">
-								<a
-									class="btn-floating right waves-effect waves-light red accent-4"><i
-									class="mdi-content-add"></i></a>
-							</div>
-						</div>
-
-						<table class="hoverable">
-							<thead>
-								<tr>
-									<th>Seq</th>
-									<th>Material</th>
-									<th>Quantidade</th>
-								</tr>
-							</thead>
-							<tbody>
-
-							</tbody>
-							<tfoot>
-
-							</tfoot>
-						</table>
+				<div class="box box-info">
+					<div class="box-header with-border">
+						<h3 class="box-title">Cadastro</h3>
 					</div>
-
-					<!-- Fim Estrutura -->
-				</div>
-				<div id="roteiro" class="col s12" style="display: none;">
-					<!-- Roteiro -->
+					<!-- /.box-header -->
+					<!-- form start -->
 					
-						<div class="card-panel">
-<form action="<c:url value='/produtos/roteiro'/>" method="POST"
-						accept-charset="UTF-8">
-							<div class="row">
-								<div class="col s12">
-									<div class="row">
-										<div class="input-field col s12">
-											<i class="mdi-action-search prefix"></i> <input type="text"
-												id="operacao" class="autocomplete"> <label
-												for="operacao">Operação</label>
+
+
+
+						<div class="nav-tabs-custom">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tab_cadastro"
+									data-toggle="tab" aria-expanded="true">Cadastro</a></li>
+								<li class=""><a href="#tab_estrutura" data-toggle="tab"
+									aria-expanded="false">Estrutura</a></li>
+								<li class=""><a href="#tab_roteiro" data-toggle="tab"
+									aria-expanded="false">Roteiro</a></li>
+								<li class="pull-right"><a href="#" class="text-muted"><i
+										class="fa fa-gear"></i></a></li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane active" id="tab_cadastro">
+
+									<!-- CADASTRO -->
+                               <form class="form-horizontal" action="<c:url value='/materiais/'/>"
+						method="POST" accept-charset="UTF-8">
+									<div class="box-body">
+
+
+										<div class="box-header with-border">
+											<h3 class="box-title">Dados Básicos</h3>
+										</div>
+
+
+
+
+
+
+										<div class="form-group row">
+											<label for="descricao" class="col-sm-1 control-label">Código
+												Interno:</label>
+
+											<div class="col-sm-2">
+												<input id="codigoInterno" class="form-control" type="text"
+													name="produto.codigoInterno">
+											</div>
+
+
+											<label for="descricao" class="col-sm-1 control-label">Descrição:</label>
+											<div class="col-sm-6">
+												<input id="descricao" class="form-control" type="text"
+													name="produto.descricao">
+											</div>
+										</div>
+
+
+
+
+										<div class="form-group row">
+											<label for="valorUnitario" class="col-sm-1 control-label">Valor
+												Unitário:</label>
+
+											<div class="col-sm-3">
+												<input id="valorUnitario" class="form-control" type="number"
+													pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+													name="produto.valorUnitario">
+											</div>
+
+											<div class="col-sm-6">
+												<label for="ATIVO" class="radio-inline"> <input
+													name="produto.situacao" type="radio" id="ATIVO"
+													value="ATIVO" checked> Ativo
+												</label> <label for="INATIVO" class="radio-inline"> <input
+													name="produto.situacao" type="radio" id="INATIVO"
+													VALUE="INATIVO"> Inativo
+												</label> <label for="FORA_DE_LINHA" class="radio-inline"> <input
+													name="produto.situacao" type="radio" id="FORA_DE_LINHA"
+													VALUE="FORA_DE_LINHA"> Fora de Linha
+												</label>
+
+											</div>
+										</div>
+
+
+
+
+
+
+										<div class="box-header with-border">
+											<h3 class="box-title">Dados Técnicos</h3>
+										</div>
+
+
+										<div class="form-group row">
+											<label for="unidadeMedida" class="col-sm-1 control-label">Unidade
+												de Medida:</label>
+
+											<div class="col-sm-3">
+												<select name="produto.unidadeMedida.id" class="form-control">
+													<option value="" disabled selected>Escolha uma
+														unidade</option>
+													<c:forEach items="${unidades}" var="unidade">
+														<option value="${unidade.id}">${unidade.sigla}-${unidade.descricao}</option>
+													</c:forEach>
+												</select>
+											</div>
+
+
+											<label for="peso" class="col-sm-1 control-label">Peso
+												(KG):</label>
+											<div class="col-sm-3">
+												<input id="peso" type="number"
+													pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+													name="produto.peso" class="form-control">
+											</div>
+
+										</div>
+
+
+										<div class="form-group row">
+											<label for="comprimento" class="col-sm-1 control-label">Comprimento
+												(mm):</label>
+											<div class="col-sm-2">
+												<input id="comprimento" type="number"
+													pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+													name="produto.comprimento" class="form-control">
+											</div>
+
+
+											<label for="comprimento" class="col-sm-1 control-label">Largura
+												(mm):</label>
+											<div class="col-sm-2">
+												<input id="largura" type="number"
+													pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+													name="produto.largura" class="form-control">
+											</div>
+
+
+											<label for="altura" class="col-sm-1 control-label">Altura
+												(mm):</label>
+											<div class="col-sm-2">
+												<input id="altura" type="number"
+													pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+													name="produto.altura" class="form-control">
+											</div>
+
+										</div>
+
+
+
+
+
+
+
+										<div class="box-header with-border">
+											<h3 class="box-title">Dados Estoque</h3>
+										</div>
+
+
+										<div class="form-group row">
+											<label for="quantidadeEstoque" class="col-sm-1 control-label">Quantidade
+												Estoque :</label>
+											<div class="col-sm-2">
+												<input id="quantidadeEstoque" type="number"
+													pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+													name="produto.quantidadeEstoque" class="form-control">
+
+											</div>
+
+											<label for="quantidadeMinima" class="col-sm-1 control-label">Quantidade
+												Mínima :</label>
+											<div class="col-sm-2">
+												<input id="quantidadeMinima" type="number"
+													pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+													name="produto.quantidadeMinima" class="form-control">
+
+											</div>
+
+											<label for="leadtime" class="col-sm-1 control-label">Lead
+												Time (D) :</label>
+											<div class="col-sm-2">
+												<input id="leadtime" type="number"
+													pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+													name="produto.leadTime" class="form-control">
+
+											</div>
+										</div>
+
+
+
+
+
+										<!-- /.box-body -->
+									</div>
+									
+									<div class="box-footer">
+							<button type="reset" class="btn btn-cancel pull-right fa fa-ban">
+								Cancelar</button>
+							<button type="submit" class="btn btn-save pull-right fa fa-save">
+								Salvar</button>
+						</div>
+                               	</form>
+
+									<!-- FIM CADASTRO -->
+
+
+
+
+								</div>
+								<!-- /.tab-pane -->
+								<div class="tab-pane" id="tab_estrutura">
+
+									<!--  ESTRUTURA  -->
+									<div class="form-group row">
+									<form action="<c:url value='/produtos/addProduto'/>" method="post">
+										<label class="col-sm-1 control-label">Produto:</label>
+										<div class="col-sm-6">
+											<select class="js-data-example-ajax" id="busca_produto" name="produto.id"
+												style="width: 100%">
+												 <option value="" disabled selected>Escolha um Produto</option>
+												<c:forEach var="produto" items="${produtos}">
+													<option value="${produto.id}">${produto.descricao}</option>
+												</c:forEach>
+												
+												</select>
+										</div>
+										
+										<div class="col-sm-3">
+										<input id="quantidadeMinima" type="number"
+													pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+													name="quantidade" class="form-control">
+										</div>
+										
+										
+										<div class="col-sm-1">
+											<button type="submit" class="btn btn-default">Adicionar</button>
+										</div>
+										</form>
+									</div>
+									
+									
+									<div class="form-group row">
+									<form action="<c:url value='/produtos/addMaterial'/>" method="post">
+										<label class="col-sm-1 control-label">Material:</label>
+										<div class="col-sm-6">
+											<select class="js-data-example-ajax" id="busca_material" name="material.id"
+												style="width: 100%">
+												 <option value="" disabled selected>Escolha um Material</option>
+												<c:forEach var="material" items="${materiais}">
+													<option value="${material.id}">${material.descricao}</option>
+												</c:forEach>
+												
+												</select>
+										</div>
+										
+										<div class="col-sm-3">
+										<input id="quantidadeMinima" type="number"
+													pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+													name="quantidade" class="form-control">
+										</div>
+										
+										
+										<div class="col-sm-1">
+											<button type="submit" class="btn btn-default">Adicionar</button>
+										</div>
+										</form>
+									</div>
+
+
+									<div class="box">
+										<div class="box-header">
+											<h3 class="box-title">Lista de Materiais/Produtos</h3>
+											<h3>${produtoSession.estrutura.size}</h3>
+										</div>
+										<!-- /.box-header -->
+										<div class="box-body no-padding">
+											<table class="table table-striped">
+												<thead>
+													<tr>
+														<th style="width: 10px">#</th>
+														<th style="width: 20px">ID</th>
+														<th>Descrição</th>
+														<th>Tipo</th>
+														<th style="width: 50px">Quantidade</th>
+													</tr>
+												</thead>
+												<tbody>
+                                                <c:forEach var="item" items="${produtoSession.estrutura}" varStatus="loop">
+                                                <c:set var="mapKey" value="${item.key}"/>
+                                                <c:set var="mapValue" value="${item.value}"/>
+                                                <tr>
+                                                  <td>${mapKey}</td>
+                                                  <td>${mapKey.id}</td>
+                                                  <td><c:out value="${produtoSession.estrutura[item.key]}"/></td>
+                                                  <td>${mapKey.descricao}</td>
+                                                  <td>${mapValue}</td>
+                                                  </tr>
+												</c:forEach>
+												</tbody>
+
+											</table>
 										</div>
 									</div>
+
+									<!--  FIM ESTRUTURA  -->
 								</div>
+								<!-- /.tab-pane -->
+								<div class="tab-pane" id="tab_roteiro">
+
+									<!-- ROTEIRO -->
+
+									<div class="form-group row">
+										<label class="col-sm-1 control-label">Operação:</label>
+										<div class="col-sm-6">
+											<select class="js-data-example-ajax" id="busca_operacao"
+												style="width: 100%">
+                                               <option value="" disabled selected>Escolha uma operação</option>
+												<c:forEach var="operacao" items="${operacoes}">
+													<option value="${operacao.id}">${operacao.descricao}</option>
+												</c:forEach>
+											</select>
+										</div>
+										<div class="col-sm-1">
+											<button type="button" class="btn btn-default">Adicionar</button>
+										</div>
+									</div>
+
+
+									<div class="box">
+										<div class="box-header">
+											<h3 class="box-title">Operações</h3>
+										</div>
+										<!-- /.box-header -->
+										<div class="box-body no-padding">
+											<table class="table table-striped">
+												<thead>
+													<tr>
+														<th style="width: 10px">#</th>
+														<th style="width: 20px">ID</th>
+														<th style="width: 200px">Descrição</th>
+														<th style="width: 150px">Setor</th>
+														<th style="width: 100px">Tempo Setup</th>
+														<th style="width: 100px">Tempo Produção</th>
+														<th style="width: 100px">Tempo Finalização</th>
+													</tr>
+												</thead>
+												<tbody>
+
+												</tbody>
+
+											</table>
+										</div>
+									</div>
+
+									<!-- FIM ROTEIRO -->
+
+
+								</div>
+								<!-- /.tab-pane -->
 							</div>
-<input type="hidden" name="roteiro.operacao.id" value="28"/>
-<input type="hidden" name="roteiro.sequencia" value="1"/>
-
-							<div class="row">
-								<div class="input-field col s2">
-									<i class="mdi-av-timer prefix"></i> <label>Tempo Setup:</label>
-								</div>
-
-								<div class="input-field col s1">
-									<input class="validate" type="time" step="1" id="tempo_setup" 
-										pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
-								</div>
-
-								<div class="input-field col s2">
-									<i class="mdi-av-timer prefix"></i> <label>Tempo
-										Produção:</label>
-								</div>
-
-								<div class="input-field col s1">
-									<input class="validate" type="time" step="1"
-										id="tempo_producao" 
-										pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
-								</div>
-
-								<div class="input-field col s2">
-									<i class="mdi-av-timer prefix"></i> <label>Tempo
-										Finalização:</label>
-								</div>
-
-
-								<div class="input-field col s1">
-									<input class="validate" type="time" step="1" 
-										id="tempo_finalizacao"
-										pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
-								</div>
-
-								<div class="input-field col s1">
-									<button type="submit"
-										class="btn-floating right waves-effect waves-light red accent-4">
-										<i class="material-icons">add</i>
-									</button>
-								</div>
-							</div>
-							</form>
-
-
-
-
-							<table class="hoverable" id="tabela_roteiro">
-								<thead>
-									<tr>
-										<th>Seq</th>
-										<th>ID</th>
-										<th>Operação</th>
-										<th>Tempo Setup</th>
-										<th>Tempo Produção</th>
-										<th>Tempo Finalização</th>
-										<th>Total</th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody id="tabela_operacao">
-                                    <c:forEach items="${produtoSession.roteiros}" var="roteiro">
-											<tr>
-											    <td>${roteiro.operacao.sequencia}</td>
-											    <td>${roteiro.operacao.id}</td>
-											    <td>${roteiro.operacao.descricao}</td>
-												<td>${roteiro.tempoSetup}</td>
-												<td>${roteiro.tempoProducao}</td>
-												<td>${roteiro.tempoFinalizacao}</td>
-												<td>-</td>
-												<td><button type="button" class="btn-floating right waves-effect waves-light red accent-4"><i class="material-icons">remove</i></button></td>
-											</tr>
-
-										</c:forEach>
-								</tbody>
-								<tfoot>
-                                    
-								</tfoot>
-							</table>
-							
-							${prod}
+							<!-- /.tab-content -->
 						</div>
-					
+						<!-- /.box-footer -->
+				
 				</div>
-				<!-- Fim Roteiro -->
 
-
-			</div>
+			</section>
+			<!-- /.content -->
 		</div>
+		<!-- /.content-wrapper -->
 
+		<!-- Main Footer -->
+		<%@ include file="../common/footer.jspf"%>
+		<!-- Control Sidebar -->
+		<%@ include file="../common/control_sidebar.jspf"%>
+		<!-- /.control-sidebar -->
+		<!-- Add the sidebar's background. This div must be placed
+  immediately after the control sidebar -->
+		<div class="control-sidebar-bg"></div>
 	</div>
+	<!-- ./wrapper -->
 
-	<div class="card-panel">
-		<div class="row">
-			<button class="btn grey darken-4 waves-effect waves-light right"
-				type="submit">
-				Salvar <i class="material-icons right">send</i>
-			</button>
-		</div>
-	</div>
+	<!-- REQUIRED JS SCRIPTS -->
+	<%@ include file="../common/import_js.jspf"%>
 
-
-
-
-
-
-
+	<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. -->
 </body>
-</main>
-
-
-<%@ include file="../common/footer.jspf"%>
-<script type="text/javascript">
-	$(document)
-			.ready(
-					function() {
-						$
-								.ajax({
-									type : 'GET',
-									url : "<c:url value='/operacoes/operacoes.json'/>",
-									data : {
-										get_param : 'value'
-									},
-									dataType : 'json',
-									success : function(data) {
-										var operacoes = data;
-										var data_operacoes = {};
-										for (var i = 0; i < operacoes.length; i++) {
-											data_operacoes[operacoes[i].id
-													+ "-"
-													+ operacoes[i].descricao] = operacoes[i].id;
-										}
-
-										$('#operacao').autocomplete({
-											data : data_operacoes,
-											limit : 20, // The max amount of results that can be shown at once. Default: Infinity.
-											onAutocomplete : function(val) {
-												// Callback function when value is autcompleted.
-											},
-											minLength : 1, // The minimum length of the input for the autocomplete to start. Default: 1.
-										});
-
-									}
-								});
-
-					});
-</script>
-
-<script>
-	function addOperacao() {
-		var operacao = document.getElementById("operacao").value;
-		var id_oper = parseInt(operacao.match(/\d+/)[0]);
-		var tempo_setup = document.getElementById("tempo_setup").value;
-		var tempo_producao = document.getElementById("tempo_producao").value;
-		var tempo_finalizacao = document.getElementById("tempo_finalizacao").value;
-
-		alert(tempo_setup);
-		var param = {
-			id : id_oper
-		};
-		$.post("<c:url value='/operacoes/operacao.json'/>", param,
-				insere_operacao);
-	}
-
-	function insere_operacao(data) {
-		$("#tabela_roteiro")
-				.find('tbody')
-				.append(
-						"<tr>"
-								+ "<td>-</td>"
-								+ "<td>"
-								+ data.id
-								+ "</td>"
-								+ "<td>"
-								+ data.descricao
-								+ "</td>"
-								+ "<td>"
-								+ String(tempo_setup)
-								+ "</td>"
-								+ "<td>"
-								+ tempo_producao.toString()
-								+ "</td>"
-								+ "<td>"
-								+ tempo_finalizacao.toString()
-								+ "</td>"
-								+ "<td>-</td>"
-								+ "<td><button type='button' class='btn-floating right waves-effect waves-light red accent-4'><i class='material-icons'>remove</i></button></td>"
-								+ "</tr>");
-	}
-</script>
 </html>
 
 
 
 
-
-
-
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#busca_operacao").select2({
+			placeholder : "Selecione uma Operação",
+			minimumInputLength : 1
+		});
+		
+		
+		
+		$("#busca_produto").select2({
+			placeholder : "Selecione um Produto",
+			minimumInputLength : 1
+		});
+		
+		
+		$("#busca_material").select2({
+			placeholder : "Selecione um Material",
+			minimumInputLength : 1
+		});
+	});
+</script>
 
 
 

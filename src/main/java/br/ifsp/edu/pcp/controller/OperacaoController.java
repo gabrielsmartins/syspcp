@@ -1,7 +1,5 @@
 package br.ifsp.edu.pcp.controller;
 
-import static br.com.caelum.vraptor.view.Results.json;
-
 import java.util.List;
 
 import javax.inject.Inject;
@@ -71,16 +69,6 @@ public class OperacaoController {
 	}
 	
 
-	@Get("/operacoes.json")
-	public void operacoes() {
-		 List<Operacao> operacoes = operacaoDAO.listar();
-		 result.use(json()).withoutRoot().from(operacoes).serialize();   
-    }
 	
-	@Post("/operacao.json")
-	public void buscaOperacao(Long id) {
-		 Operacao operacao = operacaoDAO.pesquisar(id);
-		 result.use(json()).withoutRoot().from(operacao).serialize();   
-    }
 
 }
