@@ -1,69 +1,85 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!Doctype html>
+
 <html>
-  <head>
-<%@ include file="../common/import_css.jspf"%>
-    <title>Unidade de Medida - Cadastro</title>
-<%@ include file="../common/import_js.jspf"%>
-  </head>
-  
+<head>
+  <%@ include file="../common/import_css.jspf"%>
+  <title>Unidade de Medida - Novo</title>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+  <!-- Main Header -->
 <%@ include file="../common/header.jspf"%>
-  <main>
-  <body>
-     <!-- Breadcrumb -->
-   <nav class="grey">
-    <div class="nav-wrapper">
-      <div class="col s12">
-        <a href="#!" class="breadcrumb">Dashboard</a>
-        <a href="#!" class="breadcrumb">Unidade de Medida</a>
-        <a href="#!" class="breadcrumb">Cadastro</a>
-      </div>
-    </div>
-  </nav>
-         <!-- Fim Breadcrumbs -->
-
+  <!-- Left side column. contains the logo and sidebar -->
+<%@ include file="../common/sidebar.jspf"%> 
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+  immediately after the control sidebar -->
+  <div class="content-wrapper">
   
-					<div class="card-panel">
-						<h4 class="header2"><strong>Unidade de Medida - Cadastro</strong></h4>
-						<div class="row">
-							<form class="col s12" action="<c:url value='/unidades/'/>"
+  
+  
+  
+   <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Horizontal Form</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal" action="<c:url value='/unidades/'/>"
 								method="POST" accept-charset="UTF-8">
-								<div class="row">
-									<div class="input-field col s6">
-										<input id="descricao" type="text" class="validate" name="unidade.descricao"> 
-											<label for="descricao">Descrição:</label>
-									</div>
-								</div>
-								<div class="row">
-									<div class="input-field col s3">
-										<input id="sigla" type="text" name="unidade.sigla" class="validate">
-										<label for="sigla">Sigla:</label>
-									</div>
-								</div>
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="descricao" class="col-sm-2 control-label">Descrição:</label>
 
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="descricao" placeholder="Descrição" name="unidade.descricao">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="sigla" class="col-sm-2 control-label">Sigla:</label>
 
-								<div class="row">
-										<button class="btn grey darken-4 waves-effect waves-light right" type="submit">
-											Salvar  <i class="material-icons right">send</i>
-										</button>
-								</div>
-								
-							</form>
-						</div>
-
-					</div>
-
-
-        </div>
-   
-  </body>
-  </main>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="sigla" placeholder="Sigla" name="unidade.sigla">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> Remember me
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-info pull-right">Salvar</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
   
+  </div>
   
-<%@ include file="../common/footer.jspf"%>
  
-</html>
+  
+</div>
+<!-- ./wrapper -->
 
+<!-- REQUIRED JS SCRIPTS -->
+<%@ include file="../common/import_js.jspf"%>
+
+
+
+
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. -->
+</body>
+</html>
 
 
 
