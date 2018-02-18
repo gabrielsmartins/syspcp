@@ -41,7 +41,7 @@ public class OperacaoController {
 	@Post("/")
 	public void adiciona(Operacao operacao) {
 		operacaoDAO.salvar(operacao);
-		result.include("mensagem", "Operacaoo Salva com Sucesso");
+		result.include("mensagem", "Operação Salva com Sucesso");
 		result.redirectTo(OperacaoController.class).lista();
 
 	}
@@ -55,7 +55,7 @@ public class OperacaoController {
 	@Put("/{operacao.id}")
 	public void atualiza(Operacao operacao) {
 		operacaoDAO.atualizar(operacao);
-		result.include("mensagem", "Operacaoo Alterada com Sucesso");
+		result.include("mensagem", "Operação Alterada com Sucesso");
 		result.redirectTo(OperacaoController.class).lista();
 		 
 	}
@@ -63,7 +63,7 @@ public class OperacaoController {
 	@Delete("/{operacao.id}")
 	public void remove(Operacao operacao) {
 		operacaoDAO.remover(operacao.getId());
-		result.include("mensagem", "Operacaoo Excluida com Sucesso");
+		result.include("mensagem", "Operação Excluida com Sucesso");
 		result.redirectTo(OperacaoController.class).lista();
 
 	}

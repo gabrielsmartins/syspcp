@@ -74,6 +74,13 @@ public class Produto extends Componente implements Serializable {
 	public void setRoteiros(List<Roteiro> roteiros) {
 		this.roteiros = roteiros;
 	}
+
+	public void removerComponente(Componente componente) {
+         if(this.estrutura.containsKey(componente)) {
+        	 this.estrutura.remove(componente);
+       }
+		
+	}
 	
 	
 	

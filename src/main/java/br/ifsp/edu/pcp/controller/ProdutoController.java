@@ -1,8 +1,10 @@
 package br.ifsp.edu.pcp.controller;
 
+import java.time.LocalTime;
 import java.util.List;
 
 import javax.inject.Inject;
+
 
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Delete;
@@ -62,6 +64,8 @@ public class ProdutoController {
 
 	@Post("/")
 	public void adiciona(Produto produto) {
+		produto.setEstrutura(this.produto.getEstrutura());
+		produto.setRoteiros(this.produto.getRoteiros());
 		produtoDAO.salvar(produto);
 		result.include("mensagem", "Produto Salvo com Sucesso");
 		result.redirectTo(ProdutoController.class).lista();
@@ -93,9 +97,12 @@ public class ProdutoController {
 	}
 
 	@Post("/addRoteiro")
-	public void adicionarRoteiro(Roteiro roteiro) {
+	public void adicionarRoteiro(Roteiro roteiro,String tempoSetup, String tempoProducao, String tempoFinalizacao) {
 		Operacao operacao = operacaoDAO.pesquisar(roteiro.getOperacao().getId());
 		roteiro.setOperacao(operacao);
+		roteiro.setTempoSetup(LocalTime.parse(tempoSetup));
+		roteiro.setTempoProducao(LocalTime.parse(tempoProducao));
+		roteiro.setTempoFinalizacao(LocalTime.parse(tempoFinalizacao));
 		roteiro.setSequencia(Long.parseLong(String.valueOf(this.produto.getRoteiros().size())+1));
 		this.produto.adicionarRoteiro(roteiro);
 		result.redirectTo(ProdutoController.class).form();
@@ -110,9 +117,23 @@ public class ProdutoController {
 		
 	}
 	
+	@Post("/removeMaterial")
+	public void removerMaterial(Material material) {
+		this.produto.removerComponente(this.materialDAO.pesquisar(material.getId()));
+		result.redirectTo(ProdutoController.class).form();
+		
+	}
+	
 	@Post("/addProduto")
 	public void adicionarProduto(Produto produto, Double quantidade) {
 		this.produto.adicionarComponente(produtoDAO.pesquisar(produto.getId()), quantidade);
+		result.redirectTo(ProdutoController.class).form();
+	}
+	
+	
+	@Post("/removeProduto")
+	public void removerProduto(Produto produto) {
+		this.produto.removerComponente(produtoDAO.pesquisar(produto.getId()));
 		result.redirectTo(ProdutoController.class).form();
 	}
 	

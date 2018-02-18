@@ -4,6 +4,7 @@ import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Embeddable
@@ -14,6 +15,7 @@ public class Roteiro {
 	private Long sequencia;
 
 	@OneToOne
+	@JoinColumn(name = "rot_oper_id")
 	private Operacao operacao;
 
 	@Column(name = "rot_tmp_stp")

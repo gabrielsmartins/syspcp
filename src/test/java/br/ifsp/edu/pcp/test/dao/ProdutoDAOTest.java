@@ -85,8 +85,8 @@ public class ProdutoDAOTest {
 
 
 		
-	   Roteiro roteiro1 = new Roteiro(1L,operacao1, LocalTime.of(02, 05, 00), LocalTime.of(05, 50, 10),  LocalTime.of(02, 10, 05));
-	   Roteiro roteiro2 = new Roteiro(2L,operacao2, LocalTime.of(01, 10, 05), LocalTime.of(06, 35, 05),  LocalTime.of(00, 50, 30));
+	   Roteiro roteiro1 = new Roteiro(1L,operacao1,LocalTime.parse("01:10:05"), LocalTime.parse("05:10:05"),  LocalTime.parse("00:50:05"));
+	   Roteiro roteiro2 = new Roteiro(2L,operacao2,LocalTime.parse("00:05:15"), LocalTime.parse("04:10:30"),  LocalTime.parse("00:40:05"));
 	
 	    produto.adicionarRoteiro(roteiro1);
 	    produto.adicionarRoteiro(roteiro2);

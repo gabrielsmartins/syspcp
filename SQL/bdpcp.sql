@@ -137,6 +137,7 @@ DROP TABLE produto;
 DROP TABLE unidade;
 DROP TABLE setor;
 DROP TABLE operacao;
+DROP TABLE roteiro;
 
 TRUNCATE TABLE usuario CASCADE;
 TRUNCATE TABLE perfil CASCADE;
@@ -155,9 +156,29 @@ SELECT * FROM usuario;
 SELECT * FROM unidade;
 SELECT * FROM produto;
 SELECT * FROM operacao;
+SELECT * FROM roteiro;
 SELECT * FROM setor;
 SELECT * FROM estrutura_produto;
 
+/** Consulta Estrutura Produto**/
+SELECT p.prod_id,p.prod_desc,M.prod_desc,ES.prod_sub_qntd
+       FROM produto AS P
+INNER JOIN estrutura_produto AS ES 
+            ON P.prod_id = ES.prod_id
+INNER JOIN produto AS M 
+            ON M.prod_id = ES.prod_sub_id;
+
+
+/** Consulta Roteiro Produto **/
+SELECT p.prod_id,p.prod_desc,O.oper_desc, R.rot_tmp_stp,R.rot_tmp_prd,R.rot_tmp_fnl
+       FROM produto AS P
+INNER JOIN roteiro AS R 
+           ON P.prod_id = R.rot_prod_id
+INNER JOIN operacao AS O
+           ON O.oper_id = R.rot_oper_id ;
+
+
+/** Consulta Unidade de Medida**/
 SELECT p.*,u.* from produto  AS p 
 inner join unidade AS u on u.unid_id = p.prod_unid_id;
 

@@ -91,7 +91,7 @@ desired effect
 								<div class="tab-pane active" id="tab_cadastro">
 
 									<!-- CADASTRO -->
-                               <form class="form-horizontal" action="<c:url value='/materiais/'/>"
+                               <form class="form-horizontal" action="<c:url value='/produtos/'/>"
 						method="POST" accept-charset="UTF-8">
 									<div class="box-body">
 
@@ -350,6 +350,8 @@ desired effect
 														<th>Descrição</th>
 														<th>Tipo</th>
 														<th style="width: 50px">Quantidade</th>
+														<th style="width: 50px">Alterar</th>
+														<th style="width: 50px">Remover</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -365,6 +367,12 @@ desired effect
                                                   <td><% out.print(entry.getKey().getDescricao()); %></td>
                                                   <td><% out.print(entry.getKey().getClass().getSimpleName()); %></td>
                                                   <td><% out.print(entry.getValue()); %></td>
+                                                  <td>
+                                                      <button type="button" class="btn btn-cancel fa fa-edit"></button>
+                                                      </td>
+                                                      <td>
+                                                      <button type="button" class="btn btn-cancel fa fa-remove"></button>
+                                                    </td>
                                                   </tr>
 												
 												<% }%>
@@ -396,15 +404,15 @@ desired effect
 										</div>
 										<label class="col-sm-1 control-label">Tempo Setup:</label>
 										<div class="col-sm-1">
-											<input class="form-control" type="time" name="roteiro.tempoSetup" step="1" id="tempo_setup" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
+											<input class="form-control" type="time" name="tempoSetup" step="1" id="tempo_setup" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
 										</div>
 										<label class="col-sm-1 control-label">Tempo Produção:</label>
 										<div class="col-sm-1">
-										   <input class="form-control" type="time" name="roteiro.tempoProducao" step="1" id="tempo_setup" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
+										   <input class="form-control" type="time" name="tempoProducao" step="1" id="tempo_setup" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
 										</div>
 										<label class="col-sm-1 control-label">Tempo Finalização:</label>
 										<div class="col-sm-1">
-										  <input class="form-control" type="time" name="roteiro.tempoFinalizacao" step="1" id="tempo_setup" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
+										  <input class="form-control" type="time" name="tempoFinalizacao" step="1" id="tempo_setup" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
 										</div>
 										<div class="col-sm-1">
 												<button type="submit" class="btn btn-cancel fa fa-plus"></button>
@@ -429,6 +437,8 @@ desired effect
 														<th style="width: 100px">Tempo Setup</th>
 														<th style="width: 100px">Tempo Produção</th>
 														<th style="width: 100px">Tempo Finalização</th>
+														<th style="width: 50px">Alterar</th>
+														<th style="width: 50px">Remover</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -438,9 +448,15 @@ desired effect
 												   <td>${roteiro.operacao.id}</td>
 												    <td>${roteiro.operacao.descricao}</td>
 												     <td>${roteiro.operacao.setor.descricao}</td>
-												     <td></td>
-												     <td></td>
-												     <td></td>
+												     <td>${roteiro.tempoSetup}</td>
+												     <td>${roteiro.tempoProducao}</td>
+												     <td>${roteiro.tempoFinalizacao}</td>
+												      <td>
+                                                      <button type="button" class="btn btn-cancel fa fa-edit"></button>
+                                                      </td>
+                                                      <td>
+                                                      <button type="button" class="btn btn-cancel fa fa-remove"></button>
+                                                    </td>
 												     </tr>
 												</c:forEach>
 												</tbody>
