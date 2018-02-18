@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="br.ifsp.edu.pcp.model.Produto" %>
+<%@ page import="br.ifsp.edu.pcp.model.Componente" %>
+<%@ page import="java.util.Map" %>
+
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -290,7 +294,7 @@ desired effect
 												</select>
 										</div>
 										
-										<div class="col-sm-3">
+										<div class="col-sm-1">
 										<input id="quantidadeMinima" type="number"
 													pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
 													name="quantidade" class="form-control">
@@ -298,27 +302,26 @@ desired effect
 										
 										
 										<div class="col-sm-1">
-											<button type="submit" class="btn btn-default">Adicionar</button>
+											<button type="submit" class="btn btn-cancel fa fa-plus"></button>
 										</div>
 										</form>
 									</div>
 									
-									
-									<div class="form-group row">
 									<form action="<c:url value='/produtos/addMaterial'/>" method="post">
+									<div class="form-group row">
 										<label class="col-sm-1 control-label">Material:</label>
 										<div class="col-sm-6">
 											<select class="js-data-example-ajax" id="busca_material" name="material.id"
 												style="width: 100%">
 												 <option value="" disabled selected>Escolha um Material</option>
 												<c:forEach var="material" items="${materiais}">
-													<option value="${material.id}">${material.descricao}</option>
+													<option value="${material.id}">${material.id} - ${material.descricao} - ${material.situacao}</option>
 												</c:forEach>
 												
 												</select>
 										</div>
 										
-										<div class="col-sm-3">
+										<div class="col-sm-1">
 										<input id="quantidadeMinima" type="number"
 													pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
 													name="quantidade" class="form-control">
@@ -326,10 +329,10 @@ desired effect
 										
 										
 										<div class="col-sm-1">
-											<button type="submit" class="btn btn-default">Adicionar</button>
+											<button type="submit" class="btn btn-cancel fa fa-plus"></button>
 										</div>
-										</form>
 									</div>
+									</form>
 
 
 									<div class="box">
@@ -350,17 +353,22 @@ desired effect
 													</tr>
 												</thead>
 												<tbody>
-                                                <c:forEach var="item" items="${produtoSession.estrutura}" varStatus="loop">
-                                                <c:set var="mapKey" value="${item.key}"/>
-                                                <c:set var="mapValue" value="${item.value}"/>
-                                                <tr>
-                                                  <td>${mapKey}</td>
-                                                  <td>${mapKey.id}</td>
-                                                  <td><c:out value="${produtoSession.estrutura[item.key]}"/></td>
-                                                  <td>${mapKey.descricao}</td>
-                                                  <td>${mapValue}</td>
+												<c:set var="produto" value="${produtoSession}"/>
+												<% Produto produto = (Produto) pageContext.getAttribute("produto"); 
+												  int seq = 0;
+												  for(Map.Entry<Componente, Double> entry : produto.getEstrutura().entrySet()) {
+													  seq++;
+												%>
+												<tr>
+                                                  <td><% out.print(seq); %></td>
+                                                  <td><% out.print(entry.getKey().getId());  %></td>
+                                                  <td><% out.print(entry.getKey().getDescricao()); %></td>
+                                                  <td><% out.print(entry.getKey().getClass().getSimpleName()); %></td>
+                                                  <td><% out.print(entry.getValue()); %></td>
                                                   </tr>
-												</c:forEach>
+												
+												<% }%>
+                                                
 												</tbody>
 
 											</table>
@@ -374,21 +382,35 @@ desired effect
 
 									<!-- ROTEIRO -->
 
+                               <form action="<c:url value='/produtos/addRoteiro'/>" method="post">
 									<div class="form-group row">
 										<label class="col-sm-1 control-label">Operação:</label>
-										<div class="col-sm-6">
+										<div class="col-sm-3">
 											<select class="js-data-example-ajax" id="busca_operacao"
-												style="width: 100%">
+												style="width: 100%" name="roteiro.operacao.id">
                                                <option value="" disabled selected>Escolha uma operação</option>
 												<c:forEach var="operacao" items="${operacoes}">
-													<option value="${operacao.id}">${operacao.descricao}</option>
+													<option value="${operacao.id}">(${operacao.id}) - ${operacao.descricao} - ${operacao.setor.descricao}</option>
 												</c:forEach>
 											</select>
 										</div>
+										<label class="col-sm-1 control-label">Tempo Setup:</label>
 										<div class="col-sm-1">
-											<button type="button" class="btn btn-default">Adicionar</button>
+											<input class="form-control" type="time" name="roteiro.tempoSetup" step="1" id="tempo_setup" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
+										</div>
+										<label class="col-sm-1 control-label">Tempo Produção:</label>
+										<div class="col-sm-1">
+										   <input class="form-control" type="time" name="roteiro.tempoProducao" step="1" id="tempo_setup" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
+										</div>
+										<label class="col-sm-1 control-label">Tempo Finalização:</label>
+										<div class="col-sm-1">
+										  <input class="form-control" type="time" name="roteiro.tempoFinalizacao" step="1" id="tempo_setup" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$">
+										</div>
+										<div class="col-sm-1">
+												<button type="submit" class="btn btn-cancel fa fa-plus"></button>
 										</div>
 									</div>
+							  </form>
 
 
 									<div class="box">
@@ -410,7 +432,17 @@ desired effect
 													</tr>
 												</thead>
 												<tbody>
-
+												<c:forEach var="roteiro" items="${produtoSession.roteiros}">
+												<tr>
+												<td>${roteiro.sequencia}</td>
+												   <td>${roteiro.operacao.id}</td>
+												    <td>${roteiro.operacao.descricao}</td>
+												     <td>${roteiro.operacao.setor.descricao}</td>
+												     <td></td>
+												     <td></td>
+												     <td></td>
+												     </tr>
+												</c:forEach>
 												</tbody>
 
 											</table>

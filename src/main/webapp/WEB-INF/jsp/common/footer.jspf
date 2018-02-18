@@ -1,8 +1,8 @@
 <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Anything you want
+      Desenvolvido por Gabriel Martins
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>PCP-WEB &copy; 2018 <a href="#">IFSP-GRU</a>.</strong> Trabalho de Conclusão de Curso.
   </footer>

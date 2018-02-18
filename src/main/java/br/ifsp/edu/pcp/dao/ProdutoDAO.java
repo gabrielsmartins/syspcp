@@ -13,9 +13,7 @@ public class ProdutoDAO extends GenericDAO<Produto, Serializable> {
 		super(Produto.class);
 	}
 	
-	public void recarrega(Produto produto) {
-		entityManager.refresh(produto);
-	}
+
 	
 	
 }

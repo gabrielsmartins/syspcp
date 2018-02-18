@@ -146,6 +146,7 @@ public abstract class Componente {
 	}
 
 
+	
 	public void setQuantidadeMinima(Double quantidadeMinima) {
 		this.quantidadeMinima = quantidadeMinima;
 	}

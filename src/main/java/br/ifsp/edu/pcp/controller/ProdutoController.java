@@ -16,6 +16,7 @@ import br.ifsp.edu.pcp.dao.OperacaoDAO;
 import br.ifsp.edu.pcp.dao.ProdutoDAO;
 import br.ifsp.edu.pcp.dao.UnidadeMedidaDAO;
 import br.ifsp.edu.pcp.model.Material;
+import br.ifsp.edu.pcp.model.Operacao;
 import br.ifsp.edu.pcp.model.Produto;
 import br.ifsp.edu.pcp.model.Roteiro;
 
@@ -33,7 +34,6 @@ public class ProdutoController {
 	private OperacaoDAO operacaoDAO;
 	
 
-	
 	@Inject
 	private MaterialDAO materialDAO;
 	
@@ -92,11 +92,12 @@ public class ProdutoController {
 
 	}
 
-	@Post("/roteiro")
+	@Post("/addRoteiro")
 	public void adicionarRoteiro(Roteiro roteiro) {
-		/*this.produtoDAO.recarrega(produto);*/
+		Operacao operacao = operacaoDAO.pesquisar(roteiro.getOperacao().getId());
+		roteiro.setOperacao(operacao);
+		roteiro.setSequencia(Long.parseLong(String.valueOf(this.produto.getRoteiros().size())+1));
 		this.produto.adicionarRoteiro(roteiro);
-		result.include("prod",produto.getRoteiros().size());
 		result.redirectTo(ProdutoController.class).form();
 		
 	}
@@ -104,16 +105,15 @@ public class ProdutoController {
 	
 	@Post("/addMaterial")
 	public void adicionarMaterial(Material material, Double quantidade) {
-		this.produto.adicionarComponente(material, quantidade);
+		this.produto.adicionarComponente(this.materialDAO.pesquisar(material.getId()), quantidade);
 		result.redirectTo(ProdutoController.class).form();
 		
 	}
 	
 	@Post("/addProduto")
 	public void adicionarProduto(Produto produto, Double quantidade) {
-		this.produto.adicionarComponente(produto, quantidade);
+		this.produto.adicionarComponente(produtoDAO.pesquisar(produto.getId()), quantidade);
 		result.redirectTo(ProdutoController.class).form();
-		
 	}
 	
 	
