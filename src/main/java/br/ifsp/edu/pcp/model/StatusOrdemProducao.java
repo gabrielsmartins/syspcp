@@ -1,6 +1,6 @@
-package br.ifsp.edu.pcp.test.model;
+package br.ifsp.edu.pcp.model;
 
-public enum StatusOrdem {
+public enum StatusOrdemProducao {
 	
 	EMITIDA("Emitida"),
 	INICIADA("Iniciada"),
@@ -9,7 +9,7 @@ public enum StatusOrdem {
 	
 	private String status;
 	
-	private StatusOrdem(String status) {
+	private StatusOrdemProducao(String status) {
 		this.status = status;
 	}
 

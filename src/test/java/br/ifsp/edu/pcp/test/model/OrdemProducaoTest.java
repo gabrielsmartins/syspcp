@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 
 import org.junit.Test;
 
+import br.ifsp.edu.pcp.model.OrdemProducao;
 import br.ifsp.edu.pcp.model.Perfil;
 import br.ifsp.edu.pcp.model.Produto;
 import br.ifsp.edu.pcp.model.SituacaoProduto;
@@ -22,8 +23,8 @@ public class OrdemProducaoTest {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		UnidadeMedida unidadeMedida = new UnidadeMedida("UNIDADE", "UN");
 		Produto produto = new Produto("MESA TUBULAR", SituacaoProduto.ATIVO, unidadeMedida, 500.50, 2, 10.00, 5.00);
-		OrdemProducao ordemProducao = new OrdemProducao(LocalDate.parse("18/02/2018",formatter),LocalDate.parse("23/02/2018",formatter),usuario,produto);
-		assertEquals(LocalDate.parse("18/02/2018",formatter),ordemProducao.getDataEmissao());
+		OrdemProducao ordemProducao = new OrdemProducao(produto,LocalDate.parse("23/02/2018",formatter),new Usuario("Admin", "admin", "12345", new Perfil("PCP")));
+		assertEquals(LocalDate.now(),ordemProducao.getDataEmissao());
 		assertEquals(LocalDate.parse("23/02/2018",formatter),ordemProducao.getPrazo());
 		assertEquals("Usuario",usuario.getNome());	
 	}

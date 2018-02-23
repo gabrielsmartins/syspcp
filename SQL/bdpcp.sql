@@ -104,6 +104,20 @@ CREATE TABLE roteiro(
 );
 
 
+CREATE TABLE ordem_producao(
+	     ord_id SERIAL,
+             ord_prod_id INT NOT NULL,
+	     ord_dt_emi TIMESTAMP  DEFAULT CURRENT_TIMESTAMP,
+	     ord_prazo  DATE NOT NULL,
+	     ord_usr_id INT NOT NULL,
+	     ord_dt_concl TIMESTAMP ,
+	     ord_status VARCHAR(500) NOT NULL DEFAULT 'EMITIDA',
+	     CONSTRAINT PK_ordem_producao PRIMARY KEY(ord_prod_id),
+	     CONSTRAINT FK_ordem_producao_produto FOREIGN KEY(ord_id) REFERENCES produto(prod_id),
+	     CONSTRAINT FK_ordem_producao_usuario FOREIGN KEY(ord_usr_id) REFERENCES usuario(usr_id),
+	     CONSTRAINT CHK_ordem_producao_status CHECK(ord_status IN('EMITIDA','INICIADA','ENCERRADA','CANCELADA'))     
+);
+
 
 
 
@@ -123,7 +137,7 @@ INSERT INTO perfil(perf_desc)VALUES('PRODUCAO');
 INSERT INTO perfil(perf_desc)VALUES('ALMOXARIFADO');
 INSERT INTO perfil(perf_desc)VALUES('ENGENHARIA');
 
-INSERT INTO usuario(usr_perf_id,usr_nome,usr_login,usr_pwd)VALUES(1,'Gabriel Martins','admin',12345);
+INSERT INTO usuario(usr_perf_id,usr_nome,usr_login,usr_pwd)VALUES(1,'Administrador','admin',12345);
 
 INSERT INTO unidade(unid_desc,unid_sig)VALUES('UNIDADE','UN');
 INSERT INTO unidade(unid_desc,unid_sig)VALUES('CAIXA','CX');
