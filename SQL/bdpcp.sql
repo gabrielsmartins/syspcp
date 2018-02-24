@@ -158,11 +158,13 @@ TRUNCATE TABLE perfil CASCADE;
 TRUNCATE TABLE estrutura_produto CASCADE;
 TRUNCATE TABLE produto CASCADE;
 TRUNCATE TABLE unidade CASCADE;
+TRUNCATE TABLE ordem_producao CASCADE;
 
 ALTER SEQUENCE perfil_perf_id_seq RESTART WITH 1;
 ALTER SEQUENCE usuario_usr_id_seq RESTART WITH 1;
 ALTER SEQUENCE unidade_unid_id_seq RESTART WITH 1;
 ALTER SEQUENCE produto_prod_id_seq RESTART WITH 1;
+ALTER SEQUENCE ordem_producao_ord_id_seq RESTART WITH 1;
 
 
 SELECT * FROM perfil;

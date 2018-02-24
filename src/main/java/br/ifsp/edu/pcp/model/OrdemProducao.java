@@ -1,27 +1,39 @@
 package br.ifsp.edu.pcp.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-public class OrdemProducao {
+@Entity
+@Table(name="ordem_producao")
+public class OrdemProducao implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ord_id")
 	private Long id;
 	
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	@Column(name="ord_status")
 	private StatusOrdemProducao status = StatusOrdemProducao.EMITIDA;
 	
-	@OneToOne
-	@Column(name="ord_id")
+	@ManyToOne
+	@JoinColumn(name="ord_prod_id")
 	private Produto produto;
 	
 	@Column(name="ord_dt_emi")
@@ -30,14 +42,18 @@ public class OrdemProducao {
 	@Column(name="ord_prazo")
 	private LocalDate prazo;
 	
-	@OneToOne
-	@Column(name="ord_usr_id")
+
+	@ManyToOne
+	@JoinColumn(name="ord_usr_id")
 	private Usuario responsavel;
 	
 	@Column(name="ord_dt_concl")
 	private LocalDate dataConclusao;
 
 	
+	public OrdemProducao() {
+		
+	}
 
 	public OrdemProducao(Produto produto, LocalDate prazo, Usuario responsavel) {
 		this.produto = produto;
