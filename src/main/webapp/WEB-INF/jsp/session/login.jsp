@@ -37,6 +37,25 @@
     </form>
   </div>
   <!-- /.login-box-body -->
+  
+   <c:if test="${not empty error}">
+   <br><br>
+    <div class="callout callout-danger">
+                <h4>Autenticação</h4>
+
+                <p>${error}</p>
+              </div>
+              </c:if>
+              
+              
+                 <c:if test="${not empty mensagem}">
+   <br><br>
+    <div class="callout callout-success">
+                <h4>Logout</h4>
+
+                <p>${mensagem}</p>
+              </div>
+              </c:if>
 </div>
 <!-- /.login-box -->
 

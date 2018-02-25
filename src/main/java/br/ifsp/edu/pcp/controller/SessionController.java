@@ -38,6 +38,7 @@ public class SessionController {
 			sessao.login(user);
 			result.redirectTo(MainController.class).home();
 		}else {
+			result.include("error", "Usuário ou Senha Inválidos");
 			result.redirectTo(SessionController.class).login();
 		}
 		
@@ -47,7 +48,7 @@ public class SessionController {
 	@Get("/logout")
 	public void logout() {	
 		sessao.logout();
-		result.include("mensagem", "Obrigado por Utilizar o WEBPCP");
+		result.include("mensagem", "Obrigado por Utilizar o Sistema");
 		result.redirectTo(SessionController.class).login();
 	}
 	
