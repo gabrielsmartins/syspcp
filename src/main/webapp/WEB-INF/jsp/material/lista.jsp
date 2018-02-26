@@ -125,9 +125,11 @@ desired effect
 												</a> 
 												</td>
 												<td>
+
 												<form action="<c:url value='/materiais/${material.id}'/>" method="post">
 													<button type="submit"class="btn btn-cancel"><i class="fa fa-remove"></i></button>
 												</form>
+												
 												</td>
 											</tr>
 										</c:forEach>

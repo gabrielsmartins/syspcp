@@ -36,9 +36,15 @@ public class SetorController {
 
 	@Post("/")
 	public void adiciona(Setor setor) {
-		setorDAO.salvar(setor);
-		result.include("mensagem", "Setor Salvo com Sucesso");
-		result.redirectTo(SetorController.class).lista();
+		try {
+			setorDAO.salvar(setor);
+			result.include("mensagem", "Setor Salvo com Sucesso");
+		}catch(Exception exception) {
+			result.include("error", "Já existe um Setor cadastrado com essa descrição");
+			result.redirectTo(SetorController.class).form();
+		}
+		
+		
 
 	}
 

@@ -154,6 +154,8 @@ SELECT * FROM estrutura_produto;
 SELECT * FROM setor;
 SELECT * FROM operacao;
 SELECT * FROM unidade;
+SELECT * FROM perfil;
+SELECT * FROM usuario;
 
 
 INSERT INTO perfil(perf_desc)VALUES('PCP');

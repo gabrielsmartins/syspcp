@@ -281,7 +281,6 @@ desired effect
 
 									<!--  ESTRUTURA  -->
 									<div class="form-group row">
-									<form action="<c:url value='/produtos/addProduto'/>" method="post">
 										<label class="col-sm-1 control-label">Produto:</label>
 										<div class="col-sm-6">
 											<select class="js-data-example-ajax" id="busca_produto" name="produto.id"
@@ -304,10 +303,9 @@ desired effect
 										<div class="col-sm-1">
 											<button type="submit" class="btn btn-cancel fa fa-plus"></button>
 										</div>
-										</form>
+
 									</div>
 									
-									<form action="<c:url value='/produtos/addMaterial'/>" method="post">
 									<div class="form-group row">
 										<label class="col-sm-1 control-label">Material:</label>
 										<div class="col-sm-6">
@@ -322,17 +320,17 @@ desired effect
 										</div>
 										
 										<div class="col-sm-1">
-										<input id="quantidadeMinima" type="number"
+										<input id="quantidadeMinimaMaterial" type="number"
 													pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
 													name="quantidade" class="form-control">
 										</div>
 										
 										
 										<div class="col-sm-1">
-											<button type="submit" class="btn btn-cancel fa fa-plus"></button>
+											<button type="button" class="btn btn-cancel fa fa-plus" onclick="addMaterial()"></button>
 										</div>
 									</div>
-									</form>
+				
 
 
 									<div class="box">
@@ -371,7 +369,8 @@ desired effect
                                                       <button type="button" class="btn btn-cancel fa fa-edit"></button>
                                                       </td>
                                                       <td>
-                                                      <button type="button" class="btn btn-cancel fa fa-remove"></button>
+                                                      <button type="button" class="btn btn-cancel fa fa-remove" onclick="removeMaterial(<% out.print(entry.getKey().getId());  %>)"></button>
+                                                      </a>
                                                     </td>
                                                   </tr>
 												
@@ -390,7 +389,6 @@ desired effect
 
 									<!-- ROTEIRO -->
 
-                               <form action="<c:url value='/produtos/addRoteiro'/>" method="post">
 									<div class="form-group row">
 										<label class="col-sm-1 control-label">Operação:</label>
 										<div class="col-sm-3">
@@ -418,8 +416,7 @@ desired effect
 												<button type="submit" class="btn btn-cancel fa fa-plus"></button>
 										</div>
 									</div>
-							  </form>
-
+					
 
 									<div class="box">
 										<div class="box-header">
@@ -529,7 +526,34 @@ desired effect
 
 
 
+<script type="text/javascript">
+    function addMaterial() {
+        var url = "<c:url value='/produtos/addMaterialJSON'/>";
+        var params = { materialId: $("#busca_material").val(),
+        		       quantidade : $("#quantidadeMinimaMaterial").val()
+        		       };
+        $.post(url, params, adiciona );
+    }
 
+    function adiciona(resposta) {
+    	alert(resposta);
+    	console.log(resposta);
+        /*$("#quantidade" + resposta.Id).html(resposta.Quantidade);*/
+    }
+    
+    function removeMaterial(id){
+    	 var url = "<c:url value='/produtos/removeMaterialJSON'/>";
+         var params = { materialId: id };
+         $.post(url, params, remove );
+    }
+    
+    function remove(resposta) {
+    	alert(resposta);
+    	console.log(resposta);
+        /*$("#quantidade" + resposta.Id).html(resposta.Quantidade);*/
+    }
+
+</script>
 
 
 

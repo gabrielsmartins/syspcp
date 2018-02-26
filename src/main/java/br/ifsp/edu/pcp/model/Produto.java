@@ -52,7 +52,14 @@ public class Produto extends Componente implements Serializable {
 	}
 
 	public void adicionarComponente(Componente componente, Double quantidade) {
-		estrutura.put(componente, quantidade);
+		if(estrutura.containsKey(componente)) {
+			Double valor = estrutura.get(componente);
+			valor += quantidade;
+			estrutura.put(componente, valor);
+		}else {
+			estrutura.put(componente, quantidade);
+		}
+	
 	}
 
 	public Map<Componente, Double> getEstrutura() {

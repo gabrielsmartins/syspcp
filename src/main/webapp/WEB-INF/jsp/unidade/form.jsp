@@ -64,14 +64,14 @@ desired effect
                   <label for="descricao" class="col-sm-1 control-label">Descrição:</label>
 
                   <div class="col-sm-6">
-                    <input type="text" class="form-control" id="descricao" placeholder="Descrição" name="unidade.descricao">
+                    <input type="text" class="form-control" id="descricao" placeholder="Descrição" name="unidade.descricao" required="required">
                   </div>
                 </div>
                 <div class="form-group row">
                   <label for="sigla" class="col-sm-1 control-label">Sigla:</label>
 
                   <div class="col-sm-3">
-                    <input type="text" class="form-control" id="sigla" placeholder="Sigla" name="unidade.sigla">
+                    <input type="text" class="form-control" id="sigla" placeholder="Sigla" name="unidade.sigla" required="required">
                   </div>
                 </div>
               </div>

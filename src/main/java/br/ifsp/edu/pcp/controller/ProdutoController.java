@@ -1,10 +1,13 @@
 package br.ifsp.edu.pcp.controller;
 
+import static br.com.caelum.vraptor.view.Results.json;
+
 import java.time.LocalTime;
 import java.util.List;
 
 import javax.inject.Inject;
 
+import com.google.gson.Gson;
 
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Delete;
@@ -68,6 +71,7 @@ public class ProdutoController {
 		produto.setRoteiros(this.produto.getRoteiros());
 		produtoDAO.salvar(produto);
 		result.include("mensagem", "Produto Salvo com Sucesso");
+		produto = new Produto();
 		result.redirectTo(ProdutoController.class).lista();
 
 	}
@@ -105,36 +109,37 @@ public class ProdutoController {
 		roteiro.setTempoFinalizacao(LocalTime.parse(tempoFinalizacao));
 		roteiro.setSequencia(Long.parseLong(String.valueOf(this.produto.getRoteiros().size())+1));
 		this.produto.adicionarRoteiro(roteiro);
-		result.redirectTo(ProdutoController.class).form();
+		//result.redirectTo(ProdutoController.class).form();
 		
 	}
 	
 	
-	@Post("/addMaterial")
-	public void adicionarMaterial(Material material, Double quantidade) {
-		this.produto.adicionarComponente(this.materialDAO.pesquisar(material.getId()), quantidade);
-		result.redirectTo(ProdutoController.class).form();
-		
-	}
 	
-	@Post("/removeMaterial")
-	public void removerMaterial(Material material) {
-		this.produto.removerComponente(this.materialDAO.pesquisar(material.getId()));
-		result.redirectTo(ProdutoController.class).form();
-		
-	}
 	
-	@Post("/addProduto")
-	public void adicionarProduto(Produto produto, Double quantidade) {
-		this.produto.adicionarComponente(produtoDAO.pesquisar(produto.getId()), quantidade);
-		result.redirectTo(ProdutoController.class).form();
+	@Post("/addProdutoJSON")
+	public void adicionarProdutoJSON(Long produtoId, Double quantidade) {
+		this.produto.adicionarComponente(produtoDAO.pesquisar(produtoId), quantidade);
+		result.use(json()).withoutRoot().from(this.produto.getEstrutura()).include("componente").serialize();
 	}
 	
 	
-	@Post("/removeProduto")
-	public void removerProduto(Produto produto) {
-		this.produto.removerComponente(produtoDAO.pesquisar(produto.getId()));
-		result.redirectTo(ProdutoController.class).form();
+	@Post("/removeProdutoJSON")
+	public void removerProdutoJSON(Long produtoId) {
+		this.produto.removerComponente(produtoDAO.pesquisar(produtoId));
+		result.use(json()).withoutRoot().from(this.produto.getEstrutura()).include("componente").serialize();
+	}
+	
+	
+	@Post("/addMaterialJSON")
+	public void adicionarMaterialJSON(Long materialId, Double quantidade) {
+		this.produto.adicionarComponente(materialDAO.pesquisar(materialId), quantidade);
+		result.use(json()).withoutRoot().from(this.produto.getEstrutura()).serialize();
+	}
+	
+	@Post("/removeMaterialJSON")
+	public void removerMaterialJSON(Long materialId) {
+		this.produto.removerComponente(materialDAO.pesquisar(materialId));
+		result.use(json()).withoutRoot().from(this.produto.getEstrutura()).serialize();
 	}
 	
 	

@@ -63,7 +63,7 @@ desired effect
                   <label for="descricao" class="col-sm-1 control-label">Descrição:</label>
 
                   <div class="col-sm-6">
-                    <input type="text" class="form-control" id="descricao" placeholder="Descrição" name="setor.descricao">
+                    <input type="text" class="form-control" id="descricao" placeholder="Descrição" name="setor.descricao" required="required">
                   </div>
                 </div>
               </div>
@@ -71,6 +71,15 @@ desired effect
               <div class="box-footer">
                 <button type="reset" class="btn btn-cancel pull-right fa fa-ban"> Cancelar</button>
                 <button type="submit" class="btn btn-save pull-right fa fa-save"> Salvar</button>
+                
+                   <c:if test="${not empty error}">
+   <br><br>
+    <div class="callout callout-danger">
+                <h4>Falha ao cadastrar setor</h4>
+
+                <p>${error}</p>
+              </div>
+              </c:if>
               </div>
               <!-- /.box-footer -->
             </form>

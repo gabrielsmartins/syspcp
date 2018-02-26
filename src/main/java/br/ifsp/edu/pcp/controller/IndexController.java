@@ -16,7 +16,7 @@ public class IndexController {
 
 	@Path("/")
 	public void index() {
-		result.redirectTo(SessionController.class).login();
+		
 	}
 
 }

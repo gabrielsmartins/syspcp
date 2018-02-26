@@ -26,20 +26,17 @@ public class SessionController {
 	@Inject
 	private Sessao sessao;
 	
-	@Get("/login")
-	public void login() {
-		
-	}
+
 	
 	@Post("/autenticar")
 	public void autenticar(Usuario usuario) {
 		Usuario user = this.usuarioDAO.pesquisarPorLoginESenha(usuario.getLogin(), usuario.getSenha());
 		if(user != null) {
 			sessao.login(user);
-			result.redirectTo(MainController.class).home();
+			result.redirectTo(MainController.class).dashboard();
 		}else {
 			result.include("error", "Usuário ou Senha Inválidos");
-			result.redirectTo(SessionController.class).login();
+			result.redirectTo(IndexController.class).index();
 		}
 		
 	}
@@ -49,7 +46,7 @@ public class SessionController {
 	public void logout() {	
 		sessao.logout();
 		result.include("mensagem", "Obrigado por Utilizar o Sistema");
-		result.redirectTo(SessionController.class).login();
+		result.redirectTo(IndexController.class).index();
 	}
 	
 	
