@@ -7,8 +7,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import com.google.gson.Gson;
-
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Delete;
 import br.com.caelum.vraptor.Get;
@@ -20,7 +18,7 @@ import br.ifsp.edu.pcp.dao.MaterialDAO;
 import br.ifsp.edu.pcp.dao.OperacaoDAO;
 import br.ifsp.edu.pcp.dao.ProdutoDAO;
 import br.ifsp.edu.pcp.dao.UnidadeMedidaDAO;
-import br.ifsp.edu.pcp.model.Material;
+import br.ifsp.edu.pcp.model.ItemEstrutura;
 import br.ifsp.edu.pcp.model.Operacao;
 import br.ifsp.edu.pcp.model.Produto;
 import br.ifsp.edu.pcp.model.Roteiro;
@@ -118,28 +116,30 @@ public class ProdutoController {
 	
 	@Post("/addProdutoJSON")
 	public void adicionarProdutoJSON(Long produtoId, Double quantidade) {
-		this.produto.adicionarComponente(produtoDAO.pesquisar(produtoId), quantidade);
+		ItemEstrutura item = new ItemEstrutura(produtoDAO.pesquisar(produtoId),quantidade);
+		this.produto.adicionarComponente(item);
 		result.use(json()).withoutRoot().from(this.produto.getEstrutura()).include("componente").serialize();
 	}
 	
 	
 	@Post("/removeProdutoJSON")
-	public void removerProdutoJSON(Long produtoId) {
-		this.produto.removerComponente(produtoDAO.pesquisar(produtoId));
+	public void removerProdutoJSON(int index) {
+		this.produto.removerComponente(index);
 		result.use(json()).withoutRoot().from(this.produto.getEstrutura()).include("componente").serialize();
 	}
 	
 	
 	@Post("/addMaterialJSON")
 	public void adicionarMaterialJSON(Long materialId, Double quantidade) {
-		this.produto.adicionarComponente(materialDAO.pesquisar(materialId), quantidade);
-		result.use(json()).withoutRoot().from(this.produto.getEstrutura()).serialize();
+		ItemEstrutura item = new ItemEstrutura(materialDAO.pesquisar(materialId),quantidade);
+		this.produto.adicionarComponente(item);
+		result.use(json()).withoutRoot().from(this.produto.getEstrutura()).include("componente").serialize();
 	}
 	
 	@Post("/removeMaterialJSON")
-	public void removerMaterialJSON(Long materialId) {
-		this.produto.removerComponente(materialDAO.pesquisar(materialId));
-		result.use(json()).withoutRoot().from(this.produto.getEstrutura()).serialize();
+	public void removerMaterialJSON(int index) {
+		this.produto.removerComponente(index);
+		result.use(json()).withoutRoot().from(this.produto.getEstrutura()).include("componente").serialize();
 	}
 	
 	

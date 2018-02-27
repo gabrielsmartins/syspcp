@@ -17,6 +17,7 @@ import br.ifsp.edu.pcp.dao.OperacaoDAO;
 import br.ifsp.edu.pcp.dao.ProdutoDAO;
 import br.ifsp.edu.pcp.dao.SetorDAO;
 import br.ifsp.edu.pcp.dao.UnidadeMedidaDAO;
+import br.ifsp.edu.pcp.model.ItemEstrutura;
 import br.ifsp.edu.pcp.model.Material;
 import br.ifsp.edu.pcp.model.Operacao;
 import br.ifsp.edu.pcp.model.Produto;
@@ -67,7 +68,14 @@ public class ProdutoDAOTest {
 		produto.setComprimento(500.00);
 		produto.setLargura(450.00);
 
-		produto.adicionarComponente(material, 2.00);
+
+		
+		ItemEstrutura item = new ItemEstrutura(material, 2.00);
+
+		produto.adicionarComponente(item);
+
+		
+		
 		
 		Setor setor1 = new Setor("CORTE A LASER");
 		Setor setor2 = new Setor("DOBRA");
@@ -115,7 +123,9 @@ public class ProdutoDAOTest {
 		produto.setComprimento(500.00);
 		produto.setLargura(450.00);
 
-		produto.adicionarComponente(material, 5.00);
+		ItemEstrutura item = new ItemEstrutura(material, 5.00);
+		produto.adicionarComponente(item);
+
 
 		produtoDAO.salvar(produto);
 
@@ -124,7 +134,12 @@ public class ProdutoDAOTest {
 		produtoAlterado.setAltura(1750.00);
 		produtoAlterado.setComprimento(500.00);
 		produtoAlterado.setLargura(450.00);
-		produtoAlterado.adicionarComponente(material, 5.00);
+		
+		
+		ItemEstrutura itemAlterado = new ItemEstrutura(material, 5.00);
+		produto.adicionarComponente(itemAlterado);
+
+
 		produtoAlterado.setId(produto.getId());
 		produtoDAO.atualizar(produtoAlterado);
 	}
@@ -138,7 +153,10 @@ public class ProdutoDAOTest {
 		Produto produto = new Produto("Prateleira Grande", SituacaoProduto.ATIVO,
 				unidadeMedida, 350.00, 20, 5.00, 2.00);
 
-		produto.adicionarComponente(material, 2.00);
+		
+		ItemEstrutura item = new ItemEstrutura(material, 2.00);
+		produto.adicionarComponente(item);
+
 
 		produtoDAO.salvar(produto);
 		produtoDAO.remover(produto.getId());

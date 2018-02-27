@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="br.ifsp.edu.pcp.model.Produto" %>
-<%@ page import="br.ifsp.edu.pcp.model.Componente" %>
-<%@ page import="java.util.Map" %>
+	
+	 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -336,7 +336,7 @@ desired effect
 									<div class="box">
 										<div class="box-header">
 											<h3 class="box-title">Lista de Materiais/Produtos</h3>
-											<h3>${produtoSession.estrutura.size}</h3>
+											<h3>${fn:length(produtoSession.estrutura)}</h3>
 										</div>
 										<!-- /.box-header -->
 										<div class="box-body no-padding">
@@ -352,29 +352,8 @@ desired effect
 														<th style="width: 50px">Remover</th>
 													</tr>
 												</thead>
-												<tbody>
-												<c:set var="produto" value="${produtoSession}"/>
-												<% Produto produto = (Produto) pageContext.getAttribute("produto"); 
-												  int seq = 0;
-												  for(Map.Entry<Componente, Double> entry : produto.getEstrutura().entrySet()) {
-													  seq++;
-												%>
-												<tr>
-                                                  <td><% out.print(seq); %></td>
-                                                  <td><% out.print(entry.getKey().getId());  %></td>
-                                                  <td><% out.print(entry.getKey().getDescricao()); %></td>
-                                                  <td><% out.print(entry.getKey().getClass().getSimpleName()); %></td>
-                                                  <td><% out.print(entry.getValue()); %></td>
-                                                  <td>
-                                                      <button type="button" class="btn btn-cancel fa fa-edit"></button>
-                                                      </td>
-                                                      <td>
-                                                      <button type="button" class="btn btn-cancel fa fa-remove" onclick="removeMaterial(<% out.print(entry.getKey().getId());  %>)"></button>
-                                                      </a>
-                                                    </td>
-                                                  </tr>
-												
-												<% }%>
+												<tbody id="tabela_materiais">
+											
                                                 
 												</tbody>
 
@@ -535,25 +514,48 @@ desired effect
         $.post(url, params, adiciona );
     }
 
-    function adiciona(resposta) {
-    	alert(resposta);
-    	console.log(resposta);
-        /*$("#quantidade" + resposta.Id).html(resposta.Quantidade);*/
+    function adiciona(data) {
+    	$('#tabela_materiais tr').remove();
+    	for(var i=0;i < data.length;i++){
+    		$('#tabela_materiais').append( "<tr>"+
+                    "<td>" + (i+1) + "</td>"+
+                    "<td>" + data[i].componente.id + "</td>"+
+                    "<td>" + data[i].componente.descricao + "</td>"+
+                    "<td>Material</td>"+
+                    "<td>" + data[i].quantidade + "</td>"+
+                    "<td><button type='button' class='btn btn-cancel fa fa-edit'></button></td>"+
+                    "<td><button type='button' class='btn btn-cancel fa fa-remove' onclick='removeMaterial(" + i + ")'></button></td>"+
+                    "</tr>");
+    	}
+    	
     }
     
     function removeMaterial(id){
     	 var url = "<c:url value='/produtos/removeMaterialJSON'/>";
-         var params = { materialId: id };
+         var params = { index: id };
          $.post(url, params, remove );
     }
     
-    function remove(resposta) {
-    	alert(resposta);
-    	console.log(resposta);
-        /*$("#quantidade" + resposta.Id).html(resposta.Quantidade);*/
+    function remove(data) {
+    	$('#tabela_materiais tr').remove();
+    	for(var i=0;i < data.length;i++){
+    		$('#tabela_materiais').append( "<tr>"+
+                    "<td>" + (i+1) + "</td>"+
+                    "<td>" + data[i].componente.id + "</td>"+
+                    "<td>" + data[i].componente.descricao + "</td>"+
+                    "<td>Material</td>"+
+                    "<td>" + data[i].quantidade + "</td>"+
+                    "<td><button type='button' class='btn btn-cancel fa fa-edit'></button></td>"+
+                    "<td><button type='button' class='btn btn-cancel fa fa-remove' onclick='removeMaterial(" + i + ")'></button></td>"+
+                    "</tr>");
+    	}
+       
     }
+    
 
+    	
 </script>
+
 
 
 

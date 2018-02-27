@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import br.ifsp.edu.pcp.model.ItemEstrutura;
 import br.ifsp.edu.pcp.model.Material;
 import br.ifsp.edu.pcp.model.Produto;
 import br.ifsp.edu.pcp.model.SituacaoProduto;
@@ -40,8 +41,10 @@ public class ProdutoTest {
 		produto.setSituacao(SituacaoProduto.ATIVO);
 		
 		
-		produto.adicionarComponente(material1,2.00);
-		produto.adicionarComponente(material2,1.00);
+		ItemEstrutura item1 = new ItemEstrutura(material1, 2.00);
+		ItemEstrutura item2 = new ItemEstrutura(material2, 1.00);
+		produto.adicionarComponente(item1);
+		produto.adicionarComponente(item2);
 		
 		assertEquals("Mesa", produto.getDescricao());
 		assertEquals("MI-005", produto.getCodigoInterno());
@@ -87,12 +90,18 @@ public class ProdutoTest {
 		produto.setSituacao(SituacaoProduto.ATIVO);
 		
 		
-		produto.adicionarComponente(material1,2.00);
-		produto.adicionarComponente(material2,1.00);
-		produto.adicionarComponente(material2,3.00);
+		ItemEstrutura item1 = new ItemEstrutura(material1, 2.00);
+		ItemEstrutura item2 = new ItemEstrutura(material2, 1.00);
+		ItemEstrutura item3 = new ItemEstrutura(material2, 3.00);
+		produto.adicionarComponente(item1);
+		produto.adicionarComponente(item2);
+		produto.adicionarComponente(item3);
 		
-		assertEquals(2.00, produto.getEstrutura().get(material1),0);
-		assertEquals(4.00, produto.getEstrutura().get(material2),0);
+		
+		
+		assertEquals(2.00, produto.getEstrutura().get(0).getQuantidade(),0);
+		assertEquals(1.00, produto.getEstrutura().get(1).getQuantidade(),0);
+		assertEquals(3.00, produto.getEstrutura().get(2).getQuantidade(),0);
 		
 	}
 	
@@ -122,9 +131,14 @@ public class ProdutoTest {
 		produto.setSituacao(SituacaoProduto.ATIVO);
 		
 		
-		produto.adicionarComponente(material1,2.00);
-		produto.adicionarComponente(material2,1.00);
-		produto.removerComponente(material2);
+		ItemEstrutura item1 = new ItemEstrutura(material1, 2.00);
+		ItemEstrutura item2 = new ItemEstrutura(material2, 1.00);
+		produto.adicionarComponente(item1);
+		produto.adicionarComponente(item2);
+
+		
+
+		produto.removerComponente(1);
 		
 		assertEquals(1, produto.getEstrutura().size());
 

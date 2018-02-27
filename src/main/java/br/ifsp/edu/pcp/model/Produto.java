@@ -1,20 +1,15 @@
 package br.ifsp.edu.pcp.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import javax.persistence.CollectionTable;
-import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.MapKeyJoinColumn;
 
 
 @SessionScoped
@@ -27,18 +22,21 @@ public class Produto extends Componente implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@ElementCollection
-	@JoinTable(name = "estrutura_produto", joinColumns = @JoinColumn(name = "prod_id"))
-	@Column(name = "prod_sub_qntd")
-	@MapKeyJoinColumn(name = "prod_sub_id", updatable = true)
-	private Map<Componente, Double> estrutura = new LinkedHashMap<>();
 
 	 @ElementCollection
 	  @CollectionTable(
 	        name="roteiro",
 	        joinColumns=@JoinColumn(name="rot_prod_id")
 	  )
-	private List<Roteiro> roteiros = new ArrayList<>();
+	private List<Roteiro> roteiros = new LinkedList<>();
+	 
+	 
+	 @ElementCollection
+	  @CollectionTable(
+	        name="estrutura_produto",
+	        joinColumns=@JoinColumn(name="prod_id")
+	  )
+	private List<ItemEstrutura> estrutura = new LinkedList<>();
 	 
 	 
 
@@ -51,41 +49,38 @@ public class Produto extends Componente implements Serializable {
 
 	}
 
-	public void adicionarComponente(Componente componente, Double quantidade) {
-		if(estrutura.containsKey(componente)) {
-			Double valor = estrutura.get(componente);
-			valor += quantidade;
-			estrutura.put(componente, valor);
-		}else {
-			estrutura.put(componente, quantidade);
-		}
+	public void adicionarComponente(ItemEstrutura itemEstrutura) {
+		this.estrutura.add(itemEstrutura);
+	}
+
 	
-	}
-
-	public Map<Componente, Double> getEstrutura() {
-		return this.estrutura;
-	}
-
 	public void adicionarRoteiro(Roteiro roteiro) {
 		this.roteiros.add(roteiro);
+	}
+	
+	
+	
+
+	public List<ItemEstrutura> getEstrutura() {
+		return estrutura;
+	}
+
+	public void setEstrutura(List<ItemEstrutura> estrutura) {
+		this.estrutura = estrutura;
 	}
 
 	public List<Roteiro> getRoteiros() {
 		return roteiros;
 	}
 
-	public void setEstrutura(Map<Componente, Double> estrutura) {
-		this.estrutura = estrutura;
-	}
+	
 
 	public void setRoteiros(List<Roteiro> roteiros) {
 		this.roteiros = roteiros;
 	}
 
-	public void removerComponente(Componente componente) {
-         if(this.estrutura.containsKey(componente)) {
-        	 this.estrutura.remove(componente);
-       }
+	public void removerComponente(int index) {
+		this.estrutura.remove(index);
 		
 	}
 	
